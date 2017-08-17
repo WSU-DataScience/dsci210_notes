@@ -1,0 +1,239 @@
+Handout 7: Twitter/Text Mining
+
+***Setting up an API, i.e. Twitter Side***
+
+Twitter uses an Application Programming Interface (API) that allows
+developers to pull Twitter data.
+
+![](img/h18/media/image1.png){width="5.8097430008748905in"
+height="3.3604647856517937in"}
+
+To setup an API, go to <http://apps.twitter.com>, sign in using an
+existing Twitter account.
+
+![](img/h18/media/image2.png){width="4.963666885389326in"
+height="1.3162193788276466in"}
+
+> Once logged in, select Create New App
+
+![](img/h18/media/image3.png){width="4.941860236220473in"
+height="1.0443372703412073in"}
+
+Next, specify the requested information to create a new application.
+
+![](img/h18/media/image4.png){width="2.383720472440945in"
+height="1.3976345144356956in"}
+
+DSCI210\_TwitterPull is the newly created application.
+
+![](img/h18/media/image5.png){width="3.7291666666666665in"
+height="1.0833333333333333in"}
+
+After a successful application has been setup, the following information
+is required to access Twitter’s data API from R.
+
+-   Consumer Key
+
+-   Consumer Secret
+
+-   Access Token
+
+-   Access Token Secret
+
+These information can be obtained under the Keys and Access Tokens tab
+on the Twitter site.
+
+  ------------------------------------------------------------------------------------------- -------------------------------------------------------------------------------------------
+  ![](img/h18/media/image6.png){width="3.3620056867891512in" height="1.3304352580927383in"}   ![](img/h18/media/image7.png){width="3.1913035870516184in" height="1.4856988188976379in"}
+  ------------------------------------------------------------------------------------------- -------------------------------------------------------------------------------------------
+
+*Working with Twitter Pulls in R*
+
+The following packages/libraries will be used to analyze Twitter data in
+R.
+
+> library(twitteR)
+>
+> library(RCurl)
+>
+> library(tm)
+>
+> library(wordcloud)
+
+The following information is obtained from the DSCI210\_TwitterPull
+application on Twitter side.
+
+> \#Specified from Twitter Account - DSCI\_210 is app name
+>
+> consumer\_key &lt;- "*&lt;consumer\_key&gt;*"
+>
+> consumer\_secert &lt;- "*&lt;consumer\_secert&gt;*"
+>
+> token\_key &lt;- "*&lt;token\_key&gt;*"
+>
+> token\_secert &lt;- "*&lt;token\_secert&gt;*"
+
+Setting up the OAUTH connection in R.
+
+> **Note**: OAUTH is an open protocol to allow secure authorization in a
+> simple and standard method from web, mobile and desktop applications.
+>
+> \#Setting up OAUTH in R
+>
+> setup\_twitter\_oauth(consumer\_key,consumer\_secert,token\_key,token\_secert)
+
+![](img/h18/media/image8.png){width="4.255813648293963in"
+height="0.9734711286089239in"}
+
+Getting a Twitter pull
+
+> \#Gettting a pull on recent Ecuador Earthquake
+>
+> pull &lt;- searchTwitter("\#EcuadorEarthquake", n=1000, lang="en")
+
+The object returned by the searchTwitter() function is a list.
+
+> \#Checking to see if object is indeed a list
+>
+> is.list(pull)
+
+This (somewhat unstructured) list can be converted a standard data.frame
+using the following.
+
+> \#Converting list to dataframe
+>
+> df &lt;- do.call("rbind", lapply(pull, as.data.frame))
+>
+> View(df)
+
+![](img/h18/media/image9.png){width="6.5in" height="1.01875in"}
+
+Writing data.frame to comma delimited file
+
+> \#The write.csv() function to write this data.frame into a \*.csv file
+>
+> write.csv(df,file=&lt;director/filename&gt;")
+
+A summary of screenname
+
+> Get \# posts by screenName
+>
+> table(df\$screenName)
+>
+> \#Plotting results
+>
+> plot(table(df\$screenName))
+>
+> \#adding a horizontal line at 3
+>
+> abline(h=3)
+
+![](img/h18/media/image10.png){width="5.197673884514436in"
+height="2.8165168416447943in"}
+
+> \#Idenitfy screenNames with more than 3 counts
+>
+> which(table(df\$screenName)&gt;3)
+
+![](img/h18/media/image11.png){width="5.569767060367454in"
+height="0.8860454943132109in"}
+
+Gain an understating the of the variable types in this data.frame.
+
+> \#Getting the structure of our data.frame
+>
+> str(df)
+
+![](img/h18/media/image12.png){width="6.239583333333333in"
+height="3.7604166666666665in"}
+
+> \#Plotting twitter pull across days
+>
+> plot(table(as.Date(df\$created)))
+>
+> ![](img/h18/media/image13.png){width="4.232557961504812in"
+> height="2.32415791776028in"}
+>
+> \#The following can be used to pull hour off created variable
+>
+> as.POSIXlt(df\$created)\$hour
+>
+> \#Next, table/plot outcome
+>
+> plot(table(as.POSIXlt(df\$created)\$hour))
+>
+> ![](img/h18/media/image14.png){width="4.6046511373578305in"
+> height="2.866100174978128in"}
+
+***Text Mining Procedures***
+
+> \#using the tm library for text mining
+>
+> myCorpus &lt;- Corpus(VectorSource(df\$text))
+>
+> \#Clean up text using the tm\_map() function
+>
+> myCorpus &lt;- tm\_map(myCorpus, tolower)
+>
+> myCorpus &lt;- tm\_map(myCorpus, removePunctuation)
+>
+> myCorpus &lt;- tm\_map(myCorpus, removeNumbers)
+
+Necessary to get rid of common English words. The stopwords() function
+can be used to accomplish this in R.
+
+> \#Getting rid of common english words
+>
+> myStopwords &lt;- c(stopwords('english'))
+>
+> myCorpus &lt;- tm\_map(myCorpus, removeWords, myStopwords)
+
+The following is used to convert the Corpus object into a
+TermDocumentMatrix which is then converted to a matrix, and eventually a
+data.frame.
+
+> myDtm &lt;- TermDocumentMatrix(myCorpus, control = list(minWordLength
+> = 1))
+>
+> m &lt;- as.matrix(myDtm)
+>
+> v &lt;- sort(rowSums(m), decreasing=TRUE)
+>
+> myNames &lt;- names(v)
+>
+> \#Creating data.frame for wordcloud
+>
+> d &lt;- data.frame(word=myNames, freq=v)
+>
+> wordcloud(d\$word, d\$freq, min.freq=3)
+
+A Wordcloud of text from Twitter pull.
+
+> ![](img/h18/media/image15.png){width="3.3953488626421695in"
+> height="3.320230752405949in"}
+
+The wordcloud() function allows specification of a minimum frequency
+when plotting. This can be used to identify the most common words.
+
+> wordcloud(d\$word, d\$freq, min.freq=40)
+>
+> ![](img/h18/media/image16.png){width="3.1666666666666665in"
+> height="3.0395374015748033in"}
+
+***Task***
+
+Obtain a Twitter pull on a topic of your choice. Complete the following
+for your data.
+
+1.  Write the Twitter data into a CSV file.
+
+2.  Does the number of tweets vary much over day? If some days are more
+    tweets than others, why might this be the case?
+
+3.  Doe the number of tweets vary much over time of day?
+
+4.  Create a reasonable workcloud for your twitter date. If necessary,
+    remove any over-represented words by modifying the myStopwords line
+    above in the code.
+
+

@@ -1,5 +1,5 @@
-Excel: Append, i.e. OFFSET() Function
-=====================================
+Appending with the OFFSET() Function
+====================================
 
 Climate change affects the environment is many ways. This past winter
 produced little snow in California which is likely to compound their

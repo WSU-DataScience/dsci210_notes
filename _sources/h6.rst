@@ -1,5 +1,5 @@
-Excel: Merge Tables, i.e. MATCH() / INDEX() Functions
-=====================================================
+Merge Tables with the MATCH() and INDEX() Functions
+===================================================
 
 Merging Content from Tables
 ---------------------------

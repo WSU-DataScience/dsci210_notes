@@ -1,5 +1,5 @@
-Excel: Reading in Standard Data
-===============================
+Reading in Standard Data
+========================
 
 In this example, we’ll use the *CarAccidents* data set. The easiest way
 to open a file in Excel is to simply double-click on the file name once

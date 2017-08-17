@@ -1,0 +1,165 @@
+# Excel: Reading in Standard Data
+## Reading in Excel files (\*.xlsx)
+
+In this example, we’ll use the *CarAccidents* data set. The easiest way
+to open a file in Excel is to simply double-click on the file name once
+you’re in the appropriate directory. This works well when the file you
+are opening is an Excel file.
+
+![](img/h1/media/image1.png){width="6.641288276465442in"
+height="1.8541666666666667in"}
+
+A portion of the dataset
+
+![](img/h1/media/image2.png){width="4.039385389326334in"
+height="2.6770833333333335in"}
+
+## Reading in Comma Delimited Files (\*.csv)
+
+Excel has the ability to automatically read in comma delimited files;
+thus, double-clicking on the CarAccidents.csv file will work (at least
+most of the time). This is especially true when EXCEL is used to create
+the comma delimited file.
+
+![](img/h1/media/image3.png){width="6.5in"
+height="1.8005085301837271in"}
+
+When Excel attempts to open the CarAccidents.csv file, I get the
+following error:
+
+![](img/h1/media/image4.png){width="6.5in"
+height="0.9487839020122485in"}
+
+After clicking “Yes” I get the following error:
+
+![](img/h1/media/image5.png){width="6.5in"
+height="0.9073600174978128in"}
+
+### Questions: 
+
+Use Google to identify why this error is occurring and
+propose a solution in case Excel is unable to open the file in a
+different format.
+
+1.  What is the problem?
+
+2.  What is a possible a solution if Excel is unable to open the file?
+
+3.  Verify that the CarAccidents.csv file can be opened successfully
+    without this error (implement your solution if need be).
+
+4.  Use an online resource such as Wikipedia to gain more information
+    about \*.csv files. What does csv stand for? What is the main
+    advantage of using \*.csv files?
+
+## Using Notepad++ to view data in its raw format
+
+![](img/h1/media/image6.png){width="4.354166666666667in"
+height="2.656538713910761in"}
+
+Here, we can see that the first row contains the column headers and the
+remaining rows contain the raw data. Commas are used to separate the
+variables in this file.
+
+![](img/h1/media/image7.png){width="5.614583333333333in"
+height="2.65625in"}
+
+## Reading in Tab Delimited Files (\*.txt)
+
+As we just discussed, variables in a comma delimited file are separated
+by commas; likewise, variables in a tab delimited file are separated by
+tabs.
+
+![](img/h1/media/image8.png){width="5.635416666666667in"
+height="1.5017257217847768in"}
+
+To read the tab delimited file (CarAccidents.txt) into Excel, launch
+Excel and select File &gt; Open. Be sure to tell Excel to search from
+“All files” instead of “All Excel files” as shown below.
+
+![](img/h1/media/image9.png){width="6.5in" height="0.5625in"}
+
+Once you click on the \*.txt file and click through the SYLK errors, the
+Text Import Wizard – Step 1 of 3 window should appear. Since this is a
+delimited file, select Delimited and click Next &gt;.
+
+![](img/h1/media/image10.png){width="5.1875in" height="3.735in"}
+
+In Step 2 of 3, specify the appropriate delimiter type. The bottom of
+the window gives you insight into how the data will be read in.
+
+![](img/h1/media/image11.png){width="4.114583333333333in"
+height="2.9625010936132985in"}
+
+Additional specifications for the variables are possible in Step 3 of 3.
+Click Finish to import the data.
+
+![](img/h1/media/image12.png){width="3.5729166666666665in"
+height="2.5725in"}
+
+###Note: 
+You can also automatically invoke the Text Import Wizard
+from the Data tab in Excel. In the “Get External Data” section, you
+should see the following.
+
+![](img/h1/media/image13.png){width="3.8125in"
+height="1.2439840332458443in"}
+
+## Using the Fixed width option when reading in data
+
+Open the CarAccidents.prn file in Notepad or another simple editor.
+
+###Question: 
+
+What problem is preventing a successful import of this
+data using the methods discussed previously?
+
+###Fix: 
+
+Read the data in using a fixed width format.
+
+![](img/h1/media/image14.png){width="3.6145833333333335in"
+height="2.6025in"}
+
+Notice that starting in row 101, the ID and Gender column don’t
+necessarily have a space between them. To fix this, simply move the
+first vertical line over to separate these two columns. The first column
+has width 3, so place the vertical line appropriately.
+
+![](img/h1/media/image15.png){width="4.479166666666667in"
+height="3.225in"}
+
+After all vertical lines have been appropriately placed, click Next &gt;
+and/or Finish.
+
+![](img/h1/media/image16.png){width="4.325810367454069in"
+height="3.1145833333333335in"}
+
+## Reading data in from Microsoft Access Files (\*.accdb)
+
+Under the Data tab in the “Get External Data” section, select “From
+Access.”
+
+![](img/h1/media/image13.png){width="2.96875in"
+height="0.9686767279090114in"}
+
+Specify the location of the file and click Open. In the Import Data
+window, specify that you want to read in a Table of data and the cell
+location for where you want the data to be located. Click OK.
+
+![](img/h1/media/image17.png){width="2.90625in"
+height="2.2884962817147856in"}
+
+The following contains a portion of the data set imported from Access.
+
+![](img/h1/media/image18.png){width="4.241301399825022in"
+height="1.84375in"}
+
+## Exporting Data From Excel
+
+To export data from Excel to either a \*.csv or \*.txt file, simply use
+the “Save As” command. Select the file type you want from the “Save as
+type” drop-down menu.
+
+![](img/h1/media/image19.png){width="6.177083333333333in"
+height="3.4166666666666665in"}

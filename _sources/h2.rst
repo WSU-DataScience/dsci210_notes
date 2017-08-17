@@ -1,5 +1,5 @@
-Sorting and Filtering Data in Excel
-===================================
+Sorting and Filtering Data
+==========================
 
 
 In this handout, we will consider the North Carolina Birth data. A

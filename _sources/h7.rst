@@ -1,5 +1,5 @@
-Excel: Association Rules, i.e. Market Basket Analysis
-=====================================================
+Application: Association Rules, i.e. Market Basket Analysis
+===========================================================
 
 Market Basket Analyses are a common application of association rules.
 One goal of a market basket analysis is to understand the association
@@ -224,21 +224,9 @@ Applying filters to columns Whole Milk and Butter allows one to easy
 compute the support and confidence for the rule
 :math:`\left\{ \text{Butter} \right\}\  \rightarrow \left\{ \text{Milk} \right\}`.
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-| +--------+---------------------------------------------------------------------------------------+                                                   |
-| | Rule   | .. math:: \left\{ \text{Butter} \right\}\  \rightarrow \left\{ \text{Milk} \right\}   |                                                   |
-| +--------+---------------------------------------------------------------------------------------+                                                   |
-+======================================================================================================================================================+=============+
-| |image16|                                                                                                                                            | |image17|   |
-+------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-| -  :math:`Support(Butter\ AND\ Milk) = \ \frac{\#\ Butter\ AND\ Milk}{\#\ Transactions} = \frac{271}{9835} = 0.028`                                  |
-|                                                                                                                                                      |
-| -  :math:`Confidence = \ \frac{Support(Butter\ AND\ Milk)}{Support(Butter)} = \frac{\frac{271}{9835}}{\frac{545}{9835}} = \frac{271}{545} = 0.497`   |
-|                                                                                                                                                      |
-| -  :math:`Lift = \ \frac{\text{Confidence}}{Support(Milk)} = \frac{0.497}{\frac{2513}{9835}} = \frac{0.497}{0.256} = 1.946`                          |
-+------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
+|image16|
 
-The =COUNT() function in Excel can used to count the number of nonblank
+The ``=COUNT()`` function in Excel can used to count the number of nonblank
 rows in a column. Excel functions also work with tables and variable
 names. The following will provide a count of the number of transactions
 in the Groceries dataset, i.e. 9835. The use of the table and variable
@@ -247,18 +235,18 @@ of cells in Excel.
 
 |image18|
 
-The =COUNTIF() function in Excel provides a count of only the cells that
+The ``=COUNTIF()`` function in Excel provides a count of only the cells that
 satisfy some condition. The following can be used to compute the support
 for butter.
 
-=COUNTIF( Groceries[butter] , 1 )
+``=COUNTIF( Groceries[butter] , 1 )``
 
-If more than one condition is needed, the =COUNTIFS() function can be
-used. COUNTIFS is necessary to compute Support(Butter AND Whole Milk).
+If more than one condition is needed, the ``=COUNTIFS()`` function can be
+used. ``COUNTIFS`` is necessary to compute Support(Butter AND Whole Milk).
 
-=COUNTIFS( Groceries[butter] , 1 , Groceries[whole milk] , 1 )
+``=COUNTIFS( Groceries[butter] , 1 , Groceries[whole milk] , 1 )``
 
-A brief description of the COUNTIFS function in Excel is provide here.
+A brief description of the ``COUNTIFS`` function in Excel is provide here.
 
 |image19|
 
@@ -279,36 +267,37 @@ provided below.
 
 |image22|
 
-*Evaluating Several Rules*
+Evaluating Several Rules
+------------------------
 
 The procedure provided above lack efficiencies and does not scale well
 when several rules need to be evaluated. For example, to evaluate the
 rule
 :math:`\left\{ \text{Yogurt} \right\}\  \rightarrow \left\{ \text{Milk} \right\}`,
-the formulas for support will need to be changed. The =INDIRCT()
+the formulas for support will need to be changed. The ``=INDIRCT()``
 function in Excel will help increase the efficiency in computing the
 support, confidence, and lift for several rules.
 
-+------------------------------------------------------------------------------------------+
-| INDIRECT() Function                                                                      |
-+==========================================================================================+
-| +---------------------------------+--------------------------------------------------+   |
-| | | Consider the following data   | Step 1: Obtain value from another cell           |   |
-| | | in Excel.                     |                                                  |   |
-| |                                 | |image24|                                        |   |
-| | |image23|                       |                                                  |   |
-| +=================================+==================================================+   |
-| |                                 | Step 2: Use value in specified cell in formula   |   |
-| |                                 |                                                  |   |
-| |                                 | |image25|                                        |   |
-| +---------------------------------+--------------------------------------------------+   |
-+------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------+
+| ``INDIRECT()`` Function                                                                      |
++==============================================================================================+
+| +---------------------------------+--------------------------------------------------+       |
+| | | Consider the following data   | Step 1: Obtain value from another cell           |       |
+| | | in Excel.                     |                                                  |       |
+| |                                 | |image24|                                        |       |
+| | |image23|                       |                                                  |       |
+| +=================================+==================================================+       |
+| |                                 | Step 2: Use value in specified cell in formula   |       |
+| |                                 |                                                  |       |
+| |                                 | |image25|                                        |       |
+| +---------------------------------+--------------------------------------------------+       |
++----------------------------------------------------------------------------------------------+
 
-The =INDIRECT() function can be used in the following manner to
+The ``=INDIRECT()`` function can be used in the following manner to
 automatically update the variable names when computing the support for
 several rules.
 
-=COUNTIF( INDIRECT ( “ Groceries[ “ & B2 & “ ] “ ), 1)
+``=COUNTIF( INDIRECT ( “ Groceries[ “ & B2 & “ ] “ ), 1)``
 
 The following setup is used to evaluate six different association rules
 for Milk.
@@ -321,44 +310,48 @@ well.
 
 |image27|
 
-*Questions*
+.. admonition:: Questions
 
-1. The Lift for
-   :math:`\left\{ \text{Cereal} \right\}\  \rightarrow \left\{ \text{Milk} \right\}`
-   is about 2.5 which is fairly high. Thus, given that the transaction
-   includes cereal, there is 2.5 fold increase in the likelihood of milk
-   being purchased.
+    1. The Lift for
+       :math:`\left\{ \text{Cereal} \right\}\  \rightarrow \left\{ \text{Milk} \right\}`
+       is about 2.5 which is fairly high. Thus, given that the transaction
+       includes cereal, there is 2.5 fold increase in the likelihood of milk
+       being purchased.
 
-   a. Compute Support(Cereal AND Milk).
+       a. Compute Support(Cereal AND Milk).
 
-   b. This value is fairly low. Why does a low support value negate the
-      usefulness of a rule?
+       b. This value is fairly low. Why does a low support value negate the
+          usefulness of a rule?
 
-2. The Lift value for the rule
-   :math:`\left\{ \text{Canned\ Beer} \right\}\  \rightarrow \left\{ \text{Milk} \right\}`
-   is lowest on this list. What can be said about the purchase of Canned
-   Beer AND Milk?
+    2. The Lift value for the rule
+       :math:`\left\{ \text{Canned\ Beer} \right\}\  \rightarrow \left\{ \text{Milk} \right\}`
+       is lowest on this list. What can be said about the purchase of Canned
+       Beer AND Milk?
 
-3. Which of these rules is least useful in the prediction of Milk?
-   Explain how you made this determination.
+    3. Which of these rules is least useful in the prediction of Milk?
+       Explain how you made this determination.
 
-*Task*
+.. admonition:: Task
 
-Use Excel to obtain the Confidence and Lift for all association rules
-for Whole Milk where only single items are considered on the left.
+    Use Excel to obtain the Confidence and Lift for all association rules
+    for Whole Milk where only single items are considered on the left.
 
--  Copy all variable names and paste them into a single column. This can
-   be done using Paste Special – specify Values and Transpose when
-   pasting.
+    -  Copy all variable names and paste them into a single column. This can
+       be done using Paste Special – specify Values and Transpose when
+       pasting.
 
--  The =CONCATENATE() function can be used to create the Rule column,
-   i.e. =CONCATENATE(“{“,B2,”} -> {Milk}”).
+    -  The ``=CONCATENATE()`` function can be used to create the Rule column,
+       i.e. ``=CONCATENATE(“{“,B2,”} -> {Milk}”)``.
 
-+----------------------------------------------------+--------------------+
-| Specify Values and Transpose under Paste Special   | Output for Rules   |
-|                                                    |                    |
-| |image28|                                          | |image29|          |
-+----------------------------------------------------+--------------------+
+    **Specify Values and Transpose under Paste Special**
+
+    |image28|                                          
+
+    **Output for Rules**
+
+    |image29|
+
+
 
 .. |http://imagesus.homeaway.com/mda01/f4e2379a-d720-459f-b9c0-9999fc559022.1.6| image:: img/h7/media/image1.jpeg
    :width: 1.91575in
@@ -413,10 +406,10 @@ for Whole Milk where only single items are considered on the left.
    :height: 0.41739in
 .. |image16| image:: img/h7/media/image17.png
    :width: 4.82in
-   :height: 1.65420in
+   :height: 2.66in
 .. |image17| image:: img/h7/media/image18.png
    :width: 2.86101in
-   :height: 1.62185in
+   :height: 2.6685in
 .. |image18| image:: img/h7/media/image19.png
    :width: 4.04478in
    :height: 0.74083in

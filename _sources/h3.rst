@@ -1,5 +1,5 @@
-Excel: Basic String Functions
-=============================
+Basic String Functions
+======================
 
 Consider the NC Birth dataset once again.
 
