@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>4.2. R: Programming in R &mdash; Runestone Interactive Overview</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="_static/clickable.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="_static/dragndrop.css" type="text/css" />
+    <link rel="stylesheet" href="_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="_static/livecode.css" type="text/css" />
+    <link rel="stylesheet" href="_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootswatch/2.3.1/""/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/runestonebase.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="_static/codemirror.js"></script>
+    <script type="text/javascript" src="_static/xml.js"></script>
+    <script type="text/javascript" src="_static/css.js"></script>
+    <script type="text/javascript" src="_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="_static/python.js"></script>
+    <script type="text/javascript" src="_static/javascript.js"></script>
+    <script type="text/javascript" src="_static/activecode.js"></script>
+    <script type="text/javascript" src="_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="_static/clike.js"></script>
+    <script type="text/javascript" src="_static/timed_activecode.js"></script>
+    <script type="text/javascript" src="_static/animationbase.js"></script>
+    <script type="text/javascript" src="_static/mchoice.js"></script>
+    <script type="text/javascript" src="_static/timedmc.js"></script>
+    <script type="text/javascript" src="_static/timed.js"></script>
+    <script type="text/javascript" src="_static/clickable.js"></script>
+    <script type="text/javascript" src="_static/timedclickable.js"></script>
+    <script type="text/javascript" src="_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="_static/pytutor.js"></script>
+    <script type="text/javascript" src="_static/codelens.js"></script>
+    <script type="text/javascript" src="_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="_static/datafile.js"></script>
+    <script type="text/javascript" src="_static/dragndrop.js"></script>
+    <script type="text/javascript" src="_static/timeddnd.js"></script>
+    <script type="text/javascript" src="_static/fitb.js"></script>
+    <script type="text/javascript" src="_static/timedfitb.js"></script>
+    <script type="text/javascript" src="_static/livecode.js"></script>
+    <script type="text/javascript" src="_static/clike.js"></script>
+    <script type="text/javascript" src="_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="_static/lib/hammer.min.js"></script>
+    <script type="text/javascript" src="_static/parsons.js"></script>
+    <script type="text/javascript" src="_static/timedparsons.js"></script>
+    <script type="text/javascript" src="_static/poll.js"></script>
+    <script type="text/javascript" src="_static/reveal.js"></script>
+    <script type="text/javascript" src="_static/shortanswer.js"></script>
+    <script type="text/javascript" src="_static/timed_shortanswer.js"></script>
+    <script type="text/javascript" src="_static/tabbedstuff.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="_static/rangy-core.js"></script>
+    <script type="text/javascript" src="_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="_static/user-highlights.js"></script>
+    <script type="text/javascript" src="_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="Runestone Interactive Overview" href="index.html" />
+    <link rel="up" title="4. Processing Data with R" href="R_toctree.html" />
+    <link rel="next" title="4.3. Summaries in R" href="h14.html" />
+    <link rel="prev" title="4.1. R: Introduction to R" href="h12.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="/runestone/static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'dsci210';
+  eBookConfig.logLevel = 0;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = false;
+  eBookConfig.python3 = true;
+  eBookConfig.basecourse = 'dsci210';
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="index.html">DSCI 210 Notes</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='index.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/dsci210/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:ACFactory.toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/dsci210/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='/runestone/default/reportabug?course=dsci210&page=h13'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        <!--
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">4.2. R: Programming in R</a><ul>
+<li><a class="reference internal" href="#id5">4.2.1. ***</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - 4.1. R: Introduction to R" data-toggle="tooltip">
+    <a href="h12.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - 4.3. Summaries in R' data-toggle="tooltip" >
+    <a href="h14.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content">
+  
+  <div class="section" id="r-programming-in-r">
+<h1>4.2. R: Programming in R<a class="headerlink" href="#r-programming-in-r" title="Permalink to this headline">¶</a></h1>
+<table border="1" class="docutils">
+<colgroup>
+<col width="81%" />
+<col width="19%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><p class="first">R is one of the most common software packaged used for data science. Python is a second software package often utilized in data science. The use of R is widespread because</p>
+<ul class="last simple">
+<li>R has the ability to deal with data, and</li>
+<li>R is a programming language.</li>
+</ul>
+</td>
+<td><a class="reference internal" href="../img/h13/media/image1.png"><img alt="https://www.r-project.org/Rlogo.png" src="../img/h13/media/image1.png" style="width: 1.34409in; height: 1.04167in;" /></a></td>
+</tr>
+</tbody>
+</table>
+<p>A script window in R allow you to write code which can later be
+executed. A script window can be obtained in R Studio near the
+upper-left corner. R is interactive in that you can write code directly
+into the R console; however, I’d encourage you write your code in the
+script window.</p>
+<p>The following can be used to obtain a R script window.</p>
+<p><a class="reference internal" href="../img/h13/media/image2.png"><img alt="image1" src="../img/h13/media/image2.png" style="width: 3.86087in; height: 1.32874in;" /></a></p>
+<p><strong>*Getting Started*</strong></p>
+<p>R code can be written directly into the R Script window. Commenting code
+is important in any language. A comment line in the R script window
+stats with #. That is, any line that starts with # will be ignored upon
+submitting the code to be executed.</p>
+<p><a class="reference internal" href="../img/h13/media/image3.png"><img alt="image2" src="../img/h13/media/image3.png" style="width: 4.07292in; height: 0.84548in;" /></a></p>
+<p>Write the following two lines of code in the script window. Click Run to
+execute this code.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><p class="first">#Simple commands</p>
+<p>#Addition</p>
+<p class="last">5+5</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><a class="reference internal" href="../img/h13/media/image4.png"><img alt="image3" src="../img/h13/media/image4.png" style="width: 4.30208in; height: 1.05024in;" /></a></p>
+<p>Consider the following code</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><p class="first">#Simple commands</p>
+<p>#Addition</p>
+<p>5+5</p>
+<p>#Multiplication</p>
+<p>5*5</p>
+<p>#Powers</p>
+<p>2^3</p>
+<p>#Using log functions, base e</p>
+<p>log(5)</p>
+<p>#Log function with base=10</p>
+<p>log(5,base=10)</p>
+<p>#Log 10 is common enough that log10() exists</p>
+<p>log10(5)</p>
+<p>#Modular arithmetic, 4 mod 2</p>
+<p class="last">4 %% 2</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>The &gt; log(5) command used above is a example of a built-in <em>function</em> in
+R. When using functions, it may be useful to hit the TAB key. For
+example, enter “log” at the prompt and then select the TAB key. R then
+displays information about functions whose names begin with “log.”</p>
+<p><a class="reference internal" href="../img/h13/media/image5.png"><img alt="image4" src="../img/h13/media/image5.png" style="width: 4.51337in; height: 1.28898in;" /></a></p>
+<p>The expressions from above are evaluated and the results are printed to
+the screen. The results can be assigned to an object with the use of
+assignment operators, i.e. “&lt;-“. For example, the following will save
+the result into a variable named Ten.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><p class="first">#Assigning the outcome to a variable</p>
+<p>Ten &lt;- 5 + 5</p>
+<p>#Type variable name is see outcome</p>
+<p>Ten</p>
+<p>#Identify internal structure of variable Ten</p>
+<p class="last">str(Ten)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Assigning a set of values to a vector. The c() syntax is used to create
+a vector from scratch. Often R allows operators/functions to work within
+other functions. Consider the following examples.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><p class="first">#Assign a set of values to a vector - Version #1</p>
+<p>mydata &lt;- c( 10 , 6 , 2 )</p>
+<p>#Assign a set of values to a vector - Version #2</p>
+<p class="last">mydata &lt;- c( 5+5 , 3*2 , 3-1 )</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>*Using Basic Operators in R*</strong></p>
+<p>R uses the following comparison operators.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&nbsp;</th>
+<th class="head">Equal</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>!=</td>
+<td>Not equal</td>
+</tr>
+<tr class="row-odd"><td>&gt;</td>
+<td>Greater than</td>
+</tr>
+<tr class="row-even"><td>&gt;=</td>
+<td>Greater than or equal to</td>
+</tr>
+<tr class="row-odd"><td>&lt;</td>
+<td>Less than</td>
+</tr>
+<tr class="row-even"><td>&lt;=</td>
+<td>Less than or equal to</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><p class="first">#Which data elements are greater than 5?</p>
+<p class="last">mydata &gt; 5</p>
+</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<div>[1] TRUE TRUE FALSE</div></blockquote>
+<p>Next, use the previous command to obtain a subset of data that includes
+only the value that are greater than 5.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><p class="first">#Obtain subset of data; only observations &gt; 5</p>
+<p>mydata[ mydata &gt; 5 ]</p>
+<p>#Obtain subset of data; only observations &gt; 5; assign subset into data.greater.than.5 variable</p>
+<p class="last">mydata.greater.than.5 &lt;- data[ data &gt; 5 ]</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Using the which() function to identify only the TRUE outcomes.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><p class="first">#Using which() to locate TRUE outcomes</p>
+<p class="last">which(mydata &gt; 5)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<div>[1] 1 2</div></blockquote>
+<p>The which() function simple returns the identifiers for the elements
+that were TRUE.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="37%" />
+<col width="21%" />
+<col width="21%" />
+<col width="21%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">R Code</th>
+<th class="head">Element 1</th>
+<th class="head">Element 2</th>
+<th class="head">Element 3</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>&nbsp;</td>
+<td>10</td>
+<td>6</td>
+<td>2</td>
+</tr>
+<tr class="row-odd"><td>mydata &gt; 5</td>
+<td>TRUE</td>
+<td>TRUE</td>
+<td>FALSE</td>
+</tr>
+<tr class="row-even"><td>which( mydata &gt; 5 )</td>
+<td>1</td>
+<td>2</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p><strong>*Using Compound Operators in R*</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="9%" />
+<col width="91%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&amp;</th>
+<th class="head">AND returns TRUE if both comparisons return TRUE</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>|</td>
+<td>OR returns TRUE if at least one comparison returns TRUE</td>
+</tr>
+<tr class="row-odd"><td>!</td>
+<td>NOT returns the negation of a logical vector.</td>
+</tr>
+</tbody>
+</table>
+<p>Again, working the data vector created above.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><p class="first">#Getting data values &gt; 8 or &lt; 3</p>
+<p class="last">mydata &gt; 8 | mydata &lt; 3</p>
+</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<div>[1] TRUE FALSE TRUE</div></blockquote>
+<p>Create the following simple data.frame in R.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><p class="first">#Creating a simple data.frame with two variables</p>
+<p>var1 &lt;- c(10,20,30,40,50)</p>
+<p>var2 &lt;- c(&#8220;a&#8221;,&#8221;b&#8221;,&#8221;c&#8221;,&#8221;b&#8221;,&#8221;ac&#8221;)</p>
+<p>var12 &lt;- data.frame(var1,var2)</p>
+<p>#To view the data.frame, use the View() function; *Note*: Capital “V” in View.</p>
+<p class="last">View(var12)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><a class="reference internal" href="../img/h13/media/image6.png"><img alt="image5" src="../img/h13/media/image6.png" style="width: 1.84722in; height: 1.96729in;" /></a></p>
+<p>Consider the following commands. For each command, verify that the
+desired output is returned.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><p class="first">#Getting rows for which var1 &gt; 10</p>
+<p>var12[var12$var1 &gt; 10, ]</p>
+<p>#Gettign rows for which var1 &gt; 10 and var2 == b</p>
+<p>var12[var12$var1 &gt; 10 &amp; var12$var2 == &#8220;b&#8221;, ]</p>
+<p>#Getting rows for which var2 contains only an a or only a c</p>
+<p>var12[var12$var2 %in% c(&#8220;a&#8221;,&#8221;c&#8221;), ]</p>
+<p>#Getting rows for which var2 contains an any a</p>
+<p class="last">var12[grep(&#8220;a&#8221;,var12$var2), ]</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="id5">
+<h2>4.2.1. <a href="#id1"><span class="problematic" id="id2">**</span></a><a href="#id3"><span class="problematic" id="id4">*</span></a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p><strong>*For Loops / IF Statements in R*</strong></p>
+<p>Consider the following structure of a for() loop in R. Here i is the
+index, the loop runs from i=1 to i=10. Once again the [ ] syntax is used
+to place the output into its respective element of the output vector.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%" />
+<col width="52%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><p class="first">for(i in 1:10 ) {</p>
+<blockquote>
+<div>output[ i ] &lt;- i * 2</div></blockquote>
+<p>}</p>
+<p>**
+Better method in R**</p>
+<p><strong>output &lt;- seq(1,10)</strong></p>
+<p><strong>output &lt;- output * 2</strong></p>
+<p><a href="#id6"><span class="problematic" id="id7">**</span></a>or **</p>
+<p class="last"><strong>output &lt;- 2 * seq(1,10)</strong></p>
+</td>
+<td><table border="1" class="first last docutils">
+<colgroup>
+<col width="29%" />
+<col width="71%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&nbsp;</th>
+<th class="head">output &lt;- i * 2</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>i=1</td>
+<td>2</td>
+</tr>
+<tr class="row-odd"><td>i=2</td>
+<td>4</td>
+</tr>
+<tr class="row-even"><td>i=3</td>
+<td>6</td>
+</tr>
+<tr class="row-odd"><td>i=4</td>
+<td>8</td>
+</tr>
+<tr class="row-even"><td>i=5</td>
+<td>10</td>
+</tr>
+<tr class="row-odd"><td>i=6</td>
+<td>12</td>
+</tr>
+<tr class="row-even"><td>i=7</td>
+<td>14</td>
+</tr>
+<tr class="row-odd"><td>i=8</td>
+<td>16</td>
+</tr>
+<tr class="row-even"><td>i=9</td>
+<td>18</td>
+</tr>
+<tr class="row-odd"><td>i=10</td>
+<td>20</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Write the following code in the script window. Execute this code to
+obtain the desired output vector.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%" />
+<col width="52%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><p class="first">#For Loops in R</p>
+<p>#Creating an initial vector filled with NAs</p>
+<p>output &lt;- rep(NA,10)</p>
+<p>#or creating an initial vector filled with 0s</p>
+<p>output &lt;- rep(0,10)</p>
+<p>#or creating an initial vector filled with NAs</p>
+<p>output &lt;- c( )</p>
+<p>#The for loop</p>
+<p>for( i in 1 : 10 ) {</p>
+<p>output[ i ] &lt;- i * 2</p>
+<p class="last">}</p>
+</td>
+<td><table border="1" class="first last docutils">
+<colgroup>
+<col width="17%" />
+<col width="39%" />
+<col width="43%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&nbsp;</th>
+<th class="head">initial output</th>
+<th class="head"><p class="first">updated</p>
+<p class="last">output &lt;- i * 2</p>
+</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>i=1</td>
+<td>NA</td>
+<td>2</td>
+</tr>
+<tr class="row-odd"><td>i=2</td>
+<td>NA</td>
+<td>4</td>
+</tr>
+<tr class="row-even"><td>i=3</td>
+<td>NA</td>
+<td>6</td>
+</tr>
+<tr class="row-odd"><td>i=4</td>
+<td>NA</td>
+<td>8</td>
+</tr>
+<tr class="row-even"><td>i=5</td>
+<td>NA</td>
+<td>10</td>
+</tr>
+<tr class="row-odd"><td>i=6</td>
+<td>NA</td>
+<td>12</td>
+</tr>
+<tr class="row-even"><td>i=7</td>
+<td>NA</td>
+<td>14</td>
+</tr>
+<tr class="row-odd"><td>i=8</td>
+<td>NA</td>
+<td>16</td>
+</tr>
+<tr class="row-even"><td>i=9</td>
+<td>NA</td>
+<td>18</td>
+</tr>
+<tr class="row-odd"><td>i=10</td>
+<td>NA</td>
+<td>20</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Consider the following use of the an IF() statement. This purpose of
+this statement is to set the output value equal to 50 for i=5. The
+remaining iterations should be the same as above.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="32%" />
+<col width="68%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><p class="first">for(i in 1:10){</p>
+<p>if(i == 5) {</p>
+<blockquote>
+<div>output[i] &lt;- 50</div></blockquote>
+<p>} else {</p>
+<blockquote>
+<div>output[i] &lt;- i*2</div></blockquote>
+<p>}</p>
+<p class="last">}</p>
+</td>
+<td><table border="1" class="first last docutils">
+<colgroup>
+<col width="17%" />
+<col width="39%" />
+<col width="43%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&nbsp;</th>
+<th class="head">initial output</th>
+<th class="head"><p class="first">updated</p>
+<p class="last">output &lt;- i * 2</p>
+</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>i=1</td>
+<td>NA</td>
+<td>2</td>
+</tr>
+<tr class="row-odd"><td>i=2</td>
+<td>NA</td>
+<td>4</td>
+</tr>
+<tr class="row-even"><td>i=3</td>
+<td>NA</td>
+<td>6</td>
+</tr>
+<tr class="row-odd"><td>i=4</td>
+<td>NA</td>
+<td>8</td>
+</tr>
+<tr class="row-even"><td>i=5</td>
+<td>NA</td>
+<td><strong>50</strong></td>
+</tr>
+<tr class="row-odd"><td>i=6</td>
+<td>NA</td>
+<td>12</td>
+</tr>
+<tr class="row-even"><td>i=7</td>
+<td>NA</td>
+<td>14</td>
+</tr>
+<tr class="row-odd"><td>i=8</td>
+<td>NA</td>
+<td>16</td>
+</tr>
+<tr class="row-even"><td>i=9</td>
+<td>NA</td>
+<td>18</td>
+</tr>
+<tr class="row-odd"><td>i=10</td>
+<td>NA</td>
+<td>20</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Write the following code in the script window. Execute this code to
+obtain the desired output vector.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><p class="first">#Creating an initial vector filled with NAs</p>
+<p>output &lt;- rep(NA,10)</p>
+<p>#The for loop that contains an if() statement</p>
+<p>for(i in 1:10){</p>
+<p>if(i == 5) {</p>
+<p>output[i] &lt;- 50</p>
+<p>} else {</p>
+<p>output[i] &lt;- i*2</p>
+<p>}</p>
+<p class="last">}</p>
+</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li></li>
+<li></li>
+</ul>
+<p><em>Questions</em>:</p>
+<ol class="arabic simple">
+<li>Consider the following modification of the code presented above. The
+else{} portion of the IF() statement has been removed. Explain why
+the output vector has a value of 10 (instead of 50) for i=5.</li>
+</ol>
+<table border="1" class="docutils">
+<colgroup>
+<col width="39%" />
+<col width="61%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><p class="first">for(i in 1:10){</p>
+<p>if(i == 5) {</p>
+<blockquote>
+<div>output[i] &lt;- 50</div></blockquote>
+<p>}</p>
+<p>output[i] &lt;- i*2</p>
+<p class="last">}</p>
+</td>
+<td><table border="1" class="first last docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&nbsp;</th>
+<th class="head">output &lt;- i * 2</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>i=1</td>
+<td>2</td>
+</tr>
+<tr class="row-odd"><td>i=2</td>
+<td>4</td>
+</tr>
+<tr class="row-even"><td>i=3</td>
+<td>6</td>
+</tr>
+<tr class="row-odd"><td>i=4</td>
+<td>8</td>
+</tr>
+<tr class="row-even"><td>i=5</td>
+<td>[STRIKEOUT:50] 10</td>
+</tr>
+<tr class="row-odd"><td>i=6</td>
+<td>12</td>
+</tr>
+<tr class="row-even"><td>i=7</td>
+<td>14</td>
+</tr>
+<tr class="row-odd"><td>i=8</td>
+<td>16</td>
+</tr>
+<tr class="row-even"><td>i=9</td>
+<td>18</td>
+</tr>
+<tr class="row-odd"><td>i=10</td>
+<td>20</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<ol class="arabic simple">
+<li>Write the following code in R.</li>
+</ol>
+<table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><blockquote class="first">
+<div>#Create the initial data.frame</div></blockquote>
+<p>Col1&lt;- 0:11</p>
+<p>Col2&lt;- 6:17</p>
+<p>mydata&lt;-data.frame(Col1,Col2)</p>
+<p>View(mydata)</p>
+<p>#Code to manipulate data.frame</p>
+<p>#First, create an indicator for which to split Col2</p>
+<p>mydata$Col3 &lt;- mydata$Col1 %% 4</p>
+<p>#Create new var.frame for loop to dump output</p>
+<p>newmydata&lt;-data.frame(Col1=rep(NA,3),Col2=rep(NA,3),Col3=rep(NA,3),Col4=rep(NA,3))</p>
+<p>View(newmydata)</p>
+<p>#The loop to rearrange</p>
+<p>for(i in 1:4){</p>
+<p>newmydata[,i] &lt;- mydata$Col2[mydata$Col3 == (i-1)]</p>
+<p class="last">}</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>The code above transform the original data.frame to the desired
+data.frame provided below.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="40%" />
+<col width="22%" />
+<col width="38%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><p class="first">Original data.frame</p>
+<p class="last"><a class="reference internal" href="../img/h13/media/image7.png"><img alt="image6" src="../img/h13/media/image7.png" style="width: 0.86842in; height: 1.83333in;" /></a></p>
+</td>
+<td>Transform</td>
+<td><p class="first">Desired data.frame</p>
+<p class="last"><a class="reference internal" href="../img/h13/media/image8.png"><img alt="image7" src="../img/h13/media/image8.png" style="width: 2.31250in; height: 0.85919in;" /></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Consider again the code used to transform this data.frame to its desired
+structure.</p>
+<p><a class="reference internal" href="../img/h13/media/image9.png"><img alt="image8" src="../img/h13/media/image9.png" style="width: 5.60185in; height: 2.32992in;" /></a></p>
+<ol class="loweralpha simple">
+<li>What is the purpose of Line 9? Discuss.</li>
+<li>Consider Line 12, what is rep(NA,3) doing?</li>
+<li>Consider Line 17, what are the value of mydata$Col2[mydata$Col3 ==
+(i=1)] for i=2?</li>
+<li>Consider Line 17, why is i used for newmydata[,i], but (i-1) being
+used for mydata$Col2[mydata$Col3 == (i=1)]?</li>
+<li>Rewrite Line 17 to read: newmydata[,i] = Col2[(Col1 %% 4) == (i-1)]
+Is the mydata data.frame needed or is this loop able to work directly
+with the individual vectors? Briefly discuss.</li>
+</ol>
+</div>
+</div>
+
+
+  
+      
+  <li id="relations-prev" class="navLink" title='Previous Section - 4.1. R: Introduction to R' data-toggle="tooltip">
+    <a href="h12.html" >
+      <i class='prevNav glyphicon glyphicon-chevron-left'></i>
+    </a>
+  </li>
+  <a class="navLinkBg" id="navLinkBgLeft"  href="h12.html" ></a>
+  
+  <li id="relations-next" class="navLink" title='Next Section - 4.3. Summaries in R' data-toggle="tooltip" >
+    <a href="h14.html" >
+      <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
+    </a>
+  </li>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="h14.html" >Next Section - 4.3. Summaries in R</a>
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+  
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      
+      | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015 Todd Iverson.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.5.
+    </p>
+  </div>
+</footer>
+
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

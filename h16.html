@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>4.6. Data Management in R &mdash; Runestone Interactive Overview</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="_static/clickable.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="_static/dragndrop.css" type="text/css" />
+    <link rel="stylesheet" href="_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="_static/livecode.css" type="text/css" />
+    <link rel="stylesheet" href="_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootswatch/2.3.1/""/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/runestonebase.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="_static/codemirror.js"></script>
+    <script type="text/javascript" src="_static/xml.js"></script>
+    <script type="text/javascript" src="_static/css.js"></script>
+    <script type="text/javascript" src="_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="_static/python.js"></script>
+    <script type="text/javascript" src="_static/javascript.js"></script>
+    <script type="text/javascript" src="_static/activecode.js"></script>
+    <script type="text/javascript" src="_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="_static/clike.js"></script>
+    <script type="text/javascript" src="_static/timed_activecode.js"></script>
+    <script type="text/javascript" src="_static/animationbase.js"></script>
+    <script type="text/javascript" src="_static/mchoice.js"></script>
+    <script type="text/javascript" src="_static/timedmc.js"></script>
+    <script type="text/javascript" src="_static/timed.js"></script>
+    <script type="text/javascript" src="_static/clickable.js"></script>
+    <script type="text/javascript" src="_static/timedclickable.js"></script>
+    <script type="text/javascript" src="_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="_static/pytutor.js"></script>
+    <script type="text/javascript" src="_static/codelens.js"></script>
+    <script type="text/javascript" src="_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="_static/datafile.js"></script>
+    <script type="text/javascript" src="_static/dragndrop.js"></script>
+    <script type="text/javascript" src="_static/timeddnd.js"></script>
+    <script type="text/javascript" src="_static/fitb.js"></script>
+    <script type="text/javascript" src="_static/timedfitb.js"></script>
+    <script type="text/javascript" src="_static/livecode.js"></script>
+    <script type="text/javascript" src="_static/clike.js"></script>
+    <script type="text/javascript" src="_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="_static/lib/hammer.min.js"></script>
+    <script type="text/javascript" src="_static/parsons.js"></script>
+    <script type="text/javascript" src="_static/timedparsons.js"></script>
+    <script type="text/javascript" src="_static/poll.js"></script>
+    <script type="text/javascript" src="_static/reveal.js"></script>
+    <script type="text/javascript" src="_static/shortanswer.js"></script>
+    <script type="text/javascript" src="_static/timed_shortanswer.js"></script>
+    <script type="text/javascript" src="_static/tabbedstuff.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="_static/rangy-core.js"></script>
+    <script type="text/javascript" src="_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="_static/user-highlights.js"></script>
+    <script type="text/javascript" src="_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="Runestone Interactive Overview" href="index.html" />
+    <link rel="up" title="4. Processing Data with R" href="R_toctree.html" />
+    <link rel="next" title="4.7. Writing Custom Functions" href="h17.html" />
+    <link rel="prev" title="4.4. Basic Graphics in R" href="h15.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="/runestone/static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'dsci210';
+  eBookConfig.logLevel = 0;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = false;
+  eBookConfig.python3 = true;
+  eBookConfig.basecourse = 'dsci210';
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="index.html">DSCI 210 Notes</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='index.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/dsci210/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:ACFactory.toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/dsci210/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='/runestone/default/reportabug?course=dsci210&page=h16'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        <!--
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">4.6. Data Management in R</a></li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - 4.4. Basic Graphics in R" data-toggle="tooltip">
+    <a href="h15.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - 4.7. Writing Custom Functions' data-toggle="tooltip" >
+    <a href="h17.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content">
+  
+  <div class="section" id="data-management-in-r">
+<h1>4.6. Data Management in R<a class="headerlink" href="#data-management-in-r" title="Permalink to this headline">¶</a></h1>
+<table border="1" class="docutils">
+<colgroup>
+<col width="95%" />
+<col width="5%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><p class="first">For this handout, we will consider the Baby Name data this is provided by the Social Security administration. One goal of this handout is to consider regional differences in names. Thus, the State-specific data will be downloaded and used here.</p>
+<p class="last">Data: <a class="reference external" href="https://www.ssa.gov/oact/babynames/limits.html">https://www.ssa.gov/oact/babynames/limits.html</a></p>
+</td>
+<td><a class="reference internal" href="_images/image120.png"><img alt="image0" src="_images/image120.png" style="width: 2.25000in; height: 1.47059in;" /></a></td>
+</tr>
+</tbody>
+</table>
+<p>American culture has several cases in which difference exist across
+regions, e.g. language, food, etc. We will investigate potential
+difference in baby names.</p>
+<p><a class="reference internal" href="_images/image217.png"><img alt="image1" src="_images/image217.png" style="width: 5.06291in; height: 2.70833in;" /></a></p>
+<p>Source: <a class="reference external" href="http://www.babynamewizard.com/blog">http://www.babynamewizard.com/blog</a></p>
+<p>The Name Voyager link on this website allows one to investigate how
+names change over time.</p>
+<blockquote>
+<div><a class="reference external" href="http://www.babynamewizard.com/voyager#prefix=&amp;sw=both&amp;exact=false">http://www.babynamewizard.com/voyager#prefix=&amp;sw=both&amp;exact=false</a></div></blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="52%" />
+<col width="48%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><p class="first">Trend for Francis over time</p>
+<p class="last"><a class="reference internal" href="_images/image316.png"><img alt="image2" src="_images/image316.png" style="width: 3.03458in; height: 2.25000in;" /></a></p>
+</td>
+<td><p class="first">Trend for Chris over time</p>
+<p class="last"><a class="reference internal" href="_images/image410.png"><img alt="image3" src="_images/image410.png" style="width: 2.90302in; height: 2.18750in;" /></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>The Social Security Administration provides two datasets on their
+website. Regional differences are to be investigated here; thus, we will
+use the State-specific data. This file is somewhat larger than the
+National dataset.</p>
+<p>Data: <a class="reference external" href="https://www.ssa.gov/oact/babynames/limits.html">https://www.ssa.gov/oact/babynames/limits.html</a></p>
+<p>After downloading this file, the file will need to be unzipped. Zipping
+a file is common for larger datasets. Several files are unzipped as is
+shown here.</p>
+<p><a class="reference internal" href="_images/image56.png"><img alt="image4" src="_images/image56.png" style="width: 6.50000in; height: 1.43472in;" /></a></p>
+<p><a class="reference internal" href="_images/image66.png"><img alt="image5" src="_images/image66.png" style="width: 6.50000in; height: 0.86181in;" /></a></p>
+<p>Each data file is a text document. The contents of each line are
+separated by a comma. Thus when reading this file into R, we will
+specify comma delimited type.</p>
+<p><a class="reference internal" href="_images/image76.png"><img alt="image6" src="_images/image76.png" style="width: 2.52083in; height: 2.11458in;" /></a></p>
+<p>The following code will automatically download this file, unzip the
+file, and combine all relevant datasets.</p>
+<p>&gt; #Reading in zip file that contains several files</p>
+<p>&gt;</p>
+<p>&gt; #Setup up directory and temporary file</p>
+<p>&gt; zipdir&lt;-tempfile()</p>
+<p>&gt; temp&lt;-tempfile()</p>
+<p>&gt;</p>
+<p>&gt; #Create directory</p>
+<p>&gt; dir.create(zipdir)</p>
+<p>&gt;</p>
+<p>&gt; #Downlaod the file, happens to be a zip file thus must be unpacked</p>
+<p>&gt;
+download.file(&#8220;<a class="reference external" href="https://www.ssa.gov/oact/babynames/state/namesbystate.zip">https://www.ssa.gov/oact/babynames/state/namesbystate.zip</a>&#8221;,
+temp, mode=&#8221;wb&#8221;)</p>
+<p>&gt;</p>
+<p>&gt; #Unzip the file</p>
+<p>&gt; unzip(temp, exdir=zipdir)</p>
+<p>&gt;</p>
+<p>&gt; #Get list of file contained in this directory, only bring in *.TXT
+files</p>
+<p>&gt; files &lt;- list.files(zipdir, pattern=&#8221;\\.TXT$&#8221;)</p>
+<p>&gt;</p>
+<p>&gt; #Initialize a data.frame</p>
+<p>&gt; namedata&lt;-data.frame()</p>
+<p>&gt; #Loop to read in files and concatenate them together via rbind</p>
+<p>&gt; for(i in 1:length(files)){</p>
+<ul class="simple">
+<li>filepath &lt;- file.path(zipdir,files[i])</li>
+<li>temp &lt;- read.csv(filepath,header=F)</li>
+<li>namedata&lt;-rbind(namedata, temp)</li>
+<li>}</li>
+</ul>
+<p>&gt; #Unlink connection to directory</p>
+<p>&gt; unlink(zipdir)</p>
+<p>The full dataset has over 5 million observations and 5 variables.</p>
+<p><a class="reference internal" href="_images/image86.png"><img alt="image7" src="_images/image86.png" style="width: 4.57292in; height: 0.68750in;" /></a></p>
+<p>A snipit of the full dataset.</p>
+<p><a class="reference internal" href="_images/image95.png"><img alt="image8" src="_images/image95.png" style="width: 2.31250in; height: 1.48978in;" /></a></p>
+<p>Notice that the names are generic. The names of a data.frame can be
+reassigned using the code provided below.</p>
+<p>&gt; names(namedata)</p>
+<p>[1] &#8220;V1&#8221; &#8220;V2&#8221; &#8220;V3&#8221; &#8220;V4&#8221; &#8220;V5&#8221;</p>
+<p>&gt; names(namedata)&lt;-c(&#8220;State&#8221;,&#8221;Gender&#8221;,&#8221;Year&#8221;,&#8221;Name&#8221;,&#8221;Count&#8221;)</p>
+<p>&gt; names(namedata)</p>
+<p>[1] &#8220;State&#8221; &#8220;Gender&#8221; &#8220;Year&#8221; &#8220;Name&#8221; &#8220;Count&#8221;</p>
+<p><a class="reference internal" href="_images/image106.png"><img alt="image9" src="_images/image106.png" style="width: 3.39583in; height: 1.59375in;" /></a></p>
+<p>To investigate potential differences across regions, we must identify
+which states are contained with each region of the United States. The
+Census Bureau has specifically defined regions and these will be used
+here. These regions are contained in the StateRegions dataset. Load the
+StateRegions dataset into R.</p>
+<p>&gt; StateRegions &lt;- read.csv(file.choose(), header=T, stringsAsFactors =
+TRUE)</p>
+<p>This file has 51 observations (50 states + DC) and 3 columns.</p>
+<p><a class="reference internal" href="_images/image1110.png"><img alt="image10" src="_images/image1110.png" style="width: 4.20833in; height: 0.52083in;" /></a></p>
+<p>Snipit of StateRegions dataset.</p>
+<p><a class="reference internal" href="_images/image125.png"><img alt="image11" src="_images/image125.png" style="width: 2.35918in; height: 2.11458in;" /></a></p>
+<p>The next step is to merge the information from the StateRegions data
+with the namedata. This type of merge is called a left join. There are a
+variety of methods to join tables – details of these methods will not be
+discussed here.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="42%" />
+<col width="36%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><p class="first">namesdata</p>
+<p class="last"><a class="reference internal" href="_images/image106.png"><img alt="image12" src="_images/image106.png" style="width: 2.83333in; height: 1.32976in;" /></a></p>
+</td>
+<td>Merge Name and Region</td>
+<td><p class="first">StateRegions data</p>
+<p class="last"><a class="reference internal" href="_images/image125.png"><img alt="image13" src="_images/image125.png" style="width: 2.35918in; height: 2.11458in;" /></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>The dplyr package in R is convenient for the management of data.
+Download this package and load it into R.</p>
+<p><a class="reference internal" href="_images/image135.png"><img alt="image14" src="_images/image135.png" style="width: 3.09375in; height: 2.25367in;" /></a></p>
+<p><a class="reference internal" href="_images/image145.png"><img alt="image15" src="_images/image145.png" style="width: 5.50000in; height: 0.80392in;" /></a></p>
+<p>The following single line of code is used to merge the two tables
+together.</p>
+<p>&gt; #Load the dplyr package</p>
+<p>&gt; library(dplyr)</p>
+<p>&gt;</p>
+<p>&gt; #Join the tables</p>
+<p>&gt; namedata&lt;-left_join(namedata,StateRegions)</p>
+<p>Joining by: &#8220;State&#8221;</p>
+<p>A view of the namesdata table after the merge. The namedata data.frame
+now contain the two additional columns.</p>
+<p><a class="reference internal" href="_images/image155.png"><img alt="image16" src="_images/image155.png" style="width: 5.29167in; height: 1.83333in;" /></a></p>
+<p><strong>*Filtering Rows
+*</strong>The filter() function in dplyr allow you to easily filter out
+particular rows. Here, only rows that contain Chris are selected.</p>
+<p>&gt; #Obtain all rows that match Name == &#8220;Chris&#8221;</p>
+<p>&gt; Chris&lt;-filter(namedata,Name == &#8220;Chris&#8221;)</p>
+<p>Certainly, a filter can be obtained without the dplyr package, but dplyr
+does make common tasks easier.</p>
+<p>&gt; #Without dplyr</p>
+<p>&gt; Chris&lt;-namedata[namedata$Name == &#8220;Chris&#8221;,]</p>
+<p>The Chris data.frame contains 4090 observations and 7 variables.</p>
+<p><a class="reference internal" href="_images/image165.png"><img alt="image17" src="_images/image165.png" style="width: 4.45833in; height: 1.43003in;" /></a></p>
+<p>The following code will create a picture similar to the one provided by
+BabyVoyager when Chris is put into their search box. The display
+provided here breaks the data out amongst the four regions of the United
+States.</p>
+<p>&gt; #Obtain all rows that match Name == &#8220;Chris&#8221;</p>
+<p>&gt; Chris&lt;-filter(namedata,Name == &#8220;Chris&#8221;)</p>
+<p>&gt;</p>
+<p>&gt; #Summarize Chris by Gender, Year, Region</p>
+<p>&gt; by_variable &lt;- group_by(Chris,Gender,Year,StateRegion)</p>
+<p>&gt;</p>
+<p>&gt; output&lt;-summarize(by_variable,Total=sum(Count))</p>
+<p>The xyplot() in the lattice package allows the plotting to be done
+easily.</p>
+<p>&gt; library(lattice)</p>
+<p>&gt; xyplot(Total~Year|StateRegion, data=output,groups=Gender, type=&#8221;l&#8221;)</p>
+<p><a class="reference internal" href="_images/image175.png"><img alt="image18" src="_images/image175.png" style="width: 6.12500in; height: 4.20701in;" /></a></p>
+<p><em>Questions</em>:</p>
+<ol class="arabic simple">
+<li>Based on these graphs, what is a type age for a person named Chris?</li>
+<li>Does there appear to be regional difference in baby’s named Chris?
+Discuss.</li>
+</ol>
+<p>One drawback of the summaries provided above is that there is *not*
+and equal number of children born in the various regions in the United
+States. This is especially true for earlier years as the west very few
+people compared to the Northeast.</p>
+<p>The following code will allow us to consider percent of baby names whose
+name is Chris. These percentages are computed within Gender, Year, and
+Region.</p>
+<p>&gt; #Summarize Gender, Year, Region</p>
+<p>&gt; by_variable &lt;- group_by(namedata,Gender,Year,StateRegion)</p>
+<p>&gt;</p>
+<p>&gt; output2&lt;-summarize(by_variable,Total2=sum(Count))</p>
+<p>&gt;</p>
+<p>&gt; #Join Chris to output2</p>
+<p>&gt; output3&lt;-left_join(output,output2)</p>
+<p>&gt; #Get percent for Chris</p>
+<p>&gt; output3&lt;-mutate(output3,Percent = Total/Total2)</p>
+<p>&gt;</p>
+<p>&gt; #Creating the plot</p>
+<p>&gt; xyplot(Percent~Year|StateRegion, data=output3,groups=Gender,
+type=&#8221;l&#8221;)</p>
+<p><a class="reference internal" href="_images/image185.png"><img alt="image19" src="_images/image185.png" style="width: 5.30435in; height: 3.82922in;" /></a></p>
+<p><em>Questions</em>:</p>
+<ol class="arabic simple">
+<li>What information in conveyed in this plot that is not seen in the
+plot based on counts? Discuss.</li>
+</ol>
+<p>The following example investigates the name Francis. This name is much
+more common for males than females.</p>
+<p>&gt; #Obtain all rows that match Name == &#8220;Francis</p>
+<p>&gt; Francis&lt;-filter(namedata,Name == &#8220;Francis&#8221;)</p>
+<p>&gt;</p>
+<p>&gt; #Summarize Francis by Gender, Year, Region</p>
+<p>&gt; by_variable &lt;- group_by(Francis,Gender,Year,StateRegion)</p>
+<p>&gt;</p>
+<p>&gt; output&lt;-summarize(by_variable,Total=sum(Count))</p>
+<p>&gt;</p>
+<p>&gt; #Joining Francis with output2, i.e. total counts</p>
+<p>&gt; output3&lt;-left_join(output,output2)</p>
+<p>Joining by: c(&#8220;Gender&#8221;, &#8220;Year&#8221;, &#8220;StateRegion&#8221;)</p>
+<p>&gt; output3&lt;-mutate(output3,Percent = Total/Total2)</p>
+<p>&gt;</p>
+<p>&gt; #Create plot</p>
+<p>&gt; xyplot(Percent~Year|StateRegion, data=output3,groups=Gender,
+type=&#8221;l&#8221;)</p>
+<p><a class="reference internal" href="_images/image195.png"><img alt="image20" src="_images/image195.png" style="width: 5.75652in; height: 4.04679in;" /></a></p>
+<p><em>Questions</em>:</p>
+<ol class="arabic simple">
+<li>What regional difference in baby’s named Francis?</li>
+<li>The Pacific plots appear to have a lot of variation compared to other
+regions. Why might this be the case?</li>
+</ol>
+<p>The code has been rewritten so that any name can be easily investigated.
+Here simply change the assignment of the LookupName to whatever name
+you’d like.</p>
+<p>&gt; #Automating this process</p>
+<p>&gt; LookupName =&#8221;William&#8221;</p>
+<p>&gt; #Obtain all rows that match Name</p>
+<p>&gt; data&lt;-filter(namedata,Name == LookupName)</p>
+<p>&gt;</p>
+<p>&gt; #Summarize Chris by Gender, Year, Region</p>
+<p>&gt; by_variable &lt;- group_by(data,Gender,Year,StateRegion)</p>
+<p>&gt;</p>
+<p>&gt; output&lt;-summarize(by_variable,Total=sum(Count))</p>
+<p>&gt;</p>
+<p>&gt; output3&lt;-left_join(output,output2)</p>
+<p>&gt; output3&lt;-mutate(output3,Percent = Total/Total2)</p>
+<p>&gt;</p>
+<p>&gt; xyplot(Percent~Year|StateRegion, data=output3,groups=Gender,
+type=&#8221;l&#8221;)</p>
+<p><a class="reference internal" href="_images/image204.png"><img alt="image21" src="_images/image204.png" style="width: 4.79167in; height: 3.41867in;" /></a></p>
+<p><em>Questions</em>:</p>
+<ol class="arabic simple">
+<li>On the BabyName blog, the author suggested that William was more
+popular in the South than other regions. Does our investigation
+support this statement? Discuss.</li>
+<li>Is William gaining or losing popularity? Is this true for all
+regions?</li>
+</ol>
+<p>The following code will create a filled polygon similar to the one
+provided by NameVoyager. This code uses the latticeExtra package.</p>
+<p><a class="reference internal" href="_images/image218.png"><img alt="image22" src="_images/image218.png" style="width: 5.11458in; height: 0.86458in;" /></a></p>
+<p>&gt; #Obtain all rows that match Name == &#8220;William&#8221;</p>
+<p>&gt; William&lt;-filter(namedata,Name == &#8220;William&#8221;)</p>
+<p>&gt;</p>
+<p>&gt; #Summarize William by Year, Region</p>
+<p>&gt; by_variable &lt;- group_by(William, Year,StateRegion)</p>
+<p>&gt;</p>
+<p>&gt; output&lt;-summarize(by_variable,Total=sum(Count))</p>
+<p>&gt;</p>
+<p>&gt;</p>
+<p>&gt; #Summarize Gender, Year, Region</p>
+<p>&gt; by_variable &lt;- group_by(namedata,Year,StateRegion)</p>
+<p>&gt;</p>
+<p>&gt; output2&lt;-summarize(by_variable,Total2=sum(Count))</p>
+<p>&gt;</p>
+<p>&gt; #Join Chris to output2</p>
+<p>&gt; output3&lt;-left_join(output,output2)</p>
+<p>&gt; #Get percent for William</p>
+<p>&gt; output3&lt;-mutate(output3,Percent = Total/Total2)</p>
+<p>&gt;</p>
+<p>&gt;</p>
+<p>&gt; library(latticeExtra)</p>
+<p>&gt; mypanel = function(x, y){</p>
+<ul class="simple">
+<li>panel.xyarea(x,y, fill=TRUE)</li>
+<li>}</li>
+</ul>
+<p>&gt;</p>
+<p>&gt; #Creating the plot</p>
+<p>&gt; xyplot(Percent~Year|StateRegion, data=output3, panel=mypanel)</p>
+<p>The resulting plot.</p>
+<p><a class="reference internal" href="_images/image225.png"><img alt="image23" src="_images/image225.png" style="width: 6.50000in; height: 4.79097in;" /></a></p>
+<p><strong>*Task*</strong></p>
+<p>Complete the following task using the baby names dataset.</p>
+<ol class="arabic simple">
+<li>How much regional differences exist in your name? Create an xyplot to
+investigate any differences.</li>
+<li>Consider the following graphic which shows the most common unisex
+names in American. The names Casey, Riley, and Jessie top this list.
+Investigate the similarities in these names over time and across the
+four regions of the United States.</li>
+</ol>
+<p><a class="reference internal" href="_images/image234.png"><img alt="image24" src="_images/image234.png" style="width: 4.01721in; height: 3.95982in;" /></a></p>
+<blockquote>
+<div>Source:
+<a class="reference external" href="http://fivethirtyeight.com/features/there-are-922-unisex-names-in-america-is-yours-one-of-them/">http://fivethirtyeight.com/features/there-are-922-unisex-names-in-america-is-yours-one-of-them/</a></div></blockquote>
+</div>
+
+
+  
+      
+  <li id="relations-prev" class="navLink" title='Previous Section - 4.4. Basic Graphics in R' data-toggle="tooltip">
+    <a href="h15.html" >
+      <i class='prevNav glyphicon glyphicon-chevron-left'></i>
+    </a>
+  </li>
+  <a class="navLinkBg" id="navLinkBgLeft"  href="h15.html" ></a>
+  
+  <li id="relations-next" class="navLink" title='Next Section - 4.7. Writing Custom Functions' data-toggle="tooltip" >
+    <a href="h17.html" >
+      <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
+    </a>
+  </li>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="h17.html" >Next Section - 4.7. Writing Custom Functions</a>
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+  
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      
+      | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015 Todd Iverson.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.5.
+    </p>
+  </div>
+</footer>
+
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

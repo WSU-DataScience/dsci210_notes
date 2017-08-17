@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>2.1. Text Editor/ Excel: Text Mining &mdash; Runestone Interactive Overview</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="_static/clickable.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="_static/dragndrop.css" type="text/css" />
+    <link rel="stylesheet" href="_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="_static/livecode.css" type="text/css" />
+    <link rel="stylesheet" href="_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootswatch/2.3.1/""/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/runestonebase.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="_static/codemirror.js"></script>
+    <script type="text/javascript" src="_static/xml.js"></script>
+    <script type="text/javascript" src="_static/css.js"></script>
+    <script type="text/javascript" src="_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="_static/python.js"></script>
+    <script type="text/javascript" src="_static/javascript.js"></script>
+    <script type="text/javascript" src="_static/activecode.js"></script>
+    <script type="text/javascript" src="_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="_static/clike.js"></script>
+    <script type="text/javascript" src="_static/timed_activecode.js"></script>
+    <script type="text/javascript" src="_static/animationbase.js"></script>
+    <script type="text/javascript" src="_static/mchoice.js"></script>
+    <script type="text/javascript" src="_static/timedmc.js"></script>
+    <script type="text/javascript" src="_static/timed.js"></script>
+    <script type="text/javascript" src="_static/clickable.js"></script>
+    <script type="text/javascript" src="_static/timedclickable.js"></script>
+    <script type="text/javascript" src="_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="_static/pytutor.js"></script>
+    <script type="text/javascript" src="_static/codelens.js"></script>
+    <script type="text/javascript" src="_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="_static/datafile.js"></script>
+    <script type="text/javascript" src="_static/dragndrop.js"></script>
+    <script type="text/javascript" src="_static/timeddnd.js"></script>
+    <script type="text/javascript" src="_static/fitb.js"></script>
+    <script type="text/javascript" src="_static/timedfitb.js"></script>
+    <script type="text/javascript" src="_static/livecode.js"></script>
+    <script type="text/javascript" src="_static/clike.js"></script>
+    <script type="text/javascript" src="_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="_static/lib/hammer.min.js"></script>
+    <script type="text/javascript" src="_static/parsons.js"></script>
+    <script type="text/javascript" src="_static/timedparsons.js"></script>
+    <script type="text/javascript" src="_static/poll.js"></script>
+    <script type="text/javascript" src="_static/reveal.js"></script>
+    <script type="text/javascript" src="_static/shortanswer.js"></script>
+    <script type="text/javascript" src="_static/timed_shortanswer.js"></script>
+    <script type="text/javascript" src="_static/tabbedstuff.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="_static/rangy-core.js"></script>
+    <script type="text/javascript" src="_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="_static/user-highlights.js"></script>
+    <script type="text/javascript" src="_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="Runestone Interactive Overview" href="index.html" />
+    <link rel="up" title="2. Processing Data with a Text Editor" href="texteditor_toctree.html" />
+    <link rel="next" title="3. Processing Data with Bash" href="bash_toctree.html" />
+    <link rel="prev" title="2. Processing Data with a Text Editor" href="texteditor_toctree.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="/runestone/static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'dsci210';
+  eBookConfig.logLevel = 0;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = false;
+  eBookConfig.python3 = true;
+  eBookConfig.basecourse = 'dsci210';
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="index.html">DSCI 210 Notes</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='index.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/dsci210/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:ACFactory.toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/dsci210/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='/runestone/default/reportabug?course=dsci210&page=h8'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        <!--
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">2.1. Text Editor/ Excel: Text Mining</a></li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - 2. Processing Data with a Text Editor" data-toggle="tooltip">
+    <a href="texteditor_toctree.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - 3. Processing Data with Bash' data-toggle="tooltip" >
+    <a href="bash_toctree.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content">
+  
+  <div class="section" id="text-editor-excel-text-mining">
+<h1>2.1. Text Editor/ Excel: Text Mining<a class="headerlink" href="#text-editor-excel-text-mining" title="Permalink to this headline">¶</a></h1>
+<p>Data is an ambiguous word. A computer scientist may consider data to be
+anything that can be stored in a byte of memory. A statistician may
+consider data to be information that can easily be stored in a
+spreadsheet with clearly defined rows and columns. A data scientist must
+be able to work with data in a variety of formats.</p>
+<p><a class="reference internal" href="_images/image170.png"><img alt="image0" src="_images/image170.png" style="width: 6.50000in; height: 1.48125in;" /></a></p>
+<p>A simple text mining task may be to create a word cloud from a passage
+of text. If a word occurs frequently in a passage, this word is printed
+in larger font than other words. Word clouds allows one to easily
+compare common words in two different passages.</p>
+<p><em>Questions</em>:</p>
+<ol class="arabic simple">
+<li>Discuss the similarities / differences between the inaugural
+addresses of Trump (2017) and Lincoln (1861).</li>
+<li>Are there any words that surprised you in these speeches?</li>
+<li>Commonly used words such as ‘the’, ‘and’, ‘this’, etc. should be
+removed from the passage before making a word cloud. Why?</li>
+</ol>
+<p>Example 1: For this example, we will consider the inaugural addresses of
+Trump (2017) and Obama (2009). Source:
+<a class="reference external" href="https://sites.google.com/a/brown.edu/partisan-bias/">https://sites.google.com/a/brown.edu/partisan-bias/</a></p>
+<p><em>Snip-it of Trump’s (2017) Inaugural Address</em></p>
+<p><a class="reference internal" href="_images/image426.png"><img alt="image3" src="_images/image426.png" style="width: 6.50000in; height: 1.43958in;" /></a></p>
+<p><em>Snip-it of Obama’s (2009) Inaugural Address</em></p>
+<p><a class="reference internal" href="_images/image516.png"><img alt="image4" src="_images/image516.png" style="width: 6.50000in; height: 1.29167in;" /></a></p>
+<p><em>Goal</em>: Evaluate the degree to which these presidents used concept/idea
+type words versus emotional words to carry their inaugural message.</p>
+<p>To accomplish the desired text mining task in Excel, we must first get
+the word lists into Excel. Once this is accomplished the =MATCH()
+function can be used to check whether or not each word in the passages
+exists in either or the word lists. The website from which this work is
+based off of provided a concept word list and an emotion words list.</p>
+<p>The concept word list is provided in the commonly used *.csv format.</p>
+<p><a class="reference internal" href="_images/image1015.png"><img alt="image11" src="_images/image1015.png" style="width: 5.74945in; height: 2.48958in;" /></a></p>
+<p>This concept words can be easily read into Excel. The Text Import Wizard
+can be used to accomplish this task. When reading in this file, make
+sure to specify that commas as being used to delineate the various
+words.</p>
+<p><a class="reference internal" href="_images/image1216.png"><img alt="image12" src="_images/image1216.png" style="width: 2.62557in; height: 2.00000in;" /></a></p>
+<p>The text from this file was read into a single row. This occurred
+because the original version of this file did not contain any newline
+breaks.</p>
+<p><a class="reference internal" href="_images/image1315.png"><img alt="image13" src="_images/image1315.png" style="width: 6.50000in; height: 0.44792in;" /></a></p>
+<p>This data can be transposed into the more typical column format by
+highlighting all words, selecting Paste &gt; Paste Special. Select
+Transpose in the Paste Special box.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><p class="first">Paste &gt; Paste Special</p>
+<p class="last"><a class="reference internal" href="_images/image1414.png"><img alt="image14" src="_images/image1414.png" style="width: 1.40347in; height: 2.45805in;" /></a></p>
+</td>
+<td><p class="first">Then select Transpose</p>
+<p class="last"><a class="reference internal" href="_images/image1514.png"><img alt="image15" src="_images/image1514.png" style="width: 2.74144in; height: 2.28125in;" /></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>After list is pasted as a column, insert an appropriate column header to
+identify that these words are Concept Words. This process can be
+repeated for the Emotion Words list.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><p class="first">Concept Word list in Excel</p>
+<p class="last"><a class="reference internal" href="_images/image1614.png"><img alt="image16" src="_images/image1614.png" style="width: 1.36458in; height: 3.06250in;" /></a></p>
+</td>
+<td><p class="first">Concept Word list in Excel</p>
+<p class="last"><a class="reference internal" href="_images/image1712.png"><img alt="image17" src="_images/image1712.png" style="width: 1.51042in; height: 3.04167in;" /></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Text Management via a Text Editor</p>
+<p>As a data scientist it is important to become efficient in your work.
+For example, you could manually verify whether or not words are concept
+or emotion words; however, it makes much more sense to automate this
+process somehow. Likewise, the management of text may be better done
+using a text editor.</p>
+<p>To begin, open the word list in a text editor. In this course, we will
+be using Sublime as our text editor. Your text editor of choice should
+be able to manipulate text using regular expressions, i.e. regex.
+Regular expressions is a universal language that allows us to manage
+text strings.</p>
+<p>Sources:</p>
+<ul class="simple">
+<li>Sublime: <a class="reference external" href="https://www.sublimetext.com/">https://www.sublimetext.com/</a></li>
+<li>Wiki Regular Expressions:
+<a class="reference external" href="https://en.wikipedia.org/wiki/Regular_expression">https://en.wikipedia.org/wiki/Regular_expression</a></li>
+</ul>
+<p>The emotion word list as shown in Sublime.</p>
+<p><a class="reference internal" href="_images/image1812.png"><img alt="image18" src="_images/image1812.png" style="width: 6.50000in; height: 2.13333in;" /></a></p>
+<p>The contents of this file (the individual words) are separated by
+commas, i.e. comma delimited. All content is contained on a single line
+– this can easily be seen when reading this file into Excel or by
+noticing that only a single line number is shown in Sublime.</p>
+<p>The first text management task will be to replace each “,” with a
+“newline” hidden character, i.e. \n. This can be done easily in
+Sublime, by selecting Find &gt; Replace.</p>
+<p><a class="reference internal" href="_images/image1912.png"><img alt="image19" src="_images/image1912.png" style="width: 3.61458in; height: 1.75755in;" /></a></p>
+<ul>
+<li><p class="first">In the Find What box type ,</p>
+</li>
+<li><div class="first line-block">
+<div class="line">In the Replace with box, specify \n or press Ctrl Enter. The
+standard approach here would be to specify the \n character as
+this is the character used to specify a newline break.</div>
+<div class="line"><strong>*Comment:*</strong> The regular expression box, far-left box, must be
+selected when using the newline character. This informs Sublime
+that you want to place the , with a newline versus replacing the ,
+with the literal characters \n.</div>
+</div>
+</li>
+</ul>
+<p><a class="reference internal" href="_images/image2010.png"><img alt="image20" src="_images/image2010.png" style="width: 6.50000in; height: 3.17986in;" /></a></p>
+<p>The text should have the following structure upon success completion of
+the steps above. Once this file has been modify into the appropriate
+column format, it can be read directly into Excel.</p>
+<p><a class="reference internal" href="_images/image2115.png"><img alt="image21" src="_images/image2115.png" style="width: 1.61458in; height: 2.91983in;" /></a></p>
+<p>Text Management of a Passage of Text</p>
+<p>A passage of written text often requires considerable management before
+text mining can be done. The task here is to compare each word in
+Trump’s Inaugural address to existing word lists. Thus, each word needs
+to be separated into individual cells (in Excel) or individual items in
+a list (in R or Python).</p>
+<p><em>Snip-it of Trump’s (2017) Inaugural Address</em></p>
+<p><a class="reference internal" href="_images/image426.png"><img alt="image22" src="_images/image426.png" style="width: 6.50000in; height: 1.43958in;" /></a></p>
+<p><a class="reference internal" href="_images/image2214.png"><img alt="image23" src="_images/image2214.png" style="width: 3.88741in; height: 2.18750in;" /></a></p>
+<p>The text management tasks that need to be done include removal of
+punctuation, the removal of ‘, consideration of lowercase vs uppercase
+letters, etc.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="30%" />
+<col width="7%" />
+<col width="31%" />
+<col width="31%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Trump</th>
+<th class="head">&nbsp;</th>
+<th class="head">Concept Words</th>
+<th class="head">Emotion Words</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Chief</td>
+<td>&nbsp;</td>
+<td>work</td>
+<td>amusement</td>
+</tr>
+<tr class="row-odd"><td>Justice</td>
+<td>&nbsp;</td>
+<td>help</td>
+<td>celebrate</td>
+</tr>
+<tr class="row-even"><td>:</td>
+<td>&nbsp;</td>
+<td>:</td>
+<td>cheer</td>
+</tr>
+<tr class="row-odd"><td>world:</td>
+<td>&nbsp;</td>
+<td>:</td>
+<td>:</td>
+</tr>
+<tr class="row-even"><td>:</td>
+<td>&nbsp;</td>
+<td>transition</td>
+<td>:</td>
+</tr>
+<tr class="row-odd"><td>celebrate,</td>
+<td>&nbsp;</td>
+<td>:</td>
+<td>:</td>
+</tr>
+<tr class="row-even"><td>:</td>
+<td>&nbsp;</td>
+<td>:</td>
+<td>celebrate</td>
+</tr>
+<tr class="row-odd"><td>transition.</td>
+<td>&nbsp;</td>
+<td>nation</td>
+<td>:</td>
+</tr>
+<tr class="row-even"><td>:</td>
+<td>&nbsp;</td>
+<td>:</td>
+<td>trouble</td>
+</tr>
+<tr class="row-odd"><td>magnificent.</td>
+<td>&nbsp;</td>
+<td>:</td>
+<td>:</td>
+</tr>
+<tr class="row-even"><td>:</td>
+<td>&nbsp;</td>
+<td>:</td>
+<td>:</td>
+</tr>
+<tr class="row-odd"><td>nation’s</td>
+<td>&nbsp;</td>
+<td>:</td>
+<td>magnificent</td>
+</tr>
+<tr class="row-even"><td>:</td>
+<td>&nbsp;</td>
+<td>justice</td>
+<td>:</td>
+</tr>
+</tbody>
+</table>
+<p>The removal of text can be accomplished using Find &gt; Replace in Sublime.</p>
+<ul class="simple">
+<li>Removing the . from the end of sentences, replace with nothing, i.e.
+deleting this character</li>
+</ul>
+<p><a class="reference internal" href="_images/image2313.png"><img alt="image24" src="_images/image2313.png" style="width: 4.91667in; height: 2.05229in;" /></a></p>
+<ul class="simple">
+<li>Removing the , and replace with nothing</li>
+</ul>
+<p><a class="reference internal" href="_images/image2411.png"><img alt="image25" src="_images/image2411.png" style="width: 4.87500in; height: 2.04167in;" /></a></p>
+<p>Continue this process to delete the following characters.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>;</td>
+<td>:</td>
+<td>“</td>
+</tr>
+</tbody>
+</table>
+<p>Some punctuation marks need to be carefully considered. For example, in
+this passage the “- -“ character, i.e. em dash, is being used to
+separate parenthetical phrases of the sentence and “-“ is used for
+hyphenated words. See the content of the text on Line 7.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%" />
+<col width="7%" />
+<col width="45%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Existing phrase</th>
+<th class="head">&nbsp;</th>
+<th class="head">Desired outcome</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>rusted-out</td>
+<td>&nbsp;</td>
+<td>rusted_out</td>
+</tr>
+<tr class="row-odd"><td>one nation &#8211; and their</td>
+<td>&nbsp;</td>
+<td>one nation_and their</td>
+</tr>
+</tbody>
+</table>
+<p>The safe action here is to replace the “-“ with a space, i.e. “ “</p>
+<ul class="simple">
+<li>Replace the – with a space</li>
+</ul>
+<p><a class="reference internal" href="_images/image259.png"><img alt="image26" src="_images/image259.png" style="width: 4.78125in; height: 2.52191in;" /></a></p>
+<p>The last punctuation mark that needs to be addressed is the ‘. It will
+not suffice to simple replace the ‘ with nothing as words such as we’ve
+will become weve and nation’s will be come nations. Weve is not a word
+and the comparison word list may or may not contain plural version of
+words. Thus, careful consideration is needed here.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="43%" />
+<col width="10%" />
+<col width="48%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Existing word</th>
+<th class="head">&nbsp;</th>
+<th class="head">Desired outcome</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>we’ve</td>
+<td>&nbsp;</td>
+<td>we</td>
+</tr>
+<tr class="row-odd"><td>nation’s</td>
+<td>&nbsp;</td>
+<td>nation</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>Regular expressions can be used to find the ‘ and the \w+ will
+continue till the end of the word. Actually, \w+ says move ahead
+till you find a non-character and _ is considered such a character.</li>
+</ul>
+<p><a class="reference internal" href="_images/image269.png"><img alt="image27" src="_images/image269.png" style="width: 4.44792in; height: 2.23869in;" /></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="27%" />
+<col width="73%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Regex Code</th>
+<th class="head">Outcome</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>‘ \w+</td>
+<td>Find the ‘ and go till end of word</td>
+</tr>
+</tbody>
+</table>
+<p>This passage of text is mostly cleaned, the only characters remaining
+are words, spaces, and some \n characters that define newlines. We can
+easily remove the \n characters so that the string of text only
+contains words and spaces.</p>
+<ul class="simple">
+<li>Replace the \n characters, i.e. newline characters, with a space.</li>
+</ul>
+<p><a class="reference internal" href="_images/image279.png"><img alt="image28" src="_images/image279.png" style="width: 5.77083in; height: 2.96927in;" /></a></p>
+<p>Finally, we are now able to replace each space with a \n character.
+This will put each word on a separate line, i.e. create a column of
+words for Trump’s 2017 inaugural speech.</p>
+<p><a class="reference internal" href="_images/image289.png"><img alt="image29" src="_images/image289.png" style="width: 5.50000in; height: 2.24289in;" /></a></p>
+<p>The last step is to remove any blank lines. Blank lines may have
+occurred for a variety of reasons, e.g. two spaces used after a .
+instead of a single space, would cause this problem. Also, when the “-“
+character was replaced by a space, we actually left four spaces in the
+phrase “one nation &#8211; and their”.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="42%" />
+<col width="6%" />
+<col width="52%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Existing phrase</th>
+<th class="head">&nbsp;</th>
+<th class="head">Desired outcome</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>one nation &#8211; and their</td>
+<td>&nbsp;</td>
+<td>one nation_ _ _ _and their</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>Replace the \n characters, i.e. newline characters, with a space.</li>
+</ul>
+<p><a class="reference internal" href="_images/image298.png"><img alt="image30" src="_images/image298.png" style="width: 5.33333in; height: 2.29174in;" /></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="79%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Regex Code</th>
+<th class="head">Outcome</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>^\n</td>
+<td><p class="first">^ : beginning of line</p>
+<p class="last">^\n: does line being with \n, i.e. empty line</p>
+</td>
+</tr>
+<tr class="row-odd"><td>^\s</td>
+<td>^\s: does line being with space, \n, \t, or \f</td>
+</tr>
+</tbody>
+</table>
+<p>The final result is a clean version of the passage where each word of
+the passage is separated. This file will now be read in Excel for
+further analysis.</p>
+<p>Text Analysis via Excel</p>
+<p>After each word of the passage of text has been separated using a text
+editor, read the passage into Excel. The inaugural addresses of Trump
+and Obama are shown below.</p>
+<p><a class="reference internal" href="_images/image2214.png"><img alt="image31" src="_images/image2214.png" style="width: 3.88741in; height: 2.18750in;" /></a></p>
+<p>The =MATHCH() in Excel will be used to determine whether or not each
+word of the passage is contained in the Concept word list. The same will
+be done for the Emotion words. The use of these function is shown below.</p>
+<p><a class="reference internal" href="_images/image307.png"><img alt="image32" src="_images/image307.png" style="width: 5.55208in; height: 2.44920in;" /></a></p>
+<p><em>Questions</em>:</p>
+<ol class="arabic simple">
+<li>What does it mean when the =MATCH() function returns #N/A?</li>
+<li>Consider the outcome of 97 returned in cell B3, i.e. looking up
+Justice in the Concept word list. What does the value 97 mean?</li>
+</ol>
+<p>An =IF() statement can be used to clean up the outcome returned by the
+=MATCH() function. A value of 0 is being returned here if the word is
+*not* contained in the list and 1 if the value was contained in the
+list.</p>
+<p><a class="reference internal" href="_images/image3113.png"><img alt="image33" src="_images/image3113.png" style="width: 5.62962in; height: 3.12401in;" /></a></p>
+<p>Notice that when 0/1 values are used, SUM will easily count that number
+of words found in each list. Futhermore, the aveage of these columns can
+be interpreted as percentages.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="43%" />
+<col width="43%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><p class="first">Trump</p>
+<p class="last">Speech</p>
+</th>
+<th class="head">Concept Value</th>
+<th class="head">Emotion Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Chief</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>Justice</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>Roberts</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>great</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="row-even"><td>effort</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>SUM</td>
+<td>2</td>
+<td>1</td>
+</tr>
+<tr class="row-odd"><td>Average</td>
+<td><div class="first math">
+\[\frac{2}{5} = 0.40\]</div>
+<p class="last">i.e. 40%</p>
+</td>
+<td><div class="first math">
+\[\frac{1}{5} = 0.20\]</div>
+<p class="last">i.e. 20%</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Using PivotTables to compute the percentage of words in Trump’s inagural
+address that are concept and emotion words.</p>
+<p><a class="reference internal" href="_images/image3210.png"><img alt="image34" src="_images/image3210.png" style="width: 5.12500in; height: 3.21791in;" /></a></p>
+<p>A more complete summary of Trump’s inagural address.</p>
+<p><a class="reference internal" href="_images/image335.png"><img alt="image35" src="_images/image335.png" style="width: 5.22917in; height: 2.70833in;" /></a></p>
+<p><em>Questions</em>:</p>
+<ol class="arabic simple">
+<li>Show the math for how the 1.7% was computed above.</li>
+<li>Suppose one wanted to compare these percentages to Obama’s inaugural
+speech. Why might it be necessary to use percentages when making
+these comparisons?</li>
+</ol>
+<p>On common task in text mining is to remove what is called <strong>stop
+words</strong>, i.e. common english words like the, and, an, etc.</p>
+<p><strong>*Stop Words*</strong>: Commonly used english words that are often filterd out
+of text before analysis</p>
+<div class="math">
+\[Stop\ Words:\ \ \{ a,able,about,across,\ \ldots,\ you,\ your\}\]</div>
+<p><em>Questions</em>:</p>
+<ol class="arabic simple">
+<li>Suppose Stop Words are removed from Trump’s inaugural address. How
+might this effect the percentages computed above?</li>
+</ol>
+<p><em>Tasks</em></p>
+<ol class="arabic">
+<li><p class="first">Use Sublime to clean Obama’s inagural address. Read this cleaned
+version of text into Excel. Compute the % of concept words and % of
+emotion words. Is your output similar to mine which has been provided
+below? Discuss.</p>
+<p><a class="reference internal" href="_images/image344.png"><img alt="image36" src="_images/image344.png" style="width: 5.22917in; height: 2.71875in;" /></a></p>
+</li>
+<li><p class="first">Compare and contrast these percentages from Trump to Obama. What is
+learned by considering these values?</p>
+</li>
+<li><p class="first">Consider the following list of most commonly used words in Turmp’s
+speech. Notice that only 2 of the top 10, i.e. “will” and “America”,
+are meaningful. Use the Stop Words list provided on our course
+website to remove the common english words. After this is done, use
+Excel to recompute a list of top 10 words used by Trump in his 2017
+inagural address.</p>
+<p><a class="reference internal" href="_images/image353.png"><img alt="image37" src="_images/image353.png" style="width: 2.14583in; height: 2.44792in;" /></a></p>
+</li>
+</ol>
+</div>
+
+
+  
+      
+  <li id="relations-prev" class="navLink" title='Previous Section - 2. Processing Data with a Text Editor' data-toggle="tooltip">
+    <a href="texteditor_toctree.html" >
+      <i class='prevNav glyphicon glyphicon-chevron-left'></i>
+    </a>
+  </li>
+  <a class="navLinkBg" id="navLinkBgLeft"  href="texteditor_toctree.html" ></a>
+  
+  <li id="relations-next" class="navLink" title='Next Section - 3. Processing Data with Bash' data-toggle="tooltip" >
+    <a href="bash_toctree.html" >
+      <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
+    </a>
+  </li>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="bash_toctree.html" >Next Section - 3. Processing Data with Bash</a>
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+  
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      
+      | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015 Todd Iverson.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.5.
+    </p>
+  </div>
+</footer>
+
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

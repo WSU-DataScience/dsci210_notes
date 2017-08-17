@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>4.7. Writing Custom Functions &mdash; Runestone Interactive Overview</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="_static/clickable.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="_static/dragndrop.css" type="text/css" />
+    <link rel="stylesheet" href="_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="_static/livecode.css" type="text/css" />
+    <link rel="stylesheet" href="_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootswatch/2.3.1/""/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/runestonebase.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="_static/codemirror.js"></script>
+    <script type="text/javascript" src="_static/xml.js"></script>
+    <script type="text/javascript" src="_static/css.js"></script>
+    <script type="text/javascript" src="_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="_static/python.js"></script>
+    <script type="text/javascript" src="_static/javascript.js"></script>
+    <script type="text/javascript" src="_static/activecode.js"></script>
+    <script type="text/javascript" src="_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="_static/clike.js"></script>
+    <script type="text/javascript" src="_static/timed_activecode.js"></script>
+    <script type="text/javascript" src="_static/animationbase.js"></script>
+    <script type="text/javascript" src="_static/mchoice.js"></script>
+    <script type="text/javascript" src="_static/timedmc.js"></script>
+    <script type="text/javascript" src="_static/timed.js"></script>
+    <script type="text/javascript" src="_static/clickable.js"></script>
+    <script type="text/javascript" src="_static/timedclickable.js"></script>
+    <script type="text/javascript" src="_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="_static/pytutor.js"></script>
+    <script type="text/javascript" src="_static/codelens.js"></script>
+    <script type="text/javascript" src="_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="_static/datafile.js"></script>
+    <script type="text/javascript" src="_static/dragndrop.js"></script>
+    <script type="text/javascript" src="_static/timeddnd.js"></script>
+    <script type="text/javascript" src="_static/fitb.js"></script>
+    <script type="text/javascript" src="_static/timedfitb.js"></script>
+    <script type="text/javascript" src="_static/livecode.js"></script>
+    <script type="text/javascript" src="_static/clike.js"></script>
+    <script type="text/javascript" src="_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="_static/lib/hammer.min.js"></script>
+    <script type="text/javascript" src="_static/parsons.js"></script>
+    <script type="text/javascript" src="_static/timedparsons.js"></script>
+    <script type="text/javascript" src="_static/poll.js"></script>
+    <script type="text/javascript" src="_static/reveal.js"></script>
+    <script type="text/javascript" src="_static/shortanswer.js"></script>
+    <script type="text/javascript" src="_static/timed_shortanswer.js"></script>
+    <script type="text/javascript" src="_static/tabbedstuff.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="_static/rangy-core.js"></script>
+    <script type="text/javascript" src="_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="_static/user-highlights.js"></script>
+    <script type="text/javascript" src="_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="Runestone Interactive Overview" href="index.html" />
+    <link rel="up" title="4. Processing Data with R" href="R_toctree.html" />
+    <link rel="next" title="4.8. Twitter/Text Mining" href="h18.html" />
+    <link rel="prev" title="4.6. Data Management in R" href="h16.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="/runestone/static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'dsci210';
+  eBookConfig.logLevel = 0;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = false;
+  eBookConfig.python3 = true;
+  eBookConfig.basecourse = 'dsci210';
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="index.html">DSCI 210 Notes</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='index.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/dsci210/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:ACFactory.toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/dsci210/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='/runestone/default/reportabug?course=dsci210&page=h17'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        <!--
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">4.7. Writing Custom Functions</a><ul>
+<li><a class="reference internal" href="#id5">4.7.1. ***</a></li>
+<li><a class="reference internal" href="#id10">4.7.2. ***</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - 4.6. Data Management in R" data-toggle="tooltip">
+    <a href="h16.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - 4.8. Twitter/Text Mining' data-toggle="tooltip" >
+    <a href="h18.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content">
+  
+  <div class="section" id="writing-custom-functions">
+<h1>4.7. Writing Custom Functions<a class="headerlink" href="#writing-custom-functions" title="Permalink to this headline">¶</a></h1>
+<p>Before we discussing writing new functions in R, let’s examine an
+existing function more closely. For more insight into the coding behind
+the median() function, consider the following R commands and output.</p>
+<p>&gt; median</p>
+<p>function (x, na.rm = FALSE)</p>
+<p>UseMethod(&#8220;median&#8221;)</p>
+<p>&lt;bytecode: 0x000000000b265d20&gt;</p>
+<p>&lt;environment: namespace:stats&gt;</p>
+<p>&gt; methods(median)</p>
+<p>[1] median.default</p>
+<p>&gt; median.default</p>
+<p>function (x, na.rm = FALSE)</p>
+<p>{</p>
+<p>if (is.factor(x) || is.data.frame(x))</p>
+<p>stop(&#8220;need numeric data&#8221;)</p>
+<p>if (length(names(x)))</p>
+<p>names(x) &lt;- NULL</p>
+<p>if (na.rm)</p>
+<p>x &lt;- x[!is.na(x)]</p>
+<p>else if (any(is.na(x)))</p>
+<p>return(x[FALSE][NA])</p>
+<p>n &lt;- length(x)</p>
+<p>if (n == 0L)</p>
+<p>return(x[FALSE][NA])</p>
+<p>half &lt;- (n + 1L)%/%2L</p>
+<p>if (n%%2L == 1L)</p>
+<p>sort(x, partial = half)[half]</p>
+<p>else mean(sort(x, partial = half + 0L:1L)[half + 0L:1L])</p>
+<p>}</p>
+<p>When determining how to use this function, note that this function
+contains two arguments: x and na.rm. For more information on these
+arguments, you should review the help documentation for median.</p>
+<p>&gt; help(&#8220;median&#8221;)</p>
+<p><a class="reference internal" href="_images/image126.png"><img alt="image0" src="_images/image126.png" style="width: 4.32292in; height: 2.42540in;" /></a></p>
+<p>Notice that by default, the na.rm argument is set to FALSE. This means
+that the following arguments both return the same result:</p>
+<p>&gt; #Creating a vector of ages that represents typical ages for working
+adults</p>
+<p>&gt; ages &lt;- seq(18,65)</p>
+<p>&gt;</p>
+<p>&gt; #Taking a (random) sample of 10 ages &#8211; with replacement</p>
+<p>&gt; mydata &lt;- sample(ages,size=10,replace=TRUE)</p>
+<p>&gt; mydata</p>
+<p>[1] 47 42 54 46 49 21 32 56 21 26</p>
+<p>&gt;</p>
+<p>&gt; #Setting a seed to ensure we get the same random sample</p>
+<p>&gt; set.seed(987654321)</p>
+<p>&gt;</p>
+<p>&gt; mydata &lt;- sample(ages,size=10,replace=TRUE)</p>
+<p>&gt; mydata</p>
+<p>[1] 35 56 44 26 49 24 43 34 51 53</p>
+<p>&gt;</p>
+<p>&gt; #Compute median of x</p>
+<p>&gt; median(mydata)</p>
+<p>[1] 43.5</p>
+<p>&gt;</p>
+<p>&gt; #Creating some missingness, replace the 5<sup>th</sup> number with NA</p>
+<p>&gt; mydata[5] &lt;- NA</p>
+<p>&gt; mydata</p>
+<p>[1] 35 56 44 26 NA 24 43 34 51 53</p>
+<p>&gt; median(mydata)</p>
+<p>[1] NA</p>
+<p>&gt; median(mydata,na.rm=TRUE)</p>
+<p>[1] 43</p>
+<p>The previous example gives us some insight into how functions are
+written with arguments that are called within R. You can learn a lot
+about R programming by examining the code behind functions that were
+written by others. The remainder of this handout provides an
+introduction to the basics of writing your own functions in R.</p>
+<div class="section" id="id5">
+<h2>4.7.1. <a href="#id1"><span class="problematic" id="id2">**</span></a><a href="#id3"><span class="problematic" id="id4">*</span></a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p><strong>*WRITING NEW FUNCTIONS IN R*</strong></p>
+<p>One of the advantages of using a scripting language like R is the
+ability to write your own functions (or to modify existing functions).
+An R programmer can define their own functions using the function() and
+return() functions.</p>
+<p><strong>Example 1: Creating a simple function</strong></p>
+<p>Note that the sum() function already exists in R and can be used to add
+two numbers; for illustrative purposes, however, we will write our own
+simple function to do this. The parameters (or values) being used by
+this function have been generically named param1 and param2.</p>
+<blockquote>
+<div><p>&gt; #Add two function</p>
+<p>&gt; Addtwo &lt;- function(param1,param2){</p>
+<ul class="simple">
+<li>param1 + param2</li>
+<li>}</li>
+</ul>
+</div></blockquote>
+<p>This new function will be listed in your Global Environment under
+Functions.</p>
+<blockquote>
+<div><a class="reference internal" href="_images/image219.png"><img alt="image1" src="_images/image219.png" style="width: 3.11458in; height: 0.85892in;" /></a></div></blockquote>
+<p>To call the function, enter the following at the prompt.</p>
+<blockquote>
+<div><p>&gt; Addtwo(param1=3,param2=9)</p>
+<p>[1] 12</p>
+</div></blockquote>
+<p>You can shortcut the function call as follows (dropping the parameter
+names).</p>
+<blockquote>
+<div><p>&gt; Addtwo(3,9)</p>
+<p>[1] 12</p>
+</div></blockquote>
+<p><strong>*
+*</strong>R uses a local environment for function parameters. For example, if
+param1 exists in the global environment and also in the local
+environment, R will use the value in the local function environment.</p>
+<blockquote>
+<div><p>&gt; param1 &lt;- 10</p>
+<p>&gt; Addtwo(param1=3,param2=9)</p>
+<p>[1] 12</p>
+</div></blockquote>
+<p><a class="reference internal" href="_images/image317.png"><img alt="image2" src="_images/image317.png" style="width: 3.46995in; height: 1.50000in;" /></a></p>
+<p>Suppose a parameter does not exist in the local function environment,
+then R will search and use this parameter if it exists in the global
+environment.</p>
+<blockquote>
+<div><p>&gt; #Add three function</p>
+<p>&gt; Addthree &lt;- function(param1,param2){</p>
+<ul class="simple">
+<li>param1 + param2 + param3</li>
+<li>}</li>
+</ul>
+<p>&gt; #Using the Addthree function</p>
+<p>&gt; param3 &lt;- 100</p>
+<p>&gt; Addthree(param1=3,param2=9)</p>
+<p>[1] 112</p>
+</div></blockquote>
+<p><strong>Example 2: Creating a simple function – with default values</strong></p>
+<p>Default vales can be specified for a function. Parameter specification
+is done when specifying arguments for the function.</p>
+<blockquote>
+<div><p>&gt; #Add two function with default value for param2</p>
+<p>&gt; Addtwo &lt;- function(param1,param2=100){</p>
+<ul class="simple">
+<li>param1 + param2</li>
+<li>}</li>
+</ul>
+<p>&gt; #Usage of this version, only param1 being specified in function
+call</p>
+<p>&gt; Addtwo(param1=10)</p>
+<p>[1] 110</p>
+</div></blockquote>
+<p>Specify a default value for the first parameter.</p>
+<blockquote>
+<div><p>&gt; #Add two function with default value for param1</p>
+<p>&gt; Addtwo &lt;- function(param1=-500,param2){</p>
+<ul class="simple">
+<li>param1 + param2</li>
+<li>}</li>
+</ul>
+<p>&gt; #Usage of this version</p>
+<p>&gt; Addtwo(,param2=5)</p>
+<p>[1] -495</p>
+<p>&gt; Addtwo(,5)</p>
+<p>[1] -495</p>
+</div></blockquote>
+<p>The following will not work, as this is setting param1 = 5, and no value
+has been specified for param2.</p>
+<blockquote>
+<div><p>&gt; Addtwo(5)</p>
+<p>Error in Addtwo(5) : argument &#8220;param2&#8221; is missing, with no default</p>
+</div></blockquote>
+<p><strong>*Example 3: Creating a function to compute multiple quantities*</strong></p>
+<p>Next, suppose you want to write a function in R to both find the
+difference between two values and the ratio of those two values. You may
+start with the following.</p>
+<blockquote>
+<div><p>&gt; Myfunction &lt;- function(a,b){</p>
+<ul class="simple">
+<li>a-b</li>
+<li>a/b</li>
+<li>}</li>
+</ul>
+<p>&gt; #Using this function</p>
+<p>&gt; MyFunction(4,2)</p>
+<p>[1] 2</p>
+</div></blockquote>
+<p>Note that the function returns the result of only the last of the
+computations. To report all of the results, you can use the return
+statement as shown below.</p>
+<p>&gt; MyFunction &lt;- function(a,b){</p>
+<ul class="simple">
+<li>return(c(a-b, a/b ))</li>
+<li>}</li>
+</ul>
+<p>&gt; MyFunction(4,2)</p>
+<p>[1] 2 2</p>
+<p>Finally, note that it may be more useful to assign names to the values
+calculated and to return a more flexible data type (such as a list
+object) to provide more information about the calculations that have
+been performed. The following programming statements return the results
+in a list.</p>
+<p>&gt; MyFunction &lt;- function(a,b){</p>
+<ul class="simple">
+<li>Result1 = a-b</li>
+<li>Result2 = a/b</li>
+<li>return(list(Difference=Result1,Ratio=Result2))</li>
+<li>}</li>
+</ul>
+<p>&gt; MyFunction(4,2)</p>
+<p>$Difference</p>
+<p>[1] 2</p>
+<p>$Ratio</p>
+<p>[1] 2</p>
+</div>
+<div class="section" id="id10">
+<h2>4.7.2. <a href="#id6"><span class="problematic" id="id7">**</span></a><a href="#id8"><span class="problematic" id="id9">*</span></a><a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><strong>*Example 4: Computing the mean of a vector of numbers
+*</strong></div>
+<div class="line">Once again, note that the mean() function already exists in R and can
+be used to find the average of a vector of numbers; for illustrative
+purposes, however, we will write our own simple function to do this.
+Suppose we want to name our function average. We can check to make
+sure that this is not already a keyword in R (we wouldn’t want to
+overwrite an existing function!).</div>
+</div>
+<p>&gt; ?average</p>
+<p>No documentation for ‘average’ in specified packages and libraries:</p>
+<p>you could try ‘??average’</p>
+<div class="line-block">
+<div class="line">Next, we can write the function as follows.</div>
+<div class="line">&gt; average &lt;- function(x){</div>
+</div>
+<ul class="simple">
+<li>s = sum(x)</li>
+<li>avg = s/length(x)</li>
+<li>return (avg)</li>
+<li>}</li>
+</ul>
+<p>Note that this function can now be applied to calculate the average of
+any vector in R.</p>
+<p>&gt; average(x)</p>
+<p>[1] 0.4783486</p>
+<p><strong>*
+Example 5: Dealing with missing values*</strong></p>
+<p>Missing values should be considered when writing custom functions. For
+example, the average() function written above will not work with
+missingness present.</p>
+<p>&gt; x[2]&lt;-NA</p>
+<p>&gt; x</p>
+<p>[1] 0.36888095 NA 0.54802340 0.17993140 0.65435477 0.12500433 0.52510142
+0.35084670 0.70311331</p>
+<p>[10] 0.73129676 0.61784387 0.52065692 0.75065050 0.58954068 0.65485598
+0.07954121 0.30900394 0.79808945</p>
+<p>[19] 0.07708921 0.17460408</p>
+<p>&gt; average(x)</p>
+<p>[1] NA</p>
+<p>Missing values can be dealt with easily in this simple case by adding
+na.rm=TRUE to the sum() function. In addition, na.omit() will be used to
+omit any missing values when computing the length of the vector.</p>
+<p>&gt; average &lt;- function(x){</p>
+<ul class="simple">
+<li>s = sum(x, na.rm=TRUE)</li>
+<li>avg = s/length(na.omit(x))</li>
+<li>return (avg)</li>
+<li>}</li>
+</ul>
+<p>&gt; average(x)</p>
+<p>[1] 0.4609699</p>
+<p>A check to make sure NA is being properly ignored. The x[-2] syntax
+simply removes the second element to x.</p>
+<p>&gt; average(x[-2])</p>
+<p>[1] 0.4609699</p>
+<p><strong>*
+Example 6: Modifying the summary() function*</strong></p>
+<p>R allow us to expand upon existing functions. Consider the following in
+which the summary() function is being applied to a data.frame.</p>
+<p>&gt; set.seed(987654321)</p>
+<p>&gt; x&lt;-runif(20,0,1)</p>
+<p>&gt; summary(x)</p>
+<p>Min. 1st Qu. Median Mean 3rd Qu. Max.</p>
+<p>0.07709 0.27670 0.53660 0.47830 0.66690 0.80850</p>
+<p>We will now add to the standard list of summaries the standard
+deviation, mean absolute deviation, and the count. The following code
+will add these summaries to standard output provided by the summary()
+function.</p>
+<p>&gt; num.summary &lt;- function(x){</p>
+<ul class="simple">
+<li>original = summary(x)</li>
+<li>stdev = sd(x,na.rm=TRUE)</li>
+<li>mean.abs.dev = mean(abs(na.omit(x)-mean(na.omit(x))))</li>
+<li>n=length(na.omit(x))</li>
+<li>list(c(original,&#8221;Std Dev&#8221; = stdev, &#8220;MAD&#8221; = mean.abs.dev,&#8221;Count&#8221;=n))</li>
+<li>}</li>
+</ul>
+<p>The modified summary function includes the additional summaries.</p>
+<p>&gt; num.summary(x)</p>
+<p>[[1]]</p>
+<p>Min. 1st Qu. Median Mean 3rd Qu. Max. Std Dev MAD Count</p>
+<p>0.0770900 0.2767000 0.5366000 0.4783000 0.6669000 0.8085000 0.2498250
+0.2161887 20.0000000</p>
+<p>Finally, note that you could change the layout of the output. The
+paste() and round() functions are used here for writing to the screen
+and for rounding output.</p>
+<p>&gt; num.summary &lt;- function(x){</p>
+<ul class="simple">
+<li>Min = summary(x)[1]</li>
+<li>Q1 = summary(x)[2]</li>
+<li>Q2 = summary(x)[3]</li>
+<li>Q3 = summary(x)[5]</li>
+<li>Max = summary(x)[6]</li>
+<li>Mean = summary(x)[4]</li>
+<li>s = sd(x,na.rm=TRUE)</li>
+<li>mean.abs.dev = mean(abs(na.omit(x)-mean(na.omit(x))))</li>
+<li>n=length(na.omit(x))</li>
+<li>cat(paste(&#8220;Min: &#8221;, Min))</li>
+<li>cat(&#8220;\n&#8221;)</li>
+<li>cat(paste(&#8220;Q1: &#8221;, Q1))</li>
+<li>cat(&#8220;\n&#8221;)</li>
+<li>cat(paste(&#8220;Median: &#8221;, Q2))</li>
+<li>cat(&#8220;\n&#8221;)</li>
+<li>cat(paste(&#8220;Q3: &#8221;, Q3))</li>
+<li>cat(&#8220;\n&#8221;)</li>
+<li>cat(paste(&#8220;Max: &#8221;, Max))</li>
+<li>cat(&#8220;\n&#8221;)</li>
+<li>cat(paste(&#8220;Mean: &#8221;, Mean))</li>
+<li>cat(&#8220;\n&#8221;)</li>
+<li>cat(paste(&#8220;Standard Deviation: &#8221;, round(s,4)))</li>
+<li>cat(&#8220;\n&#8221;)</li>
+<li>cat(paste(&#8220;Mean Absolute Deviation: &#8221;, round(mean.abs.dev,4)))</li>
+<li>cat(&#8220;\n&#8221;)</li>
+<li>cat(paste(&#8220;Sample Size: &#8221;, round(n,0)))</li>
+<li></li>
+<li>}</li>
+</ul>
+<p>The output with custom printing.</p>
+<p>&gt; num.summary(x)</p>
+<p>Min: 0.07709</p>
+<p>Q1: 0.2767</p>
+<p>Median: 0.5366</p>
+<p>Q3: 0.6669</p>
+<p>Max: 0.8085</p>
+<p>Mean: 0.4783</p>
+<p>Standard Deviation: 0.2498</p>
+<p>Mean Absolute Deviation: 0.2162</p>
+<p>Sample Size: 20</p>
+<p><strong>*Example 7: Modifying the plot() function*</strong></p>
+<p>Consider the following data and its associated plot.</p>
+<p>&gt; #Getting a vector of random data</p>
+<p>&gt; set.seed(987654321)</p>
+<p>&gt; x&lt;-runif(20,0,1)</p>
+<p>&gt; y&lt;-2 + 3*x + runif(20,-0.5,0.5)</p>
+<div class="line-block">
+<div class="line">&gt;</div>
+<div class="line">&gt; plot(x,y)</div>
+</div>
+<p><a class="reference internal" href="_images/image413.png"><img alt="image3" src="_images/image413.png" style="width: 3.36458in; height: 2.50506in;" /></a></p>
+<p>Suppose you want the plot() function to use a very large triangle
+plotting character that is red. The plot() function can be modified as
+follows. R allows you to pass an unspecified number of parameters to a
+function using the … notation. Note: One should carefully consider the
+order of the arguments in the list when using the … notation.</p>
+<p>&gt; myplot &lt;- function(..., pch.new=2, col.new=&#8221;red&#8221;, cex.new=4.0 ) {</p>
+<ul class="simple">
+<li>plot(..., pch=pch.new, col=col.new, cex=cex.new )</li>
+<li>}</li>
+</ul>
+<p>&gt;</p>
+<p>&gt; #USing the new plottign function</p>
+<p>&gt; myplot(x,y)</p>
+<p><a class="reference internal" href="_images/image57.png"><img alt="image4" src="_images/image57.png" style="width: 3.45833in; height: 2.62599in;" /></a></p>
+<ul class="simple">
+<li></li>
+<li></li>
+</ul>
+<p><em>Tasks</em>:</p>
+<ol class="arabic simple">
+<li>Recall that the formula for a sphere is
+<sup>4</sup>⁄<sub>3</sub>πr<sup>3</sup>. Write a function named
+sphere.volume that returns the volume of a sphere when given the
+radius <em>r</em> as a parameter. Then, call the function to return the
+volume of a sphere with a radius of 5. Call the function again to
+return the volume of a sphere with a radius of 10.</li>
+<li>Write a function named myplot which calls the plot() function but
+uses a blue open circles as the default plotting symbol. Create a
+plot using your new myplot() function.</li>
+</ol>
+</div>
+</div>
+
+
+  
+      
+  <li id="relations-prev" class="navLink" title='Previous Section - 4.6. Data Management in R' data-toggle="tooltip">
+    <a href="h16.html" >
+      <i class='prevNav glyphicon glyphicon-chevron-left'></i>
+    </a>
+  </li>
+  <a class="navLinkBg" id="navLinkBgLeft"  href="h16.html" ></a>
+  
+  <li id="relations-next" class="navLink" title='Next Section - 4.8. Twitter/Text Mining' data-toggle="tooltip" >
+    <a href="h18.html" >
+      <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
+    </a>
+  </li>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="h18.html" >Next Section - 4.8. Twitter/Text Mining</a>
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+  
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      
+      | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015 Todd Iverson.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.5.
+    </p>
+  </div>
+</footer>
+
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>
