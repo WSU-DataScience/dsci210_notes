@@ -1,0 +1,787 @@
+Basic Graphics in R
+===================
+
+This handout will provide an introduction to creating graphics in R.
+Here, we will cover only the more basic, traditional graphics. You
+should be aware, however, that more advanced users can create more
+complex and interesting graphical summaries of data using R.
+
+First, to see some examples of graphs that can be created in R, enter
+the following command at the prompt.
+
+> demo(graphics)
+
+***
+Histograms and Density Smoothers***
+
+Read the NutritionData file into R.
+
+|image0|
+
+Once this data set has been attached, the names in this data frame are
+as follows.
+
+> names(NutritionData)
+
+[1] "Location" "ItemName" "Type" "Calories" "TotalFat"
+
+[6] "SatFat" "Cholesterol" "Sodium" "Carbohydrates" "Fiber"
+
+***
+***\ The most basic form of the hist() function is employed below.
+
+> hist(NutritionData$SatFat)
+
+|image1|
+
+***
+***
+
+As shown in the following documentation, several optional arguments
+exist that can be used to modify the resulting plot.
+
+|image2|
+
+For example, enter the following options to the hist() function.
+
+> hist(NutritionData$SatFat,breaks=20,freq=F,xlab="Saturated Fat",
+main="Histogram of Saturated Fat",col='gray')
+
+|image3|
+
+*
+*
+
+*Questions*:
+
+1. What happens when the freq= option is set to TRUE. What changes?
+
+2. Can you figure out how to change the breaks option so that there are
+   breakpoints at 0, 5, 10, 15, 20, 25, and 30? Hint: These values will
+   need to be entered as a vector.
+
+***Adding a Density Smoother to a Histogram in R***
+
+The following command will add a “trend” to the histogram. This trend
+line is called a density smoother.
+
+> hist(NutritionData$SatFat,breaks=20,freq=F,xlab="Saturated Fat",
+main="Histogram of Saturated Fat",col='gray')
+
+> lines(density(NutritionData$SatFat))
+
+|image4|
+
+Once again, several optional arguments exist that can be used to modify
+the resulting density smoother.
+
+> help(density)
+
+|image5|
+
+> help(lines)
+
+|image6|
+
+For example, we can modify the appearance of the histogram/density
+smoother as follows:
+
+> hist(NutritionData$SatFat,breaks=40,freq=F,xlab="Saturated Fat",
+main="Histogram of Saturated Fat", col='gray')
+
+> lines(density(NutritionData$SatFat,adjust=0.50),lty=2)
+
+|image7|
+
+*Questions*:
+
+1. Change the adjust= option to a few different values. What changes?
+
+2. Change the lty= option to 5 and then to “dotted”. What changes?
+
+***
+***
+
+***Boxplots in R***
+
+The most basic form of the boxplot() function is employed below.
+
+> boxplot(NutritionData$SatFat)
+
+|image8|
+
+You can learn more about the optional arguments from the help
+documentation.
+
+> help(boxplot)
+
+The following can be used to obtain boxplots for Saturated Fat for each
+restaurant location.
+
+| > boxplot(NutritionData$SatFat ~ NutritionData$Location)
+| |image9|
+
+The order in which the restaurants are plotted is determine by the
+factor levels. Most often these are alphabetical in order.
+
+|image10|
+
+To existing order can be identified using the levels() function.
+
+> levels(NutritionData$Location) |image11|
+
+A new vector for the factor level settings can be used to reassign
+levels. The following will reorder the levels so that all the Fast Food
+locations are listed first, the Pizza locations second, followed by the
+Subs locations.
+
+|image12|
+
+> #Change order of factor levels
+
+>
+NutritionData$Location<-factor(NutritionData$Location,levels=c("BurgerKing","KFC","McDonalds","TacoBell","Wendys","Dominos","PizzaHut","ErbertGerbert","Subway"))
+
+|image13|
+
+***Bar Charts / Pie Charts in R***
+
+Barchart are commonly used to display counts from categorical data. The
+table() function is used to obtain counts in R.
+
+> table(NutritionData$Location)
+
+|image14|
+
+We can pass the output from the table() function directly in the
+barplot() function.
+
+> barplot(table(NutritionData$Location))
+
+|image15|
+
+A pie chart can be obtained in a similar way.
+
+> pie(table(NutritionData$Location))
+
+|image16|
+
+Plots for two-dimensional tables are
+
+> table(NutritionData$Type, NutritionData$Location)
+
+|image17|
+
+Getting a stacked barchart for this table. A more appropriate 100%
+stacked barchart is provided below.
+
+> barplot(table(NutritionData$Type, NutritionData$Location),
+legend=TRUE)
+
+|image18|
+
+A 100% stacked barchart can be obtained as follows.
+
+> table.of.counts<-table(NutritionData$Type,NutritionData$Location)
+
+> barplot(prop.table(table.of.counts,2),legend=TRUE)
+
+|image19|
+
+***
+***
+
+***Scatterplots and Smoothers***
+
+Scatterplots are simple to create in R using the plot() function. For
+example, we could examine the relationship between *Saturated Fat* and
+*Total Fat* by creating the following plot.
+
+> plot(TotalFat~SatFat,data=NutritionData)
+
+|image20|
+
+To add a trend line (i.e., the regression line) to this plot, you can
+use the abline() and lm() function.
+
+> abline(lm(TotalFat~SatFat,data=NutritionData))
+
+|image21|
+
+***
+***
+
+Loess smoothers are a common alternative to regression models in data
+science. Loess models are more flexible than regression-type smoothers.
+There are advantages and disadvantages to all models.
+
+Loess Regression Wiki page:
+https://en.wikipedia.org/wiki/Local_regression
+
+|image22|
+
+The loess() function in R can be used to obtain a loess smoother in R. 
+=======================================================================
+
+> #Creating the intial plot
+
+> plot(TotalFat~SatFat,data=NutritionData)
+
+>
+
+> #Fitting a loess model
+
+> fit<-loess(TotalFat~SatFat,data=NutritionData)
+
+>
+
+> #Using a generic sequence for x to obtain a prediction line
+
+> #lines(seq(0,30,1),
+predict(fit,newdata=data.frame(SatFat=seq(0,30,1))))
+
+>
+
+> #Using actual SatFat data valus to obtain a prediction
+
+> lines(sort(NutritionData$SatFat),
+predict(fit,newdata=NutritionData[order(NutritionData$SatFat),]))
+
+The span= option within the loess() function controls the amount of
+smoothing being done. The lower the span value, the less smoothing that
+is done.
+
+> fit<-loess(TotalFat~SatFat,data=NutritionData, span=.4)
+
+***
+***
+
++---------------------------------+--------------+
+| Span = 0.75 (default setting)   | Span = 0.3   |
+|                                 |              |
+| |image23|                       | |image24|    |
++---------------------------------+--------------+
+
+***(Optional) Graphical Parameters***
+
+> par(mfrow=c(1,2)) #Create a 1 x 2 grid for plotting
+
+> par(pty="s") #Force square plotting region, par(pty="m") will change
+back to default
+
+>help(par) # for others – several to choose from
+
+|image25|
+
+The following command will change the range on the x- and y-axis from
+the defaults.
+
+> plot(TotalFat~SatFat,data=NutritionData, xlab="Saturated Fat",
+ylab="Total Fat", xlim=c(0,60), ylim=c(0,60))
+
+|image26|
+
+Options can be specified for the points as well. The col= option can be
+used to change the color and the pch= option specifies the plotting
+character. The list of plotting characters is provided here.
+
+|image27|
+
+To following change the color to blue and uses plotting character 2,
+i.e. a triangle.
+
+> plot(TotalFat~SatFat,data=NutritionData, xlab="Saturated Fat",
+ylab="Total Fat", col="blue",pch=2)
+
+|image28|
+
+***
+***
+
+For the next set of plots, we will create a subset of the NutritionData
+
+> BeefChickenData <- NutritionData[NutritionData$Type %in%
+c("Beef","Chicken"), ]
+
+***
+***
+
++----+------------------------------------------------+
+|    | Consider the following subset for next plot…   |
+|    | |image29|                                      |
++----+------------------------------------------------+
+
+The following sequence of commands will create the plot below.
+
+> plot(TotalFat~SatFat,data=BeefChickenData,xlab="Saturated Fat",
+ylab="Total Fat", col=c("red","blue")[match(Type,c("Beef","Chicken"))])
+
+>
+abline(lm(TotalFat~SatFat,data=BeefChickenData[BeefChickenData$Type=="Beef",]),col="red")
+
+>
+abline(lm(TotalFat~SatFat,data=BeefChickenData[BeefChickenData$Type=="Chicken",]),col="blue")
+
+> abline(0,1,col="gray",lty=2)
+
+|image30|
+
+A legend can be added to this plot using the legend() function.
+
+> legend("bottomright",legend=c("Beef","Chicken"),fill=c("red","blue"))
+
+The following code is used to add loess smoothers to the scatterplot.
+
+> #Plots with Loess smoothers
+
+> plot(TotalFat~SatFat,data=BeefChickenData,xlab="Saturated Fat",
+ylab="Total Fat",
+
++ col=c("red","blue")[match(Type,c("Beef","Chicken"))])
+
+>
+
+>
+fit.beef<-loess(TotalFat~SatFat,data=BeefChickenData[BeefChickenData$Type=="Beef",])
+
+> lines(sort(BeefChickenData[BeefChickenData$Type == "Beef",6]),
+sort(predict(fit.beef,newdata=BeefChickenData[BeefChickenData$Type ==
+"Beef",])), col="red")
+
+>
+
+>
+fit.chicken<-loess(TotalFat~SatFat,data=BeefChickenData[BeefChickenData$Type=="Chicken",])
+
+> lines(sort(BeefChickenData[BeefChickenData$Type == "Chicken",6]),
+sort(predict(fit.chicken,newdata=BeefChickenData[BeefChickenData$Type ==
+"Chicken",])), col="blue")
+
+> abline(0,1,col="gray",lty=2)
+
+> legend("bottomright",legend=c("Beef","Chicken"),fill=c("red","blue"))
+
+|image31|
+
+The type=”n” option in the plot() function prevents the points from
+being plotted.
+
+> plot(TotalFat~SatFat,data=BeefChickenData,xlab="Saturated Fat",
+ylab="Total Fat",
+
++ col=c("red","blue")[match(Type,c("Beef","Chicken"))], type="n")
+
+***
+***
+
+***Advanced Plotting***
+
+The lattice package is a powerful graphical package available in R. The
+most cutting-edge package for plotting is ggplot2. The ggplot2 package
+will not be covered in this handout.
+
+|image32|
+
+To load this (or any other) package in R, go to the lower right-hand
+window of the R Studio window. You can search for the package of
+interest.
+
+|image33|
+
+Here, you can check the box next to “lattice” and note that R
+automatically runs the following command.
+
+> library(lattice)
+
+***
+***
+
+***Obtaining a Histogram Using the Lattice Package***
+
+You can use the histogram() function once the lattice package has been
+installed:
+
+> histogram( ~ SatFat, data=NutritionData)
+
+|image34|
+
+A more interesting display would compare the distribution of Saturated
+Fat across Location. This is easily implemented with lattice graphics.
+
+> histogram(~SatFat\|Location,data=NutritionData, col="gray")
+
+|image35|
+
+***
+***
+
+***Obtaining a Density Plot Using the Lattice Package***
+
+> densityplot(~SatFat\|Location,data=NutritionData, col="black",
+plot.points=FALSE)
+
+|image36|
+
+*
+Question:* Re-submit the above command with the plot.points argument
+omitted. What happens?
+
+Note that instead of displaying the density plots in a separate panels
+for each location, R can alternatively overlay the density plots as
+following by way of the groups= option.
+
+> densityplot(~SatFat, data=NutritionData, groups=Location,
+plot.points=FALSE, auto.key=TRUE)
+
++-------------+-------------+
+| |image37|   | |image38|   |
++-------------+-------------+
+
+An example with more clarity is given for the Beef and Chicken subset
+datasets.
+
+> densityplot(~SatFat, data=BeefChickenData, groups=Type,
+plot.points=FALSE, auto.key=TRUE)
+
++-------------+-------------+
+| |image39|   | |image40|   |
++-------------+-------------+
+
+Notice that the legend is incorrect and appears to be using the factor
+levels from the NutritionData and not the Beef and Chicken subset.
+
+> str(BeefChickenData)
+
+|image41|
+
+Update the factor level settings for Type in the Beef and Chicken
+subset.
+
+>
+BeefChickenData$Type<-factor(BeefChickenData$Type,levels=c("Beef","Chicken"))
+
+> str(BeefChickenData)
+
+|image42|
+
+The legend now correctly corresponds with the plot.
+
+> densityplot(~SatFat, data=BeefChickenData, groups=Type,
+plot.points=FALSE, auto.key=TRUE)
+
++-------------+-------------+
+| |image43|   | |image44|   |
++-------------+-------------+
+
+***
+***
+
+***Obtaining a Scatterplot Using Lattice***
+
+> xyplot(TotalFat~SatFat, data=NutritionData)
+
+|image45|
+
+Next, note that you can also obtain the scatterplot above for each
+location fairly easily using the built-in conditioning functionality
+provided by the lattice package.
+
+> xyplot(TotalFat~SatFat \| Location, data=NutritionData)
+
+|image46|
+
+> xyplot(TotalFat~SatFat\|Location,data=NutritionData, type="smooth")
+
+|image47|
+
+> xyplot(TotalFat~SatFat\|Location,data=NutritionData,
+type=c("p","smooth"))
+
+|image48|
+
+Finally, a completely custom panel function can be specified. The
+following custom panel function will use plotting character 2, the size
+of the points will be reduced using cex, the loess fit will be blue and
+thicker than usual through the use of the lwd option.
+
+> panel.smoother <- function(x, y) {
+
++ panel.xyplot(x, y, pch=2, cex=0.5) # show points
+
++ panel.loess(x, y, col="black", lwd=2) # show smoothed line
+
++ }
+
+This custom function is then called with the panel= option in the
+xyplot.
+
+> xyplot(TotalFat~SatFat\|Location,data=NutritionData, panel =
+panel.smoother)
+
+|image49|
+
+***
+***
+
+***Obtaining Scatterplot Matrices without Lattice Package***
+
+> pairs(NutritionData[,5:10], panel=panel.smooth)
+
+|image50|
+
+There is a function that accompanies the “An R Companion to Applied
+Regression.” This package is called car. Install this package and load
+it contents into R.
+
+|image51|
+
+|image52|
+
+After the car package is downloaded and installed, the
+scatterplotMatrix() function can be used to create a scatterplot matrix
+with loess smoothers in each panel. The syntax of this function is akin
+to the lattice package.
+
+> scatterplotMatrix( ~ (TotalFat+SatFat+Carbohydrates+Fiber)\|Type,
+data=BeefChickenData)
+
+|image53|
+
+***Task***
+
+For this task, we will consider the airline data. Of interest is the
+rate in which flights are cancelled or delayed. This data can be
+downloaded from the following site:
+
+http://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236&DB_Short_Name=On-Time
+
+|image54|
+
+You must specify which Field Names to include. The following fields
+should be downloaded.
+
++------------------------------------+-----------------+------------------------+
+| **Fields/Variables to download**   |
++====================================+=================+========================+
+| -  Day of Week                     | -  CRSDepTime   | -  Cancelled           |
+|                                    |                 |                        |
+| -  FlightDate                      | -  DepTime      | -  CarrierDelay        |
+|                                    |                 |                        |
+| -  UniqueCarrier                   | -  DepDelay     | -  WeatherDelay        |
+|                                    |                 |                        |
+| -  Origin                          | -  CRSArrTime   | -  NASDelay            |
+|                                    |                 |                        |
+| -  Dest                            | -  ArrTime      | -  SecurityDelay       |
+|                                    |                 |                        |
+|                                    | -  ArrDelay     | -  LateAircraftDelay   |
++------------------------------------+-----------------+------------------------+
+
+*
+*
+
+*Questions*
+
+1. Create a barplot to show the cancellation rate of flights by day of
+   week. Which day of the week has the largest percentage of flights?
+
+2. Create a barplot to show the cancellation rate of flights by carrier,
+   i.e. airline. Which carrier appears to cancel the largest percentage
+   of flights?
+
+For the following you may want to create a subset of the full dataset.
+You can create a subset however you’d like, e.g. narrow your focus to
+just Chicago O’Hare – Code: ORD. The following can be used to create a
+random subset of 10000 observations from a data.frame named Delay.
+
+    > mysubset<-Delay[sample(1:dim(Delay)[1],size=10000),]
+
+1. Use a command similar to this to obtain the average delay across all
+   flights for Carrier delay, weather delay, NAS delay, security delay,
+   and late aircraft delay. These columns are contained within columns
+   13:17 for my data.frame.
+
+    > apply(Delay[,13:17],2,function(x){mean(x,na.rm=TRUE)})
+
+Which type of delay is the longest on average? Why is the na.rm required
+for the apply function to work?
+
+1. Create some type of plot for the averages from above. What type of
+   plot did you decide to create?
+
+2. Consider the above problem, which type of delay has the most amount
+   of variation, i.e. largest standard deviation?
+
+3. Your friend insists on flying early in the day to avoid delays. Is
+   there any truth that flights earlier in the day are less likely be
+   delayed? Create a plot to communicate your findings.
+
+4. How often does a flight leave early and arrive early? How often does
+   a flight leave late, but arrive early? Hint: You will likely need to
+   create new variables for this and then use the table() function on
+   your new variables.
+
+.. |image0| image:: img/h15/media/image1.png
+   :width: 6.00000in
+   :height: 1.16458in
+.. |image1| image:: img/h15/media/image2.png
+   :width: 2.99130in
+   :height: 1.94331in
+.. |image2| image:: img/h15/media/image3.png
+   :width: 5.90688in
+   :height: 3.59130in
+.. |image3| image:: img/h15/media/image4.png
+   :width: 3.48958in
+   :height: 2.80586in
+.. |image4| image:: img/h15/media/image5.png
+   :width: 3.27826in
+   :height: 2.38736in
+.. |image5| image:: img/h15/media/image6.png
+   :width: 5.81003in
+   :height: 2.65217in
+.. |image6| image:: img/h15/media/image7.png
+   :width: 6.00000in
+   :height: 1.92917in
+.. |image7| image:: img/h15/media/image8.png
+   :width: 5.26956in
+   :height: 3.44412in
+.. |image8| image:: img/h15/media/image9.png
+   :width: 2.57289in
+   :height: 2.33895in
+.. |image9| image:: img/h15/media/image10.png
+   :width: 6.00000in
+   :height: 3.34444in
+.. |image10| image:: img/h15/media/image11.png
+   :width: 6.00000in
+   :height: 1.15652in
+.. |image11| image:: img/h15/media/image12.png
+   :width: 6.00000in
+   :height: 0.18750in
+.. |image12| image:: img/h15/media/image13.png
+   :width: 1.66956in
+   :height: 1.77778in
+.. |image13| image:: img/h15/media/image14.png
+   :width: 5.14043in
+   :height: 3.01227in
+.. |image14| image:: img/h15/media/image15.png
+   :width: 6.00000in
+   :height: 0.19167in
+.. |image15| image:: img/h15/media/image16.png
+   :width: 4.74847in
+   :height: 2.70509in
+.. |image16| image:: img/h15/media/image17.png
+   :width: 3.49693in
+   :height: 2.82345in
+.. |image17| image:: img/h15/media/image18.png
+   :width: 6.00000in
+   :height: 1.45278in
+.. |image18| image:: img/h15/media/image19.png
+   :width: 6.00000in
+   :height: 3.70278in
+.. |image19| image:: img/h15/media/image20.png
+   :width: 4.98261in
+   :height: 2.90018in
+.. |image20| image:: img/h15/media/image21.png
+   :width: 4.45217in
+   :height: 3.38602in
+.. |image21| image:: img/h15/media/image22.png
+   :width: 4.05217in
+   :height: 3.03163in
+.. |image22| image:: img/h15/media/image23.png
+   :width: 5.37391in
+   :height: 2.60983in
+.. |image23| image:: img/h15/media/image24.png
+   :width: 2.60000in
+   :height: 2.42065in
+.. |image24| image:: img/h15/media/image25.png
+   :width: 2.60870in
+   :height: 2.42663in
+.. |image25| image:: img/h15/media/image26.png
+   :width: 6.00000in
+   :height: 2.58125in
+.. |image26| image:: img/h15/media/image27.png
+   :width: 3.84759in
+   :height: 2.93913in
+.. |image27| image:: img/h15/media/image28.png
+   :width: 6.00000in
+   :height: 0.50769in
+.. |image28| image:: img/h15/media/image29.png
+   :width: 4.36522in
+   :height: 3.34364in
+.. |image29| image:: img/h15/media/image30.png
+   :width: 3.99130in
+   :height: 0.37005in
+.. |image30| image:: img/h15/media/image31.png
+   :width: 4.61156in
+   :height: 3.48672in
+.. |image31| image:: img/h15/media/image32.png
+   :width: 5.18261in
+   :height: 4.80471in
+.. |image32| image:: img/h15/media/image33.png
+   :width: 3.10435in
+   :height: 2.25249in
+.. |image33| image:: img/h15/media/image34.png
+   :width: 5.26042in
+   :height: 0.68750in
+.. |image34| image:: img/h15/media/image35.png
+   :width: 4.23585in
+   :height: 3.11315in
+.. |image35| image:: img/h15/media/image36.png
+   :width: 5.04348in
+   :height: 3.49366in
+.. |image36| image:: img/h15/media/image37.png
+   :width: 6.00000in
+   :height: 4.26736in
+.. |image37| image:: img/h15/media/image38.png
+   :width: 4.11043in
+   :height: 2.98054in
+.. |image38| image:: img/h15/media/image39.png
+   :width: 1.63542in
+   :height: 1.30208in
+.. |image39| image:: img/h15/media/image40.png
+   :width: 3.73248in
+   :height: 2.05935in
+.. |image40| image:: img/h15/media/image41.png
+   :width: 1.33121in
+   :height: 1.33121in
+.. |image41| image:: img/h15/media/image42.png
+   :width: 6.00000in
+   :height: 1.18542in
+.. |image42| image:: img/h15/media/image43.png
+   :width: 6.00000in
+   :height: 1.21875in
+.. |image43| image:: img/h15/media/image44.png
+   :width: 3.64968in
+   :height: 2.48550in
+.. |image44| image:: img/h15/media/image45.png
+   :width: 1.31250in
+   :height: 0.41667in
+.. |image45| image:: img/h15/media/image46.png
+   :width: 3.01887in
+   :height: 2.52166in
+.. |image46| image:: img/h15/media/image47.png
+   :width: 5.04717in
+   :height: 4.31054in
+.. |image47| image:: img/h15/media/image48.png
+   :width: 2.97170in
+   :height: 2.52629in
+.. |image48| image:: img/h15/media/image49.png
+   :width: 4.98416in
+   :height: 4.32075in
+.. |image49| image:: img/h15/media/image50.png
+   :width: 5.07547in
+   :height: 4.39757in
+.. |image50| image:: img/h15/media/image51.png
+   :width: 6.00000in
+   :height: 4.51458in
+.. |image51| image:: img/h15/media/image52.png
+   :width: 3.33177in
+   :height: 2.37736in
+.. |image52| image:: img/h15/media/image53.png
+   :width: 5.29167in
+   :height: 0.82292in
+.. |image53| image:: img/h15/media/image54.png
+   :width: 5.46226in
+   :height: 4.03727in
+.. |image54| image:: img/h15/media/image55.png
+   :width: 6.00000in
+   :height: 3.64931in
