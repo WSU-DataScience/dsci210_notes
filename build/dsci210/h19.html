@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>4.9. Classification Trees in R &mdash; Runestone Interactive Overview</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="_static/clickable.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="_static/dragndrop.css" type="text/css" />
+    <link rel="stylesheet" href="_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="_static/livecode.css" type="text/css" />
+    <link rel="stylesheet" href="_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootswatch/2.3.1/""/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/runestonebase.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="_static/codemirror.js"></script>
+    <script type="text/javascript" src="_static/xml.js"></script>
+    <script type="text/javascript" src="_static/css.js"></script>
+    <script type="text/javascript" src="_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="_static/python.js"></script>
+    <script type="text/javascript" src="_static/javascript.js"></script>
+    <script type="text/javascript" src="_static/activecode.js"></script>
+    <script type="text/javascript" src="_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="_static/clike.js"></script>
+    <script type="text/javascript" src="_static/timed_activecode.js"></script>
+    <script type="text/javascript" src="_static/animationbase.js"></script>
+    <script type="text/javascript" src="_static/mchoice.js"></script>
+    <script type="text/javascript" src="_static/timedmc.js"></script>
+    <script type="text/javascript" src="_static/timed.js"></script>
+    <script type="text/javascript" src="_static/clickable.js"></script>
+    <script type="text/javascript" src="_static/timedclickable.js"></script>
+    <script type="text/javascript" src="_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="_static/pytutor.js"></script>
+    <script type="text/javascript" src="_static/codelens.js"></script>
+    <script type="text/javascript" src="_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="_static/datafile.js"></script>
+    <script type="text/javascript" src="_static/dragndrop.js"></script>
+    <script type="text/javascript" src="_static/timeddnd.js"></script>
+    <script type="text/javascript" src="_static/fitb.js"></script>
+    <script type="text/javascript" src="_static/timedfitb.js"></script>
+    <script type="text/javascript" src="_static/livecode.js"></script>
+    <script type="text/javascript" src="_static/clike.js"></script>
+    <script type="text/javascript" src="_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="_static/lib/hammer.min.js"></script>
+    <script type="text/javascript" src="_static/parsons.js"></script>
+    <script type="text/javascript" src="_static/timedparsons.js"></script>
+    <script type="text/javascript" src="_static/poll.js"></script>
+    <script type="text/javascript" src="_static/reveal.js"></script>
+    <script type="text/javascript" src="_static/shortanswer.js"></script>
+    <script type="text/javascript" src="_static/timed_shortanswer.js"></script>
+    <script type="text/javascript" src="_static/tabbedstuff.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="_static/rangy-core.js"></script>
+    <script type="text/javascript" src="_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="_static/user-highlights.js"></script>
+    <script type="text/javascript" src="_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="Runestone Interactive Overview" href="index.html" />
+    <link rel="up" title="4. Processing Data with R" href="R_toctree.html" />
+    <link rel="prev" title="4.8. Twitter/Text Mining" href="h18.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="/runestone/static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'dsci210';
+  eBookConfig.logLevel = 0;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = false;
+  eBookConfig.python3 = true;
+  eBookConfig.basecourse = 'dsci210';
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="index.html">DSCI 210 Notes</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----MIIHNwYJKoZIhvcNAQcEoIIHKDCCByQCAQExggEwMIIBLAIBADCBlDCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20CAQAwDQYJKoZIhvcNAQEBBQAEgYAcrkqh1hn3lYqIpfXxNqe1T82EhXzCJGy1yMAmklpyZshyMkfDGe1Bhx+iwyGeoYRTTyphFmP+9M3NyO0+Q5XdHxgZPx/zYjjBxlZHgEV6jhE8bN2fHkkPf0VHfz0a0QQylQOPlKiOTZV7B37Jpk6yM47oVZ1tG/KNm0NkfmB76DELMAkGBSsOAwIaBQAwgbQGCSqGSIb3DQEHATAUBggqhkiG9w0DBwQIi0GmFfOlcjuAgZBbYOo9UO+CpMQa+PYqwsUmUnJvXIImeMeNI3KVTUx5Cfk9gNMo3WzPeiB5IqZo9nRAQ0mf1qL2ecLeB5tidM+lgBUhOxfj3/FecpnVFa0263gp4g+PLw8jzhvVRdUon1K3SeO1Rzh23fIRKwnrD6btt73uwtj0sl3tGd8qz+6GIcwPDdRk9VcUffiBJT/ZagKgggOHMIIDgzCCAuygAwIBAgIBADANBgkqhkiG9w0BAQUFADCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20wHhcNMDQwMjEzMTAxMzE1WhcNMzUwMjEzMTAxMzE1WjCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20wgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAMFHTt38RMxLXJyO2SmS+Ndl72T7oKJ4u4uw+6awntALWh03PewmIJuzbALScsTS4sZoS1fKciBGoh11gIfHzylvkdNe/hJl66/RGqrj5rFb08sAABNTzDTiqqNpJeBsYs/c2aiGozptX2RlnBktH+SUNpAajW724Nv2Wvhif6sFAgMBAAGjge4wgeswHQYDVR0OBBYEFJaffLvGbxe9WT9S1wob7BDWZJRrMIG7BgNVHSMEgbMwgbCAFJaffLvGbxe9WT9S1wob7BDWZJRroYGUpIGRMIGOMQswCQYDVQQGEwJVUzELMAkGA1UECBMCQ0ExFjAUBgNVBAcTDU1vdW50YWluIFZpZXcxFDASBgNVBAoTC1BheVBhbCBJbmMuMRMwEQYDVQQLFApsaXZlX2NlcnRzMREwDwYDVQQDFAhsaXZlX2FwaTEcMBoGCSqGSIb3DQEJARYNcmVAcGF5cGFsLmNvbYIBADAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBBQUAA4GBAIFfOlaagFrl71+jq6OKidbWFSE+Q4FqROvdgIONth+8kSK//Y/4ihuE4Ymvzn5ceE3S/iBSQQMjyvb+s2TWbQYDwcp129OPIbD9epdr4tJOUNiSojw7BHwYRiPh58S1xGlFgHFXwrEBb3dgNbMUa+u4qectsMAXpVHnD9wIyfmHMYIBmjCCAZYCAQEwgZQwgY4xCzAJBgNVBAYTAlVTMQswCQYDVQQIEwJDQTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEUMBIGA1UEChMLUGF5UGFsIEluYy4xEzARBgNVBAsUCmxpdmVfY2VydHMxETAPBgNVBAMUCGxpdmVfYXBpMRwwGgYJKoZIhvcNAQkBFg1yZUBwYXlwYWwuY29tAgEAMAkGBSsOAwIaBQCgXTAYBgkqhkiG9w0BCQMxCwYJKoZIhvcNAQcBMBwGCSqGSIb3DQEJBTEPFw0xMzExMDMxMzQxMzFaMCMGCSqGSIb3DQEJBDEWBBRDJF8w+zsMr7FSk+pwinB5f5D4rzANBgkqhkiG9w0BAQEFAASBgHw1LMHpkpaqHIvDGdFE0eG+2mZlmMnUeDCBhQlbc7QMzFQYKTV94NfaebBO4PmNdADe1rq4WidSRZZbE7CzkX9IGENYnBTWY0hb2l0lGdGrJdGeWyV3ekg9WVaFMMumrekds96h3Cx7dGz2kWDzIai2iEXE/qoE+xpkyXAYZNV3-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='index.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/dsci210/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:ACFactory.toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/dsci210/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='/runestone/default/reportabug?course=dsci210&page=h19'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        <!--
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">4.9. Classification Trees in R</a></li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - 4.8. Twitter/Text Mining" data-toggle="tooltip">
+    <a href="h18.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+    <li class="divider-vertical"></li>
+  
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content">
+  
+  <div class="section" id="classification-trees-in-r">
+<h1>4.9. Classification Trees in R<a class="headerlink" href="#classification-trees-in-r" title="Permalink to this headline">¶</a></h1>
+<p>A classification tree is an example of a simple machine learning
+algorithm – an algorithm that uses data to learn how to best make
+predictions. Classification trees can be applied to a large class of
+problems, e.g. to determine whether or not a credit card transaction is
+fraudulent or to determine whether or not someone has cancer.</p>
+<p><em>Example 8.1</em>: Consider the following animals. The machine learning goal
+here is to separate (or classify) these animals into two groups –
+mammals and non-mammals.</p>
+<p><a class="reference internal" href="_images/image226.png"><img alt="image0" src="_images/image226.png" style="width: 2.95833in; height: 2.10592in;" /></a></p>
+<p>The most obvious way to separate/classify these animals is divide the
+groups based on whether or not the animal is a mammal. However, this
+approach has absolutely no <em>predictive</em> ability because you are using
+the outcome to predict the outcome. This would be akin to placing a beat
+on the Super Bowl in Las Vegas after the Super Bowl has been played.</p>
+<p><a class="reference internal" href="_images/image319.png"><img alt="image1" src="_images/image319.png" style="width: 3.53125in; height: 1.75091in;" /></a></p>
+<p>The approach taken above does not allow us to make prediction for a new
+mammal, say a Spiny Anteater.</p>
+<p><a class="reference internal" href="_images/image415.png"><img alt="image2" src="_images/image415.png" style="width: 1.79643in; height: 1.14583in;" /></a></p>
+<p><em>Tasks</em></p>
+<ol class="arabic simple">
+<li>Visit the course website, click on the Training web link. Use the
+four predictor variables: 1) Blood (Warm/Cold), 2) Gives Birth
+(Yes/No), 3) 4 Legs (Yes / No), and 4) Hibernates (Yes / No) to build
+a set of rules for classifying each animal as a mammal or non-mammal.
+Briefly describe your process below.</li>
+<li>Next, click on the Test web link. Apply the rule you developed above
+to classify each of the animals provided here. How well did your rule
+work? Discuss.</li>
+<li>Compare and contrast your rule against a classmate. Which rule is
+better – yours or theirs? How did you define “better”? Discuss.</li>
+</ol>
+<p><em>Development of a Classification Rule</em></p>
+<p>Machine learning requires that the methodology being used makes
+predictions in a logical, systematic, and precise manner.</p>
+<p><a class="reference internal" href="_images/image226.png"><img alt="image3" src="_images/image226.png" style="width: 3.44792in; height: 2.45443in;" /></a></p>
+<p>Consider the following two rules for classifying animals into Mammals
+and Non-mammals.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="6%" />
+<col width="56%" />
+<col width="38%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&nbsp;</th>
+<th class="head">Rule #1: Hibernates &gt; Blood &gt; Give Birth</th>
+<th class="head">Rule #2: Blood &gt; Give Birth</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><em>Step 1</em></td>
+<td>Divide animal into two groups – hibernates = No, and hibernates = Yes.
+<a class="reference internal" href="_images/image59.png"><img alt="image4" src="_images/image59.png" style="width: 3.40909in; height: 1.45833in;" /></a></td>
+<td><p class="first">Divide animal into two groups – Blooded = Warm and Blooded = Cold.</p>
+<p class="last"><a class="reference internal" href="_images/image68.png"><img alt="image5" src="_images/image68.png" style="width: 2.64576in; height: 1.62590in;" /></a></p>
+</td>
+</tr>
+<tr class="row-odd"><td><em>Step 2</em></td>
+<td><p class="first">Divide each respective group into – blooded = Warm and blooded = Cold.</p>
+<p class="last"><a class="reference internal" href="_images/image78.png"><img alt="image6" src="_images/image78.png" style="width: 2.72917in; height: 1.18672in;" /></a></p>
+</td>
+<td><p class="first">Divide Blooded = Warm group into Gives Birth = Yes and Gives Birth = No.</p>
+<p class="last"><a class="reference internal" href="_images/image88.png"><img alt="image7" src="_images/image88.png" style="width: 2.90558in; height: 1.97648in;" /></a></p>
+</td>
+</tr>
+<tr class="row-even"><td><em>Step 3</em></td>
+<td><p class="first">Divide Hibernates = No, Blooded = Warm into two additional groups, Gives Birth = Yes, and Gives Birth = No.</p>
+<p class="last"><a class="reference internal" href="_images/image97.png"><img alt="image8" src="_images/image97.png" style="width: 3.32292in; height: 1.31639in;" /></a></p>
+</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p>Comment: Rule #2 is a better rule as this rule is able to able to make
+valid predictions in less steps than Rule #1. Simplicity is a positive
+trait of a classification rule; however, a rule with optimal predictive
+ability is also important!</p>
+<p>An algorithm will need to be able to identify which predictor variable
+is most advantages to use at any given step. The following quantity is
+used by R in the development of their classification trees.</p>
+<div class="math">
+\[G^{2} = - 2*\sum_{j}^{}{n_{i,j}*ln\left( \frac{n_{i,j}}{n_{i}} \right)}\]</div>
+<p>where <span class="math">\(n_{i} = Number\ in\ node\ i\)</span> and
+<span class="math">\(n_{i,\ k} = Number\ in\ node\ i\ that\ are\ of\ type\ j\)</span>.</p>
+<p><em>Calculations for G:sup:`2` for each of the above rules</em></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="62%" />
+<col width="38%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Iniital Value</th>
+<th class="head"><a class="reference internal" href="_images/image108.png"><img alt="image9" src="_images/image108.png" style="width: 2.19698in; height: 0.89236in;" /></a></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>&nbsp;</td>
+<td><a class="reference internal" href="_images/image226.png"><img alt="image10" src="_images/image226.png" style="width: 2.42014in; height: 1.72280in;" /></a></td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="37%" />
+<col width="32%" />
+<col width="32%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Rule #1</th>
+<th class="head"><a class="reference internal" href="_images/image1112.png"><img alt="image11" src="_images/image1112.png" style="width: 2.23473in; height: 0.90625in;" /></a></th>
+<th class="head"><a class="reference internal" href="_images/image129.png"><img alt="image12" src="_images/image129.png" style="width: 2.18750in; height: 0.86872in;" /></a></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>&nbsp;</td>
+<td><a class="reference internal" href="_images/image137.png"><img alt="image13" src="_images/image137.png" style="width: 2.30208in; height: 2.00610in;" /></a></td>
+<td><a class="reference internal" href="_images/image147.png"><img alt="image14" src="_images/image147.png" style="width: 2.37500in; height: 1.52761in;" /></a></td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="37%" />
+<col width="32%" />
+<col width="32%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Rule #2</th>
+<th class="head"><a class="reference internal" href="_images/image157.png"><img alt="image15" src="_images/image157.png" style="width: 2.18048in; height: 0.93750in;" /></a></th>
+<th class="head"><a class="reference internal" href="_images/image167.png"><img alt="image16" src="_images/image167.png" style="width: 1.41667in; height: 0.66336in;" /></a></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>&nbsp;</td>
+<td><a class="reference internal" href="_images/image176.png"><img alt="image17" src="_images/image176.png" style="width: 2.56250in; height: 1.95544in;" /></a></td>
+<td><a class="reference internal" href="_images/image186.png"><img alt="image18" src="_images/image186.png" style="width: 1.43750in; height: 2.55556in;" /></a></td>
+</tr>
+</tbody>
+</table>
+<p>The initial or starting G<sup>2</sup> value is about 13.5. When using Rule
+#1, the combined G<sup>2</sup> value from the two nodes, i.e. Hibernates =
+Yes and Hibernates = No drops to (7.64 + 5.55) = 13.19. When using Rule
+#2, the combined G<sup>2</sup> value from Blood: Warm and Blood: Cold
+drops to (5.0 + 0.0) = 5.0. The drop in G<sup>2</sup> is considerable
+larger for Rule #2 – thus dividing the animal by Warm/Cold Blood is more
+advantageous.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="13%" />
+<col width="48%" />
+<col width="39%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Step</th>
+<th class="head">Rule #1</th>
+<th class="head">Rule #2</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0</td>
+<td>13.46</td>
+<td>13.46</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>(7.64 + 5.55) = 13.19
+2% drop</td>
+<td>(5.0 + 0.0) = 5.0
+63% drop</td>
+</tr>
+<tr class="row-even"><td>2</td>
+<td>(3.81 + 0.0 + 0.0) = 3.81
+72% drop</td>
+<td><ol class="first last arabic">
+<li><ul class="first simple">
+<li>0.0+ 0.0) = 0.0</li>
+</ul>
+<p>100% drop</p>
+</li>
+</ol>
+</td>
+</tr>
+<tr class="row-odd"><td>3</td>
+<td>(0.0+0.0+0.0+0.0) = 0.0
+100% drop</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p>Classification rules are often arranged in a tree-type structure, hence
+the name <strong>Classification Tree</strong>.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="18%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&nbsp;</th>
+<th class="head">Appearance in JMP</th>
+<th class="head">Appearance in R via post() function</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><em>Step 0:</em></td>
+<td><a class="reference internal" href="_images/image196.png"><img alt="image19" src="_images/image196.png" style="width: 1.05208in; height: 0.72461in;" /></a></td>
+<td><a class="reference internal" href="_images/image205.png"><img alt="image20" src="_images/image205.png" style="width: 1.06944in; height: 0.81156in;" /></a></td>
+</tr>
+<tr class="row-odd"><td><em>Step 1:</em> Divide on Warm/Cold Blooded</td>
+<td><a class="reference internal" href="_images/image2110.png"><img alt="image21" src="_images/image2110.png" style="width: 1.48936in; height: 1.11574in;" /></a></td>
+<td><a class="reference internal" href="_images/image227.png"><img alt="image22" src="_images/image227.png" style="width: 2.50000in; height: 1.35337in;" /></a></td>
+</tr>
+<tr class="row-even"><td><em>Step 2:</em> Divide Warm Blooded into Gives Birth Yes / No</td>
+<td><a class="reference internal" href="_images/image235.png"><img alt="image23" src="_images/image235.png" style="width: 2.44097in; height: 1.79005in;" /></a></td>
+<td><a class="reference internal" href="_images/image244.png"><img alt="image24" src="_images/image244.png" style="width: 2.36111in; height: 1.71962in;" /></a></td>
+</tr>
+</tbody>
+</table>
+<p>As seen above, the Classification Tree for Rule #1 contains an
+additional layer that is not necessary.</p>
+<p><a class="reference internal" href="_images/image253.png"><img alt="image25" src="_images/image253.png" style="width: 4.49537in; height: 2.60741in;" /></a></p>
+<p><em>Measuring Predictive Ability</em></p>
+<p>Recall for Example 8.1, you were asked to construct a classification
+rule using the training dataset which included animals such as
+porcupine, salmon, bat, eagle, etc. After constructing your rule, a
+<strong>test dataset</strong> can be used to measure the overall quality of your
+predictions</p>
+<ul class="simple">
+<li>Training Dataset: Data used to build / construct a predictive model</li>
+<li>Test Dataset: Data used to measure the predictive ability of a model</li>
+</ul>
+<p>Consider the following animals that will be used as test cases to
+measure the quality of Rule #1 from Example 8.1.</p>
+<p><a class="reference internal" href="_images/image263.png"><img alt="image26" src="_images/image263.png" style="width: 3.46875in; height: 2.65085in;" /></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="41%" />
+<col width="59%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Classification Rule #2</th>
+<th class="head">Using Rule #2 to make predictions</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference internal" href="_images/image273.png"><img alt="image27" src="_images/image273.png" style="width: 2.72917in; height: 1.91596in;" /></a></td>
+<td><a class="reference internal" href="_images/image283.png"><img alt="image28" src="_images/image283.png" style="width: 3.93750in; height: 2.74068in;" /></a></td>
+</tr>
+</tbody>
+</table>
+<p>Next, we must systematically check the validity of our predictions in
+each node. We can see that we have predicted the Spiny Anteater to be a
+Non-mammal when in fact it is a mammal.</p>
+<p>There are a variety of measures that can be used to measure the quality
+of your prediction. One of the simplest measures is simply the
+misclassification rate. A misclassification matrix is commonly used to
+understand the nature of the misclassifications. The off-diagonal values
+in this matrix are cases that have been misclassified.</p>
+<p>A misclassification rate can be computed. For Example 8.1, the
+misclassification rate for test dataset is 10%.</p>
+<div class="math">
+\[Misclassification\ Rate\ for\ Predictions = \ \frac{\mathbf{0 + 1}}{10} = 10\%\]</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="91%" />
+<col width="9%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><p class="first"><em>Example 8.2</em>: Consider the following example where the goal is classify whether or not one should play golf on a given day.</p>
+<blockquote class="last">
+<div><p>Response: Play Golf (Yes / No)</p>
+<p>Predictor variables: 1) Outlook (overcast, rain, sunny), 2) Temperature (<sup>O</sup>F), 3) Humidity (%), and 4) Windy (Yes, No).</p>
+</div></blockquote>
+</td>
+<td><a class="reference internal" href="_images/image3110.png"><img alt="image31" src="_images/image3110.png" style="width: 2.29158in; height: 1.78919in;" /></a></td>
+</tr>
+</tbody>
+</table>
+<p><em>Dealing with numerical predictors</em></p>
+<p>The methodology for developing classification rules when using numerical
+predictors is similar to binary predictors. For numerical predictors,
+the algorithm will attempt to find an optimal cut-point that best
+separates the response variable. In a classification tree, all
+rules/decisions are binary (i.e. one either move to the left or right
+down the tree); thus, only a single cut-point is needed.</p>
+<p>Suppose the classification rule is considering using Humidity to
+separate Play = Yes from Play = No.</p>
+<p><a class="reference internal" href="_images/image323.png"><img alt="image32" src="_images/image323.png" style="width: 3.42130in; height: 1.08085in;" /></a></p>
+<p>One can see that various cut-points will not be very useful in trying to
+separate Play = Yes from Play = No. Thus, humidity is likely not to
+appear early in the development of a classification tree.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><p class="first"><em>Will 82 work as a cut-point? No…</em></p>
+<p class="last"><a class="reference internal" href="_images/image332.png"><img alt="image33" src="_images/image332.png" style="width: 3.15903in; height: 1.02222in;" /></a></p>
+</td>
+<td><p class="first"><em>Will 73 work as a cut-point? No…</em></p>
+<p class="last"><a class="reference internal" href="_images/image342.png"><img alt="image34" src="_images/image342.png" style="width: 3.28750in; height: 1.05278in;" /></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>A situation in which Humidity would be a powerful predictor in
+separating Play = Yes from Play = No.</p>
+<p><a class="reference internal" href="_images/image352.png"><img alt="image35" src="_images/image352.png" style="width: 3.86541in; height: 1.31944in;" /></a></p>
+<p><em>Dealing with categorical predictors that are not binary</em></p>
+<p>Consider again previous example that involved building a classification
+rule for playing golf. The Outlook predictor variable has three levels:
+overcast, rain, and sunny. As stated above, all rules/decisions are
+binary in a classification tree. Therefore, categorical predictors with
+multiple levels must be combined in a way to form binary sets that are
+disjoint.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="79%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><p class="first"><em>Decisions rules must be binary; thus, the following is not allowed</em></p>
+<p class="last"><a class="reference internal" href="_images/image362.png"><img alt="image36" src="_images/image362.png" style="width: 1.13559in; height: 2.18982in;" /></a></p>
+</td>
+<td><p class="first"><em>Here, the classification rule divided Outlook into two sets {overcast} and {rain, sunny}. In subsequent branches of the tree, Outlook could be used again to separate Play = Yes from Play = No or rules using other predictor variables, e.g. Temperature, may be more optimal.</em></p>
+<p class="last"><a class="reference internal" href="_images/image372.png"><img alt="image37" src="_images/image372.png" style="width: 4.56482in; height: 1.91176in;" /></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>The complete classification tree fit using rpart() and post() function
+in R.</p>
+<p><a class="reference internal" href="_images/image382.png"><img alt="image38" src="_images/image382.png" style="width: 4.91204in; height: 3.53061in;" /></a></p>
+<p><em>The Concept of Overfitting</em></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="93%" />
+<col width="7%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Overfitting is a concept that naïve data scientists often overlook or are simple unaware of. Overfitting happens when a machine learning algorithm relies <em>too much</em> on the data being used to construct the predictive model. The most common way of identifying overfitting is a predictive model with good predictive ability for the data used to construct the predictive model, but a substantial decrease in predictive ability for new cases, i.e. cases in a test or holdout dataset.</td>
+<td><a class="reference internal" href="_images/image39.jpeg"><img alt="Image result for lady justice" src="_images/image39.jpeg" style="width: 0.84501in; height: 1.26371in;" /></a></td>
+</tr>
+</tbody>
+</table>
+<p>In the golf example (see Example 8.2) all available data was used to
+build the classification tree; thus, no data has been left out to test
+or verify the predictive ability of the model. However, other signals
+exist that overfitting may be taking place. For example, consider the
+lower branches of the classification tree provided for the golf data.
+Notice that very few observations are being selected for each branch –
+which may be a warning sign of overfitting. Finally, the golf example
+only had 14 observations; thus, overfitting is very likely to have
+occurred.</p>
+<p>Another common problem in using trees is the over reliance on certain
+predictors. This appears to be the case for the golf example as
+Temperature is used repeated in this tree. To alleviate this problem,
+more complex algorithms, e.g. random forests, randomly select a set of
+predictors for consideration when building the predictive model.</p>
+<p><a class="reference internal" href="_images/image402.png"><img alt="image40" src="_images/image402.png" style="width: 4.43796in; height: 3.14783in;" /></a></p>
+<ul class="simple">
+<li></li>
+<li></li>
+</ul>
+<p>Overfitting may occur in any type of predictive model – not just
+classification trees. For example, suppose one wants to build a
+predictive model for College GPA using a person’s High School GPA. A
+predictive model that simply connects the dots would rely <em>too much</em> on
+the data being used to build the model.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="66%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><p class="first">Relationship between College GPA and HS GPA</p>
+<p class="last"><a class="reference internal" href="_images/image416.png"><img alt="image41" src="_images/image416.png" style="width: 2.29878in; height: 1.75000in;" /></a></p>
+</th>
+<th class="head"><p class="first">One possible predictive model is the trend line through the middle of the data</p>
+<p class="last"><a class="reference internal" href="_images/image423.png"><img alt="image42" src="_images/image423.png" style="width: 2.27746in; height: 1.72941in;" /></a></p>
+</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><p class="first">A second predictive model that is more flexible than the trend line provided above.</p>
+<p class="last"><a class="reference internal" href="_images/image432.png"><img alt="image43" src="_images/image432.png" style="width: 2.74374in; height: 2.05780in;" /></a></p>
+</td>
+<td><p class="first">Connecting the dots would be considered overfitting as there is no residual error for this data and this model would have low predictive ability for a new prediction.</p>
+<p class="last"><a class="reference internal" href="_images/image442.png"><img alt="image44" src="_images/image442.png" style="width: 2.86814in; height: 2.18525in;" /></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><em>Classification Trees in R</em></p>
+<p>We will begin with fitting the golf classification tree. The following
+code can be used to read in the golf.csv file.</p>
+<p>#Reading in the golf data and viewwing</p>
+<p>golf_df &lt;- read.csv(file.choose(),header=T,stringsAsFactors = TRUE)</p>
+<p>View(golf_df)</p>
+<p><a class="reference internal" href="_images/image452.png"><img alt="image45" src="_images/image452.png" style="width: 2.21739in; height: 0.53271in;" /></a></p>
+<p>The classification tree will be constructing using the rpart() function
+that can be found in a package named rpart. The generic syntax for
+constructing a model has the following form.</p>
+<p>Response ~ Predictor1 + Predictor2 + …</p>
+<p>In the context of the golf example, the model would have the following
+form. The data should be passed into the rpart() function. The control
+option can be used to control the size of the tree – here a complete
+tree is being constructed for demonstration purposes.</p>
+<p>Play ~ Outlook + Temperature + Humidity + Windy</p>
+<p>#Using the rpart() function to fit the classification tree</p>
+<p>library(rpart)</p>
+<p>#Building the classification tree, using control option to build a
+complete tree</p>
+<p>golf_tree &lt;- rpart(Play ~ Outlook+Temperature+Humidity+Windy,
+data=golf_df, control = rpart.control(minsplit=1))</p>
+<p>To plot the actual tree, two options are available 1) standard plotting,
+and 2) plotting via prp() function</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="47%" />
+<col width="53%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><p class="first">#Plotting the tree</p>
+<p>plot(golf_tree)</p>
+<p>#Printing the text for the tree</p>
+<p>text(golf_tree)</p>
+<p class="last"><a class="reference internal" href="_images/image462.png"><img alt="image46" src="_images/image462.png" style="width: 2.37443in; height: 2.00000in;" /></a>*
+Note*: Use levels(golf_df$Outlook) to identify labels.</p>
+</td>
+<td><p class="first"># Using the rpart.plot package and the prp() plotting function</p>
+<p>library(rpart.plot)</p>
+<p>prp(golf_tree,type=4,extra=3)</p>
+<p class="last"><a class="reference internal" href="_images/image471.png"><img alt="image47" src="_images/image471.png" style="width: 2.28696in; height: 2.09051in;" /></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>The summary() function can be used to view details of the classification
+tree.</p>
+<p>&gt; summary(golf_tree)</p>
+<p>Call:</p>
+<p>rpart(formula = Play ~ Outlook + Temperature + Humidity + Windy,</p>
+<p>data = golf_df, control = rpart.control(minsplit = 1))</p>
+<p>n= 14</p>
+<p>CP nsplit rel error xerror xstd</p>
+<p>1 0.20 0 1 1.0 0.3585686</p>
+<p>2 0.01 5 0 1.6 0.3703280</p>
+<p>Variable importance</p>
+<p>Temperature Outlook Windy</p>
+<p>76 20 4</p>
+<p>Node number 1: 14 observations, complexity param=0.2</p>
+<p>predicted class=Yes expected loss=0.3571429 P(node) =1</p>
+<p>class counts: 5 9</p>
+<p>probabilities: 0.357 0.643</p>
+<p>left son=2 (10 obs) right son=3 (4 obs)</p>
+<p>Primary splits:</p>
+<p>Outlook splits as RLL, improve=1.4285710, (0 missing)</p>
+<p>Humidity &lt; 82.5 to the right, improve=0.9174603, (0 missing)</p>
+<p>Temperature &lt; 84 to the right, improve=0.8901099, (0 missing)</p>
+<p>Windy splits as RL, improve=0.4285714, (0 missing)</p>
+<p>:</p>
+<p>etc…</p>
+<p>Next, consider the construction of a classification tree for the mammals
+dataset. The first step is to read in the mammals data.</p>
+<p>#Reading in the mammals data and viewing the data</p>
+<p>mammals_df &lt;- read.csv(file.choose(),header=T,stringsAsFactors = TRUE)</p>
+<p>View(mammals_df)</p>
+<p><a class="reference internal" href="_images/image481.png"><img alt="image48" src="_images/image481.png" style="width: 2.92174in; height: 2.80167in;" /></a></p>
+<p>Recall, this dataset is divided into two parts 1) training datasets and
+2) test dataset. The predictive model should be built using only the
+training cases.</p>
+<p>#Fitting the classification tree to the training data, filter() from
+dplyr package is being used to fit only the Training dataset</p>
+<p>library(dplyr)</p>
+<p>#Fitting a complete tree for the training data</p>
+<p>mammals_tree &lt;- rpart(Mammal~Blood+Birth+X4Legs+Hibernates,
+data=filter(mammals_df,Designation == &#8220;TrainingData&#8221;),
+control=rpart.control(minsplit = 1))</p>
+<p>#Plotting the classification tree</p>
+<p>prp(mammals_tree,type=4,extra=3)</p>
+<p><a class="reference internal" href="_images/image491.png"><img alt="image49" src="_images/image491.png" style="width: 1.77391in; height: 2.08891in;" /></a></p>
+<p>This data contains test cases; thus, predictions can be made using the
+classification tree to evaluate the predictive ability of this model.</p>
+<p>#Gettting the Test Dataset via filter()</p>
+<p>&gt; filter(mammals_df,Designation==&#8221;TestData&#8221;)</p>
+<p>Name Mammal Blood Birth X4Legs Hibernates Designation</p>
+<p>1 Human Yes Warm Yes No No TestData</p>
+<p>2 Pigeon No Warm No No No TestData</p>
+<p>3 Elephant Yes Warm Yes Yes No TestData</p>
+<p>4 Leopard Shark No Cold Yes No No TestData</p>
+<p>5 Turtle No Cold No Yes No TestData</p>
+<p>6 Penguin No Cold No No No TestData</p>
+<p>7 Eel No Cold No No No TestData</p>
+<p>8 Dolphin Yes Warm Yes No No TestData</p>
+<p>9 Spiny Anteater Yes Warm No Yes Yes TestData</p>
+<p>10 Gila Monster No Cold No Yes Yes TestData</p>
+<p>The generic predict() function in R can be used to make predictions. The
+test dataset will be passed into the predict() function. It should be
+noted that the structure of the test data.frame should be the same as
+the training data.frame. The use of filter() ensure that this will be
+the case. The type=”class” should be specified in the predict() function
+to ensure proper labeling of the output.</p>
+<p>&gt; mammal_predict &lt;-
+predict(mammals_tree,newdata=filter(mammals_df,Designation==&#8221;TestData&#8221;),type=&#8221;class&#8221;)</p>
+<p>The predicted outcomes for these 10 animals are shown here.</p>
+<p>&gt; mammal_predict</p>
+<p>1 2 3 4 5 6 7 8 9 10</p>
+<p>Yes No Yes No No No No Yes No No</p>
+<p>Levels: No Yes</p>
+<p>The predicted outcomes should be compared against the actual outcomes.
+We can see that case #9, i.e. the Spiny Anteater, has been
+misclassified. This is the only animal to be misclassified in the test
+dataset.</p>
+<p>&gt; filter(mammals_df,Designation==&#8221;TestData&#8221;)$Mammal</p>
+<p>[1] Yes No Yes No No No No Yes Yes No</p>
+<p>Levels: No Yes</p>
+<p>A custom function, named Misclassify(), is created to automatically
+print the misclassification matrix and to compute the misclassification
+rate for the predictions in the test / holdout dataset.</p>
+<p>Misclassify = function(Predicted,Actual) {</p>
+<p>temp &lt;- table(Predicted,Actual)</p>
+<p>cat(&#8220;\n&#8221;)</p>
+<p>cat(&#8220;Table of Misclassification\n&#8221;)</p>
+<p>cat(&#8220;(rows: predicted, columns: actual)\n&#8221;)</p>
+<p>print(temp)</p>
+<p>cat(&#8220;\n&#8221;)</p>
+<p>numcorrect &lt;- sum(diag(temp))</p>
+<p>numincorrect &lt;- length(Actual) - numcorrect</p>
+<p>mcrate &lt;- numincorrect/length(Actual)</p>
+<p>cat(paste(&#8220;Misclassification Rate = &#8221;,100*round(mcrate,3),&#8221;%&#8221;))</p>
+<p>cat(&#8220;\n&#8221;)</p>
+<p>}</p>
+<p>Using the Misclassify() function to evaluate the quality of the
+prediction for the mammals test dataset.</p>
+<p>#Using the misclass() function to obtain the</p>
+<p>&gt;
+Misclassify(mammal_predict,filter(mammals_df,Designation==&#8221;TestData&#8221;)$Mammal)</p>
+<p>Table of Misclassification</p>
+<p>(rows: predicted, columns: actual)</p>
+<p>Actual</p>
+<p>Predicted No Yes</p>
+<p>No 6 1</p>
+<p>Yes 0 3</p>
+<p>Misclassification Rate = 10 %</p>
+<ul class="simple">
+<li></li>
+<li></li>
+</ul>
+<p><em>Example 8.3</em></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="81%" />
+<col width="6%" />
+<col width="14%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Consider the following example in which mushrooms are to be classified into two categories – edible and poisonous. For this example, there are about 20 predictor variables available for use. These predictor variables happen to be all categorical in nature. Variable/feature descriptions are provided in the following table.</td>
+<td><em>Edible</em><a class="reference internal" href="_images/image501.png"><img alt="image50" src="_images/image501.png" style="width: 0.97603in; height: 1.02609in;" /></a></td>
+<td><em>Poisonous</em><a class="reference internal" href="_images/image51.jpeg"><img alt="Image result for poisonous mushrooms" src="_images/image51.jpeg" style="width: 0.95861in; height: 1.14783in;" /></a></td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="78%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Variable / Feature</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Y:Poisonous</td>
+<td>edible=e,poisonous=p</td>
+</tr>
+<tr class="row-odd"><td>X1:CapShape</td>
+<td>bell=b,conical=c,convex=x,flat=f,knobbed=k,sunken=s</td>
+</tr>
+<tr class="row-even"><td>X2:CapSurface</td>
+<td>fibrous=f,grooves=g,scaly=y,smooth=s</td>
+</tr>
+<tr class="row-odd"><td>X3:CapColor</td>
+<td>brown=n,buff=b,cinnamon=c,gray=g,green=r,pink=p,purple=u, red=e,white=w,yellow=y</td>
+</tr>
+<tr class="row-even"><td>X4:HasBruises</td>
+<td>yes=y, no=n</td>
+</tr>
+<tr class="row-odd"><td>X5:Odor</td>
+<td><p class="first">almond=a,anise=l,creosote=c,fishy=y,foul=f,musty=m,none=n,pungent=p,</p>
+<p class="last">spicy=s</p>
+</td>
+</tr>
+<tr class="row-even"><td>X6:GillAttachment</td>
+<td>attached=a,descending=d,free=f,notched=n</td>
+</tr>
+<tr class="row-odd"><td>X7:GillSpacing</td>
+<td>close=c,crowded=w,distant=d</td>
+</tr>
+<tr class="row-even"><td>X8:GillSize</td>
+<td>broad=b,narrow=n</td>
+</tr>
+<tr class="row-odd"><td>X9:GillColor</td>
+<td>lack=k,brown=n,buff=b,chocolate=h,gray=g,green=r,orange=o,pink=p,purple=u,red=e, white=w,yellow=y</td>
+</tr>
+<tr class="row-even"><td>X10:StalkShape</td>
+<td>enlarging=e,tapering=t</td>
+</tr>
+<tr class="row-odd"><td>X11:StalkSurfaceAboveRing</td>
+<td>ibrous=f,scaly=y,silky=k,smooth=s</td>
+</tr>
+<tr class="row-even"><td>X12:StalkSurfaceBelowRing</td>
+<td>ibrous=f,scaly=y,silky=k,smooth=s</td>
+</tr>
+<tr class="row-odd"><td>X13:StalkColorAboveRing</td>
+<td>brown=n,buff=b,cinnamon=c,gray=g,orange=o,pink=p,red=e,white=w,yellow=y</td>
+</tr>
+<tr class="row-even"><td>X14:StalkColorBelowRing</td>
+<td>brown=n,buff=b,cinnamon=c,gray=g,orange=o,pink=p,red=e,white=w,yellow=y</td>
+</tr>
+<tr class="row-odd"><td>X15:VeilType</td>
+<td>partial=p,universal=u</td>
+</tr>
+<tr class="row-even"><td>X16:VeilColor</td>
+<td>brown=n,orange=o,white=w,yellow=y</td>
+</tr>
+<tr class="row-odd"><td>X17:RingNumber</td>
+<td>none=n,one=o,two=t</td>
+</tr>
+<tr class="row-even"><td>X18:RingType</td>
+<td>cobwebby=c,evanescent=e,flaring=f,large=l,none=n,pendant=p,sheathing=s,zone=z</td>
+</tr>
+<tr class="row-odd"><td>X19:SporePrintColor</td>
+<td>black=k,brown=n,buff=b,chocolate=h,green=r,orange=o,purple=u,white=w,yellow=y</td>
+</tr>
+<tr class="row-even"><td>X20:Population</td>
+<td>abundant=a,clustered=c,numerous=n,scattered=s,several=v,solitary=y</td>
+</tr>
+<tr class="row-odd"><td>X21:Habitat</td>
+<td>grasses=g,leaves=l,meadows=m,paths=p,urban=u,waste=w,woods=d</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li></li>
+</ul>
+<p><a href="#id1"><span class="problematic" id="id2">*</span></a>Getting this data into R using the read.csv() function. This data has
+8124 cases and 22 variables (1 response variable and 21 predictor
+variables).</p>
+<p>mushrooms_df &lt;- read.csv(file.choose(),header=T, stringsAsFactors =
+TRUE)</p>
+<p>View(mushrooms_df)</p>
+<p>Some preliminary plots…</p>
+<p>par(mfrow=c(4,3))</p>
+<p>barplot(prop.table(table(mushrooms_df$Poisonous,mushrooms_df$CapShape),2),ylab=&#8221;Percent&#8221;,xlab=&#8221;CapShape&#8221;)</p>
+<p>To begin, let us first consider the relationship between Poisonous and
+each of the predictor variables. The following mosaic plots will help
+determine which predictor variables will be useful in separating the
+edible from poisonous mushrooms.</p>
+<blockquote>
+<div>Legend: Dark gray = edible, light gray is poisonous.</div></blockquote>
+<p><a class="reference internal" href="_images/image522.png"><img alt="image52" src="_images/image522.png" style="width: 4.70503in; height: 4.51200in;" /></a></p>
+<p><a class="reference internal" href="_images/image532.png"><img alt="image53" src="_images/image532.png" style="width: 4.59258in; height: 3.15200in;" /></a></p>
+<p>This dataset contains several thousand observations. Therefore, this
+data will be divided into a Training dataset and a test / holdout
+dataset. Random division of the observations is done here to reduce the
+potential for bias.</p>
+<p><a class="reference internal" href="_images/image542.png"><img alt="image54" src="_images/image542.png" style="width: 3.69811in; height: 1.23824in;" /></a></p>
+<p>In R, getting a random selection of 30% of the 8124 cases which will be
+used as the test cases.</p>
+<p>&gt; test_rows &lt;- sample(1:8124,0.30*8124,replace=F)</p>
+<p>&gt; head(sort(test_rows),20)</p>
+<p>[1] 6 7 9 10 11 17 20 21 25 27 29 39 43 50 53 58 62 64 65 67</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="68%" />
+<col width="32%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><p class="first">Syntax for referencing training dataset</p>
+<p class="last">mushrooms_df[-test_rows,]</p>
+</th>
+<th class="head"><p class="first">Training Dataset</p>
+<p class="last"><a class="reference internal" href="_images/image552.png"><img alt="image55" src="_images/image552.png" style="width: 4.09565in; height: 1.48770in;" /></a></p>
+</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><p class="first">Syntax for referencing test dataset</p>
+<p class="last">mushrooms_df[test_rows,]</p>
+</td>
+<td><p class="first">Test Cases</p>
+<p class="last"><a class="reference internal" href="_images/image561.png"><img alt="image56" src="_images/image561.png" style="width: 4.17204in; height: 1.51304in;" /></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li></li>
+<li></li>
+</ul>
+<p>Fitting a classification tree for the mushroom data using only the
+training rows from the data.frame.</p>
+<p>#Fitting a classification tree</p>
+<p>&gt; mushrooms_tree &lt;- rpart(Poisonous ~ .,
+data=mushrooms_df[-test_rows,])</p>
+<p>#Plotting the tree, using prp() function which is part of rpart.plot
+package</p>
+<p>&gt; library(rpart.plot)</p>
+<p>&gt; prp(mushroom_tree, type=4, extra=3)</p>
+<p><a class="reference internal" href="_images/image571.png"><img alt="image57" src="_images/image571.png" style="width: 2.63208in; height: 2.14808in;" /></a></p>
+<p>Note: The names() function can be used to help identify shortened names.
+The levels() command might also be necessary to identify the levels for
+a particular variable, e.g. binary outcomes Yes / No, maybe labeled as
+a/b or as y/n.</p>
+<p>&gt; names(mushrooms_df)</p>
+<p>[1] &#8220;Poisonous&#8221; &#8220;CapShape&#8221; &#8220;CapSurface&#8221; &#8220;CapColor&#8221;</p>
+<p>[5] &#8220;HasBruises&#8221; &#8220;Odor&#8221; &#8220;GillAttachment&#8221; &#8220;GillSpacing&#8221;</p>
+<p>[9] &#8220;GillSize&#8221; &#8220;GillColor&#8221; &#8220;StalkShape&#8221; &#8220;StalkSurfaceAboveRing&#8221;</p>
+<p>[13] &#8220;StalkSurfaceBelowRing&#8221; &#8220;StalkColorAboveRing&#8221; &#8220;StalkColorBelowRing&#8221;
+&#8220;VeilType&#8221;</p>
+<p>[17] &#8220;VeilColor&#8221; &#8220;RingNumber&#8221; &#8220;RingType&#8221; &#8220;SporePrintColor&#8221;</p>
+<p>[21] &#8220;Population&#8221; &#8220;Habitat&#8221;</p>
+<ul class="simple">
+<li></li>
+</ul>
+<p><a href="#id3"><span class="problematic" id="id4">*</span></a>Fitting a slightly larger tree – this is done by reducing the cp
+value and/or the minsplit value which are passed into the rpart()
+function through the control parameter.</p>
+<p>mushroom_tree2 &lt;- rpart(Poisonous ~ .,
+data=mushrooms_df[-test_rows,],
+control=rpart.control(cp=0.005,minsplit = 3))</p>
+<p>prp(mushroom_tree2,type=4,extra=3)</p>
+<p><a class="reference internal" href="_images/image581.png"><img alt="image58" src="_images/image581.png" style="width: 2.72391in; height: 2.27826in;" /></a></p>
+<p>Finally, the misclassification rate for each rule is computed using the
+previously used Misclassify() function.</p>
+<p>#Misclassification Rate for first tree</p>
+<div class="line-block">
+<div class="line">&gt;
+Misclassify(predict(mushroom_tree,newdata=mushrooms_df[test_rows,],type=&#8221;class&#8221;),</div>
+<div class="line">mushrooms_df[test_rows,1])</div>
+</div>
+<p>Table of Misclassification</p>
+<p>(rows: predicted, columns: actual)</p>
+<p>Actual</p>
+<p>Predicted e p</p>
+<p>e 1259 14</p>
+<p>p 0 1164</p>
+<p>Misclassification Rate = 0.6 %</p>
+<p>#Getting the misclassification rate for second tree – the more complex
+tree</p>
+<div class="line-block">
+<div class="line">&gt;
+Misclassify(predict(mushroom_tree2,newdata=mushrooms_df[test_rows,],type=&#8221;class&#8221;),</div>
+<div class="line">mushrooms_df[test_rows,1])</div>
+</div>
+<p>Table of Misclassification</p>
+<p>(rows: predicted, columns: actual)</p>
+<p>Actual</p>
+<p>Predicted e p</p>
+<p>e 1259 7</p>
+<p>p 0 1171</p>
+<p>Misclassification Rate = 0.3 %</p>
+<p><em>Tasks</em></p>
+<ol class="arabic">
+<li><p class="first">Suppose you work for small upstart company who is considering
+extending credit to customers through a store credit card, e.g. Kohls
+Card, Scheels Card, etc. You have been asked to investigation whether
+or not one can reliably predict the credit risk of a customer given a
+set of predictor variables about this customer.</p>
+<p>Download the GermanCreditRisk data from the course website. The
+response variable of interest here is Credit Risk (Good / Bad). The
+predictor variables are: CreditHistory, CheckingAccount - level of
+money in checking account, SavingsAccount – level of money in savings
+account, Age of customer, Housing, Employment, JobSkill,
+OtherCreditFromUs – does customer have existing credit account with
+us, TotNumberCreditAccounts – total number of credit accounts,
+OtherDebtors, Purpose, CreditAmount – amount of credit to be
+extended, RepaymentPercent – monthly payment as a percentage of
+monthly disposable income.</p>
+<ol class="loweralpha simple">
+<li>After reading in the data, create mosaic plots for each of the
+predictor variables that are categorical in nature, i.e.
+CreditHistory, CheckingAccount, etc. Code has been provided for
+plotting CreditRisk vs. CreditHistory, this code can be edited for
+the other categorical predictor variables.</li>
+</ol>
+<blockquote>
+<div><p>#Reading in the dataset</p>
+<p>CreditRisk_df &lt;- read.csv(file.choose(), header=T, stringsAsFactors
+= TRUE)</p>
+<p>#View of data.frame</p>
+<p>View(CreditRisk_df)</p>
+<p>#Creating a barplot for CreditHistory</p>
+<p>barplot(prop.table(table(CreditRisk_df$CreditRisk,CreditRisk_df$CreditHistory),2))</p>
+</div></blockquote>
+</li>
+</ol>
+<ol class="loweralpha">
+<li><p class="first">Next, create plots to investigate the relationship between CreditRisk
+and the numeric variables – Age and CreditAmount. Again, code has
+been provided for Age and can be edited to plot relationship for
+CreditAmount.</p>
+<blockquote>
+<div><p>#Loading the lattic() package</p>
+<p>library(lattice)</p>
+<p>#Using a densityplot to see if there is a shift in Age between
+CreditRisk</p>
+<p>densityplot(~Age, data=CreditRisk_df, groups=CreditRisk,
+plot.points=FALSE, auto.key=TRUE)</p>
+</div></blockquote>
+</li>
+</ol>
+<ol class="loweralpha">
+<li><p class="first">Why type of plot, barplot() or densityplot(), should be used to
+understand the relationship between CreditRisk and
+TotNumberCreditAccounts and CreditRisk and RepaymentPercent? Try both
+a barplot() and densityplot(). Which plot is better? Discuss.</p>
+</li>
+<li><p class="first">Consider the plots made in part a., part b, and part c. Which
+predictor variables appear to best separate CreditRisk = Good from
+CreditRisk = Bad? Discuss.</p>
+</li>
+<li><p class="first">Next, use the rpart() function in R to build a classification tree
+for predicting CreditRisk. Plot your classification tree.</p>
+</li>
+<li><p class="first">Which predictor variable does your classification tree use early one?
+Which predictor variables are used later in building the tree? What
+does it mean, in a practical sense, when a variable is used early in
+the classification rule (vs. later in a classification tree)?
+Discuss.</p>
+</li>
+<li><p class="first">Suppose a new customer is seeking credit with the following profile.
+Use your classification tree to make a CreditRisk prediction for this
+customer. Should we extend credit to this customer? Discuss.</p>
+<p><a class="reference internal" href="_images/image591.png"><img alt="image59" src="_images/image591.png" style="width: 5.09375in; height: 0.66719in;" /></a></p>
+</li>
+</ol>
+<ol class="arabic simple">
+<li>For the second task, build a classification rule to determine whether
+or not a women’s a breast biopsy is cancerous (malignant, denoted M
+in dataset) or not (benign, denoted B in dataset). There are 10
+predictor variables / features that are measurements regarding
+various characteristics of the cells examined. These features
+include: Radius, Texture, Perimeter, Area, Smoothness, Compactness,
+Concavity, ConcavePts, Symmetry, and FracDim.<ol class="loweralpha">
+<li>Divide this dataset into a training set (70%) and test set (30%).</li>
+<li>Build two different classification trees – a simple tree and a
+second more complex tree.</li>
+<li>Make predictions for the test set using each rule. What is the
+misclassification rate for each rule?</li>
+<li>Which predictor variables are most important in your
+classification tree? Discuss.</li>
+<li>Provide a description (for a doctor) that would describe how to
+make a prediction using your classification tree?</li>
+</ol>
+</li>
+</ol>
+</div>
+
+
+  
+      
+  <li id="relations-prev" class="navLink" title='Previous Section - 4.8. Twitter/Text Mining' data-toggle="tooltip">
+    <a href="h18.html" >
+      <i class='prevNav glyphicon glyphicon-chevron-left'></i>
+    </a>
+  </li>
+  <a class="navLinkBg" id="navLinkBgLeft"  href="h18.html" ></a>
+  
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+  
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      
+      | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015 Todd Iverson.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.5.
+    </p>
+  </div>
+</footer>
+
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

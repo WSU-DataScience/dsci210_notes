@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>3.3. BASH SHELL – FILE UTILITIES / AWK: RECORD &amp; FIELD MANAGEMENT &mdash; Runestone Interactive Overview</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="_static/clickable.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="_static/dragndrop.css" type="text/css" />
+    <link rel="stylesheet" href="_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="_static/livecode.css" type="text/css" />
+    <link rel="stylesheet" href="_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootswatch/2.3.1/""/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/runestonebase.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="_static/codemirror.js"></script>
+    <script type="text/javascript" src="_static/xml.js"></script>
+    <script type="text/javascript" src="_static/css.js"></script>
+    <script type="text/javascript" src="_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="_static/python.js"></script>
+    <script type="text/javascript" src="_static/javascript.js"></script>
+    <script type="text/javascript" src="_static/activecode.js"></script>
+    <script type="text/javascript" src="_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="_static/clike.js"></script>
+    <script type="text/javascript" src="_static/timed_activecode.js"></script>
+    <script type="text/javascript" src="_static/animationbase.js"></script>
+    <script type="text/javascript" src="_static/mchoice.js"></script>
+    <script type="text/javascript" src="_static/timedmc.js"></script>
+    <script type="text/javascript" src="_static/timed.js"></script>
+    <script type="text/javascript" src="_static/clickable.js"></script>
+    <script type="text/javascript" src="_static/timedclickable.js"></script>
+    <script type="text/javascript" src="_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="_static/pytutor.js"></script>
+    <script type="text/javascript" src="_static/codelens.js"></script>
+    <script type="text/javascript" src="_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="_static/datafile.js"></script>
+    <script type="text/javascript" src="_static/dragndrop.js"></script>
+    <script type="text/javascript" src="_static/timeddnd.js"></script>
+    <script type="text/javascript" src="_static/fitb.js"></script>
+    <script type="text/javascript" src="_static/timedfitb.js"></script>
+    <script type="text/javascript" src="_static/livecode.js"></script>
+    <script type="text/javascript" src="_static/clike.js"></script>
+    <script type="text/javascript" src="_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="_static/lib/hammer.min.js"></script>
+    <script type="text/javascript" src="_static/parsons.js"></script>
+    <script type="text/javascript" src="_static/timedparsons.js"></script>
+    <script type="text/javascript" src="_static/poll.js"></script>
+    <script type="text/javascript" src="_static/reveal.js"></script>
+    <script type="text/javascript" src="_static/shortanswer.js"></script>
+    <script type="text/javascript" src="_static/timed_shortanswer.js"></script>
+    <script type="text/javascript" src="_static/tabbedstuff.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="_static/rangy-core.js"></script>
+    <script type="text/javascript" src="_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="_static/user-highlights.js"></script>
+    <script type="text/javascript" src="_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="Runestone Interactive Overview" href="index.html" />
+    <link rel="up" title="3. Processing Data with Bash" href="bash_toctree.html" />
+    <link rel="next" title="4. Processing Data with R" href="R_toctree.html" />
+    <link rel="prev" title="3.2. BASH SHELL - GREP" href="h10.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="/runestone/static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'dsci210';
+  eBookConfig.logLevel = 0;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = false;
+  eBookConfig.python3 = true;
+  eBookConfig.basecourse = 'dsci210';
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="index.html">DSCI 210 Notes</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='index.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/dsci210/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:ACFactory.toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/dsci210/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='/runestone/default/reportabug?course=dsci210&page=h11'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        <!--
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">3.3. BASH SHELL – FILE UTILITIES / AWK: RECORD &amp; FIELD MANAGEMENT</a></li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - 3.2. BASH SHELL - GREP" data-toggle="tooltip">
+    <a href="h10.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - 4. Processing Data with R' data-toggle="tooltip" >
+    <a href="R_toctree.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content">
+  
+  <div class="section" id="bash-shell-file-utilities-awk-record-field-management">
+<h1>3.3. BASH SHELL – FILE UTILITIES / AWK: RECORD &amp; FIELD MANAGEMENT<a class="headerlink" href="#bash-shell-file-utilities-awk-record-field-management" title="Permalink to this headline">¶</a></h1>
+<p>For this handout, we will consider usage data from Citi Bike – a bike
+share organization in NYC.</p>
+<p><a class="reference internal" href="_images/image112.png"><img alt="image0" src="_images/image112.png" style="width: 5.12963in; height: 1.46107in;" /></a></p>
+<p><a class="reference external" href="https://www.citibikenyc.com/">https://www.citibikenyc.com/</a></p>
+<p>The goal of our work will be to understand the rental / usage patterns
+for the following holidays:</p>
+<p>New Years Day, Easter, Memorial Day, Independence Day, Labor Day,
+Thanksgiving, and Christmas</p>
+<p>The 2016 usage rental data will be used for our investigation. The
+following table provides the actual dates for the holidays listed above
+for 2016.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="49%" />
+<col width="51%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Holiday</th>
+<th class="head">Date</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>New Years Day</td>
+<td>January 1, 2016</td>
+</tr>
+<tr class="row-odd"><td>Easter</td>
+<td>March 27, 2106</td>
+</tr>
+<tr class="row-even"><td>Memorial Day</td>
+<td>May 30, 2016</td>
+</tr>
+<tr class="row-odd"><td>Independence Day</td>
+<td>July 4, 2016</td>
+</tr>
+<tr class="row-even"><td>Labor Day</td>
+<td>September 5, 2016</td>
+</tr>
+<tr class="row-odd"><td>Thanksgiving</td>
+<td>November 24, 2016</td>
+</tr>
+<tr class="row-even"><td>Christmas</td>
+<td>December 25, 2016</td>
+</tr>
+</tbody>
+</table>
+<p>The rental / usage data is available from Citi Bike’s System Data
+website.</p>
+<p><a class="reference external" href="https://s3.amazonaws.com/tripdata/index.html">https://s3.amazonaws.com/tripdata/index.html</a></p>
+<p><a class="reference internal" href="_images/image22.png"><img alt="image1" src="_images/image22.png" style="width: 4.74937in; height: 2.35185in;" /></a></p>
+<p><em>AUTOMATING FILE DOWNLOAD</em></p>
+<p>The typical method of retreiving data from the internet is to use a web
+browser. A web browser has many advantages in getting data. However, if
+many files need to be retrieved, then automating the process of
+downloading files should be considered.</p>
+<p>The curl command in BASH can be used to download. The –O option writes
+the output to a local file using the same name as the file being
+downloaded. Curl is a BASH tool to transfer data from a server to your
+machine or vise versa. Curl supports a variety of transfer protocols,
+e.g. FTP, HTTP, HTTPS, TELNET, etc.</p>
+<p>$ curl -O <a class="reference external" href="https://s3.amazonaws.com/tripdata/201601-citibike-tripdata.zip">https://s3.amazonaws.com/tripdata/201601-citibike-tripdata.zip</a></p>
+<p>The system data is provided by month; thus, in addition to January we
+will need to get data from March, May, July, September, November, and
+December. The following commands can be used to retrieve the data from
+these remaining months.</p>
+<p>$ curl -O <a class="reference external" href="https://s3.amazonaws.com/tripdata/201603-citibike-tripdata.zip">https://s3.amazonaws.com/tripdata/201603-citibike-tripdata.zip</a></p>
+<p>$ curl -O <a class="reference external" href="https://s3.amazonaws.com/tripdata/201605-citibike-tripdata.zip">https://s3.amazonaws.com/tripdata/201605-citibike-tripdata.zip</a></p>
+<p>$ curl -O <a class="reference external" href="https://s3.amazonaws.com/tripdata/201607-citibike-tripdata.zip">https://s3.amazonaws.com/tripdata/201607-citibike-tripdata.zip</a></p>
+<p>$ curl -O <a class="reference external" href="https://s3.amazonaws.com/tripdata/201609-citibike-tripdata.zip">https://s3.amazonaws.com/tripdata/201609-citibike-tripdata.zip</a></p>
+<p>$ curl -O <a class="reference external" href="https://s3.amazonaws.com/tripdata/201611-citibike-tripdata.zip">https://s3.amazonaws.com/tripdata/201611-citibike-tripdata.zip</a></p>
+<p>$ curl -O <a class="reference external" href="https://s3.amazonaws.com/tripdata/201612-citibike-tripdata.zip">https://s3.amazonaws.com/tripdata/201612-citibike-tripdata.zip</a></p>
+<p><em>Comment</em>: The following variation of the curl command can be used to
+download all months.</p>
+<p>$ curl -O
+<a class="reference external" href="https://s3.amazonaws.com/tripdata/20160[1-9]-citibike-tripdata.zip">https://s3.amazonaws.com/tripdata/20160[1-9]-citibike-tripdata.zip</a></p>
+<p>$ curl -O
+<a class="reference external" href="https://s3.amazonaws.com/tripdata/20161[0-2]-citibike-tripdata.zip">https://s3.amazonaws.com/tripdata/20161[0-2]-citibike-tripdata.zip</a></p>
+<p>Another alternative to running each of these commands one-at-a-time,
+would be to place all necessary commands into a single text file. Here
+the curl command for each month has been put into a file called
+download.sh. The *.sh extension just identifes that the file contains
+Bash shell commands.</p>
+<p><a class="reference internal" href="_images/image32.png"><img alt="image2" src="_images/image32.png" style="width: 6.50000in; height: 1.59722in;" /></a></p>
+<p>The download.sh file is put in the same directory for which the files
+are to be downloaded.</p>
+<p>$ ls –l</p>
+<p><a class="reference internal" href="_images/image42.png"><img alt="image3" src="_images/image42.png" style="width: 6.50000in; height: 0.43333in;" /></a></p>
+<p>The following commans will exectue all the commands found in the
+download.sh file.</p>
+<p>$ bash download.sh</p>
+<p>The curl commands provides infromation about the sequential downloading
+of the requested files. A snip-it of the download statistics regarding
+the first couple files are provided here.</p>
+<p><a class="reference internal" href="_images/image52.png"><img alt="image4" src="_images/image52.png" style="width: 6.50000in; height: 1.04722in;" /></a></p>
+<p>Checking to make sure all files have been downloaded correctly.</p>
+<p>$ ls –l</p>
+<p><a class="reference internal" href="_images/image62.png"><img alt="image5" src="_images/image62.png" style="width: 6.47685in; height: 1.21806in;" /></a></p>
+<p><em>UNZIPPING FILES</em></p>
+<p>The files provided by Citibike are in a zip format. Zip is a common data
+compresssion format which reduces the size of a file. Before one can use
+a zip file, the content of the file must be extracted or unzipped. There
+are several programs available to unzip a file. Bash has a built in
+unzip command.</p>
+<p><a class="reference internal" href="_images/image72.png"><img alt="image6" src="_images/image72.png" style="width: 3.87500in; height: 1.52764in;" /></a></p>
+<p>The following command can be used to unzip a zipped file in Bash. Notice
+that the size of the compressed file is about 20% (17794115 / 98943693)
+of the size of the original data file.</p>
+<p>$ unzip 201601-citibike-tripdata.zip</p>
+<p>$ ls –l</p>
+<p><a class="reference internal" href="_images/image82.png"><img alt="image7" src="_images/image82.png" style="width: 6.50000in; height: 0.40694in;" /></a></p>
+<p>Unfortantely, the wildcard character is not understood by unzip in the
+following usage. However, if the *.zip is placed in a quoted string,
+e.g. ‘*.zip’, then the unzip function interprets the wildcard
+correctly.</p>
+<p>$ unzip *.zip <a class="reference internal" href="_images/image92.png"><img alt="image8" src="_images/image92.png" style="width: 5.19792in; height: 0.50757in;" /></a></p>
+<p><em>FOR LOOPS</em></p>
+<p>A for loop can be used to systematically apply a set of commands. The
+simple example below prints the values 1 through 5 to the screen.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="19%" />
+<col width="81%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Generic structure of a for loop in Bash</th>
+<th class="head">Simple example in Bash</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference internal" href="_images/image102.png"><img alt="image9" src="_images/image102.png" style="width: 2.73611in; height: 0.85533in;" /></a></td>
+<td><p class="first">$ for i in {1..5}</p>
+<p>&gt; do</p>
+<p>&gt; echo $i</p>
+<p>&gt; done</p>
+<p class="last">This for loop simple prints the values 1, 2, 3, 4, 5. The $i is used to refer to the value of i through each iteration through the loop. This loop starts with i=1 and stops at i=5.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>In our application, we need to systematically unzip the *.zip files in
+our directory. The variable in this loop is filename and the wildcard
+character automatically creates the appropriate variable_range for the
+filename variable. Use the following commands to unzip each fo the zip
+files in the current directory.</p>
+<div class="line-block">
+<div class="line">$ for filename in 2016*-citibike-tripdata.zip</div>
+<div class="line">&gt; do</div>
+<div class="line">&gt; unzip $filename</div>
+<div class="line">&gt; done</div>
+</div>
+<p>A schemtic showing the filename for each iteration of the above loop.</p>
+<p><a class="reference internal" href="_images/image113.png"><img alt="image10" src="_images/image113.png" style="width: 2.76073in; height: 1.86574in;" /></a></p>
+<p>A quick glance to ensure all files have been successfully unzipped.</p>
+<p>$ ls –l</p>
+<p><a class="reference internal" href="_images/image121.png"><img alt="image11" src="_images/image121.png" style="width: 6.50000in; height: 2.05764in;" /></a></p>
+<p><em>EXTRACTING RECORDS / ROWS</em></p>
+<p>The goal in our investigation is to consider rental / usage patterns of
+bikes for the following seven holidays. The data needed will need to be
+filtered out of these data files. This filtering cannot be done in Excel
+as the number of records in these datafiles exceeds Excel’s
+capabiliites.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="49%" />
+<col width="51%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Holiday</th>
+<th class="head">Date</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>New Year’s Day</td>
+<td>January 1, 2016</td>
+</tr>
+<tr class="row-odd"><td>Easter</td>
+<td>March 27, 2106</td>
+</tr>
+<tr class="row-even"><td>Memorial Day</td>
+<td>May 30, 2016</td>
+</tr>
+<tr class="row-odd"><td>Independence Day</td>
+<td>July 4, 2016</td>
+</tr>
+<tr class="row-even"><td>Labor Day</td>
+<td>September 5, 2016</td>
+</tr>
+<tr class="row-odd"><td>Thanksgiving</td>
+<td>November 24, 2016</td>
+</tr>
+<tr class="row-even"><td>Christmas</td>
+<td>December 25, 2016</td>
+</tr>
+</tbody>
+</table>
+<p>The following command provides a line count for each of the *.csv
+files. The number of records in these files exceed what Excel can
+handle.</p>
+<div class="line-block">
+<div class="line">$ wc –l *.csv</div>
+<div class="line"><a class="reference internal" href="_images/image131.png"><img alt="image12" src="_images/image131.png" style="width: 2.71875in; height: 0.92243in;" /></a></div>
+</div>
+<p>The next task is to filter the necessary rows from these files. This can
+be accomplished with the following grep command. The output is being
+saved into a file called Holidays.csv.</p>
+<p>$ grep
+&#8216;1/1/2016\|3/27/2016\|5/30/2016\|7/4/2016\|9/5/2016\|11/24/2016\|12/25/2016&#8217;
+2016*-citibike-tripdata.csv &gt; Holidays.csv</p>
+<p>Looking at the first few lines and the last few lines of the
+Holidays.csv file.</p>
+<p>$ head Holidays.csv</p>
+<p><a class="reference internal" href="_images/image141.png"><img alt="image13" src="_images/image141.png" style="width: 6.50000in; height: 0.79151in;" /></a></p>
+<p>$ tail Holidays.csv</p>
+<p><a class="reference internal" href="_images/image151.png"><img alt="image14" src="_images/image151.png" style="width: 6.50000in; height: 0.72568in;" /></a></p>
+<p>The Holidays.csv file does not contain bike rentals beyond Labor Day.
+The reason for this is that the date format is different for the
+201611-citibike-tripdata.csv and 201612-citibike-tripdata.csv files.</p>
+<p>$ tail 201612-citibike-tripdata.csv</p>
+<p><a class="reference internal" href="_images/image161.png"><img alt="image15" src="_images/image161.png" style="width: 6.50000in; height: 0.94097in;" /></a></p>
+<p>The following table provides the date structure for each Holiday in
+these data files. For some reason, the system data changed their data
+format between September 2016 and November 2016.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="59%" />
+<col width="41%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Holiday</th>
+<th class="head">Date</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>New Years Day</td>
+<td>1/1/2016</td>
+</tr>
+<tr class="row-odd"><td>Easter</td>
+<td>3/27/2106</td>
+</tr>
+<tr class="row-even"><td>Memorial Day</td>
+<td>5/30/2016</td>
+</tr>
+<tr class="row-odd"><td>Independence Day</td>
+<td>7/4/2016</td>
+</tr>
+<tr class="row-even"><td>Labor Day</td>
+<td>9/5/2016</td>
+</tr>
+<tr class="row-odd"><td>Thanksgiving</td>
+<td>2016-11-24</td>
+</tr>
+<tr class="row-even"><td>Christmas</td>
+<td>2016-12-25</td>
+</tr>
+</tbody>
+</table>
+<p>Given this information, modifications will need to be made to grep
+command.</p>
+<p>$ grep
+&#8216;1/1/2016\|3/27/2016\|5/30/2016\|7/4/2016\|9/5/2016\|2016-11-24\|2016-12-25&#8217;
+2016*-citibike-tripdata.csv &gt; Holidays.csv</p>
+<p>A quick check to ensure that bike rentals for Thanksgiving and Christmas
+are included.</p>
+<p>$ tail Holidays.csv</p>
+<p><a class="reference internal" href="_images/image171.png"><img alt="image16" src="_images/image171.png" style="width: 6.50000in; height: 0.69848in;" /></a></p>
+<p>Notice that the grep command has contamimated the first field in this
+data file. In particiular, the frist field is the amount of time (in
+seconds) for the bike rental. After running the grep command this field
+also contains the filename from which this line was obtained.</p>
+<p><a class="reference internal" href="_images/image181.png"><img alt="image17" src="_images/image181.png" style="width: 5.13900in; height: 0.80873in;" /></a></p>
+<p>Consider the following command as an attempt to remove the filename
+information in the first field. The head command here is being used to
+see the first 10 lines of the output file – the output is not yet being
+written out to a file.</p>
+<p>$ sed -n &#8216;s/^.*://p&#8217; Holidays.csv | head -10</p>
+<p>The command above prints the content of each line after the <em>last</em>
+colon. Keeping the content of each line after the first colon is needed
+here.</p>
+<p><a class="reference internal" href="_images/image191.png"><img alt="image18" src="_images/image191.png" style="width: 6.50000in; height: 0.55417in;" /></a></p>
+<p>Consider the following alternatives to the above command that appear to
+remove the filename content from the 1<sup>st</sup> field.</p>
+<blockquote>
+<div><p>Command #1: $ sed -n &#8216;s/^.*csv://p&#8217; Holidays.csv | head -10</p>
+<p>Command #2: $ sed -r &#8216;s/.{29}//&#8217; Holidays.csv | head -10</p>
+<p>Command #3: $ sed &#8216;s/^[^:]*://&#8217; Holidays.csv | head -10</p>
+</div></blockquote>
+<p><em>Questions</em></p>
+<ol class="arabic simple">
+<li>What is the substitute command finding in Command #1? What is the
+substitue command replacing in Command #1? What would happen if the
+sed command were changed to ‘s/.csv://p’? Verify that Command #1
+produces the desired output.</li>
+<li>What is the purpose of .{29} in Command #2? Verify that Command #2
+produces the desired output.</li>
+<li>In Command #3, the first ^ is for beginning of line, the [^:] is
+syntex for not a colon, the *: tells sed to grab any number of
+characters until you find a colon. Does Command #3 work?</li>
+</ol>
+<p>The following command will remove the filename information from the
+first field. In-place editing is being used, thus the output will be
+placed back into the Holidays.csv file.</p>
+<p>$ sed –i &#8216;s/^[^:]*://&#8217; Holidays.csv</p>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="_images/image20.png"><img alt="image19" src="_images/image20.png" style="width: 6.50000in; height: 0.52361in;" /></a></div>
+<div class="line"><a class="reference internal" href="_images/image211.png"><img alt="image20" src="_images/image211.png" style="width: 4.50000in; height: 0.52067in;" /></a></div>
+</div>
+<p>The last step will be to add back in the header information. This can be
+done using sed (Command #1) or one could grab the first line from one of
+the original files and then append it to the Holidays.csv file (Command
+#2). The output is being saved into a final called Holidays_Final.csv</p>
+<p>Command #1:</p>
+<p>$ sed &#8216;1 i\tripduration, starttime, stoptime, start station id, start
+station name, start station latitude, start station longitude, end
+station id, end station name, end station latitude, end station
+longitude, bikeid, usertype, birth year, gender&#8217; Holidays.csv &gt;
+Holidays_Final.csv</p>
+<p>Command #2:</p>
+<p>$ head -1 201601-citibike-tripdata.csv &gt; Holidays_Header.csv</p>
+<p>$ cat Holidays_Header.csv Holidays_v2.csv &gt; Holidays_Final.csv</p>
+<p><em>EXTRACTING FIELDS / COLUMNS</em></p>
+<p>Sed and grep can be used to filter data, i.e. extract rows from a data
+file. The task of extracting fields (or columns) from data files can be
+accomplished through commands such as cut or awk.</p>
+<p>The following schmatic shows the fields / columns for the Citibike data.</p>
+<p><a class="reference internal" href="_images/image221.png"><img alt="image21" src="_images/image221.png" style="width: 6.47865in; height: 0.71875in;" /></a></p>
+<p><em>CUT UTILITY</em></p>
+<p>The following use of the cut command will extract or cut out field 4,
+i.e. statition id, from the dataset. The –d option is specifying the ,
+as the delimited characters – this should be encapulasted with a
+backlash as show.</p>
+<p>$ cut -f4 -d\, Holidays_Final.csv</p>
+<p><a class="reference internal" href="_images/image23.png"><img alt="image22" src="_images/image23.png" style="width: 6.50000in; height: 0.76667in;" /></a></p>
+<p>The following can be used to extract field 4 (start station id) and
+field 8 (end station id) from the dataset.</p>
+<p>$ cut -f4,8 -d\, Holidays_Final.csv</p>
+<p><a class="reference internal" href="_images/image24.png"><img alt="image23" src="_images/image24.png" style="width: 6.50000in; height: 0.72847in;" /></a></p>
+<p>The use of the &#8211;complment option will extract all fields except field 4
+and field 8.</p>
+<p>$ cut &#8211;complement -f4,8 -d\, Holidays_Final.csv</p>
+<p><a class="reference internal" href="_images/image25.png"><img alt="image24" src="_images/image25.png" style="width: 6.50000in; height: 0.74931in;" /></a></p>
+<p>One nice feature regarding the cut utility is that it is easy to use.
+However, cut does have some limitation. For example, cut does not have
+the ability to evaluate the value contained with a field. However, AWK
+is a data-driven scripting language does have this ability.</p>
+<p>Awk can be used to manage fields (and records) in a data file. According
+to Wikipedia, AWK was initially developed in 1977 by Alfred Aho, Peter
+Weinberger, and Brian Kernighan. AWK is more powerful than cut. Some
+applications of awk are provided below.</p>
+<p><a class="reference internal" href="_images/image26.png"><img alt="image25" src="_images/image26.png" style="width: 4.90747in; height: 2.42175in;" /></a></p>
+<p>The following awk command prints fields 1, 2, 5, 9, 13, 14, and 15. A
+description of the options is provided here:</p>
+<ul class="simple">
+<li>The –F option specifies that the delimiter in the infile is a comma.</li>
+<li>The –v OFS=”,” specifies that the field separator for the outfile
+should be a comma.</li>
+<li>Fields within the file are generically labelled $1, $2, etc. Thus,
+{print $1, $2, $5, $9, $13, $14, $15} will print fields 1, 2, 5, 9,
+13, 14, and 15 to the output file.</li>
+</ul>
+<p>$ awk -F, -v OFS=, &#8216;{print $1,$2,$5,$9,$13,$14,$15}&#8217; HOlidays_Final.csv
+&gt; Holidays_LessFields.csv</p>
+<p>The command above will extract fields 1, 2, 5, 9, 13, 14, and 15.</p>
+<p><a class="reference internal" href="_images/image27.png"><img alt="image26" src="_images/image27.png" style="width: 6.50000in; height: 0.75694in;" /></a></p>
+<p>Awk can be used to create two mutually exclusive datasets - one for
+usertype = Subscriber and another for usertype = Customer. Subscribers
+are those that pay a month fee for the bike share program and customers
+are those that use the bike share program, but are not monthly
+subscribers, e.g. a tourist would likely be a customer and not a
+subscriber.</p>
+<p><a class="reference internal" href="_images/image28.png"><img alt="image27" src="_images/image28.png" style="width: 4.87500in; height: 1.82500in;" /></a></p>
+<p>The following table provides counts for this data that can be used to
+verify the number of records in the following awk commands.</p>
+<p>As mentioned above, awk is more powerful than cut. For example, awk has
+the ability to evaluate a value for a specified field. An action can
+take place after an evaluation of this value is completed. For example,
+the following command prints fields 1, 2, 5, 9, 13, 14, 15 only for
+usertype = Customer. Usertype is field 13; thus $13 is used to refer to
+the usertype in awk. The tilde character ( ~ ) is used to determine if
+two values are equal.</p>
+<p>Filter: usertype = “Customer”</p>
+<p>$ awk -F, -v OFS=, &#8216;$13~&#8221;Customer&#8221; {print $1,$2,$5,$9,$13,$14,$15}&#8217;
+Holidays_Final.csv &gt; Holidays_Customers.csv</p>
+<p>Doing the same for the Subscriber rows.</p>
+<p>Filter: usertype = “Subscriber”</p>
+<p>$ awk -F, -v OFS=, &#8216;$13~&#8221;Subscriber&#8221; {print $1,$2,$5,$9,$13,$14,$15}&#8217;
+HOlidays_Final.csv &gt; Holidays_Subscribers.csv</p>
+<p>Getting the number of lines in each of these files to ensure that the
+data has been appropriately divided into Customers and Subscribers.</p>
+<p>$ wc -l Holidays_Customers.csv Holidays_Subscribers.csv</p>
+<p>47354 Holidays_Customers.csv</p>
+<p>121509 Holidays_Subscribers.csv</p>
+<p>168863 total</p>
+<p><em>Comment:</em> The header row is not included in these files. The reason is
+that the header contains the name of the fields and thus most likely
+does not meet the condition being checked. Awk does appear to have the
+ability to skip over certain rows. For example, if NR &gt; 1 is used, then
+the 1<sup>st</sup> row is skipped; however, the syntax in using this
+command is beyond the scope presented here.</p>
+<p>The following awk command is used to reduce the rows to those that are
+customers and male. Notice the &amp;&amp; syntax is for AND. The syntax for OR
+is ||.</p>
+<blockquote>
+<div><p>Filter: usertype = “Customer”</p>
+<p>gender = “Male”</p>
+</div></blockquote>
+<p>$ awk -F, -v OFS=, &#8216;$13~&#8221;Customer&#8221; &amp;&amp; $15~”1” {print
+$1,$2,$5,$9,$13,$14,$15}&#8217; HOlidays_Final.csv &gt;
+Holidays_Customers_Males.csv</p>
+<p>Awk has the ability to work with numeric fields as well. For example,
+suppose the goal is to retain any bike rentals whose trip duration is
+less than 10 minutes. Note: Tripduration is reported in seconds in this
+file (10 minutes x 60 seconds/minute = 600 seconds).</p>
+<blockquote>
+<div>Filter: tripduration &lt; 600</div></blockquote>
+<p>The tripduration field is a quoted string in the Holidays_Final.csv
+dataset. The quotes must be removed so that Awk can evaluate each value
+against 600.</p>
+<p><a class="reference internal" href="_images/image29.png"><img alt="image28" src="_images/image29.png" style="width: 6.50000in; height: 0.89653in;" /></a></p>
+<p>The following sed commands can be used to remove the quotes from the
+first field, i.e. tripduration. Command #1 remove the 2<sup>nd</sup> quote
+on each line and Command #2 remove the 1<sup>st</sup> quote from each
+line.</p>
+<blockquote>
+<div><p>Command #1: $ sed &#8216;s/\&#8221;//2&#8217; Holidays_Final.csv</p>
+<p>Command #2: $ sed &#8216;s/\&#8221;//&#8217; Holidays_Final.csv</p>
+</div></blockquote>
+<ul class="simple">
+<li></li>
+<li></li>
+</ul>
+<p><em>Questions</em></p>
+<ol class="arabic simple">
+<li>Would it work to skip Command #1 and just run Command #2 twice?
+Discuss.</li>
+<li>What would happen if Command #2 were run first, then Command #1 was
+run? Discuss.</li>
+</ol>
+<p>A quick glance of the file after removing the quotes from the first
+field.</p>
+<p><a class="reference internal" href="_images/image30.png"><img alt="image29" src="_images/image30.png" style="width: 6.50000in; height: 0.92153in;" /></a></p>
+<p>The following awk command will keep lines whose tripduration, i.e.
+1<sup>st</sup> field, is less than 600.</p>
+<p>$ awk -F, -v OFS=, &#8216;$1 &lt; 600 {print $1,$2,$5,$9,$13,$14,$15}&#8217;
+Holidays_Final.csv &gt; Holidays_Lessthan10mins.csv</p>
+<p>The tripduration &lt; 600 filter appear to have worked. Notice all values
+in the 1<sup>st</sup> field are less than 600.</p>
+<p><a class="reference internal" href="_images/image311.png"><img alt="image30" src="_images/image311.png" style="width: 6.50000in; height: 1.03125in;" /></a></p>
+<ul class="simple">
+<li></li>
+<li></li>
+</ul>
+<p><a href="#id1"><span class="problematic" id="id2">*</span></a>SUMMARIES / VISUALIZATIONS *</p>
+<p>Much of the summaries here are center on the similaries and differences
+between the Customers and Subscribers. The following table shows the
+number of bike rentals for each usertype across the seven holidays.</p>
+<p><a class="reference internal" href="_images/image321.png"><img alt="image31" src="_images/image321.png" style="width: 4.50193in; height: 1.92679in;" /></a></p>
+<p><em>Questions</em></p>
+<ol class="arabic simple">
+<li>What Holidays tend to have the most bike rentals? Is this what you’d
+expect? Discuss.</li>
+<li>Consider the following graph shows a breakdown of usertype by each
+holiday. What information about bike rental patterns is learned from
+this graph? Discuss.</li>
+</ol>
+<p><a class="reference internal" href="_images/image33.png"><img alt="image32" src="_images/image33.png" style="width: 4.57186in; height: 2.87500in;" /></a></p>
+<ol class="arabic simple">
+<li>The rightmost column in the table below provides the average length
+of rental for each Holiday. Which Holiday tends to have the highest
+average trip duration?</li>
+</ol>
+<p><a class="reference internal" href="_images/image34.png"><img alt="image33" src="_images/image34.png" style="width: 4.17761in; height: 1.38375in;" /></a></p>
+<ol class="arabic simple">
+<li>The following table and graph provides a breakdown of average trip
+duration by usertype. Tourist tend to be usertype = Customer, what
+can be said about tourist trip duration on Holidays? How does their
+trip duration pattern different from Customers? Discuss.</li>
+</ol>
+<p><a class="reference internal" href="_images/image35.png"><img alt="image34" src="_images/image35.png" style="width: 3.26042in; height: 1.60269in;" /></a></p>
+<p><a class="reference internal" href="_images/image36.png"><img alt="image35" src="_images/image36.png" style="width: 4.35954in; height: 2.68681in;" /></a></p>
+<ol class="arabic simple">
+<li>The following table provides a list of the most frequently used bike
+stations from which rentals take place. Notice that Central Park is
+listed often. Does the popularity of a bike station depend on the
+Holiday? Why might this be a problem for those that are managing the
+bike rental system? Discuss.</li>
+</ol>
+<p><a class="reference internal" href="_images/image37.png"><img alt="image36" src="_images/image37.png" style="width: 5.48958in; height: 1.73661in;" /></a></p>
+<p><em>Tasks</em>:</p>
+<p>Consider the following situation of password creation and hacking.
+Suppose your name is ANDY and you have decided to use these four letters
+to create a password that is 8 characters.</p>
+<p><a class="reference internal" href="_images/image38.png"><img alt="image37" src="_images/image38.png" style="width: 2.25000in; height: 0.45833in;" /></a></p>
+<p>Simple probabilities can be computed for various situations. For
+example, the probability of ANDY being randomly generated on placed into
+the first four characters is simply (1/4)*(1/4)*(1/4)*(1/4) = 1/256 ≈
+0.39%.</p>
+<p>Consider the following commands.</p>
+<p>Command #1: $ cat /dev/urandom | tr -dc &#8216;ANDY&#8217; | fold -w 8 | head
+-1000000 &gt; random.txt</p>
+<p>Command #2: $ sed &#8216;s/.//5g&#8217; random.txt | grep &#8216;ANDY&#8217; | wc -l</p>
+<p>Command #1 does the following:</p>
+<ul class="simple">
+<li>Generate a string that is 8 characters long.</li>
+<li>head -1000000 tells bash to generate 1000000 rows</li>
+<li>tr –dc ‘ANDY’ specifies that A, N, D, and Y are the characters
+available for random selection, i.e. these are the characters in the
+“bucket” from which letters are drawn randomly</li>
+</ul>
+<p><a class="reference internal" href="_images/image421.png"><img alt="image41" src="_images/image421.png" style="width: 1.23895in; height: 0.82292in;" /></a></p>
+<ul class="simple">
+<li>Output is being saved into a file called random.txt</li>
+</ul>
+<p>Command #2 does the following:</p>
+<ul class="simple">
+<li>Sed command deletes all characters beyond the first four, this output
+is piped forward to grep</li>
+<li>Grep command searches for string ANDY. If ANDY is present in this
+line, the line is pushed forward</li>
+<li>The wc -l simply counts the number of lines, i.e. the number of times
+ANDY is found in the first four characters.</li>
+</ul>
+<ol class="arabic">
+<li><p class="first">Run command #1 and command #2 in Bash. How many times did ANDY show
+up in the first four positions? Compute the empirical probability,
+i.e. # times / 1000000. Is the empirical probability close to the
+theoretical value of 1/256?</p>
+</li>
+<li><p class="first">Modify command #2 so that searching of ANDY is done across all
+positions (not just the first four positions). How many times did
+grep find ANDY? Once again, is the empirical probability for this
+situation close to 5/256?</p>
+</li>
+<li><p class="first">Next, suppose the “bucket” from which the random selection is done
+contains A, N, D, Y, #, 0, 1, 2, and 3.</p>
+</li>
+<li><p class="first">Consider Command #3 below.</p>
+<p>Command #3: $ cat /dev/urandom | tr -dc &#8216;ANDY#[0-3]&#8217; | fold -w 8 |
+head -1000000 &gt; random.txt</p>
+<p>This command works but is *not* what is needed here. Fix this
+command so that is produces random passwords as requested.</p>
+<p><a class="reference internal" href="_images/image43.png"><img alt="image42" src="_images/image43.png" style="width: 1.38542in; height: 0.95510in;" /></a></p>
+</li>
+</ol>
+<ol class="loweralpha simple">
+<li>What is the theoretical probability of getting ANDY#1 in a sequence
+of 8 characters?</li>
+<li>Use grep and wc –l to compute the empirical probability for this
+situation. Does the empirical probability agree with theoretical
+value? Note: You may need to generate more than 1000000 random
+passwords to verify this probability.</li>
+</ol>
+<ol class="arabic simple">
+<li>Consider the following commands.</li>
+</ol>
+<ul>
+<li><p class="first">Command #4 generates 10,000,000 random passwords. Each password is 8
+characters long and is made up of the characters A, N, D, and Y.</p>
+</li>
+<li><p class="first">Command #5 uses sed to search for ANDY in each password. The date;
+command is placed immediately before and after the sed command. This
+can be used to compute the length of time it takes sed to do its
+searching.</p>
+</li>
+<li><p class="first">Command #6 uses grep to search for ANDY in each password. Again, the
+length of time for processing can be computed with date; placed
+before and after the grep command.</p>
+<blockquote>
+<div><p>Command #4: $ cat /dev/urandom | tr -dc &#8216;ANDY&#8217; | fold -w 8 | head
+-10000000 &gt; random.txt</p>
+<p>Command #5: $ date; sed -n &#8216;/ANDY/p&#8217; random.txt | wc -l; date;</p>
+<p>Command #6: $ date; grep &#8216;ANDY&#8217; random.txt | wc -l; date;</p>
+</div></blockquote>
+</li>
+</ul>
+<ol class="loweralpha simple">
+<li>Is sed or grep faster in doing its searching? Discuss.</li>
+<li>What happens to the time it takes for sed to complete its searching
+when the number of random passwords generated is doubled? Does the
+processing time double?</li>
+<li>What happens to the time it takes for sed to complete its searching
+when the length of the password is changed from 8 characters to 16
+characters. Does the processing time double?</li>
+<li>What happens to the time it takes for grep to complete its searching
+when the length of the password is changed from 8 characters to 16
+characters. Does the processing time double?</li>
+</ol>
+</div>
+
+
+  
+      
+  <li id="relations-prev" class="navLink" title='Previous Section - 3.2. BASH SHELL - GREP' data-toggle="tooltip">
+    <a href="h10.html" >
+      <i class='prevNav glyphicon glyphicon-chevron-left'></i>
+    </a>
+  </li>
+  <a class="navLinkBg" id="navLinkBgLeft"  href="h10.html" ></a>
+  
+  <li id="relations-next" class="navLink" title='Next Section - 4. Processing Data with R' data-toggle="tooltip" >
+    <a href="R_toctree.html" >
+      <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
+    </a>
+  </li>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="R_toctree.html" >Next Section - 4. Processing Data with R</a>
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+  
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      
+      | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015 Todd Iverson.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.5.
+    </p>
+  </div>
+</footer>
+
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

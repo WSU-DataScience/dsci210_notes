@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>4.3. Summaries in R &mdash; Runestone Interactive Overview</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="_static/clickable.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="_static/dragndrop.css" type="text/css" />
+    <link rel="stylesheet" href="_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="_static/livecode.css" type="text/css" />
+    <link rel="stylesheet" href="_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootswatch/2.3.1/""/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/runestonebase.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="_static/codemirror.js"></script>
+    <script type="text/javascript" src="_static/xml.js"></script>
+    <script type="text/javascript" src="_static/css.js"></script>
+    <script type="text/javascript" src="_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="_static/python.js"></script>
+    <script type="text/javascript" src="_static/javascript.js"></script>
+    <script type="text/javascript" src="_static/activecode.js"></script>
+    <script type="text/javascript" src="_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="_static/clike.js"></script>
+    <script type="text/javascript" src="_static/timed_activecode.js"></script>
+    <script type="text/javascript" src="_static/animationbase.js"></script>
+    <script type="text/javascript" src="_static/mchoice.js"></script>
+    <script type="text/javascript" src="_static/timedmc.js"></script>
+    <script type="text/javascript" src="_static/timed.js"></script>
+    <script type="text/javascript" src="_static/clickable.js"></script>
+    <script type="text/javascript" src="_static/timedclickable.js"></script>
+    <script type="text/javascript" src="_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="_static/pytutor.js"></script>
+    <script type="text/javascript" src="_static/codelens.js"></script>
+    <script type="text/javascript" src="_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="_static/datafile.js"></script>
+    <script type="text/javascript" src="_static/dragndrop.js"></script>
+    <script type="text/javascript" src="_static/timeddnd.js"></script>
+    <script type="text/javascript" src="_static/fitb.js"></script>
+    <script type="text/javascript" src="_static/timedfitb.js"></script>
+    <script type="text/javascript" src="_static/livecode.js"></script>
+    <script type="text/javascript" src="_static/clike.js"></script>
+    <script type="text/javascript" src="_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="_static/lib/hammer.min.js"></script>
+    <script type="text/javascript" src="_static/parsons.js"></script>
+    <script type="text/javascript" src="_static/timedparsons.js"></script>
+    <script type="text/javascript" src="_static/poll.js"></script>
+    <script type="text/javascript" src="_static/reveal.js"></script>
+    <script type="text/javascript" src="_static/shortanswer.js"></script>
+    <script type="text/javascript" src="_static/timed_shortanswer.js"></script>
+    <script type="text/javascript" src="_static/tabbedstuff.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="_static/rangy-core.js"></script>
+    <script type="text/javascript" src="_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="_static/user-highlights.js"></script>
+    <script type="text/javascript" src="_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="Runestone Interactive Overview" href="index.html" />
+    <link rel="up" title="4. Processing Data with R" href="R_toctree.html" />
+    <link rel="next" title="4.4. Basic Graphics in R" href="h15.html" />
+    <link rel="prev" title="4.2. R: Programming in R" href="h13.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="/runestone/static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'dsci210';
+  eBookConfig.logLevel = 0;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = false;
+  eBookConfig.python3 = true;
+  eBookConfig.basecourse = 'dsci210';
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="index.html">DSCI 210 Notes</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='index.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/dsci210/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:ACFactory.toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/dsci210/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='/runestone/default/reportabug?course=dsci210&page=h14'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        <!--
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">4.3. Summaries in R</a><ul>
+<li><a class="reference internal" href="#id5">4.3.1. ***</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - 4.2. R: Programming in R" data-toggle="tooltip">
+    <a href="h13.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - 4.4. Basic Graphics in R' data-toggle="tooltip" >
+    <a href="h15.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content">
+  
+  <div class="section" id="summaries-in-r">
+<h1>4.3. Summaries in R<a class="headerlink" href="#summaries-in-r" title="Permalink to this headline">¶</a></h1>
+<table border="1" class="docutils">
+<colgroup>
+<col width="93%" />
+<col width="7%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>For this handout, we will consider a dataset on trees in New York City. This data is a subset of the entire tree census conducted every 10 years or so in New York City.</td>
+<td><a class="reference internal" href="_images/image116.png"><img alt="image0" src="_images/image116.png" style="width: 3.17676in; height: 1.87313in;" /></a></td>
+</tr>
+</tbody>
+</table>
+<p>The following contains the first few rows of the trees dataset. There
+are 10 variables in this dataset.</p>
+<p><a class="reference internal" href="_images/image213.png"><img alt="image1" src="_images/image213.png" style="width: 5.43284in; height: 1.08541in;" /></a></p>
+<p>Create a new project in R for this handout. Download the NYC_Trees.csv
+dataset. Load this dataset into R using Import Data &gt; From Text File.</p>
+<p><a class="reference internal" href="_images/image313.png"><img alt="image2" src="_images/image313.png" style="width: 4.63305in; height: 3.79851in;" /></a></p>
+<p>A view of the dataset after loading it into R.</p>
+<p><a class="reference internal" href="_images/image45.png"><img alt="image3" src="_images/image45.png" style="width: 5.56599in; height: 1.06716in;" /></a></p>
+<p>The variable/field names of the dataset can be obtained using the
+names() function.</p>
+<p>&gt; names(NYC_Trees)</p>
+<p>[1] &#8220;CommonName&#8221; &#8220;Native&#8221; &#8220;Borough&#8221;</p>
+<p>[4] &#8220;Condition&#8221; &#8220;Diameter.cm.&#8221; &#8220;Height.m.&#8221;</p>
+<p>[7] &#8220;Age&#8221; &#8220;PercentFoliageDensity&#8221; &#8220;CanopyArea.msq.&#8221;</p>
+<p>[10] &#8220;CompensatoryValue&#8221;</p>
+<p>Consider the variable name Diameter(cm). R does not allow for special
+characters in the variable names and thus the ( ) were removed and
+replaced with a period. The same is done for spaces in variable names.</p>
+<p>You can easily change the variable name for the fifth variable as
+follows.</p>
+<p>&gt; names(NYC_Trees)[5]</p>
+<p>[1] &#8220;Diameter.cm.&#8221;</p>
+<p>&gt; names(NYC_Trees)[5] &lt;- &#8220;Diameter&#8221;</p>
+<p>The new name for Diameter has taken effect and is reflected when viewing
+the data.frame.</p>
+<p><a class="reference internal" href="_images/image54.png"><img alt="image4" src="_images/image54.png" style="width: 6.05573in; height: 1.08209in;" /></a></p>
+<p>The following is used to rename Height and CanopyArea.</p>
+<p>&gt; names(NYC_Trees)[6] &lt;- &#8220;Height&#8221;</p>
+<p>&gt; names(NYC_Trees)[9] &lt;- &#8220;CanopyArea&#8221;</p>
+<div class="section" id="id5">
+<h2>4.3.1. <a href="#id1"><span class="problematic" id="id2">**</span></a><a href="#id3"><span class="problematic" id="id4">*</span></a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p><strong>*Basic Summaries in R - Location*</strong></p>
+<p>Before starting an analysis, you should gain an understanding of how R
+is considering each variable. The variable types here are Factor, num,
+and int.</p>
+<p>&gt; str(NYC_Trees)</p>
+<p><a class="reference internal" href="_images/image64.png"><img alt="image5" src="_images/image64.png" style="width: 6.50000in; height: 1.46042in;" /></a></p>
+<p><a href="#id6"><span class="problematic" id="id7">*</span></a>Questions:
+*</p>
+<ol class="arabic simple">
+<li>What is the difference between a string and a factor in R?</li>
+<li>Use the levels(NYC_Trees$Native) command to determine the factor
+level settings for Native. Which level, “No” or “Yes”, is listed
+first?</li>
+</ol>
+<p>The summary() command will provide basic summaries for an entire
+data.frame.</p>
+<p>&gt; summary(NYC_Trees)</p>
+<p><a class="reference internal" href="_images/image74.png"><img alt="image6" src="_images/image74.png" style="width: 6.45040in; height: 1.96269in;" /></a></p>
+<p><a href="#id8"><span class="problematic" id="id9">*</span></a>Questions:
+*</p>
+<ol class="arabic simple">
+<li>How many different Common Names exist in this dataset?</li>
+<li>What is the breakdown of non-native versus native trees?</li>
+<li>What is the value of the most expensive tree?</li>
+</ol>
+<p>A wide variety of functions exist for basic summary statistics in R.
+Consider the following functions.</p>
+<p><a class="reference internal" href="_images/image84.png"><img alt="image7" src="_images/image84.png" style="width: 5.13433in; height: 1.37292in;" /></a></p>
+<p><em>Question:</em></p>
+<ol class="arabic simple">
+<li>What are the following values for the NYC_Trees dataset.</li>
+</ol>
+<table border="1" class="docutils">
+<colgroup>
+<col width="76%" />
+<col width="24%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Quantity</th>
+<th class="head">Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Mean</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>Median</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>Min</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>Max</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>10<sup>th</sup> Percentile</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>90<sup>th</sup> Percentile</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p>Write the following code in the script window. This code is used to
+create a cumulative density plot for Height.</p>
+<p><a class="reference internal" href="_images/image93.png"><img alt="image8" src="_images/image93.png" style="width: 6.50000in; height: 0.92500in;" /></a></p>
+<p><em>Question:</em></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="85%" />
+<col width="15%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first last arabic simple">
+<li>What information is gained by considering this plot? Discuss.</li>
+</ol>
+</td>
+<td><a class="reference internal" href="_images/image104.png"><img alt="image9" src="_images/image104.png" style="width: 2.94756in; height: 1.91407in;" /></a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>*Basic Summaries in R – Variation*</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="49%" />
+<col width="51%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><p class="first">Consider again the 319 data values for height</p>
+<p class="last"><a class="reference internal" href="_images/image117.png"><img alt="image10" src="_images/image117.png" style="width: 2.18917in; height: 2.22609in;" /></a></p>
+</td>
+<td><p class="first">Concept of variation = “distance to the middle”</p>
+<p class="last"><a class="reference internal" href="_images/image123.png"><img alt="image11" src="_images/image123.png" style="width: 2.28696in; height: 2.27521in;" /></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>The most common method of measuring variation (in statistics) is
+standard deviation. Intuitively, this can be thought of as the average
+distance to the mean.</p>
+<div class="math">
+\[\text{Standard}\ \text{Deviation} = \ \sqrt{\frac{\sum_{}^{}\left( \text{data}\ \text{point} - \text{mean} \right)^{2}}{\#\ data\ points - 1}}\]</div>
+<p>The range is a secondary measure of spread, but is not commonly used as
+this measure only uses two data values, the maximum and minimum value,
+and is adversely affected by outliers in data. Another common measure of
+spread is the median (or mean) absolute deviation.</p>
+<div class="math">
+\[\text{Median\ Absolue\ Deviation} = \ \ median\ \left\{ \left| \text{data\ point}_{1} - median \right|,\ \left| \text{data\ point}_{2} - median \right|,\ \ldots \right\}\]</div>
+<p>Consider the following measures of spread. Obtain these values for the
+Height variable from the NYC_Trees data.frame.</p>
+<p><a class="reference internal" href="_images/image133.png"><img alt="image12" src="_images/image133.png" style="width: 2.46875in; height: 0.76042in;" /></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="76%" />
+<col width="24%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Quantity</th>
+<th class="head">Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Standard Deviation</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>Range</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>Median Absolute Deviation</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p>The mean absolute deviation is commonly used in predictive analytics
+methods. The mean in predictive analytics is often obtained through some
+function of the predictors. For the simple case here, <em>f(predictors) =
+mean(height)</em> will suffice for illustrative purposes.</p>
+<div class="math">
+\[\text{Mean\ Absolute\ Deviation} = \ \frac{\sum_{}^{}\left| data\ point - f(predictors) \right|}{\#\ \text{data\ points}}\]</div>
+<p>A function does *not* exist in base R to calcualte this quantity. A
+web search produces the following link.</p>
+<p>Result from Mean Absolute Deviation web search:
+<a class="reference external" href="http://www.inside-r.org/packages/cran/lsr/docs/aad">http://www.inside-r.org/packages/cran/lsr/docs/aad</a></p>
+<p><a class="reference internal" href="_images/image143.png"><img alt="image13" src="_images/image143.png" style="width: 3.79130in; height: 2.37767in;" /></a></p>
+<p>The aad() function is found in the lsr package. In order to use this
+function, the package must be downloaded onto your local machine. To do
+so, click Intall, type in the package name, and click Install.</p>
+<p><a class="reference internal" href="_images/image153.png"><img alt="image14" src="_images/image153.png" style="width: 3.97391in; height: 2.19202in;" /></a></p>
+<p>The install simply puts the contents of this package onto your local
+machine. The library(lsr) command will actually load the package into
+your local environment so that its contents can be used.</p>
+<p><a class="reference internal" href="_images/image163.png"><img alt="image15" src="_images/image163.png" style="width: 5.58333in; height: 0.46875in;" /></a></p>
+<p>The mean absolute deviation can be computed easily with the use the of
+the aad() function. The following lines of code will obtain the same
+value returned from the aad() function.</p>
+<p>&gt; #Getting the mean absolute deviation via brute force</p>
+<p>&gt; mean.vector &lt;- rep(mean(NYC_Trees$Height),319)</p>
+<p>&gt; deviation &lt;- NYC_Trees$Height - mean.vector</p>
+<p>&gt; abs.deviation &lt;- abs(deviation)</p>
+<p><a class="reference internal" href="_images/image173.png"><img alt="image16" src="_images/image173.png" style="width: 3.96875in; height: 2.03478in;" /></a></p>
+<p>&gt; mean(abs.deviation)</p>
+<p>[1] 6.8755</p>
+<p><strong>*
+Comment*</strong>: Vector or data.frames may contain NA values (missing data).
+In this case, mean(x, na.rm=TRUE) should be used. To remove all NA from
+a data.frame, the function, na.omit() can be used.</p>
+<ul class="simple">
+<li></li>
+</ul>
+<p>Questions:*</p>
+<ol class="arabic simple">
+<li>Obtain the following summaries for the Compensatory Value.</li>
+</ol>
+<table border="1" class="docutils">
+<colgroup>
+<col width="49%" />
+<col width="51%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><table border="1" class="first last docutils">
+<colgroup>
+<col width="76%" />
+<col width="24%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Quantity</th>
+<th class="head">Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Mean</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>Median</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>Min</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>Max</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>10<sup>th</sup> Percentile</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>90<sup>th</sup> Percentile</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><table border="1" class="first last docutils">
+<colgroup>
+<col width="76%" />
+<col width="24%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Quantity</th>
+<th class="head">Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Standard Deviation</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>Range</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>Median Absolute Deviation</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>Mean Absolute Deviation</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<ol class="arabic simple">
+<li>Obtain a cumulative density plot (akin to the one provided on page 4)
+for Compensatory Value. What information does this plot provide about
+the distribution of Value? Discuss.</li>
+</ol>
+<p><strong>*Basic Summaries in R – Tables*</strong></p>
+<p>The table() function can be used to summarize categorical, i.e. factor,
+variables. Consider the following command so summarize the tree
+condition variable.</p>
+<p>&gt; table(NYC_Trees$Condition)</p>
+<p>Excellent Good Poor</p>
+<p>34 254 31</p>
+<p>&gt;</p>
+<p>&gt; table(NYC_Trees$Condition) / length(NYC_Trees$Condition)</p>
+<p>Excellent Good Poor</p>
+<p>0.10658307 0.79623824 0.09717868</p>
+<p>&gt;</p>
+<p>&gt; 100 * table(NYC_Trees$Condition) / length(NYC_Trees$Condition)</p>
+<p>Excellent Good Poor</p>
+<p>10.658307 79.623824 9.717868</p>
+<p>&gt;</p>
+<p>&gt; round(100 * table(NYC_Trees$Condition) /
+length(NYC_Trees$Condition),1)</p>
+<p>Excellent Good Poor</p>
+<p>10.7 79.6 9.7</p>
+<p>The table() easily extends to two-dimensional tables as well. For
+example, the following is used to understand the relationship between
+whether or not the tree is native and its condition.</p>
+<p>&gt; table(NYC_Trees$Native, NYC_Trees$Condition)</p>
+<p>Excellent Good Poor</p>
+<p>NO 20 205 21</p>
+<p>YES 14 49 10</p>
+<p>This output can be passed directly into the plot() function to create a
+mosaic plot.</p>
+<p>&gt; plot(table(NYC_Trees$Native, NYC_Trees$Condition))</p>
+<p><a class="reference internal" href="_images/image183.png"><img alt="image17" src="_images/image183.png" style="width: 2.74866in; height: 2.46087in;" /></a></p>
+<p>The table() function extends to higher dimensional tables in a
+straight-forward manner.</p>
+<p>&gt; table(NYC_Trees$Native, NYC_Trees$Condition, NYC_Trees$Borough)</p>
+<p>, , = Bronx</p>
+<p>Excellent Good Poor</p>
+<p>NO 3 28 5</p>
+<p>YES 8 4 2</p>
+<p>, , = Manhattan</p>
+<p>Excellent Good Poor</p>
+<p>NO 4 43 6</p>
+<p>YES 1 3 0</p>
+<p>, , = Staten Island</p>
+<p>Excellent Good Poor</p>
+<p>NO 13 134 10</p>
+<p>YES 5 42 8</p>
+<p>Consider again the table created above that show the relationship
+between Native and Condition. This table is being assigned to
+native.condition.table.</p>
+<p>&gt; native.condition.table &lt;- table(NYC_Trees$Native,
+NYC_Trees$Condition)</p>
+<p>Excellent Good Poor</p>
+<p>NO 20 205 21</p>
+<p>YES 14 49 10</p>
+<p>The margin.table() function and prop.table() functions can be used to
+obtain additional summaries for these tables.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="43%" />
+<col width="32%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Function</th>
+<th class="head">Outcome</th>
+<th class="head">Second argument</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>margin.table()</td>
+<td>Marginal counts are computed</td>
+<td><p class="first">1: Row totals</p>
+<p class="last">2: Column totals</p>
+</td>
+</tr>
+<tr class="row-odd"><td>prop.table()</td>
+<td>Proportions are computed</td>
+<td><p class="first">1: Row percentages</p>
+<p class="last">2: Column percentage</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&gt; margin.table(native.condition.table,1)</p>
+<p>NO YES</p>
+<p>246 73</p>
+<p>&gt; margin.table(native.condition.table,2)</p>
+<p>Excellent Good Poor</p>
+<p>34 254 31</p>
+<p>&gt; prop.table(native.condition.table,1)</p>
+<p>Excellent Good Poor</p>
+<p>NO 0.08130081 0.83333333 0.08536585</p>
+<p>YES 0.19178082 0.67123288 0.13698630</p>
+<p>&gt; prop.table(native.condition.table,2)</p>
+<p>Excellent Good Poor</p>
+<p>NO 0.5882353 0.8070866 0.6774194</p>
+<p>YES 0.4117647 0.1929134 0.3225806</p>
+<p><a href="#id10"><span class="problematic" id="id11">*</span></a>Questions:
+*</p>
+<ol class="arabic simple">
+<li>Create a mosaic plot to display the relationship between Condition
+and Borough. Does one Borough tend to have better trees than other?
+Discuss.</li>
+<li>Use the prop.table() function to determine the proportions being
+displayed in the mosaic plot you created above.</li>
+</ol>
+<p><strong>*Basic Summaries in R – apply() and aggregate()*</strong></p>
+<p>Often it is necessary to obtain basic summary variables for several
+variables at a time. This can be done in an insufficient way as follows.</p>
+<p>&gt;
+mean(NYC_Trees$Diameter);mean(NYC_Trees$Height);mean(NYC_Trees$Age);mean(NYC_Trees$PercentFoliageDensity);mean(NYC_Trees$CanopyArea);mean(NYC_Trees$CompensatoryValue)</p>
+<p>[1] 37.6116</p>
+<p>[1] 12.85925</p>
+<p>[1] 57.65517</p>
+<p>[1] 56.94357</p>
+<p>[1] 83.75987</p>
+<p>[1] 3255.354</p>
+<p>There exists a set of functions can will automate repeated summaries of
+this type. The most common is the <strong>apply()</strong> function. The help window
+for the apply function is provided here.</p>
+<p><a class="reference internal" href="_images/image193.png"><img alt="image18" src="_images/image193.png" style="width: 5.50327in; height: 2.01493in;" /></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="12%" />
+<col width="24%" />
+<col width="24%" />
+<col width="40%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Function</th>
+<th class="head">1<sup>st</sup> Argument</th>
+<th class="head">2<sup>nd</sup> Argument</th>
+<th class="head">3<sup>rd</sup> Argument</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>apply()</td>
+<td>Data Frame</td>
+<td><p class="first">1: Act on rows</p>
+<p class="last">2: Act on columns</p>
+</td>
+<td>Function – inherent or custom written</td>
+</tr>
+</tbody>
+</table>
+<p>The apply() functions are *not* as forgiving as the summary()
+function. For example, the following command will not work as the
+NYC_Trees data.frame contains several column for which the mean cannot
+be computed, i.e. this data.frame as several factor variables.</p>
+<p>&gt; apply(NYC_Trees,2,mean)</p>
+<p><a class="reference internal" href="_images/image202.png"><img alt="image19" src="_images/image202.png" style="width: 3.57391in; height: 0.65536in;" /></a></p>
+<p>The following code only passes the numeric columns of NYC_Trees and
+thus produces the desired outcomes.</p>
+<p>&gt; apply(NYC_Trees[,5:10],2,mean)</p>
+<p>Diameter Height Age PercentFoliageDensity</p>
+<p>37.61160 12.85925 57.65517 56.94357</p>
+<p>CanopyArea CompensatoryValue</p>
+<p>83.75987 3255.35423</p>
+<p>The colMeans() function performs similar the same actions.</p>
+<p>&gt; colMeans(NYC_Trees[,5:10])</p>
+<p>Diameter Height Age PercentFoliageDensity</p>
+<p>37.61160 12.85925 57.65517 56.94357</p>
+<p>CanopyArea CompensatoryValue</p>
+<p>83.75987 3255.35423</p>
+<p>The following syntax can be used when created a custom-built function.
+This coefficient of variation function is the custom-built function
+here.</p>
+<p>CV Function Details:
+<a class="reference external" href="https://en.wikipedia.org/wiki/Coefficient_of_variation">https://en.wikipedia.org/wiki/Coefficient_of_variation</a></p>
+<p>&gt; apply(NYC_Trees[,5:10], 2, function(x) { sd(x) / mean(x) } )</p>
+<p><a class="reference internal" href="_images/image214.png"><img alt="image20" src="_images/image214.png" style="width: 6.50000in; height: 0.50347in;" /></a></p>
+<p>Another commonly used function is the <strong>aggregate()</strong> function. This
+function allows summaries to be computed on subsets of the data that you
+specify. For example, this can be used to obtain the mean of all
+numerical variables for Non-Native and Native tree separately.</p>
+<p><a class="reference internal" href="_images/image223.png"><img alt="image21" src="_images/image223.png" style="width: 5.85821in; height: 2.95289in;" /></a></p>
+<p>Getting the mean of all numeric columns for Non-Native trees separate
+from the Native trees.</p>
+<p>&gt; aggregate(NYC_Trees[,5:10], by=list(NYC_Trees$Native), mean)</p>
+<p>Group.1 Diameter Height Age PercentFoliageDensity CanopyArea
+CompensatoryValue</p>
+<p>1 NO 38.21382 12.81341 59.68293 55.69106 85.77561 3375.589</p>
+<p>2 YES 35.58219 13.01370 50.82192 61.16438 76.96712 2850.178</p>
+<p>Here, the NYC_Trees data.frame is being split into 6 groups defined by
+Native (2 levels) and Condition (3 levels).</p>
+<p>&gt;
+aggregate(NYC_Trees[,5:10],by=list(NYC_Trees$Condition,NYC_Trees$Native),mean)</p>
+<p><a class="reference internal" href="_images/image232.png"><img alt="image22" src="_images/image232.png" style="width: 6.50000in; height: 0.82435in;" /></a></p>
+<p><strong>*Task*</strong></p>
+<p>For this task, open the Consider the Chicago_Marthon dataset. This file
+contains the results of over 37,000 runners who participated in the 2015
+Bank of American Chicago Marathon.</p>
+<p><a class="reference internal" href="_images/image242.png"><img alt="image23" src="_images/image242.png" style="width: 3.88696in; height: 1.97047in;" /></a></p>
+<p><em>Questions</em></p>
+<ol class="arabic">
+<li><p class="first">What is the average age of a runner in this dataset?</p>
+</li>
+<li><p class="first">Does the average age of a male different much from the average age of
+a female?</p>
+</li>
+<li><p class="first">Which Division has the most number of people?</p>
+</li>
+<li><p class="first">Is the Division with the most runners the same across Gender?</p>
+</li>
+<li><p class="first">USA is the most common country for runners. What is the second most
+common country?</p>
+</li>
+<li><p class="first">The following command was used (instead of the table() function) to
+obtain the number of runners from the USA. What is R is doing with
+this command?</p>
+<blockquote>
+<div><p>&gt; length(Chicago_Marathon$Country[Chicago_Marathon$Country ==
+&#8220;USA&#8221;])</p>
+</div></blockquote>
+</li>
+</ol>
+</div>
+</div>
+
+
+  
+      
+  <li id="relations-prev" class="navLink" title='Previous Section - 4.2. R: Programming in R' data-toggle="tooltip">
+    <a href="h13.html" >
+      <i class='prevNav glyphicon glyphicon-chevron-left'></i>
+    </a>
+  </li>
+  <a class="navLinkBg" id="navLinkBgLeft"  href="h13.html" ></a>
+  
+  <li id="relations-next" class="navLink" title='Next Section - 4.4. Basic Graphics in R' data-toggle="tooltip" >
+    <a href="h15.html" >
+      <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
+    </a>
+  </li>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="h15.html" >Next Section - 4.4. Basic Graphics in R</a>
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+  
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      
+      | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015 Todd Iverson.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.5.
+    </p>
+  </div>
+</footer>
+
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>
