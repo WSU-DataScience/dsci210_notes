@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Exporting Data &mdash; Runestone Interactive Overview</title>
+    <title>1.6. Exporting Data &mdash; Runestone Interactive Overview</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -101,6 +101,9 @@
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
     <link rel="top" title="Runestone Interactive Overview" href="../index.html" />
+    <link rel="up" title="1. Processing Data with Excel" href="../excel_toctree.html" />
+    <link rel="next" title="1.7. Reading in Standard Data" href="../h1.html" />
+    <link rel="prev" title="1.5. Quality Control" href="04-quality-control.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -260,10 +263,10 @@
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Exporting Data</a><ul>
-<li><a class="reference internal" href="#a-note-on-cross-platform-operability">A Note on Cross-platform Operability</a><ul>
-<li><a class="reference internal" href="#a-note-on-r-and-xls">A note on R and <code class="docutils literal"><span class="pre">xls</span></code></a></li>
-<li><a class="reference internal" href="#caveats-on-commas">Caveats on commas</a></li>
+<li><a class="reference internal" href="#">1.6. Exporting Data</a><ul>
+<li><a class="reference internal" href="#a-note-on-cross-platform-operability">1.6.1. A Note on Cross-platform Operability</a><ul>
+<li><a class="reference internal" href="#a-note-on-r-and-xls">1.6.1.1. A note on R and <code class="docutils literal"><span class="pre">xls</span></code></a></li>
+<li><a class="reference internal" href="#caveats-on-commas">1.6.1.2. Caveats on commas</a></li>
 </ul>
 </li>
 </ul>
@@ -275,6 +278,18 @@
         
         
           
+  <li id="relations-prev" title="Previous Chapter - 1.5. Quality Control" data-toggle="tooltip">
+    <a href="04-quality-control.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - 1.7. Reading in Standard Data' data-toggle="tooltip" >
+    <a href="../h1.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
 
 <script type="text/javascript">
   opts = {'placement':'bottom',
@@ -301,7 +316,7 @@
 <div class="container" id="main-content">
   
   <div class="section" id="exporting-data">
-<h1>Exporting Data<a class="headerlink" href="#exporting-data" title="Permalink to this headline">¶</a></h1>
+<h1>1.6. Exporting Data<a class="headerlink" href="#exporting-data" title="Permalink to this headline">¶</a></h1>
 <p>Authors:<strong>Christie Bahlai</strong>, <strong>Aleksandra Pawlik</strong></p>
 <p>Storing the data you&#8217;re going to work with for your analyses in Excel
 default file format (<code class="docutils literal"><span class="pre">*.xls</span></code> or <code class="docutils literal"><span class="pre">*.xlsx</span></code> - depending on the Excel
@@ -362,7 +377,7 @@ Excel!</p>
 <p class="caption"><span class="caption-text">Saving an Excel file to CSV</span></p>
 </div>
 <div class="section" id="a-note-on-cross-platform-operability">
-<h2>A Note on Cross-platform Operability<a class="headerlink" href="#a-note-on-cross-platform-operability" title="Permalink to this headline">¶</a></h2>
+<h2>1.6.1. A Note on Cross-platform Operability<a class="headerlink" href="#a-note-on-cross-platform-operability" title="Permalink to this headline">¶</a></h2>
 <p>By default, most coding and statistical environments expect UNIX-style
 line endings (<code class="docutils literal"><span class="pre">\n</span></code>) as representing line breaks. However, Windows uses
 an alternate line ending signifier (<code class="docutils literal"><span class="pre">\r\n</span></code>) by default for legacy
@@ -409,7 +424,7 @@ OSX, *nix, and Cygwin) on local files to standardize line endings.</p>
 </li>
 </ol>
 <div class="section" id="a-note-on-r-and-xls">
-<h3>A note on R and <code class="docutils literal"><span class="pre">xls</span></code><a class="headerlink" href="#a-note-on-r-and-xls" title="Permalink to this headline">¶</a></h3>
+<h3>1.6.1.1. A note on R and <code class="docutils literal"><span class="pre">xls</span></code><a class="headerlink" href="#a-note-on-r-and-xls" title="Permalink to this headline">¶</a></h3>
 <p>There are R packages that can read <code class="docutils literal"><span class="pre">xls</span></code> files (as well as Google
 spreadsheets). It is even possible to access different worksheets in the
 <code class="docutils literal"><span class="pre">xls</span></code> documents.</p>
@@ -424,7 +439,7 @@ adequate?</li>
 </ul>
 </div>
 <div class="section" id="caveats-on-commas">
-<h3>Caveats on commas<a class="headerlink" href="#caveats-on-commas" title="Permalink to this headline">¶</a></h3>
+<h3>1.6.1.2. Caveats on commas<a class="headerlink" href="#caveats-on-commas" title="Permalink to this headline">¶</a></h3>
 <p>In some datasets, the data values themselves may include commas (,). In
 that case, the software which you use (including Excel) will most likely
 incorrectly display the data in columns. This is because the commas
@@ -443,6 +458,19 @@ page</a>.</p>
 
   
       
+  <li id="relations-prev" class="navLink" title='Previous Section - 1.5. Quality Control' data-toggle="tooltip">
+    <a href="04-quality-control.html" >
+      <i class='prevNav glyphicon glyphicon-chevron-left'></i>
+    </a>
+  </li>
+  <a class="navLinkBg" id="navLinkBgLeft"  href="04-quality-control.html" ></a>
+  
+  <li id="relations-next" class="navLink" title='Next Section - 1.7. Reading in Standard Data' data-toggle="tooltip" >
+    <a href="../h1.html" >
+      <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
+    </a>
+  </li>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="../h1.html" >Next Section - 1.7. Reading in Standard Data</a>
 
 <script type="text/javascript">
 
