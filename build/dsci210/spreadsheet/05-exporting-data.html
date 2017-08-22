@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Exporting Data &mdash; Runestone Interactive Overview</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/livecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootswatch/2.3.1/""/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
+    <script type="text/javascript" src="../_static/timed_activecode.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/codelens.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/livecode.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/hammer.min.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/timedparsons.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
+    <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/timed_shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="Runestone Interactive Overview" href="../index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="/runestone/static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'dsci210';
+  eBookConfig.logLevel = 0;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = false;
+  eBookConfig.python3 = true;
+  eBookConfig.basecourse = 'dsci210';
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="../index.html">DSCI 210 Notes</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/dsci210/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:ACFactory.toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/dsci210/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='/runestone/default/reportabug?course=dsci210&page=05-exporting-data'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        <!--
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Exporting Data</a><ul>
+<li><a class="reference internal" href="#a-note-on-cross-platform-operability">A Note on Cross-platform Operability</a><ul>
+<li><a class="reference internal" href="#a-note-on-r-and-xls">A note on R and <code class="docutils literal"><span class="pre">xls</span></code></a></li>
+<li><a class="reference internal" href="#caveats-on-commas">Caveats on commas</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content">
+  
+  <div class="section" id="exporting-data">
+<h1>Exporting Data<a class="headerlink" href="#exporting-data" title="Permalink to this headline">¶</a></h1>
+<p>Authors:<strong>Christie Bahlai</strong>, <strong>Aleksandra Pawlik</strong></p>
+<p>Storing the data you&#8217;re going to work with for your analyses in Excel
+default file format (<code class="docutils literal"><span class="pre">*.xls</span></code> or <code class="docutils literal"><span class="pre">*.xlsx</span></code> - depending on the Excel
+version) isn&#8217;t a good idea. Why?</p>
+<ul class="simple">
+<li>Because it is a proprietary format, and it is possible that in the
+future, technology won’t exist (or will become sufficiently rare) to
+make it inconvenient, if not impossible, to open the file.</li>
+<li>Other spreadsheet software may not be able to open files saved in a
+proprietary Excel format.</li>
+<li>Different versions of Excel may handle data differently, leading to
+inconsistencies.</li>
+<li>Finally, more journals and grant agencies are requiring you to
+deposit your data in a data repository, and most of them don&#8217;t accept
+Excel format. It needs to be in one of the formats discussed below.</li>
+<li>The above points also apply to other formats such as open data
+formats used by LibreOffice / Open Office. These formats are not
+static and do not get parsed the same way by different software
+packages.</li>
+</ul>
+<p>As an example of inconsistencies in data storage, do you remember how we
+talked about how Excel stores dates earlier? It turns out that there are
+multiple defaults for different versions of the software, and you can
+switch between them all. So, say you’re compiling Excel-stored data from
+multiple sources. There’s dates in each file- Excel interprets them as
+their own internally consistent serial numbers. When you combine the
+data, Excel will take the serial number from the place you’re importing
+it from, and interpret it using the rule set for the version of Excel
+you’re using. Essentially, you could be adding errors to your data, and
+it wouldn’t necessarily be flagged by any data cleaning methods if your
+ranges overlap.</p>
+<p>Storing data in a universal, open, and static format will help deal with
+this problem. Try tab-delimited (tab separated values or TSV) or
+comma-delimited (comma separated values or CSV). CSV files are plain
+text files where the columns are separated by commas, hence &#8216;comma
+separated values&#8217; or CSV. The advantage of a CSV file over an
+Excel/SPSS/etc. file is that we can open and read a CSV file using just
+about any software, including plain text editors like TextEdit or
+NotePad. Data in a CSV file can also be easily imported into other
+formats and environments, such as SQLite and R. We&#8217;re not tied to a
+certain version of a certain expensive program when we work with CSV
+files, so it&#8217;s a good format to work with for maximum portability and
+endurance. Most spreadsheet programs can save to delimited text formats
+like CSV easily, although they may give you a warning during the file
+export.</p>
+<p>To save a file you have opened in Excel in CSV format:</p>
+<ol class="arabic simple">
+<li>From the top menu select &#8216;File&#8217; and &#8216;Save as&#8217;.</li>
+<li>In the &#8216;Format&#8217; field, from the list, select &#8216;Comma Separated Values&#8217;
+(<code class="docutils literal"><span class="pre">*.csv</span></code>).</li>
+<li>Double check the file name and the location where you want to save it
+and hit &#8216;Save&#8217;.</li>
+</ol>
+<p>An important note for backwards compatibility: you can open CSV files in
+Excel!</p>
+<div class="figure" id="id5">
+<img alt="Saving an Excel file to CSV" src="../_images/excel-to-csv.png" />
+<p class="caption"><span class="caption-text">Saving an Excel file to CSV</span></p>
+</div>
+<div class="section" id="a-note-on-cross-platform-operability">
+<h2>A Note on Cross-platform Operability<a class="headerlink" href="#a-note-on-cross-platform-operability" title="Permalink to this headline">¶</a></h2>
+<p>By default, most coding and statistical environments expect UNIX-style
+line endings (<code class="docutils literal"><span class="pre">\n</span></code>) as representing line breaks. However, Windows uses
+an alternate line ending signifier (<code class="docutils literal"><span class="pre">\r\n</span></code>) by default for legacy
+compatibility with Teletype-based systems.</p>
+<p>As such, when exporting to CSV using Excel, your data in text format
+will look like this:</p>
+<blockquote>
+<div>data1,data2:raw-latex:<cite>r</cite><a href="#id1"><span class="problematic" id="id2">:raw-latex:`\n`1,2:raw-latex:`</span></a>r`:raw-latex:<cite>n`4,5:raw-latex:</cite>r`:raw-latex:<cite>n</cite></div></blockquote>
+<p>When opening your CSV file in Excel again, it will parse it as follows:</p>
+<p>However, if you open your CSV file on a different system that does not
+parse the &#8220;<a href="#id3"><span class="problematic" id="id4">:raw-latex:`\r`</span></a>&#8221; it will interpret your CSV file differently:</p>
+<p>Your data in text format then look like this:</p>
+<blockquote>
+<div>data1 data2:raw-latex:<cite>r&lt;br&gt;</cite> 1 2:raw-latex:<cite>r&lt;br&gt;</cite> …</div></blockquote>
+<p>This will then in turn parse as:</p>
+<p>thus causing terrible things to happen to your data. For example,
+<code class="docutils literal"><span class="pre">2\r</span></code> is not a valid integer, and thus will throw an error (if you’re
+lucky) when you attempt to operate on it in R or Python. Note that this
+happens on Excel for OSX as well as Windows, due to legacy Windows
+compatibility.</p>
+<p>There are a handful of solutions for enforcing uniform UNIX-style line
+endings on your exported CSV files:</p>
+<ol class="arabic">
+<li><p class="first">When exporting from Excel, save as a “Windows comma separated (.csv)”
+file</p>
+</li>
+<li><p class="first">If you store your data file under version control using Git, edit the
+<code class="docutils literal"><span class="pre">.git/config</span></code> file in your repository to automatically translate
+<code class="docutils literal"><span class="pre">\r\n</span></code> line endings into <code class="docutils literal"><span class="pre">\n</span></code>. Add the following to the file
+(<a class="reference external" href="http://nicercode.github.io/blog/2013-04-30-excel-and-line-endings">see the detailed
+tutorial</a>):</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>[filter &quot;cr&quot;]
+    clean = LC_CTYPE=C awk &#39;{printf(\&quot;%s\\n\&quot;, $0)}&#39; | LC_CTYPE=C tr &#39;\\r&#39; &#39;\\n&#39;
+    smudge = tr &#39;\\n&#39; &#39;\\r&#39;`
+</pre></div>
+</div>
+<p>and then create a file <code class="docutils literal"><span class="pre">.gitattributes</span></code> that contains the line:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">*.</span><span class="n">csv</span> <span class="nb">filter</span><span class="o">=</span><span class="n">cr</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Use <a class="reference external" href="http://dos2unix.sourceforge.net/">dos2unix</a> (available on
+OSX, *nix, and Cygwin) on local files to standardize line endings.</p>
+</li>
+</ol>
+<div class="section" id="a-note-on-r-and-xls">
+<h3>A note on R and <code class="docutils literal"><span class="pre">xls</span></code><a class="headerlink" href="#a-note-on-r-and-xls" title="Permalink to this headline">¶</a></h3>
+<p>There are R packages that can read <code class="docutils literal"><span class="pre">xls</span></code> files (as well as Google
+spreadsheets). It is even possible to access different worksheets in the
+<code class="docutils literal"><span class="pre">xls</span></code> documents.</p>
+<p><strong>But</strong></p>
+<ul class="simple">
+<li>some of these only work on Windows</li>
+<li>this equates to replacing a (simple but manual) export to <code class="docutils literal"><span class="pre">csv</span></code>
+with additional complexity/dependencies in the data analysis R code</li>
+<li>data formatting best practice still apply</li>
+<li>Is there really a good reason why <code class="docutils literal"><span class="pre">csv</span></code> (or similar) is not
+adequate?</li>
+</ul>
+</div>
+<div class="section" id="caveats-on-commas">
+<h3>Caveats on commas<a class="headerlink" href="#caveats-on-commas" title="Permalink to this headline">¶</a></h3>
+<p>In some datasets, the data values themselves may include commas (,). In
+that case, the software which you use (including Excel) will most likely
+incorrectly display the data in columns. This is because the commas
+which are a part of the data values will be interpreted as delimiters.</p>
+<p>If you are working with data that contains commas, you likely will need
+to use another delimiter when working in a spreadsheet. In this case,
+consider using tabs as your delimiter and working with TSV files. TSV
+files can be exported from spreadsheet programs in the same way as CSV
+files. For more of a discussion on data formats and potential issues
+with commas within datasets see <a class="reference external" href="http://www.datacarpentry.org/spreadsheet-ecology-lesson/discuss/">the discussion
+page</a>.</p>
+</div>
+</div>
+</div>
+
+
+  
+      
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+  
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      
+      | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015 Todd Iverson.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.5.
+    </p>
+  </div>
+</footer>
+
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Quality Control &mdash; Runestone Interactive Overview</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/livecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootswatch/2.3.1/""/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
+    <script type="text/javascript" src="../_static/timed_activecode.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/codelens.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/livecode.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/hammer.min.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/timedparsons.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
+    <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/timed_shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="Runestone Interactive Overview" href="../index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="/runestone/static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'dsci210';
+  eBookConfig.logLevel = 0;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = false;
+  eBookConfig.python3 = true;
+  eBookConfig.basecourse = 'dsci210';
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="../index.html">DSCI 210 Notes</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/dsci210/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:ACFactory.toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/dsci210/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='/runestone/default/reportabug?course=dsci210&page=04-quality-control'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        <!--
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Quality Control</a><ul>
+<li><a class="reference internal" href="#quality-assurance">Quality Assurance</a></li>
+<li><a class="reference internal" href="#id1">Quality Control</a></li>
+<li><a class="reference internal" href="#sorting">Sorting</a></li>
+<li><a class="reference internal" href="#conditional-formatting">Conditional formatting</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content">
+  
+  <div class="section" id="quality-control">
+<h1>Quality Control<a class="headerlink" href="#quality-control" title="Permalink to this headline">¶</a></h1>
+<p>Authors:<strong>Christie Bahlai</strong>, <strong>Aleksandra Pawlik</strong></p>
+<p>When you have a well-structured data table, you can use several simple
+techniques within your spreadsheet to ensure the data you enter is free
+of errors. These approaches include techniques that are implemented
+prior to entering data (quality assurance) and techniques that are used
+after entering data to check for errors (quality control).</p>
+<div class="section" id="quality-assurance">
+<h2>Quality Assurance<a class="headerlink" href="#quality-assurance" title="Permalink to this headline">¶</a></h2>
+<p>Quality assurance stops bad data from ever being entered by checking to
+see if values are valid during data entry. For example, if research is
+being conducted at sites A, B, and C, then the value V (which is right
+next to B on the keyboard) should never be entered. Likewise if one of
+the kinds of data being collected is a count, only integers greater than
+or equal to zero should be allowed.</p>
+<p>To control the kind of data entered into a a spreadsheet we use Data
+Validation (Excel) or Validity (Libre Office Calc), to set the values
+that can be entered in each data column.</p>
+<ol class="arabic simple">
+<li>Select the cells or column you want to validate</li>
+<li>On the <code class="docutils literal"><span class="pre">Data</span></code> tab select <code class="docutils literal"><span class="pre">Data</span> <span class="pre">Validation</span></code></li>
+</ol>
+<div class="figure" id="id2">
+<img alt="Image of Data Validation button on Data tab" src="../_images/data_validation.png" />
+<p class="caption"><span class="caption-text">Image of Data Validation button on Data tab</span></p>
+</div>
+<p>3. In the <code class="docutils literal"><span class="pre">Allow</span></code> box select the kind of data that should be in the
+column. Options include whole numbers, decimals, lists of items, dates,
+and other values.</p>
+<div class="figure" id="id3">
+<img alt="Image of Data Validation window" src="../_images/data_validation_window.png" />
+<p class="caption"><span class="caption-text">Image of Data Validation window</span></p>
+</div>
+<p>4. After selecting an item enter any additional details. For example, if
+you&#8217;ve chosen a list of values, enter a comma-delimited list of
+allowable values in the <code class="docutils literal"><span class="pre">Source</span></code> box.</p>
+<p>Let&#8217;s try this out by setting the plot column in our spreadsheet to only
+allow plot values that are integers between 1 and 24.</p>
+<ol class="arabic simple">
+<li>Select the <code class="docutils literal"><span class="pre">plot_id</span></code> column</li>
+<li>On the <code class="docutils literal"><span class="pre">Data</span></code> tab select <code class="docutils literal"><span class="pre">Data</span> <span class="pre">Validation</span></code></li>
+<li>In the <code class="docutils literal"><span class="pre">Allow</span></code> box select <code class="docutils literal"><span class="pre">Whole</span> <span class="pre">number</span></code></li>
+<li>Set the minimum and maximum values to 1 and 24.</li>
+</ol>
+<div class="figure" id="id4">
+<img alt="Image of Data Validation window for validating plot values" src="../_images/plot_validation.png" />
+<p class="caption"><span class="caption-text">Image of Data Validation window for validating plot values</span></p>
+</div>
+<p>Now let&#8217;s try entering a new value in the plot column that isn&#8217;t a valid
+plot. The spreadsheet stops us from entering the wrong value and asks us
+if we would like to try again.</p>
+<div class="figure" id="id5">
+<img alt="Image of error when trying to enter invalid data" src="../_images/invalid_value.png" />
+<p class="caption"><span class="caption-text">Image of error when trying to enter invalid data</span></p>
+</div>
+<p>You can also customize the resulting message to be more informative by
+entering your own message in the <code class="docutils literal"><span class="pre">Input</span> <span class="pre">Message</span></code> tab</p>
+<div class="figure" id="id6">
+<img alt="Image of Input Message tab" src="../_images/input_message.png" />
+<p class="caption"><span class="caption-text">Image of Input Message tab</span></p>
+</div>
+<p>or allow invalid data to result in a warning rather than an error by
+modifying the <code class="docutils literal"><span class="pre">Style</span></code> option on the <code class="docutils literal"><span class="pre">Error</span> <span class="pre">Alert</span></code> tab.</p>
+<div class="figure" id="id7">
+<img alt="Image of Error Alert tab" src="../_images/error_alert.png" />
+<p class="caption"><span class="caption-text">Image of Error Alert tab</span></p>
+</div>
+<p>Quality assurance can make data entry easier as well as more robust. For
+example, if you use a list of options to restrict data entry, the
+spreadsheet will provide you with a drop-downlist of the available
+items. So, instead of trying to remember how to spell <em>Dipodomys
+spectabilis</em>, you can select the right option from the list.</p>
+<div class="figure" id="id8">
+<img alt="Image of drop-down menu" src="../_images/drop_down_list.png" />
+<p class="caption"><span class="caption-text">Image of drop-down menu</span></p>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>Quality Control<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Tip: <em>Before doing any quality control operations, save your original
+file with the formulas and a name indicating it is the original data.
+Create a separate file with appropriate naming and versioning, and
+ensure your data is stored as values and not as formulas. Because
+formulas refer to other cells, and you may be moving cells around, you
+may compromise the integrity of your data if you do not take this step!</em></p>
+<p>readMe (README) files: As you start manipulating your data files, create
+a readMe document / text file to keep track of your files and document
+your manipulations so that they may be easily understood and replicated,
+either by your future self or by an independent researcher. Your readMe
+file should document all of the files in your data set (including
+documentation), describe their content and format, and lay out the
+organizing principles of folders and subfolders. For each of the
+separate files listed, it is a good idea to document the manipulations
+or analyses that were carried out on those data. <a class="reference external" href="https://data.research.cornell.edu/content/readme">Cornell University&#8217;s
+Research Data Management Service
+Group</a> provides
+detailed guidelines for how to write a good readMe file, along with an
+adaptable template.</p>
+</div>
+<div class="section" id="sorting">
+<h2>Sorting<a class="headerlink" href="#sorting" title="Permalink to this headline">¶</a></h2>
+<p>Bad values often sort to the bottom or top of the column. For example,
+if your data should be numeric, then alphabetical and null data will
+group at the ends of the sorted data. Sort your data by each field, one
+at a time. Scan through each column, but pay the most attention to the
+top and the bottom of a column. If your dataset is well-structured and
+does not contain formulas, sorting should never affect the integrity of
+your dataset.</p>
+<p><strong>Remember</strong> to expand your sort in order to prevent data corruption.
+Expanding your sort ensures that the all the data in one row move
+together instead of only sorting a single column in isolation. Sorting
+by only a single column will scramble your data - a single row will no
+longer represent an individual observation.</p>
+<div class="admonition-exercise admonition">
+<p class="first admonition-title">Exercise</p>
+<p>We&#8217;ve combined all of the tables from the messy data into a single
+table in a single tab. Download this semi-cleaned data file to your
+computer:
+<a class="reference external" href="https://figshare.com/articles/survey_data_messy_quality_control/4830016">survey_sorting_exercise</a></p>
+<p>Once downloaded, sort the <code class="docutils literal"><span class="pre">Weight_grams</span></code> column in your
+spreadsheet program from <code class="docutils literal"><span class="pre">Largest</span> <span class="pre">to</span> <span class="pre">Smallest</span></code>.</p>
+<p class="last">What do you notice?</p>
+</div>
+</div>
+<div class="section" id="conditional-formatting">
+<h2>Conditional formatting<a class="headerlink" href="#conditional-formatting" title="Permalink to this headline">¶</a></h2>
+<p>Conditional formatting basically can do something like color code your
+values by some criteria or lowest to highest. This makes it easy to scan
+your data for outliers.</p>
+<p>Conditional formatting should be used with caution, but it can be a
+great way to flag inconsistent values when entering data.</p>
+<div class="admonition-exercise admonition">
+<p class="first admonition-title">Exercise</p>
+<ol class="last arabic simple">
+<li>In the main Excel menu bar, click <code class="docutils literal"><span class="pre">Format</span></code> &gt;
+<code class="docutils literal"><span class="pre">Conditional</span> <span class="pre">Formating...</span></code> Click the <code class="docutils literal"><span class="pre">+</span></code> to add a formatting
+rule.</li>
+<li>Apply a <code class="docutils literal"><span class="pre">2-Color</span> <span class="pre">Scale</span></code> formatting rule with the lowest values
+set to orange and the highest values set to yellow.</li>
+<li>Now we can scan through and different colors will stand out. Do
+you notice any strange values?</li>
+</ol>
+</div>
+<p>It is nice to do be able to do these scans in spreadsheets, but we also
+can do these checks in a programming language like R, or in OpenRefine
+or SQL.</p>
+</div>
+</div>
+
+
+  
+      
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+  
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      
+      | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015 Todd Iverson.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.5.
+    </p>
+  </div>
+</footer>
+
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>
