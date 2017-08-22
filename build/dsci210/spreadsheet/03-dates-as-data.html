@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Dates as Data &mdash; Runestone Interactive Overview</title>
+    <title>1.4. Dates as Data &mdash; Runestone Interactive Overview</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -101,6 +101,9 @@
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
     <link rel="top" title="Runestone Interactive Overview" href="../index.html" />
+    <link rel="up" title="1. Processing Data with Excel" href="../excel_toctree.html" />
+    <link rel="next" title="1.5. Quality Control" href="04-quality-control.html" />
+    <link rel="prev" title="1.3. Common Spreadsheet Errors" href="02-common-mistakes.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -260,13 +263,13 @@
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Dates as Data</a><ul>
-<li><a class="reference internal" href="#preferred-date-format">Preferred date format</a></li>
-<li><a class="reference internal" href="#data-formats-in-spreadsheets">Data formats in spreadsheets</a><ul>
-<li><a class="reference internal" href="#dates-stored-as-integers">Dates stored as integers</a></li>
+<li><a class="reference internal" href="#">1.4. Dates as Data</a><ul>
+<li><a class="reference internal" href="#preferred-date-format">1.4.1. Preferred date format</a></li>
+<li><a class="reference internal" href="#data-formats-in-spreadsheets">1.4.2. Data formats in spreadsheets</a><ul>
+<li><a class="reference internal" href="#dates-stored-as-integers">1.4.2.1. Dates stored as integers</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#advantages-of-alternative-date-formatting">Advantages of Alternative Date Formatting</a></li>
+<li><a class="reference internal" href="#advantages-of-alternative-date-formatting">1.4.3. Advantages of Alternative Date Formatting</a></li>
 </ul>
 </li>
 </ul>
@@ -276,6 +279,18 @@
         
         
           
+  <li id="relations-prev" title="Previous Chapter - 1.3. Common Spreadsheet Errors" data-toggle="tooltip">
+    <a href="02-common-mistakes.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - 1.5. Quality Control' data-toggle="tooltip" >
+    <a href="04-quality-control.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
 
 <script type="text/javascript">
   opts = {'placement':'bottom',
@@ -302,7 +317,7 @@
 <div class="container" id="main-content">
   
   <div class="section" id="dates-as-data">
-<h1>Dates as Data<a class="headerlink" href="#dates-as-data" title="Permalink to this headline">¶</a></h1>
+<h1>1.4. Dates as Data<a class="headerlink" href="#dates-as-data" title="Permalink to this headline">¶</a></h1>
 <p>Authors:<strong>Christie Bahlai</strong>, <strong>Aleksandra Pawlik</strong></p>
 <p>Dates in spreadsheets are stored in a single column. While this seems
 the most natural way to record dates, it actually is not best practice.
@@ -336,7 +351,7 @@ spreadsheet program automatically interpreted it as 2015, the year
 you entered the data.</p>
 </div>
 <div class="section" id="preferred-date-format">
-<h2>Preferred date format<a class="headerlink" href="#preferred-date-format" title="Permalink to this headline">¶</a></h2>
+<h2>1.4.1. Preferred date format<a class="headerlink" href="#preferred-date-format" title="Permalink to this headline">¶</a></h2>
 <p>It is much safer to store dates with <a class="reference external" href="#day">MONTH, DAY and YEAR</a> in
 separate columns or as <a class="reference external" href="#doy">YEAR and DAY-OF-YEAR</a> in separate
 columns.</p>
@@ -354,7 +369,7 @@ Excel</a>
 (look for dates that are ~4 years off).</p>
 </div>
 <div class="section" id="data-formats-in-spreadsheets">
-<h2>Data formats in spreadsheets<a class="headerlink" href="#data-formats-in-spreadsheets" title="Permalink to this headline">¶</a></h2>
+<h2>1.4.2. Data formats in spreadsheets<a class="headerlink" href="#data-formats-in-spreadsheets" title="Permalink to this headline">¶</a></h2>
 <p>Spreadsheet programs have numerous “useful features” which allow them to
 handle dates in a variety of ways.</p>
 <div class="figure" id="id1">
@@ -364,7 +379,7 @@ handle dates in a variety of ways.</p>
 <p>But these &#8220;features&#8221; often allow ambiguity to creep into your data.
 Ideally, data should be as unambiguous as possible.</p>
 <div class="section" id="dates-stored-as-integers">
-<h3>Dates stored as integers<a class="headerlink" href="#dates-stored-as-integers" title="Permalink to this headline">¶</a></h3>
+<h3>1.4.2.1. Dates stored as integers<a class="headerlink" href="#dates-stored-as-integers" title="Permalink to this headline">¶</a></h3>
 <p>The first thing you need to know is that Excel stores dates as numbers -
 see the last column in the above figure. Essentially, it counts the days
 from a default of December 31, 1899, and thus stores July 2, 2014 as the
@@ -424,7 +439,7 @@ manipulate the file.</div>
 </div>
 </div>
 <div class="section" id="advantages-of-alternative-date-formatting">
-<h2>Advantages of Alternative Date Formatting<a class="headerlink" href="#advantages-of-alternative-date-formatting" title="Permalink to this headline">¶</a></h2>
+<h2>1.4.3. Advantages of Alternative Date Formatting<a class="headerlink" href="#advantages-of-alternative-date-formatting" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div>Storing dates as YEAR, MONTH, DAY</div></blockquote>
 <hr class="docutils" />
@@ -482,6 +497,19 @@ receiving software.</p>
 
   
       
+  <li id="relations-prev" class="navLink" title='Previous Section - 1.3. Common Spreadsheet Errors' data-toggle="tooltip">
+    <a href="02-common-mistakes.html" >
+      <i class='prevNav glyphicon glyphicon-chevron-left'></i>
+    </a>
+  </li>
+  <a class="navLinkBg" id="navLinkBgLeft"  href="02-common-mistakes.html" ></a>
+  
+  <li id="relations-next" class="navLink" title='Next Section - 1.5. Quality Control' data-toggle="tooltip" >
+    <a href="04-quality-control.html" >
+      <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
+    </a>
+  </li>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="04-quality-control.html" >Next Section - 1.5. Quality Control</a>
 
 <script type="text/javascript">
 
