@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Common Spreadsheet Errors &mdash; Runestone Interactive Overview</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/livecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootswatch/2.3.1/""/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
+    <script type="text/javascript" src="../_static/timed_activecode.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/codelens.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/livecode.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/hammer.min.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/timedparsons.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
+    <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/timed_shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="Runestone Interactive Overview" href="../index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="/runestone/static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'dsci210';
+  eBookConfig.logLevel = 0;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = false;
+  eBookConfig.python3 = true;
+  eBookConfig.basecourse = 'dsci210';
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="../index.html">DSCI 210 Notes</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/dsci210/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:ACFactory.toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/dsci210/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='/runestone/default/reportabug?course=dsci210&page=02-common-mistakes'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        <!--
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Common Spreadsheet Errors</a><ul>
+<li><a class="reference internal" href="#using-multiple-tables">Using multiple tables</a></li>
+<li><a class="reference internal" href="#using-multiple-tabs">Using multiple tabs</a></li>
+<li><a class="reference internal" href="#not-filling-in-zeros">Not filling in zeros</a></li>
+<li><a class="reference internal" href="#using-problematic-null-values">Using problematic null values</a></li>
+<li><a class="reference internal" href="#using-formatting-to-convey-information">Using formatting to convey information</a></li>
+<li><a class="reference internal" href="#using-formatting-to-make-the-data-sheet-look-pretty">Using formatting to make the data sheet look pretty</a></li>
+<li><a class="reference internal" href="#placing-comments-or-units-in-cells">Placing comments or units in cells</a></li>
+<li><a class="reference internal" href="#entering-more-than-one-piece-of-information-in-a-cell">Entering more than one piece of information in a cell</a></li>
+<li><a class="reference internal" href="#using-problematic-field-names">Using problematic field names</a></li>
+<li><a class="reference internal" href="#using-special-characters-in-data">Using special characters in data</a></li>
+<li><a class="reference internal" href="#inclusion-of-metadata-in-data-table">Inclusion of metadata in data table</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content">
+  
+  <div class="section" id="common-spreadsheet-errors">
+<h1>Common Spreadsheet Errors<a class="headerlink" href="#common-spreadsheet-errors" title="Permalink to this headline">¶</a></h1>
+<p>Authors:<strong>Christie Bahlai</strong>, <strong>Aleksandra Pawlik</strong></p>
+<p>This lesson is meant to be used as a reference for discussion as
+learners identify issues with the messy dataset discussed in the
+previous lesson. Instructors: don&#8217;t go through this lesson except to
+refer to responses to the exercise in the previous lesson.</p>
+<p>There are a few potential errors to be on the lookout for in your own
+data as well as data from collaborators or the Internet. If you are
+aware of the errors and the possible negative effect on downstream data
+analysis and result interpretation, it might motivate yourself and your
+project members to try and avoid them. Making small changes to the way
+you format your data in spreadsheets, can have a great impact on
+efficiency and reliability when it comes to data cleaning and analysis.</p>
+<ul class="simple">
+<li>Using multiple tables</li>
+<li>Using multiple tabs</li>
+<li>Not filling in zeros</li>
+<li>Using problematic null values</li>
+<li>Using formatting to convey information</li>
+<li>Using formatting to make the data sheet look pretty</li>
+<li>Placing comments or units in cells</li>
+<li>Entering more than one piece of information in a cell</li>
+<li>Using problematic field names</li>
+<li>Using special characters in data</li>
+<li>Inclusion of metadata in data table</li>
+<li>Date formatting</li>
+</ul>
+<div class="section" id="using-multiple-tables">
+<h2>Using multiple tables<a class="headerlink" href="#using-multiple-tables" title="Permalink to this headline">¶</a></h2>
+<p>A common strategy is creating multiple data tables within one
+spreadsheet. This confuses the computer, so don&#8217;t do this! When you
+create multiple tables within one spreadsheet, you’re drawing false
+associations between things for the computer, which sees each row as an
+observation. You’re also potentially using the same field name in
+multiple places, which will make it harder to clean your data up into a
+usable form. The example below depicts the problem:</p>
+<div class="figure" id="id1">
+<img alt="multiple tabs" src="../_images/2_datasheet_example.jpg" />
+<p class="caption"><span class="caption-text">multiple tabs</span></p>
+</div>
+<p>In the example above, the computer will see (for example) row 4 and
+assume that all columns A-AF refer to the same sample. This row actually
+represents four distinct samples (sample 1 for each of four different
+collection dates - May 29th, June 12th, June 19th, and June 26th), as
+well as some calculated summary statistics (an average (avr) and
+standard error of measurement (SEM)) for two of those samples. Other
+rows are similarly problematic.</p>
+</div>
+<div class="section" id="using-multiple-tabs">
+<h2>Using multiple tabs<a class="headerlink" href="#using-multiple-tabs" title="Permalink to this headline">¶</a></h2>
+<p>But what about workbook tabs? That seems like an easy way to organize
+data, right? Well, yes and no. When you create extra tabs, you fail to
+allow the computer to see connections in the data that are there (you
+have to introduce spreadsheet application-specific functions or
+scripting to ensure this connection). Say, for instance, you make a
+separate tab for each day you take a measurement.</p>
+<p>This isn&#8217;t good practice for two reasons: 1) you are more likely to
+accidentally add inconsistencies to your data if each time you take a
+measurement, you start recording data in a new tab, and 2) even if you
+manage to prevent all inconsistencies from creeping in, you will add an
+extra step for yourself before you analyze the data because you will
+have to combine these data into a single datatable. You will have to
+explicitly tell the computer how to combine tabs - and if the tabs are
+inconsistently formatted, you might even have to do it manually.</p>
+<p>The next time you’re entering data, and you go to create another tab or
+table, ask yourself if you could avoid adding this tab by adding another
+column to your original spreadsheet.</p>
+<p>Your data sheet might get very long over the course of the experiment.
+This makes it harder to enter data if you can’t see your headers at the
+top of the spreadsheet. But don&#8217;t repeat your header row. These can
+easily get mixed into the data, leading to problems down the road.</p>
+<p>Instead you can freeze the column headers so that they remain visible
+even when you have a spreadsheet with many rows.</p>
+<p><a class="reference external" href="https://support.office.com/en-ca/article/Freeze-column-headings-for-easy-scrolling-57ccce0c-cf85-4725-9579-c5d13106ca6a">Documentation on how to freeze column
+headers</a></p>
+</div>
+<div class="section" id="not-filling-in-zeros">
+<h2>Not filling in zeros<a class="headerlink" href="#not-filling-in-zeros" title="Permalink to this headline">¶</a></h2>
+<p>It might be that when you&#8217;re measuring something, it&#8217;s usually a zero,
+say the number of times a rabbit is observed in the survey. Why bother
+writing in the number zero in that column, when it&#8217;s mostly zeros?</p>
+<p>However, there&#8217;s a difference between a zero and a blank cell in a
+spreadsheet. To the computer, a zero is actually data. You measured or
+counted it. A blank cell means that it wasn&#8217;t measured and the computer
+will interpret it as an unknown value (otherwise known as a null value).</p>
+<p>The spreadsheets or statistical programs will likely mis-interpret blank
+cells that you intend to be zeros. By not entering the value of your
+observation, you are telling your computer to represent that data as
+unknown or missing (null). This can cause problems with subsequent
+calculations or analyses. For example, the average of a set of numbers
+which includes a single null value is always null (because the computer
+can&#8217;t guess the value of the missing observations). Because of this,
+it&#8217;s very important to record zeros as zeros and truly missing data as
+nulls.</p>
+</div>
+<div class="section" id="using-problematic-null-values">
+<h2>Using problematic null values<a class="headerlink" href="#using-problematic-null-values" title="Permalink to this headline">¶</a></h2>
+<p><strong>Example</strong>: using -999 or other numerical values (or zero) to represent
+missing data.</p>
+<p><strong>Solution</strong>: One common practice is to record unknown or missing data
+as -999, 999, or 0. Many statistical programs will not recognize that
+these are intended to represent missing (null) values. How these values
+are interpreted will depend on the software you use to analyze your
+data. It is essential to use a clearly defined and consistent null
+indicator. Blanks (most applications) and NA (for R) are good choices.
+White et al, 2013, explain good choices for indicating null values for
+different software applications in their article: <a class="reference external" href="http://library.queensu.ca/ojs/index.php/IEE/article/view/4608/4898">Nine simple ways to
+make it easier to (re)use your
+data.</a>
+Ideas in Ecology and Evolution.</p>
+<div class="figure" id="id2">
+<img alt="White et al." src="../_images/3_white_table_1.jpg" />
+<p class="caption"><span class="caption-text">White et al.</span></p>
+</div>
+</div>
+<div class="section" id="using-formatting-to-convey-information">
+<h2>Using formatting to convey information<a class="headerlink" href="#using-formatting-to-convey-information" title="Permalink to this headline">¶</a></h2>
+<p><strong>Example</strong>: highlighting cells, rows or columns that should be excluded
+from an analysis, leaving blank rows to indicate separations in data.</p>
+<div class="figure" id="id3">
+<img alt="formatting" src="../_images/formatting.png" />
+<p class="caption"><span class="caption-text">formatting</span></p>
+</div>
+<p><strong>Solution</strong>: create a new field to encode which data should be
+excluded.</p>
+<div class="figure" id="id4">
+<img alt="good formatting" src="../_images/good_formatting.png" />
+<p class="caption"><span class="caption-text">good formatting</span></p>
+</div>
+</div>
+<div class="section" id="using-formatting-to-make-the-data-sheet-look-pretty">
+<h2>Using formatting to make the data sheet look pretty<a class="headerlink" href="#using-formatting-to-make-the-data-sheet-look-pretty" title="Permalink to this headline">¶</a></h2>
+<p><strong>Example</strong>: merging cells.</p>
+<p><strong>Solution</strong>: If you’re not careful, formatting a worksheet to be more
+aesthetically pleasing can compromise your computer’s ability to see
+associations in the data. Merged cells will make your data unreadable by
+statistics software. Consider restructuring your data in such a way that
+you will not need to merge cells to organize your data.</p>
+</div>
+<div class="section" id="placing-comments-or-units-in-cells">
+<h2>Placing comments or units in cells<a class="headerlink" href="#placing-comments-or-units-in-cells" title="Permalink to this headline">¶</a></h2>
+<p><strong>Example</strong>: Your data was collected, in part, by a summer student who
+you later found out was mis-identifying some of your species, some of
+the time. You want a way to note these data are suspect.</p>
+<p><strong>Solution</strong>: Most analysis software can&#8217;t see Excel or LibreOffice
+comments, and would be confused by comments placed within your data
+cells. As described above for formatting, create another field if you
+need to add notes to cells. Similarly, don’t include units in cells:
+ideally, all the measurements you place in one column should be in the
+same unit, but if for some reason they aren’t, create another field and
+specify the units the cell is in.</p>
+</div>
+<div class="section" id="entering-more-than-one-piece-of-information-in-a-cell">
+<h2>Entering more than one piece of information in a cell<a class="headerlink" href="#entering-more-than-one-piece-of-information-in-a-cell" title="Permalink to this headline">¶</a></h2>
+<p><strong>Example</strong>: You find one male, and one female of the same species. You
+enter this as 1M, 1F.</p>
+<p><strong>Solution</strong>: Don&#8217;t include more than one piece of information in a
+cell. This will limit the ways in which you can analyze your data. If
+you need both these measurements, design your data sheet to include this
+information. For example, include one column for number of individuals
+and a separate column for sex.</p>
+</div>
+<div class="section" id="using-problematic-field-names">
+<h2>Using problematic field names<a class="headerlink" href="#using-problematic-field-names" title="Permalink to this headline">¶</a></h2>
+<p>Choose descriptive field names, but be careful not to include spaces,
+numbers, or special characters of any kind. Spaces can be misinterpreted
+by parsers that use whitespace as delimiters and some programs don’t
+like field names that are text strings that start with numbers.</p>
+<p>Underscores (<code class="docutils literal"><span class="pre">_</span></code>) are a good alternative to spaces. Consider writing
+names in camel case (like this: ExampleFileName) to improve readability.
+Remember that abbreviations that make sense at the moment may not be so
+obvious in 6 months, but don&#8217;t overdo it with names that are excessively
+long. Including the units in the field names avoids confusion and
+enables others to readily interpret your fields.</p>
+<p><strong>Examples</strong></p>
+<table align="left" style="width =50%; border: 1px solid black;"><tr><div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">b</span><span class="o">&gt;</span><span class="n">Good</span> <span class="n">Name</span><span class="o">&lt;/</span><span class="n">b</span><span class="o">&gt;&lt;/</span><span class="n">td</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">br</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">b</span><span class="o">&gt;</span><span class="n">Good</span> <span class="n">Alternative</span> <span class="o">&lt;/</span><span class="n">b</span><span class="o">&gt;</span> <span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;&lt;</span><span class="n">br</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">b</span><span class="o">&gt;</span><span class="n">Avoid</span> <span class="o">&lt;/</span><span class="n">b</span><span class="o">&gt;&lt;/</span><span class="n">td</span><span class="o">&gt;&lt;</span><span class="n">br</span> <span class="o">/&gt;</span>
+</pre></div>
+</div>
+</tr><tr><div class="highlight-default"><div class="highlight"><pre><span></span>&lt;td&gt; Max_temp_C&lt;/td&gt;
+&lt;td&gt; MaxTemp &lt;/td&gt;
+&lt;td&gt; Maximum Temp (°C) &lt;/td&gt;
+</pre></div>
+</div>
+</tr><tr><div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span> <span class="n">Precipitation_mm</span><span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span> <span class="n">Precipitation</span><span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span> <span class="n">precmm</span> <span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</tr><tr><div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span> <span class="n">Mean_year_growth</span><span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span> <span class="n">MeanYearGrowth</span> <span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span> <span class="n">Mean</span> <span class="n">growth</span><span class="o">/</span><span class="n">year</span><span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</tr><tr><div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span> <span class="n">sex</span> <span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span> <span class="n">sex</span> <span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span> <span class="n">M</span><span class="o">/</span><span class="n">F</span> <span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</tr><tr><div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span> <span class="n">weight</span> <span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span> <span class="n">weight</span> <span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span> <span class="n">w</span><span class="o">.&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</tr><tr><div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span> <span class="n">cell_type</span> <span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span> <span class="n">CellType</span> <span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span> <span class="n">Cell</span> <span class="n">Type</span> <span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</tr><tr><div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span> <span class="n">Observation_01</span> <span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span> <span class="n">first_observation</span><span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span> <span class="mi">1</span><span class="n">st</span> <span class="n">Obs</span><span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</tr></table></div>
+<div class="section" id="using-special-characters-in-data">
+<h2>Using special characters in data<a class="headerlink" href="#using-special-characters-in-data" title="Permalink to this headline">¶</a></h2>
+<p><strong>Example</strong>: You treat your spreadsheet program as a word processor when
+writing notes, for example copying data directly from Word or other
+applications.</p>
+<p><strong>Solution</strong>: This is a common strategy. For example, when writing
+longer text in a cell, people often include line breaks, em-dashes, etc
+in their spreadsheet. Also, when copying data in from applications such
+as Word, formatting and fancy non-standard characters (such as left- and
+right-aligned quotation marks) are included. When exporting this data
+into a coding/statistical environment or into a relational database,
+dangerous things may occur, such as lines being cut in half and encoding
+errors being thrown.</p>
+<p>General best practice is to avoid adding characters such as newlines,
+tabs, and vertical tabs. In other words, treat a text cell as if it were
+a simple web form that can only contain text and spaces.</p>
+</div>
+<div class="section" id="inclusion-of-metadata-in-data-table">
+<h2>Inclusion of metadata in data table<a class="headerlink" href="#inclusion-of-metadata-in-data-table" title="Permalink to this headline">¶</a></h2>
+<p><strong>Example</strong>: You add a legend at the top or bottom of your data table
+explaining column meaning, units, exceptions, etc.</p>
+<p><strong>Solution</strong>: Recording data about your data (“metadata”) is essential.
+You may be on intimate terms with your dataset while you are collecting
+and analysing it, but the chances that you will still remember that the
+variable &#8220;sglmemgp&#8221; means single member of group, for example, or the
+exact algorithm you used to transform a variable or create a derived
+one, after a few months, a year, or more are slim.</p>
+<p>As well, there are many reasons other people may want to examine or use
+your data - to understand your findings, to verify your findings, to
+review your submitted publication, to replicate your results, to design
+a similar study, or even to archive your data for access and re-use by
+others. While digital data by definition are machine-readable,
+understanding their meaning is a job for human beings. The importance of
+documenting your data during the collection and analysis phase of your
+research cannot be overestimated, especially if your research is going
+to be part of the scholarly record.</p>
+<p>However, metadata should not be contained in the data file itself.
+Unlike a table in a paper or a supplemental file, metadata (in the form
+of legends) should not be included in a data file since this information
+is not data, and including it can disrupt how computer programs
+interpret your data file. Rather, metadata should be stored as a
+separate file in the same directory as your data file, preferably in
+plain text format with a name that clearly associates it with your data
+file. Because metadata files are free text format, they also allow you
+to encode comments, units, information about how null values are
+encoded, etc. that are important to document but can disrupt the
+formatting of your data file.</p>
+<p>Additionally, file or database level metadata describes how files that
+make up the dataset relate to each other; what format are they are in;
+and whether they supercede or are superceded by previous files. A
+folder-level readme.txt file is the classic way of accounting for all
+the files and folders in a project.</p>
+<p>(Text on metadata adapted from the online course Research Data
+<a class="reference external" href="http://datalib.edina.ac.uk/mantra">MANTRA</a> by EDINA and Data
+Library, University of Edinburgh. MANTRA is licensed under a <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">Creative
+Commons Attribution 4.0 International
+License</a>.)</p>
+</div>
+</div>
+
+
+  
+      
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+  
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      
+      | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015 Todd Iverson.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.5.
+    </p>
+  </div>
+</footer>
+
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>
