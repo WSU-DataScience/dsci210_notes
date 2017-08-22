@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>1.13. Excel: Association Rules, i.e. Market Basket Analysis &mdash; Runestone Interactive Overview</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="_static/clickable.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="_static/dragndrop.css" type="text/css" />
+    <link rel="stylesheet" href="_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="_static/livecode.css" type="text/css" />
+    <link rel="stylesheet" href="_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootswatch/2.3.1/""/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/runestonebase.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="_static/codemirror.js"></script>
+    <script type="text/javascript" src="_static/xml.js"></script>
+    <script type="text/javascript" src="_static/css.js"></script>
+    <script type="text/javascript" src="_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="_static/python.js"></script>
+    <script type="text/javascript" src="_static/javascript.js"></script>
+    <script type="text/javascript" src="_static/activecode.js"></script>
+    <script type="text/javascript" src="_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="_static/clike.js"></script>
+    <script type="text/javascript" src="_static/timed_activecode.js"></script>
+    <script type="text/javascript" src="_static/animationbase.js"></script>
+    <script type="text/javascript" src="_static/mchoice.js"></script>
+    <script type="text/javascript" src="_static/timedmc.js"></script>
+    <script type="text/javascript" src="_static/timed.js"></script>
+    <script type="text/javascript" src="_static/clickable.js"></script>
+    <script type="text/javascript" src="_static/timedclickable.js"></script>
+    <script type="text/javascript" src="_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="_static/pytutor.js"></script>
+    <script type="text/javascript" src="_static/codelens.js"></script>
+    <script type="text/javascript" src="_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="_static/datafile.js"></script>
+    <script type="text/javascript" src="_static/dragndrop.js"></script>
+    <script type="text/javascript" src="_static/timeddnd.js"></script>
+    <script type="text/javascript" src="_static/fitb.js"></script>
+    <script type="text/javascript" src="_static/timedfitb.js"></script>
+    <script type="text/javascript" src="_static/livecode.js"></script>
+    <script type="text/javascript" src="_static/clike.js"></script>
+    <script type="text/javascript" src="_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="_static/lib/hammer.min.js"></script>
+    <script type="text/javascript" src="_static/parsons.js"></script>
+    <script type="text/javascript" src="_static/timedparsons.js"></script>
+    <script type="text/javascript" src="_static/poll.js"></script>
+    <script type="text/javascript" src="_static/reveal.js"></script>
+    <script type="text/javascript" src="_static/shortanswer.js"></script>
+    <script type="text/javascript" src="_static/timed_shortanswer.js"></script>
+    <script type="text/javascript" src="_static/tabbedstuff.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="_static/rangy-core.js"></script>
+    <script type="text/javascript" src="_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="_static/user-highlights.js"></script>
+    <script type="text/javascript" src="_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="Runestone Interactive Overview" href="index.html" />
+    <link rel="up" title="1. Processing Data with Excel" href="excel_toctree.html" />
+    <link rel="next" title="2. Processing Data with a Text Editor" href="texteditor_toctree.html" />
+    <link rel="prev" title="1.12. Excel: Merge Tables, i.e. MATCH() / INDEX() Functions" href="h6.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="/runestone/static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'dsci210';
+  eBookConfig.logLevel = 0;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = false;
+  eBookConfig.python3 = true;
+  eBookConfig.basecourse = 'dsci210';
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="index.html">DSCI 210 Notes</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='index.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/dsci210/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:ACFactory.toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/dsci210/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='/runestone/default/reportabug?course=dsci210&page=h7'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        <!--
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">1.13. Excel: Association Rules, i.e. Market Basket Analysis</a><ul>
+<li><a class="reference internal" href="#common-data-structure">1.13.1. Common Data Structure</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - 1.12. Excel: Merge Tables, i.e. MATCH() / INDEX() Functions" data-toggle="tooltip">
+    <a href="h6.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - 2. Processing Data with a Text Editor' data-toggle="tooltip" >
+    <a href="texteditor_toctree.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content">
+  
+  <div class="section" id="excel-association-rules-i-e-market-basket-analysis">
+<h1>1.13. Excel: Association Rules, i.e. Market Basket Analysis<a class="headerlink" href="#excel-association-rules-i-e-market-basket-analysis" title="Permalink to this headline">¶</a></h1>
+<p>Market Basket Analyses are a common application of association rules.
+One goal of a market basket analysis is to understand the association
+between items purchases. The relationship between items purchased at a
+grocery store will be considered in this handout.</p>
+<p><a class="reference internal" href="_images/image249.png"><img alt="image1" src="_images/image249.png" style="width: 4.50in; height: 1.86in;" /></a></p>
+<p>An association rule highlights the fact that some items are more (or
+less) indicative of the purchase of others. For example, purchasing
+cereal increases the likelihood of purchasing milk. These types of
+analyses may also reveals that liquor and milk are rarely purchased
+together.</p>
+<p><a class="reference internal" href="_images/image425.png"><img alt="image3" src="_images/image425.png" style="width: 4.77567in; height: 3.50420in;" /></a></p>
+<p><strong>Association Rules</strong> are used to uncover associations or relationships
+that exist between items. Often these rules are constructed to identify
+relationships between items purchased, i.e. Market Basket Analysis.</p>
+<p>Procedural Steps</p>
+<ol class="arabic simple">
+<li>Determine how often items are purchased</li>
+<li>Determine how often items are purchased in conjunction with other
+items</li>
+<li>Identify which purchased items are indicative of others being
+purchased</li>
+</ol>
+<p>Data Technologies</p>
+<ol class="arabic simple">
+<li>Filtering/Subsets</li>
+<li>Creating Tables</li>
+<li>Applications of Summaries</li>
+</ol>
+<p>Consider the following subset of data from a collection of transactions
+from a grocery store.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="32%" />
+<col width="68%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Transaction ID</th>
+<th class="head">Items Purchased</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>1</td>
+<td>{Bread, Milk}</td>
+</tr>
+<tr class="row-odd"><td>2</td>
+<td>{Eggs, Ham}</td>
+</tr>
+<tr class="row-even"><td>3</td>
+<td>{Bread, Fruit, Milk}</td>
+</tr>
+<tr class="row-odd"><td>4</td>
+<td>{Beer, Bread, Butter, Fruit, Soda}</td>
+</tr>
+<tr class="row-even"><td>5</td>
+<td>{Bread, Fruit, Milk, Soda}</td>
+</tr>
+</tbody>
+</table>
+<p>Association rules are developed under the following guiding principles.</p>
+<div class="admonition-association-rule-principles admonition">
+<p class="first admonition-title">Association Rule Principles</p>
+<ol class="last arabic simple">
+<li>Items should be purchased somewhat (<strong>Support</strong>)</li>
+<li>Reliability, i.e. the degree to which one set of items predicts the purchase
+of another set of items (<strong>Confidence</strong>)</li>
+</ol>
+</div>
+<p>Consider the following association rule – the purchase of Bread
+indicates the purchase of Milk.</p>
+<div class="admonition-rule-1 admonition">
+<p class="first admonition-title">Rule 1</p>
+<div class="last math">
+\[\left\{ \text{Bread} \right\}\  \rightarrow \left\{ \text{Milk} \right\}\]</div>
+</div>
+<p>Compute the support and confidence for this rule.</p>
+<div class="math">
+\[Support(Bread\ AND\ Milk) = \ \frac{\#\ Bread\ AND\ Milk}{\#\ Transactions} =\]</div>
+<div class="math">
+\[Confidence\ of\ Rule\ \# 1 = \ \frac{Support(Bread\ AND\ Milk)}{Support(Bread)} =\]</div>
+<p>Consider a second association rule for the purchase of Milk.</p>
+<div class="admonition-rule-2 admonition">
+<p class="first admonition-title">Rule 2</p>
+<div class="last math">
+\[\left\{ \text{Fruit} \right\}\  \rightarrow \left\{ \text{Milk} \right\}\]</div>
+</div>
+<p>Compute the support and confidence for this rule.</p>
+<div class="math">
+\[Support(Fruit\ AND\ Milk) =\]</div>
+<div class="math">
+\[Confidence\ of\ Rule =\]</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title">Question</p>
+<ol class="last arabic simple">
+<li>Why might Rule #1 be considered “better” than Rule #2 when interest
+lies in the purchase of Milk?</li>
+</ol>
+</div>
+<p>Consider a third association rule for the purchase of Milk.</p>
+<div class="admonition-rule-3 admonition">
+<p class="first admonition-title">Rule 3</p>
+<div class="last math">
+\[\left\{ Bread,\ Fruit \right\}\  \rightarrow \left\{ \text{Milk} \right\}\]</div>
+</div>
+<p>Compute the support and confidence for this rule.</p>
+<div class="math">
+\[Support(Bread,\ Fruit,\ AND\ Milk) =\]</div>
+<div class="math">
+\[Confidence\ of\ Rule =\]</div>
+<p><strong>Lift</strong> is another measure often considered when evaluating rules of
+association.</p>
+<div class="math">
+\[Lift(\ \left\{ \text{Bread} \right\} \rightarrow \left\{ \text{Milk} \right\}\ ) = \ \frac{Confidence(Bread\ AND\ Milk)}{Support(Milk)} = \frac{P(Milk|Bread)}{P(Milk)}\]</div>
+<p>For our example, realize that the support for Milk is fairly large. i.e,
+Milk was purchased in 60% of the transactions. This provides a baseline
+value for confidence. That is, rules that exceed this value indicate
+gains when considering the association provided by the rule. When the
+lift of a rule is near 1, then the rule provides little information to
+understanding the purchase of the item.</p>
+<ul class="simple">
+<li><span class="math">\(Lift &gt; 1\)</span> implies positive association between items</li>
+<li><span class="math">\(Lift \approx 1\)</span> implies no association between items</li>
+<li><span class="math">\(Lift &lt; 1\)</span> implies negative association between items</li>
+</ul>
+<table border="1" class="docutils">
+<colgroup>
+<col width="39%" />
+<col width="11%" />
+<col width="26%" />
+<col width="23%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Rule</strong></th>
+<th class="head"><strong>Support</strong></th>
+<th class="head"><strong>Confidence</strong></th>
+<th class="head"><strong>Lift</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><div class="first last math">
+\[\left\{ \text{Bread} \right\}\  \rightarrow \left\{ \text{Milk} \right\}\]</div>
+</td>
+<td><div class="first last math">
+\[\frac{3}{5}\]</div>
+</td>
+<td><div class="first last math">
+\[\frac{\frac{3}{5}}{\frac{4}{5}} = \frac{3}{4}\]</div>
+</td>
+<td><div class="first last math">
+\[\frac{\frac{3}{4}}{\frac{3}{5}} = 1.25\]</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="first last math">
+\[\left\{ \text{Fruit} \right\}\  \rightarrow \left\{ \text{Milk} \right\}\]</div>
+</td>
+<td><div class="first last math">
+\[\frac{2}{5}\]</div>
+</td>
+<td><div class="first last math">
+\[\frac{\frac{2}{5}}{\frac{3}{5}} = \frac{2}{3}\]</div>
+</td>
+<td><div class="first last math">
+\[\frac{\frac{2}{3}}{\frac{3}{5}} = 1.11\]</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="first last math">
+\[\left\{ Bread,\ Fruit \right\}\  \rightarrow \left\{ \text{Milk} \right\}\]</div>
+</td>
+<td><div class="first last math">
+\[\frac{2}{5}\]</div>
+</td>
+<td><div class="first last math">
+\[\frac{\frac{2}{5}}{\frac{3}{5}} = \frac{2}{3}\]</div>
+</td>
+<td><div class="first last math">
+\[\frac{\frac{2}{3}}{\frac{3}{5}} = 1.11\]</div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-some-comments admonition">
+<p class="first admonition-title">Some Comments</p>
+<ul class="last simple">
+<li>Association rules with no support have zero confidence. E.g. Beer is
+never purchased with Milk, so the rule
+<span class="math">\(\left\{ \text{Beer} \right\}\  \rightarrow \left\{ \text{Milk} \right\}\)</span>
+should not be considered.</li>
+<li>The confidence of a rule should not be considered independent of it’s
+support. For example, the rule
+<span class="math">\(\left\{ \text{Eggs} \right\}\  \rightarrow \left\{ \text{Ham} \right\}\)</span>
+has Confidence = 1. That is, 100% of the time eggs were purchased, so
+was Ham. However, this rule has very low support as Eggs and Ham were
+only purchased once.</li>
+<li>Association rules are not invariant. For example, the confidence for
+the rule
+<span class="math">\(\left\{ \text{Bread} \right\}\  \rightarrow \left\{ \text{Milk} \right\}\)</span>
+is different than the confidence of the rule
+<span class="math">\(\left\{ \text{Milk} \right\}\  \rightarrow \left\{ \text{Bread} \right\}\)</span>.</li>
+</ul>
+</div>
+<div class="section" id="common-data-structure">
+<h2>1.13.1. Common Data Structure<a class="headerlink" href="#common-data-structure" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="_images/image515.png"><img alt="image4" src="_images/image515.png" style="width: 4.30in; height: 1.60in;" /></a></p>
+<p>Next, consider the complete grocery dataset. This dataset contains 9835
+transactions and 169 unique items. This dataset can be downloaded from
+the Workshop website.</p>
+<p><a class="reference internal" href="_images/image614.png"><img alt="image5" src="_images/image614.png" style="width: 4.86in; height: 1.44in;" /></a></p>
+<p>Open the Groceries dataset in Excel. The binary representation of this
+market basket dataset is provided in this Excel file. A snippet is shown
+here.</p>
+<p><a class="reference internal" href="_images/image814.png"><img alt="image7" src="_images/image814.png" style="width: 5.65924in; height: 1.54783in;" /></a></p>
+<p>Spreadsheets consist of rows and columns. Datasets also consist of rows
+and columns as well, but also contain information that is not data, e.g.
+variable names. Excel does not differentiate the header row from actual
+data unless you convert the collection of rows and columns into a
+<strong>Table</strong>.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="67%" />
+<col width="33%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><p class="first">Putting Data into the Table structure in Excel</p>
+<p><a class="reference internal" href="_images/image913.png"><img alt="image8" src="_images/image913.png" style="width: 1.88060in; height: 0.99254in;" /></a></p>
+<p>Give your table a name for easy referencing</p>
+<p class="last"><a class="reference internal" href="_images/image1014.png"><img alt="image9" src="_images/image1014.png" style="width: 2.47015in; height: 0.75512in;" /></a></p>
+</td>
+<td><p class="first">Short-cuts for cursor</p>
+<p>movement in Excel</p>
+<p class="last"><a class="reference internal" href="_images/image1118.png"><img alt="image10" src="_images/image1118.png" style="width: 1.53748in; height: 2.08209in;" /></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>The following snippet shows the Groceries dataset specified as a table.</p>
+<p><a class="reference internal" href="_images/image1215.png"><img alt="image11" src="_images/image1215.png" style="width: 4.78151in; height: 1.80379in;" /></a></p>
+<p>The drop-down arrows provided for each variable (or field) are called
+Filters. Filters in Excel allow you to subset rows.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="76%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><p class="first">Filter on Whole Milk</p>
+<p class="last"><a class="reference internal" href="_images/image1314.png"><img alt="image12" src="_images/image1314.png" style="width: 1.39496in; height: 1.60808in;" /></a></p>
+</td>
+<td><p class="first">Select Whole Milk = 1 to identify transactions that purchased whole milk</p>
+<p class="last"><a class="reference internal" href="_images/image1413.png"><img alt="image13" src="_images/image1413.png" style="width: 2.68750in; height: 1.06250in;" /></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>After a Filter is applied, certain rows are hidden from view. Excel
+indicates this fact with changing the row label color to blue.</p>
+<p><a class="reference internal" href="_images/image1513.png"><img alt="image14" src="_images/image1513.png" style="width: 4.08298in; height: 1.19130in;" /></a></p>
+<p>The status bar in Excel, the bar across the bottom of the Excel file,
+provides simple summaries for columns of the table. For example, if the
+Whole Milk column (column Y) is highlighted, the following summaries are
+shown.</p>
+<p><a class="reference internal" href="_images/image1613.png"><img alt="image15" src="_images/image1613.png" style="width: 5.80501in; height: 0.41739in;" /></a></p>
+<p>Applying filters to columns Whole Milk and Butter allows one to easy
+compute the support and confidence for the rule
+<span class="math">\(\left\{ \text{Butter} \right\}\  \rightarrow \left\{ \text{Milk} \right\}\)</span>.</p>
+<p>The =COUNT() function in Excel can used to count the number of nonblank
+rows in a column. Excel functions also work with tables and variable
+names. The following will provide a count of the number of transactions
+in the Groceries dataset, i.e. 9835. The use of the table and variable
+names is preferred as this avoids the need to highlight an exact range
+of cells in Excel.</p>
+<p><a class="reference internal" href="_images/image1911.png"><img alt="image18" src="_images/image1911.png" style="width: 4.04478in; height: 0.74083in;" /></a></p>
+<p>The =COUNTIF() function in Excel provides a count of only the cells that
+satisfy some condition. The following can be used to compute the support
+for butter.</p>
+<p>=COUNTIF( Groceries[butter] , 1 )</p>
+<p>If more than one condition is needed, the =COUNTIFS() function can be
+used. COUNTIFS is necessary to compute Support(Butter AND Whole Milk).</p>
+<p>=COUNTIFS( Groceries[butter] , 1 , Groceries[whole milk] , 1 )</p>
+<p>A brief description of the COUNTIFS function in Excel is provide here.</p>
+<p><a class="reference internal" href="_images/image209.png"><img alt="image19" src="_images/image209.png" style="width: 3.60870in; height: 0.98419in;" /></a></p>
+<p>Move to far right of the Groceries table in Excel. You can use Ctrl → to
+move quickly to the far right edge. Enter the following function in
+Excel to compute the counts necessary for measuring support for the rule
+<span class="math">\(\left\{ \text{Butter} \right\}\  \rightarrow \left\{ \text{Milk} \right\}\)</span>.</p>
+<p><a class="reference internal" href="_images/image2114.png"><img alt="image20" src="_images/image2114.png" style="width: 5.66276in; height: 1.40298in;" /></a></p>
+<p>Use the value computed above to compute the Confidence and Lift for this
+rule.</p>
+<p><a class="reference internal" href="_images/image2213.png"><img alt="image21" src="_images/image2213.png" style="width: 5.76119in; height: 2.02442in;" /></a></p>
+<p>Verify that these formulas are correct by comparing them to the output
+provided below.</p>
+<p><a class="reference internal" href="_images/image2312.png"><img alt="image22" src="_images/image2312.png" style="width: 2.38567in; height: 1.80000in;" /></a></p>
+<p><em>Evaluating Several Rules</em></p>
+<p>The procedure provided above lack efficiencies and does not scale well
+when several rules need to be evaluated. For example, to evaluate the
+rule
+<span class="math">\(\left\{ \text{Yogurt} \right\}\  \rightarrow \left\{ \text{Milk} \right\}\)</span>,
+the formulas for support will need to be changed. The =INDIRCT()
+function in Excel will help increase the efficiency in computing the
+support, confidence, and lift for several rules.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">INDIRECT() Function</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><table border="1" class="first last docutils">
+<colgroup>
+<col width="40%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><div class="first line-block">
+<div class="line">Consider the following data</div>
+<div class="line">in Excel.</div>
+</div>
+<p class="last"><a class="reference internal" href="_images/image2410.png"><img alt="image23" src="_images/image2410.png" style="width: 1.72174in; height: 1.09305in;" /></a></p>
+</th>
+<th class="head"><p class="first">Step 1: Obtain value from another cell</p>
+<p class="last"><a class="reference internal" href="_images/image258.png"><img alt="image24" src="_images/image258.png" style="width: 2.55186in; height: 0.86957in;" /></a></p>
+</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>&nbsp;</td>
+<td><p class="first">Step 2: Use value in specified cell in formula</p>
+<p class="last"><a class="reference internal" href="_images/image268.png"><img alt="image25" src="_images/image268.png" style="width: 2.33044in; height: 0.77142in;" /></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<p>The =INDIRECT() function can be used in the following manner to
+automatically update the variable names when computing the support for
+several rules.</p>
+<p>=COUNTIF( INDIRECT ( “ Groceries[ “ &amp; B2 &amp; “ ] “ ), 1)</p>
+<p>The following setup is used to evaluate six different association rules
+for Milk.</p>
+<p><a class="reference internal" href="_images/image278.png"><img alt="image26" src="_images/image278.png" style="width: 5.00000in; height: 1.18536in;" /></a></p>
+<p>This formula can be copied down in Excel to evaluate the support for the
+remaining rules. The confidence and lift are computed for these rules as
+well.</p>
+<p><a class="reference internal" href="_images/image288.png"><img alt="image27" src="_images/image288.png" style="width: 6.50000in; height: 1.43056in;" /></a></p>
+<p><em>Questions</em></p>
+<ol class="arabic simple">
+<li>The Lift for
+<span class="math">\(\left\{ \text{Cereal} \right\}\  \rightarrow \left\{ \text{Milk} \right\}\)</span>
+is about 2.5 which is fairly high. Thus, given that the transaction
+includes cereal, there is 2.5 fold increase in the likelihood of milk
+being purchased.<ol class="loweralpha">
+<li>Compute Support(Cereal AND Milk).</li>
+<li>This value is fairly low. Why does a low support value negate the
+usefulness of a rule?</li>
+</ol>
+</li>
+<li>The Lift value for the rule
+<span class="math">\(\left\{ \text{Canned\ Beer} \right\}\  \rightarrow \left\{ \text{Milk} \right\}\)</span>
+is lowest on this list. What can be said about the purchase of Canned
+Beer AND Milk?</li>
+<li>Which of these rules is least useful in the prediction of Milk?
+Explain how you made this determination.</li>
+</ol>
+<p><em>Task</em></p>
+<p>Use Excel to obtain the Confidence and Lift for all association rules
+for Whole Milk where only single items are considered on the left.</p>
+<ul class="simple">
+<li>Copy all variable names and paste them into a single column. This can
+be done using Paste Special – specify Values and Transpose when
+pasting.</li>
+<li>The =CONCATENATE() function can be used to create the Rule column,
+i.e. =CONCATENATE(“{“,B2,”} -&gt; {Milk}”).</li>
+</ul>
+<table border="1" class="docutils">
+<colgroup>
+<col width="72%" />
+<col width="28%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><p class="first">Specify Values and Transpose under Paste Special</p>
+<p class="last"><a class="reference internal" href="_images/image297.png"><img alt="image28" src="_images/image297.png" style="width: 1.85729in; height: 1.63478in;" /></a></p>
+</td>
+<td><p class="first">Output for Rules</p>
+<p class="last"><a class="reference internal" href="_images/image425.png"><img alt="image29" src="_images/image425.png" style="width: 3.80411in; height: 2.79130in;" /></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+  
+      
+  <li id="relations-prev" class="navLink" title='Previous Section - 1.12. Excel: Merge Tables, i.e. MATCH() / INDEX() Functions' data-toggle="tooltip">
+    <a href="h6.html" >
+      <i class='prevNav glyphicon glyphicon-chevron-left'></i>
+    </a>
+  </li>
+  <a class="navLinkBg" id="navLinkBgLeft"  href="h6.html" ></a>
+  
+  <li id="relations-next" class="navLink" title='Next Section - 2. Processing Data with a Text Editor' data-toggle="tooltip" >
+    <a href="texteditor_toctree.html" >
+      <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
+    </a>
+  </li>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="texteditor_toctree.html" >Next Section - 2. Processing Data with a Text Editor</a>
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+  
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      
+      | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015 Todd Iverson.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.5.
+    </p>
+  </div>
+</footer>
+
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

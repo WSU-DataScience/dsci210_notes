@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>4.1. R: Introduction to R &mdash; Runestone Interactive Overview</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="_static/clickable.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="_static/dragndrop.css" type="text/css" />
+    <link rel="stylesheet" href="_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="_static/livecode.css" type="text/css" />
+    <link rel="stylesheet" href="_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootswatch/2.3.1/""/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/runestonebase.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="_static/codemirror.js"></script>
+    <script type="text/javascript" src="_static/xml.js"></script>
+    <script type="text/javascript" src="_static/css.js"></script>
+    <script type="text/javascript" src="_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="_static/python.js"></script>
+    <script type="text/javascript" src="_static/javascript.js"></script>
+    <script type="text/javascript" src="_static/activecode.js"></script>
+    <script type="text/javascript" src="_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="_static/clike.js"></script>
+    <script type="text/javascript" src="_static/timed_activecode.js"></script>
+    <script type="text/javascript" src="_static/animationbase.js"></script>
+    <script type="text/javascript" src="_static/mchoice.js"></script>
+    <script type="text/javascript" src="_static/timedmc.js"></script>
+    <script type="text/javascript" src="_static/timed.js"></script>
+    <script type="text/javascript" src="_static/clickable.js"></script>
+    <script type="text/javascript" src="_static/timedclickable.js"></script>
+    <script type="text/javascript" src="_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="_static/pytutor.js"></script>
+    <script type="text/javascript" src="_static/codelens.js"></script>
+    <script type="text/javascript" src="_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="_static/datafile.js"></script>
+    <script type="text/javascript" src="_static/dragndrop.js"></script>
+    <script type="text/javascript" src="_static/timeddnd.js"></script>
+    <script type="text/javascript" src="_static/fitb.js"></script>
+    <script type="text/javascript" src="_static/timedfitb.js"></script>
+    <script type="text/javascript" src="_static/livecode.js"></script>
+    <script type="text/javascript" src="_static/clike.js"></script>
+    <script type="text/javascript" src="_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="_static/lib/hammer.min.js"></script>
+    <script type="text/javascript" src="_static/parsons.js"></script>
+    <script type="text/javascript" src="_static/timedparsons.js"></script>
+    <script type="text/javascript" src="_static/poll.js"></script>
+    <script type="text/javascript" src="_static/reveal.js"></script>
+    <script type="text/javascript" src="_static/shortanswer.js"></script>
+    <script type="text/javascript" src="_static/timed_shortanswer.js"></script>
+    <script type="text/javascript" src="_static/tabbedstuff.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="_static/rangy-core.js"></script>
+    <script type="text/javascript" src="_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="_static/user-highlights.js"></script>
+    <script type="text/javascript" src="_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="Runestone Interactive Overview" href="index.html" />
+    <link rel="up" title="4. Processing Data with R" href="R_toctree.html" />
+    <link rel="next" title="4.2. Handout 3: Summaries in R" href="h14.html" />
+    <link rel="prev" title="4. Processing Data with R" href="R_toctree.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="/runestone/static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'dsci210';
+  eBookConfig.logLevel = 0;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = false;
+  eBookConfig.python3 = true;
+  eBookConfig.basecourse = 'dsci210';
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="index.html">DSCI 210 Notes</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='index.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/dsci210/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:ACFactory.toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/dsci210/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='/runestone/default/reportabug?course=dsci210&page=h12'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        <!--
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">4.1. R: Introduction to R</a></li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - 4. Processing Data with R" data-toggle="tooltip">
+    <a href="R_toctree.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - 4.2. Handout 3: Summaries in R' data-toggle="tooltip" >
+    <a href="h14.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content">
+  
+  <div class="section" id="r-introduction-to-r">
+<h1>4.1. R: Introduction to R<a class="headerlink" href="#r-introduction-to-r" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line">To begin, download R from the R-Project web site
+(<a class="reference external" href="http://www.r-project.org">www.r-project.org</a>). R is different
+from most statistical packages in that it contains a very primitive
+interface (though this is continually improving) and as a result has a
+more hands-on or programming feel than other statistical software
+packages.</div>
+</div>
+<p>The standard installation of R utilizes a default user interface. In
+this course, we will instead use RStudio which provides a richer
+interface. Once you have installed the R base package, download RStudio
+from the following website: <a class="reference external" href="http://www.rstudio.com/">http://www.rstudio.com/</a>.</p>
+<p>R is an open source package. This has both advantages and disadvantages.
+Because it is open source, there is no “software support” you can
+directly access; however, there are literally <em>thousands</em> of documents
+on the web that can help you use R efficiently (some are much better
+than others). The following links give some of the most popular webpages
+for R support.</p>
+<ul class="simple">
+<li><a class="reference external" href="http://cran.r-project.org/other-docs.html">http://cran.r-project.org/other-docs.html</a></li>
+<li><a class="reference external" href="http://cran.r-project.org/manuals.html">http://cran.r-project.org/manuals.html</a></li>
+<li><a class="reference external" href="http://cran.r-project.org/doc/manuals/R-intro.html">http://cran.r-project.org/doc/manuals/R-intro.html</a></li>
+</ul>
+<p>R’s base package contains many basic functions used in statistics. In
+addition to the base package, many individuals have created other
+packages that can be downloaded that will aid in various analyses.</p>
+<p>The following provides a snapshot of the R Studio interface that is
+commonly used when using R.</p>
+<p><a class="reference internal" href="_images/image114.png"><img alt="image0" src="_images/image114.png" style="width: 4.87595in; height: 3.60448in;" /></a></p>
+<p><em>Organizational Structure</em></p>
+<p>The organization structure in R is best managed through what is called
+Projects. To create a new Project, select File &gt; New Project …</p>
+<p><a class="reference internal" href="_images/image210.png"><img alt="image1" src="_images/image210.png" style="width: 1.82090in; height: 0.72061in;" /></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="39%" />
+<col width="61%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><p class="first">First, specify New Directory</p>
+<p class="last"><a class="reference internal" href="_images/image310.png"><img alt="image2" src="_images/image310.png" style="width: 2.46269in; height: 1.57253in;" /></a></p>
+</td>
+<td><p class="first">Next, to begin we will create an Empty Project</p>
+<p class="last"><a class="reference internal" href="_images/image44.png"><img alt="image3" src="_images/image44.png" style="width: 2.38806in; height: 1.52681in;" /></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Specify the name and location for the new directory that will contain
+this new project.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><p class="first">Next, specify the name and location fo this new directory</p>
+<p class="last"><a class="reference internal" href="_images/image53.png"><img alt="image4" src="_images/image53.png" style="width: 2.17164in; height: 1.53944in;" /></a></p>
+</td>
+<td><p class="first">Verify that the new direcory and project has been created</p>
+<p class="last"><a class="reference internal" href="_images/image63.png"><img alt="image5" src="_images/image63.png" style="width: 2.47015in; height: 0.73473in;" /></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>The frame in the upper-left is your script window and the frame on the
+lower-left is the R console window. You can enter command directly into
+the R console; however, I’d encourage you to get accustomed to using the
+script window. The following can be used to obtain an R script window.</p>
+<p><a class="reference internal" href="_images/image73.png"><img alt="image6" src="_images/image73.png" style="width: 3.86087in; height: 1.32874in;" /></a></p>
+<p><strong>*Reading Data Files into R Studio*</strong></p>
+<p>Citibike is a bike rental company that operates in New York City.
+Citibike bike rental data is publically available.</p>
+<ul class="simple">
+<li>Citibike: <a class="reference external" href="https://www.citibikenyc.com/">https://www.citibikenyc.com/</a></li>
+<li>System Data: <a class="reference external" href="https://www.citibikenyc.com/system-data">https://www.citibikenyc.com/system-data</a></li>
+<li>Amazon data download: <a class="reference external" href="https://s3.amazonaws.com/tripdata/index.html">https://s3.amazonaws.com/tripdata/index.html</a></li>
+</ul>
+<table border="1" class="docutils">
+<colgroup>
+<col width="11%" />
+<col width="89%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="_images/image83.png"><img alt="image7" src="_images/image83.png" style="width: 3.81132in; height: 2.53956in;" /></a></td>
+<td><a class="reference internal" href="_images/image9.jpeg"><img alt="http://inhabitat.com/wp-content/blogs.dir/2/files/2013/04/citi-bike-share-1-e1366036215458.jpg" src="_images/image9.jpeg" style="width: 1.81273in; height: 1.20755in;" /></a></td>
+</tr>
+</tbody>
+</table>
+<p>Scroll down and save a copy of the most recent dataset onto your local
+machine.</p>
+<p><a class="reference internal" href="_images/image103.png"><img alt="image9" src="_images/image103.png" style="width: 3.62264in; height: 1.39684in;" /></a></p>
+<p>Unzip the file that you’ve downloaded from this website. A comma
+delimited text file is produced.</p>
+<p><a class="reference internal" href="_images/image115.png"><img alt="image10" src="_images/image115.png" style="width: 6.00000in; height: 0.71319in;" /></a></p>
+<p>The Citibike dataset is highly structured. The first row contains the
+variable or field names. Each row represents a single instance of a bike
+rental.</p>
+<p><a class="reference internal" href="_images/image122.png"><img alt="image11" src="_images/image122.png" style="width: 6.00000in; height: 2.13056in;" /></a></p>
+<p>To open a text file in RStudio, select <strong>Import Dataset</strong> in the window
+shown in the upper-right. Choose to import data from a Text File.</p>
+<p><a class="reference internal" href="_images/image132.png"><img alt="image12" src="_images/image132.png" style="width: 5.45283in; height: 0.84632in;" /></a></p>
+<p>Select the text file to be read in. The Citibike bike rental dataset is
+being read in here. Give a name to the dataset in the Name box. Options
+may need to be specified, the default setting suffice for this dataset.</p>
+<p><a class="reference internal" href="_images/image142.png"><img alt="image13" src="_images/image142.png" style="width: 5.19811in; height: 3.32583in;" /></a></p>
+<p><strong>*Understanding Data Objects*</strong></p>
+<p>Click Import, and the data set will be added to your workspace. If you
+click on the data set name in your workspace, the data set will appear
+in the upper-left window.</p>
+<p><a class="reference internal" href="_images/image152.png"><img alt="image14" src="_images/image152.png" style="width: 6.00000in; height: 0.96875in;" /></a></p>
+<p>R is an object oriented language and there are a few basic objects used
+to store data. In an effort to keep things simple, consider the
+following explanations.</p>
+<ul class="simple">
+<li>vector: the contents of a single column</li>
+<li>data.frame: a collection of vectors – restricted to each having same
+length</li>
+<li>list: a collection of vectors</li>
+</ul>
+<p>R stores the imported data in an object known as a data frame. The type
+of object can be identified using the class() function.</p>
+<p>&gt; class(Bikedata)</p>
+<p>[1] &#8220;data.frame&#8221;</p>
+<p>The str() function can be used to provide additional details regarding
+an object.</p>
+<p>&gt; str(Bikedata)</p>
+<p><a class="reference internal" href="_images/image162.png"><img alt="image15" src="_images/image162.png" style="width: 6.00000in; height: 1.50000in;" /></a></p>
+<p><em>Questions</em>:</p>
+<ol class="arabic simple">
+<li>How many observations, i.e. rows, does Bikedata contain?</li>
+<li>How many variables, i.e. columns, doe the Bikedata contain?</li>
+</ol>
+<p>A data.frame may contains a mix of data types. From the above output, we
+can see that tripduration is an integer, start.station.latitude is a
+number, and strings are identified as factors. A factor variable has
+levels inherently defined – which is beneficial when summarizing data.</p>
+<p>The summary() function is a generic function that produces summaries
+that are relevant to the object being passed into the function.</p>
+<p>&gt; summary(Bikedata)</p>
+<p><a class="reference internal" href="_images/image172.png"><img alt="image16" src="_images/image172.png" style="width: 6.00000in; height: 2.18611in;" /></a></p>
+<p>Consider the following summaries provided above.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="58%" />
+<col width="42%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><p class="first">Summaries for a numeric variable</p>
+<p><a class="reference internal" href="_images/image182.png"><img alt="image17" src="_images/image182.png" style="width: 1.46875in; height: 1.10417in;" /></a></p>
+<p class="last">Measurement Units: Seconds</p>
+</td>
+<td><p class="first">Summaries for a factor</p>
+<p class="last"><a class="reference internal" href="_images/image192.png"><img alt="image18" src="_images/image192.png" style="width: 1.58333in; height: 0.55208in;" /></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><em>Questions</em>:</p>
+<ol class="arabic simple">
+<li>Provide a brief description of the summary statistics for
+tripduration. What information about bike rentals in NYC do these
+summaries provide?</li>
+<li>Provide a brief description of the summary statistics for usertype.
+What information about bike rentals in NYC do these summaries
+provide?</li>
+</ol>
+<p><strong>*Creating New Objects*</strong></p>
+<p>R allows one to easily work with individual variables within a
+data.frame.</p>
+<p><a class="reference internal" href="_images/image201.png"><img alt="image19" src="_images/image201.png" style="width: 2.24528in; height: 0.56650in;" /></a></p>
+<p>For example, the str() and summary() function can be applied only the
+tripduration variable</p>
+<p>&gt; str(Bikedata$tripduration)</p>
+<p>int [1:919921] 1491 1044 714 329 1871 859 538 1255 1216 280 ...</p>
+<p>&gt;</p>
+<p>&gt; summary(Bikedata$tripduration)</p>
+<p>Min. 1st Qu. Median Mean 3rd Qu. Max.</p>
+<p>61 364 593 1020 1001 2826000</p>
+<p>R allows us to easily create a new variable. The “&lt;-“ is the assignment
+operator and is used to assign output to an object. R attempts to
+identify the most appropriate object type when assignments are made. The
+following will convert the trip duration to minutes. The outcome will be
+placed into an object called trip.minutes.</p>
+<p>&gt; trip.minutes &lt;- Bikedata$tripduration / 60</p>
+<p>Notice that a new (vector) object is created.</p>
+<p><a class="reference internal" href="_images/image212.png"><img alt="image20" src="_images/image212.png" style="width: 4.40566in; height: 0.31530in;" /></a></p>
+<p>Once again, the structure of this object can be identified using str().
+A summary of this newly created vector is provided here as well.</p>
+<p>&gt; str(trip.minutes)</p>
+<p>num [1:919921] 24.85 17.4 11.9 5.48 31.18 ...</p>
+<div class="line-block">
+<div class="line">&gt;</div>
+<div class="line">&gt; summary(trip.minutes)</div>
+</div>
+<p>Min. 1st Qu. Median Mean 3rd Qu. Max.</p>
+<p>1.02 6.07 9.88 17.00 16.68 47100.00</p>
+<p>A new object can be assigned to directly to an existing data.frame as
+follows.</p>
+<p>&gt; Bikedata$trip.minutes &lt;- Bikedata$tripduration / 60</p>
+<p>The number of variables in the Bikedata data.frame <em>before</em> creating
+this new variable.</p>
+<p><a class="reference internal" href="_images/image222.png"><img alt="image21" src="_images/image222.png" style="width: 3.79245in; height: 0.35955in;" /></a></p>
+<p>The number of variables in the Bikedata data.frame <em>after</em> creating this
+new variable.</p>
+<p><a class="reference internal" href="_images/image231.png"><img alt="image22" src="_images/image231.png" style="width: 3.84245in; height: 0.31806in;" /></a></p>
+<p><strong>*Referring to Elements of Objects - Vectors*</strong></p>
+<p>As seen above, R allows us to create a new variable from an existing
+column within a data.frame. R also allows us to obtain certain segments
+(or subsets) of data objects as well.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="64%" />
+<col width="36%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><p class="first">trip.minutes is stored as a vector within R</p>
+<p class="last"><a class="reference internal" href="_images/image241.png"><img alt="image23" src="_images/image241.png" style="width: 0.67708in; height: 1.82292in;" /></a></p>
+</td>
+<td><div class="first line-block">
+<div class="line">Prettified version of</div>
+<div class="line">trip.minutes</div>
+</div>
+<p class="last"><a class="reference internal" href="_images/image251.png"><img alt="image24" src="_images/image251.png" style="width: 0.94881in; height: 1.82292in;" /></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>The bracket syntax, i.e. [ ], is used to refer to particular segments of
+data objects. For example, the get the 1<sup>st</sup> element of the
+trip.minutes vector, trip.minutes[1] is used. The second element is
+obtained simple by changing the 1 to a 2.</p>
+<p>&gt; trip.minutes[1]</p>
+<p>[1] 24.85</p>
+<p>&gt; trip.minutes[2]</p>
+<p>[1] 17.4</p>
+<p>The first five elements can be obtained using 1:5 as is shown here.</p>
+<p>&gt; trip.minutes[1:5]</p>
+<p>[1] 24.850000 17.400000 11.900000 5.483333 31.183333</p>
+<p>If the first five elements are to be saved into a new object, simply
+make the necessary assignment.</p>
+<p>&gt; trip.minutes.first5 &lt;- trip.minutes[1:5]</p>
+<p>A new vector of length five is created in your environment.</p>
+<p><a class="reference internal" href="_images/image261.png"><img alt="image25" src="_images/image261.png" style="width: 4.00000in; height: 0.43665in;" /></a></p>
+<p>The length() function can be used to identify the number of elements in
+a vector.</p>
+<p>&gt; length(trip.minutes.first5)</p>
+<p>[1] 5</p>
+<p><em>Note</em>: The analogous function for a data.frame is nrow(), or the
+function dim() can be used as well.</p>
+<p><strong>*Referring to Elements of Objects – data.frames*</strong></p>
+<p>For a data.frame, names can be specified for the rows and columns.
+Generally speaking, column names are more important as these are used to
+identify fields or variables within the dataset. The colnames() and
+rownames() functions can be used to identify column names and row names,
+respectively.</p>
+<p>&gt; colnames(Bikedata)</p>
+<p><a class="reference internal" href="_images/image271.png"><img alt="image26" src="_images/image271.png" style="width: 6.00000in; height: 0.44900in;" /></a></p>
+<p>&gt; rownames(Bikedata)</p>
+<p><a class="reference internal" href="_images/image281.png"><img alt="image27" src="_images/image281.png" style="width: 6.00000in; height: 0.88234in;" /></a></p>
+<p>Akin to vectors, R allows one to refer to rows and columns by number as
+well.</p>
+<p><a class="reference internal" href="_images/image291.png"><img alt="image28" src="_images/image291.png" style="width: 4.08491in; height: 1.79282in;" /></a></p>
+<p>Once again, the square bracket syntax is used to refer to particular
+segments of data objects. The data.frame is a two-dimensional object;
+thus, a row and column identifier can be specified.</p>
+<p><a class="reference internal" href="_images/image301.png"><img alt="image29" src="_images/image301.png" style="width: 2.55660in; height: 0.65716in;" /></a></p>
+<p>Getting the 1<sup>st</sup> row, 1<sup>st</sup> column of Bikedata</p>
+<p>&gt; Bikedata[1,1]</p>
+<p>[1] 1491</p>
+<p>Getting the 1<sup>st</sup> three rows and only the 1<sup>st</sup> column of
+Bikedata</p>
+<p>&gt; Bikedata[1:3,1]</p>
+<p>[1] 1491 1044 714</p>
+<p>Getting the 1<sup>st</sup> three rows and 1<sup>st</sup> three columns of
+Bikedata</p>
+<p>&gt; Bikedata[1:3,1:3]</p>
+<p>tripduration starttime stoptime</p>
+<p>1 1491 3/1/2016 06:52:42 3/1/2016 07:17:33</p>
+<p>2 1044 3/1/2016 07:05:50 3/1/2016 07:23:15</p>
+<p>3 714 3/1/2016 07:15:05 3/1/2016 07:26:59</p>
+<p>Getting the 1<sup>st</sup> three rows and <em>all</em> columns of Bikedata. If
+the column argument is not specified, then all columns are provided.</p>
+<p>Bikedata[1:3 , ]</p>
+<p>&gt; Bikedata[1:3,]</p>
+<p><a class="reference internal" href="_images/image312.png"><img alt="image30" src="_images/image312.png" style="width: 6.48371in; height: 0.72642in;" /></a></p>
+<p>Getting the 1<sup>st</sup> three rows and only columns 1, 4, and 5. The c(
+) syntax is used to create a new vector object. The vector simple
+specifies which columns to retain in this subset of Bikedata.</p>
+<p>Bikedata[1:3 , c(1,4,5) ]</p>
+<p>&gt; Bikedata[1:3,c(1,4,5)]</p>
+<p>tripduration start.station.id start.station.name</p>
+<p>1 1491 72 W 52 St &amp; 11 Ave</p>
+<p>2 1044 72 W 52 St &amp; 11 Ave</p>
+<p>3 714 72 W 52 St &amp; 11 Ave</p>
+<p><strong>*Getting Help with R*</strong></p>
+<p>Within R, you can find help on any command (or find commands) using the
+following.</p>
+<ul>
+<li><p class="first">If you know the name of the R function, e.g. summary, use
+help(summary) or ?summary.</p>
+<blockquote>
+<div><p>&gt; help(&#8220;summary&#8221;)</p>
+<p>&gt; ?summary</p>
+</div></blockquote>
+</li>
+<li><p class="first">If you don’t know the function and want to do a keyword search for
+it, use help.search().**
+**</p>
+<blockquote>
+<div><p>&gt; help.search(&#8220;summary&#8221;)</p>
+</div></blockquote>
+</li>
+<li><p class="first">The help.start() function will launch the full help system that
+includes all manuals, references, etc.</p>
+<blockquote>
+<div><p>&gt; help.start()</p>
+</div></blockquote>
+</li>
+</ul>
+</div>
+
+
+  
+      
+  <li id="relations-prev" class="navLink" title='Previous Section - 4. Processing Data with R' data-toggle="tooltip">
+    <a href="R_toctree.html" >
+      <i class='prevNav glyphicon glyphicon-chevron-left'></i>
+    </a>
+  </li>
+  <a class="navLinkBg" id="navLinkBgLeft"  href="R_toctree.html" ></a>
+  
+  <li id="relations-next" class="navLink" title='Next Section - 4.2. Handout 3: Summaries in R' data-toggle="tooltip" >
+    <a href="h14.html" >
+      <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
+    </a>
+  </li>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="h14.html" >Next Section - 4.2. Handout 3: Summaries in R</a>
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+  
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      
+      | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015 Todd Iverson.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.5.
+    </p>
+  </div>
+</footer>
+
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

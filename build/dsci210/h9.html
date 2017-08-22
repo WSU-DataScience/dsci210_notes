@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>3.1. BASH SHELL &mdash; Runestone Interactive Overview</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="_static/clickable.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="_static/dragndrop.css" type="text/css" />
+    <link rel="stylesheet" href="_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="_static/livecode.css" type="text/css" />
+    <link rel="stylesheet" href="_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootswatch/2.3.1/""/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/runestonebase.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="_static/codemirror.js"></script>
+    <script type="text/javascript" src="_static/xml.js"></script>
+    <script type="text/javascript" src="_static/css.js"></script>
+    <script type="text/javascript" src="_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="_static/python.js"></script>
+    <script type="text/javascript" src="_static/javascript.js"></script>
+    <script type="text/javascript" src="_static/activecode.js"></script>
+    <script type="text/javascript" src="_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="_static/clike.js"></script>
+    <script type="text/javascript" src="_static/timed_activecode.js"></script>
+    <script type="text/javascript" src="_static/animationbase.js"></script>
+    <script type="text/javascript" src="_static/mchoice.js"></script>
+    <script type="text/javascript" src="_static/timedmc.js"></script>
+    <script type="text/javascript" src="_static/timed.js"></script>
+    <script type="text/javascript" src="_static/clickable.js"></script>
+    <script type="text/javascript" src="_static/timedclickable.js"></script>
+    <script type="text/javascript" src="_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="_static/pytutor.js"></script>
+    <script type="text/javascript" src="_static/codelens.js"></script>
+    <script type="text/javascript" src="_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="_static/datafile.js"></script>
+    <script type="text/javascript" src="_static/dragndrop.js"></script>
+    <script type="text/javascript" src="_static/timeddnd.js"></script>
+    <script type="text/javascript" src="_static/fitb.js"></script>
+    <script type="text/javascript" src="_static/timedfitb.js"></script>
+    <script type="text/javascript" src="_static/livecode.js"></script>
+    <script type="text/javascript" src="_static/clike.js"></script>
+    <script type="text/javascript" src="_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="_static/lib/hammer.min.js"></script>
+    <script type="text/javascript" src="_static/parsons.js"></script>
+    <script type="text/javascript" src="_static/timedparsons.js"></script>
+    <script type="text/javascript" src="_static/poll.js"></script>
+    <script type="text/javascript" src="_static/reveal.js"></script>
+    <script type="text/javascript" src="_static/shortanswer.js"></script>
+    <script type="text/javascript" src="_static/timed_shortanswer.js"></script>
+    <script type="text/javascript" src="_static/tabbedstuff.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="_static/rangy-core.js"></script>
+    <script type="text/javascript" src="_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="_static/user-highlights.js"></script>
+    <script type="text/javascript" src="_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="Runestone Interactive Overview" href="index.html" />
+    <link rel="up" title="3. Processing Data with Bash" href="bash_toctree.html" />
+    <link rel="next" title="3.2. BASH SHELL - GREP" href="h10.html" />
+    <link rel="prev" title="3. Processing Data with Bash" href="bash_toctree.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="/runestone/static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'dsci210';
+  eBookConfig.logLevel = 0;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = false;
+  eBookConfig.python3 = true;
+  eBookConfig.basecourse = 'dsci210';
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="index.html">DSCI 210 Notes</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='index.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/dsci210/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:ACFactory.toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/dsci210/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='/runestone/default/reportabug?course=dsci210&page=h9'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        <!--
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">3.1. BASH SHELL</a></li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - 3. Processing Data with Bash" data-toggle="tooltip">
+    <a href="bash_toctree.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - 3.2. BASH SHELL - GREP' data-toggle="tooltip" >
+    <a href="h10.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content">
+  
+  <div class="section" id="bash-shell">
+<h1>3.1. BASH SHELL<a class="headerlink" href="#bash-shell" title="Permalink to this headline">¶</a></h1>
+<p>BASH, an acronym for Bourne-Again Shell, is a command language that
+allows a data scientist to manage files “outside” of a software package.
+BASH allows you to manage files “at the operating system level”. You can
+also create and execute shell scripts using BASH – shell scripts can be
+used to change or influence the configuration of systems installed on
+your computer.</p>
+<p><a class="reference internal" href="_images/image180.png"><img alt="image0" src="_images/image180.png" style="width: 4.39583in; height: 1.61952in;" /></a></p>
+<p>There are different version of BASH that exist. The version that we will
+be using in GNU BASH. The following provides instructions on how to
+install GNU Bash on PC/MAC machines.</p>
+<p>The BASH window has the following appearance.</p>
+<p><a class="reference internal" href="_images/image616.png"><img alt="image5" src="_images/image616.png" style="width: 3.65625in; height: 1.19766in;" /></a></p>
+<p>Before using BASH to manage files, let us first understand how to move
+around inside of BASH.</p>
+<p>Consider the command that identifies your current location.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Command</th>
+<th class="head">Action</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>$pwd</td>
+<td>Get path of working directory</td>
+</tr>
+</tbody>
+</table>
+<p>$ pwd</p>
+<p>/c/Users/CMalone</p>
+<p>The path provided here is the same path used in Windows Explorer.</p>
+<p><a class="reference internal" href="_images/image716.png"><img alt="image6" src="_images/image716.png" style="width: 3.78125in; height: 1.35697in;" /></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><p class="first"><strong>Setting up a folder with contents</strong></p>
+<p>Create a folder named DSCI210 inside the directory specified above. Create a subdirectory called Data. From the course website, download the Babies_2014.txt and Babies_2013.txt data files and place them inside the Data subdirectory.</p>
+<p class="last"><a class="reference internal" href="_images/image816.png"><img alt="image7" src="_images/image816.png" style="width: 2.57292in; height: 1.42708in;" /></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><em>MOVING AROUND</em></p>
+<p>The change directory command can be used to move down (or up) the
+directory tree-structure.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="32%" />
+<col width="68%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Command</th>
+<th class="head">Action</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>cd &lt;folder name&gt;</td>
+<td>Move into a folder</td>
+</tr>
+<tr class="row-odd"><td>cd ..</td>
+<td>Move up a folder in the directory tree</td>
+</tr>
+</tbody>
+</table>
+<p>Move into the DSCI210 folder with the following command.</p>
+<p>$ cd DSCI210</p>
+<p>Next, moving into the Data folder.</p>
+<p>$ cd Data</p>
+<p>Realize, this could the above two commands can be done in a single step.</p>
+<p>$ cd DSCI210/Data</p>
+<p>Identify your current location.</p>
+<p>$ pwd</p>
+<p>/c/Users/CMalone/DSCI210/Data</p>
+<p>Suppose my current location is within the Data folder and you want to
+move into the DSCI415/Notes folder.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="37%" />
+<col width="63%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Current location</th>
+<th class="head">/c/Users/CMalone/DSCI210/Data</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Desired location</td>
+<td>/c/Users/CMalone/DSCI415/Notes</td>
+</tr>
+</tbody>
+</table>
+<p>$ cd ../../DSCI415/Notes</p>
+<p><a class="reference internal" href="_images/image915.png"><img alt="image8" src="_images/image915.png" style="width: 1.93750in; height: 1.90890in;" /></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="26%" />
+<col width="22%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Command</th>
+<th class="head">Move out of DSCI210/Data</th>
+<th class="head">Move out of DSCI210</th>
+<th class="head">Move into DSCI415/Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>$ cd ../../DSCI415/Notes</td>
+<td>../</td>
+<td>../</td>
+<td>DSCI415/Notes</td>
+</tr>
+</tbody>
+</table>
+<p>The movement into another location can be done using the complete path
+as well.</p>
+<p>$ cd /c/Users/CMalone/DSCI415/Notes</p>
+<p><em>LOOKING IN DIRECTORIES / FILES</em></p>
+<p>The usual method of looking in directories is to click your way through
+the directory tree-structure. Likewise, the look at a file, we normally
+double-click and the file will open in the particular software package
+that is associated with that file type.</p>
+<p><a class="reference internal" href="_images/image1016.png"><img alt="image9" src="_images/image1016.png" style="width: 4.57292in; height: 1.01376in;" /></a></p>
+<p>The ls command can be used to identify the contents of the current
+directory.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="85%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Command</th>
+<th class="head">Action</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>ls</td>
+<td>List contents of folder</td>
+</tr>
+<tr class="row-odd"><td>ls – l</td>
+<td>With the – l option, additional file information is provided</td>
+</tr>
+<tr class="row-even"><td>cat</td>
+<td>Print contents of file to screen</td>
+</tr>
+</tbody>
+</table>
+<p>$ ls</p>
+<p>Babies_2013.txt Babies_2014.txt</p>
+<p>The ls command with the –l option provides additional details.</p>
+<p>$ ls -l</p>
+<p>total 760</p>
+<p>-rw-r&#8211;r&#8211; 1 aq7839yd 1049089 370653 Feb 22 09:24 Babies_2013.txt</p>
+<p>-rw-r&#8211;r&#8211; 1 aq7839yd 1049089 404752 Feb 22 09:24 Babies_2014.txt</p>
+<p>Next, consider a situation in which management of hundreds of files is
+required. For simplicity, suppose all files sit in same directory. In
+this situation, it may be nice to get a list of all the files contained
+in this directory. That is, instead of pushing the output from the ls
+command to the screen, it can be pushed into a file.</p>
+<p><a class="reference internal" href="_images/image1120.png"><img alt="image10" src="_images/image1120.png" style="width: 5.27327in; height: 1.97917in;" /></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="76%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Command</th>
+<th class="head">Action</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>… &gt; &lt;filename.txt&gt;</td>
+<td>Put contents from command into file instead of printing to screen</td>
+</tr>
+</tbody>
+</table>
+<p>The following can be used to save the contents from the ls command into
+a file called Contents.txt</p>
+<p>$ ls &gt; Contents.txt</p>
+<p>The ls command to make sure the Content.txt was created successfully.</p>
+<p>$ ls</p>
+<p>Babies_2013.txt Babies_2014.txt Content.txt</p>
+<p>Looking at the content of this newly created file using the cat command.</p>
+<p>$ cat Content.txt</p>
+<p>Babies_2013.txt</p>
+<p>Babies_2014.txt</p>
+<p>Content.txt</p>
+<p>The cat command prints all lines from the file to the screen. The
+head/tail commands can be used to see only the top/bottom lines in a
+file.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="74%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Command</th>
+<th class="head">Action</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>head –n</td>
+<td>Show top n lines of file</td>
+</tr>
+<tr class="row-odd"><td>tail -n</td>
+<td>Show bottom n lines of file</td>
+</tr>
+</tbody>
+</table>
+<p>BASH commands have the following general structure.</p>
+<p><a class="reference internal" href="_images/image1515.png"><img alt="image14" src="_images/image1515.png" style="width: 3.77083in; height: 1.14765in;" /></a></p>
+<p>Getting the first few lines of Babies_2013.txt using the head command.</p>
+<p>$ head Babies_2013.txt</p>
+<p>&#8220;Notes&#8221; &#8220;County&#8221; &#8220;County Code&#8221; &#8220;Month&#8221; &#8220;Month Code&#8221; Births</p>
+<p>&#8220;Baldwin County, AL&#8221; &#8220;01003&#8221; &#8220;January&#8221; &#8220;1&#8221; 200</p>
+<p>&#8220;Baldwin County, AL&#8221; &#8220;01003&#8221; &#8220;February&#8221; &#8220;2&#8221; 165</p>
+<p>&#8220;Baldwin County, AL&#8221; &#8220;01003&#8221; &#8220;March&#8221; &#8220;3&#8221; 163</p>
+<p>&#8220;Baldwin County, AL&#8221; &#8220;01003&#8221; &#8220;April&#8221; &#8220;4&#8221; 190</p>
+<p>&#8220;Baldwin County, AL&#8221; &#8220;01003&#8221; &#8220;May&#8221; &#8220;5&#8221; 157</p>
+<p>&#8220;Baldwin County, AL&#8221; &#8220;01003&#8221; &#8220;June&#8221; &#8220;6&#8221; 173</p>
+<p>&#8220;Baldwin County, AL&#8221; &#8220;01003&#8221; &#8220;July&#8221; &#8220;7&#8221; 199</p>
+<p>&#8220;Baldwin County, AL&#8221; &#8220;01003&#8221; &#8220;August&#8221; &#8220;8&#8221; 198</p>
+<p>&#8220;Baldwin County, AL&#8221; &#8220;01003&#8221; &#8220;September&#8221; &#8220;9&#8221; 157</p>
+<p>Getting the last 3 lines of the Babies_2013.txt file.</p>
+<p>$ tail -3 Babies_2013.txt</p>
+<p>&#8220;10. New York County, New York (FIPS code 36061) represents Manhattan
+Borough, New York City.&#8221;</p>
+<p>&#8220;11. Queens, New York (FIPS code 36081) represents Queens Borough, New
+York City.&#8221;</p>
+<p>&#8220;12. Richmond County, New York (FIPS code 36085) represents Staten
+Island Borough, New York City.&#8221;</p>
+<p>BASH has the ability to work with wildcard characters. Suppose you
+wanted to see the first few lines of both Babies_2013.txt and
+Babies_2014.txt. The wildcard character, i.e. *, can be used to
+accomplish this task.</p>
+<p><a class="reference internal" href="_images/image1615.png"><img alt="image15" src="_images/image1615.png" style="width: 3.77083in; height: 1.17152in;" /></a></p>
+<p>$ head Babies_201*.txt</p>
+<p>==&gt; Babies_2013.txt &lt;==</p>
+<p>&#8220;Notes&#8221; &#8220;County&#8221; &#8220;County Code&#8221; &#8220;Month&#8221; &#8220;Month Code&#8221; Births</p>
+<p>&#8220;Baldwin County, AL&#8221; &#8220;01003&#8221; &#8220;January&#8221; &#8220;1&#8221; 200</p>
+<p>&#8220;Baldwin County, AL&#8221; &#8220;01003&#8221; &#8220;February&#8221; &#8220;2&#8221; 165</p>
+<p>&#8220;Baldwin County, AL&#8221; &#8220;01003&#8221; &#8220;March&#8221; &#8220;3&#8221; 163</p>
+<p>&#8220;Baldwin County, AL&#8221; &#8220;01003&#8221; &#8220;April&#8221; &#8220;4&#8221; 190</p>
+<p>&#8220;Baldwin County, AL&#8221; &#8220;01003&#8221; &#8220;May&#8221; &#8220;5&#8221; 157</p>
+<p>&#8220;Baldwin County, AL&#8221; &#8220;01003&#8221; &#8220;June&#8221; &#8220;6&#8221; 173</p>
+<p>&#8220;Baldwin County, AL&#8221; &#8220;01003&#8221; &#8220;July&#8221; &#8220;7&#8221; 199</p>
+<p>&#8220;Baldwin County, AL&#8221; &#8220;01003&#8221; &#8220;August&#8221; &#8220;8&#8221; 198</p>
+<p>&#8220;Baldwin County, AL&#8221; &#8220;01003&#8221; &#8220;September&#8221; &#8220;9&#8221; 157</p>
+<p>==&gt; Babies_2014.txt &lt;==</p>
+<p>&#8220;Notes&#8221; &#8220;County&#8221; &#8220;County Code&#8221; &#8220;Month&#8221; &#8220;Month Code&#8221; Births</p>
+<p>&#8220;Baldwin County, AL&#8221; &#8220;01003&#8221; &#8220;January&#8221; &#8220;1&#8221; 186</p>
+<p>&#8220;Baldwin County, AL&#8221; &#8220;01003&#8221; &#8220;February&#8221; &#8220;2&#8221; 177</p>
+<p>&#8220;Baldwin County, AL&#8221; &#8220;01003&#8221; &#8220;March&#8221; &#8220;3&#8221; 165</p>
+<p>&#8220;Baldwin County, AL&#8221; &#8220;01003&#8221; &#8220;April&#8221; &#8220;4&#8221; 166</p>
+<p>&#8220;Baldwin County, AL&#8221; &#8220;01003&#8221; &#8220;May&#8221; &#8220;5&#8221; 218</p>
+<p>&#8220;Baldwin County, AL&#8221; &#8220;01003&#8221; &#8220;June&#8221; &#8220;6&#8221; 192</p>
+<p>&#8220;Baldwin County, AL&#8221; &#8220;01003&#8221; &#8220;July&#8221; &#8220;7&#8221; 190</p>
+<p>&#8220;Baldwin County, AL&#8221; &#8220;01003&#8221; &#8220;August&#8221; &#8220;8&#8221; 198</p>
+<p>&#8220;Baldwin County, AL&#8221; &#8220;01003&#8221; &#8220;September&#8221; &#8220;9&#8221; 184</p>
+<p><em>Questions</em></p>
+<ol class="arabic">
+<li><p class="first">Suppose the following files were contained in my directory. How would
+one write a single head statement (with wildcards) to show the
+contents of the first few lines for all these files?</p>
+<p><a class="reference internal" href="_images/image1713.png"><img alt="image16" src="_images/image1713.png" style="width: 4.90625in; height: 1.20035in;" /></a></p>
+</li>
+</ol>
+<p>In an effort to investigate the notion of Super Bowl Babies, data was
+collected on births by month for all counties in the United States. Data
+from 2007-2014 are provided on our course website. Download each of
+these files and place them into the same directory as the
+Babies_2014.txt and Babies_2013.txt files.</p>
+<p><a class="reference internal" href="_images/image1813.png"><img alt="image17" src="_images/image1813.png" style="width: 4.03612in; height: 1.59375in;" /></a></p>
+<p>Data Source: <a class="reference external" href="https://wonder.cdc.gov/controller/datarequest/D66">https://wonder.cdc.gov/controller/datarequest/D66</a></p>
+<p><em>MANAGEMENT/EDITING OF TEXT WITHIN A FILE</em></p>
+<p>In this section, we will consider the editing of text with in file.
+There are various BASH utilities that allow for editing text. The common
+utilities include sed (or gsed on MAC) , awk, and grep.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="13%" />
+<col width="40%" />
+<col width="47%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">BASH Utility</th>
+<th class="head">Full Name</th>
+<th class="head">&nbsp;</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>sed / gsed</td>
+<td>Stream Editor</td>
+<td>Performs basic text transformations on an input stream</td>
+</tr>
+<tr class="row-odd"><td>awk</td>
+<td>AWK Language</td>
+<td>Language for pattern scanning and processing</td>
+</tr>
+<tr class="row-even"><td>grep</td>
+<td>Globally search a Regular Expression and Print</td>
+<td>Plain-text search utility – regular expression friendly</td>
+</tr>
+</tbody>
+</table>
+<p>The sed utility will be used extensively here as only simple text
+editing is needed for our work. When the sed command is used, text is
+continuously feed into the utility line-by-line.</p>
+<p><a class="reference internal" href="_images/image1913.png"><img alt="image18" src="_images/image1913.png" style="width: 3.54167in; height: 1.62137in;" /></a></p>
+<p>The man command can be used to get help on most BASH commands. You can
+also search Stack Exchange to get help on using BASH.</p>
+<p><em>Note</em>: The man command is not available in GitBash.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><p class="first">$ man sed</p>
+<p>Usage: sed [OPTION]... {script-only-if-no-other-script} [input-file]...</p>
+<p>-n, &#8211;quiet, &#8211;silent</p>
+<p>suppress automatic printing of pattern space</p>
+<p>-e script, &#8211;expression=script</p>
+<p>add the script to the commands to be executed</p>
+<p>-f script-file, &#8211;file=script-file</p>
+<p>add the contents of script-file to the commands to be executed</p>
+<p>&#8211;follow-symlinks</p>
+<p>follow symlinks when processing in place</p>
+<p>-i[SUFFIX], &#8211;in-place[=SUFFIX]</p>
+<p>edit files in place (makes backup if SUFFIX supplied)</p>
+<p>-b, &#8211;binary</p>
+<p>open files in binary mode (CR+LFs are not processed specially)</p>
+<p>-l N, &#8211;line-length=N</p>
+<p>specify the desired line-wrap length for the `l&#8217; command</p>
+<p>&#8211;posix</p>
+<p>disable all GNU extensions.</p>
+<p>-r, &#8211;regexp-extended</p>
+<p>use extended regular expressions in the script.</p>
+<p>-s, &#8211;separate</p>
+<p>consider files as separate rather than as a single continuous</p>
+<p>long stream.</p>
+<p>-u, &#8211;unbuffered</p>
+<p>load minimal amounts of data from the input files and flush</p>
+<p>the output buffers more often</p>
+<p>-z, &#8211;null-data</p>
+<p>separate lines by NUL characters</p>
+<p>&#8211;help display this help and exit</p>
+<p>&#8211;version output version information and exit</p>
+<p>If no -e, &#8211;expression, -f, or &#8211;file option is given, then the first</p>
+<p>non-option argument is taken as the sed script to interpret. All</p>
+<p>remaining arguments are names of input files; if no input files are</p>
+<p class="last">specified, then the standard input is read.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>MAC users will need to use <strong>gsed</strong> whenever a sed command is used throughout.</td>
+</tr>
+</tbody>
+</table>
+<p>The first step will be to remove the footer information in this file.
+The footer information starts with the line containing “&#8212;“.</p>
+<p><a class="reference internal" href="_images/image2011.png"><img alt="image19" src="_images/image2011.png" style="width: 3.50000in; height: 2.90246in;" /></a></p>
+<p>The following sed command can used to find the lines that contain “&#8212;“.</p>
+<p>$ sed -e &#8216;/&#8221;&#8212;&#8221;/=&#8217; Babies_2007.txt</p>
+<p>Breaking this command into it’s pieces.</p>
+<p><a class="reference internal" href="_images/image2116.png"><img alt="image20" src="_images/image2116.png" style="width: 4.44792in; height: 1.21307in;" /></a></p>
+<p>The above sed command simply prints the output, i.e. the line number for
+which “&#8212;“ is contained, to the screen. If you’d like to push the
+output into a file, simple use the following command.</p>
+<p>$ sed -e &#8216;/&#8221;&#8212;&#8221;/=&#8217; Babies_2007.txt &gt; Babies_2007_2.txt</p>
+<p><em>Questions</em></p>
+<ol class="arabic">
+<li><p class="first">Open Babies_2007_2.txt in a text editor. Did the command above
+print the line numbers for each occurrence of “&#8212;“?</p>
+</li>
+<li><p class="first">What does the following command do? Briefly discuss.</p>
+<p>$ sed -n &#8216;/&#8221;&#8212;&#8221;/=&#8217; Babies_2007.txt</p>
+</li>
+</ol>
+<p>The rm command is used to remove (or delete) a file. Be very careful in
+using rm with wildcards!</p>
+<p>$ rm Babies_2007_2.txt</p>
+<p>We now know that the footer information in this file begins on line
+7439. The relevant content of the file can be obtained using the head
+command. The first command below simply prints the output (the first
+7438 lines) to the screen; whereas, the second version saves the output
+into a new file called Babies_2007_v2.txt.</p>
+<p>$ head -7438 Babies_2007.txt</p>
+<p>$ head -7438 Babies_2007.txt &gt; Babies_2007_v2.txt</p>
+<p>The next step in the management of these files is to remove the rows
+that do not contain data for each county. We can accomplish this take in
+two distinct ways – either delete the non-data rows or keep the data
+rows. The “keep data rows” approach is shown first.</p>
+<p><a class="reference internal" href="_images/image2215.png"><img alt="image21" src="_images/image2215.png" style="width: 4.81250in; height: 2.31216in;" /></a></p>
+<p>Now, the following command uses sed to print, i.e. keep, only lines that
+begin with \t. The –n option is used to suppress the printing of
+content to the screen.</p>
+<p>Note: Replace sed with gsed on a MAC to force the use of GNU Bash.</p>
+<p>$ sed -n &#8216;/^\t/p&#8217; Babies_2007_v2.txt &gt; Babies_2007_v3.txt</p>
+<p>The following breaks this command down into its various components.</p>
+<p><a class="reference internal" href="_images/image2314.png"><img alt="image22" src="_images/image2314.png" style="width: 5.62500in; height: 1.00421in;" /></a></p>
+<p>The following variation of the command above can be used to delete all
+non-data rows – i.e. rows that start with “ are non-data rows. Rows that
+contain data start with \t.</p>
+<p><a class="reference internal" href="_images/image2412.png"><img alt="image23" src="_images/image2412.png" style="width: 4.11458in; height: 2.02300in;" /></a></p>
+<p>$ sed -e &#8216;/^”/d&#8217; Babies_2007_v2.txt &gt; Babies_2007_v3.txt</p>
+<p><em>Note</em>: The –n option must be changed to –e here. This is necessary as
+–n suppresses printing and the letter d (at the end of the quoted
+string) deletes the output. Thus, an empty file would be returned if –n
+were not changed to –e.</p>
+<p>The last step in the management of these files is to add the year to
+each line. This can be done using the following substitute functionality
+which is specified at the beginning of quoted string. Again, gsed should
+be used in place of sed here on a MAC.</p>
+<p>$ sed -e &#8216;s/\t/2007\t/&#8217; Babies_2007_v3.txt &gt; Babies_2007_v4.txt</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Babies_2007_v3.txt</th>
+<th class="head">Babies_2007_v4.txt</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference internal" href="_images/image2510.png"><img alt="image24" src="_images/image2510.png" style="width: 2.85362in; height: 1.52315in;" /></a></td>
+<td><a class="reference internal" href="_images/image2610.png"><img alt="image25" src="_images/image2610.png" style="width: 3.16380in; height: 1.49537in;" /></a></td>
+</tr>
+</tbody>
+</table>
+<p>The following table provides variations of the substitute command.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="38%" />
+<col width="62%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Substitute Commands</th>
+<th class="head">Action</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>sed –e ‘s/old_text/new_text/’ &lt;filename&gt;</td>
+<td>Replace the 1<sup>st</sup> instance of old_text in the line with new_text</td>
+</tr>
+<tr class="row-odd"><td>sed –e ‘s/old_text/new_text/g’ &lt;filename&gt;</td>
+<td>Replace all instances of old_text in the line with new_text</td>
+</tr>
+<tr class="row-even"><td>sed –e ‘s/^/new_text/’ &lt;filename&gt;</td>
+<td>Put new_text at beginning of line</td>
+</tr>
+<tr class="row-odd"><td>sed –e ‘s/$/new_text/’ &lt;filename&gt;</td>
+<td>Put new_text at end of line</td>
+</tr>
+</tbody>
+</table>
+<p>The -i option can be used to for <strong>in-place editing</strong>. The following
+command will take the Babies_2007_v3.txt file, find the first instance
+of \t and replace it with 2007\t, and then put the output directly
+back into Babies_2007_v3.txt.</p>
+<p>$ sed -i &#8216;s/\t/2007\t/&#8217; Babies_2007_v3.txt</p>
+<p><em>Questions</em></p>
+<ol class="arabic">
+<li><p class="first">Consider Statement #1 – the command used above. What happens if
+Statement #2 were used instead? Discuss.</p>
+<p>Statement #1: $ sed -e &#8216;s/\t/2007\t/&#8217; Babies_2007_v3.txt</p>
+<p>Statement #2: $ sed -e &#8216;s/\t/2007/&#8217; Babies_2007_v3.txt</p>
+</li>
+<li><p class="first">What does the following command do? Discuss.</p>
+<blockquote>
+<div><p>$ sed -e &#8216;s/^/2007/&#8217; Babies_2007_v3.txt</p>
+</div></blockquote>
+</li>
+</ol>
+<ol class="arabic">
+<li><p class="first">Consider the statement written in the previous problem – identified
+as Statement #3 here. What adverse effect would Statement #4 have?
+Discuss.</p>
+<p>Statement #3: $ sed -e &#8216;s/^/2007/&#8217; Babies_2007_v3.txt</p>
+<p>Statement #4: $ sed -e &#8216;s/^/2007\t/&#8217; Babies_2007_v3.txt</p>
+</li>
+<li><p class="first">Verify that the following command indeed replaces all tab characters,
+i.e.\t, with 2007.</p>
+</li>
+</ol>
+<p>$ sed -e &#8216;s/\t/2007/g&#8217; Babies_2007_v3.txt</p>
+<ol class="arabic simple">
+<li>What command would be used to place the year at the end of each line.
+You should carefully consider the placement of any tab and/or new
+line characters.</li>
+</ol>
+<p>The repeated processing of a file can be streamlined using piping.</p>
+<p>Using piping to prepare the Babies_2007.txt file for appending.</p>
+<p>$ head -7438 Babies_2007.txt | sed -n &#8216;/^\t/p&#8217; | sed -e
+&#8216;s/\t/2007\t&#8217;/ &gt; Babies_2007_v2.txt</p>
+<p>The following piped commands are used to prepare the datasets from each
+year.</p>
+<p><em>Note</em>: The footer content of the 2014 files starts on a different line.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="7%" />
+<col width="93%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Year</th>
+<th class="head">Piped Command for Preparing each Year</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>2007</td>
+<td>$ head -7438 Babies_2007.txt | sed -n &#8216;/^\t/p&#8217; | sed -e &#8216;s/\t/2007\t/&#8217; &gt; Babies_2007_v2.txt</td>
+</tr>
+<tr class="row-odd"><td>2008</td>
+<td>$ head -7438 Babies_2008.txt | sed -n &#8216;/^\t/p&#8217; | sed -e &#8216;s/\t/2008\t/’ &gt; Babies_2008_v2.txt</td>
+</tr>
+<tr class="row-even"><td>2009</td>
+<td>$ head -7438 Babies_2009.txt | sed -n &#8216;/^\t/p&#8217; | sed -e &#8216;s/\t/2009\t/’ &gt; Babies_2009_v2.txt</td>
+</tr>
+<tr class="row-odd"><td>2010</td>
+<td>$ head -7438 Babies_2010.txt | sed -n &#8216;/^\t/p&#8217; | sed -e &#8216;s/\t/2010\t/&#8217; &gt; Babies_2010_v2.txt</td>
+</tr>
+<tr class="row-even"><td>2011</td>
+<td>$ head -7438 Babies_2011.txt | sed -n &#8216;/^\t/p&#8217; | sed -e &#8216;s/\t/2011\t/’ &gt; Babies_2011_v2.txt</td>
+</tr>
+<tr class="row-odd"><td>2012</td>
+<td>$ head -7438 Babies_2012.txt | sed -n &#8216;/^\t/p&#8217; | sed -e &#8216;s/\t/2012\t/’ &gt; Babies_2012_v2.txt</td>
+</tr>
+<tr class="row-even"><td>2013</td>
+<td>$ head -7438 Babies_2013.txt | sed -n &#8216;/^\t/p&#8217; | sed -e &#8216;s/\t/2013\t/’ &gt; Babies_2013_v2.txt</td>
+</tr>
+<tr class="row-odd"><td>2014</td>
+<td>$ head -8140 Babies_2014.txt | sed -n &#8216;/^\t/p&#8217; | sed -e &#8216;s/\t/2014\t/’ &gt; Babies_2014_v2.txt</td>
+</tr>
+</tbody>
+</table>
+<p>The following use of head will verify that each file has the correct
+format. This should be done before appending the files together.</p>
+<p>$ head -2 Babies_20*_v2.txt</p>
+<p>==&gt; Babies_2007_v2.txt &lt;==</p>
+<p>2007 &#8220;Baldwin County, AL&#8221; &#8220;01003&#8221; &#8220;January&#8221; &#8220;1&#8221; 208</p>
+<p>2007 &#8220;Baldwin County, AL&#8221; &#8220;01003&#8221; &#8220;February&#8221; &#8220;2&#8221; 163</p>
+<p>==&gt; Babies_2008_v2.txt &lt;==</p>
+<p>2008 &#8220;Baldwin County, AL&#8221; &#8220;01003&#8221; &#8220;January&#8221; &#8220;1&#8221; 208</p>
+<p>2008 &#8220;Baldwin County, AL&#8221; &#8220;01003&#8221; &#8220;February&#8221; &#8220;2&#8221; 198</p>
+<p>==&gt; Babies_2009_v2.txt &lt;==</p>
+<p>2009 &#8220;Baldwin County, AL&#8221; &#8220;01003&#8221; &#8220;January&#8221; &#8220;1&#8221; 187</p>
+<p>2009 &#8220;Baldwin County, AL&#8221; &#8220;01003&#8221; &#8220;February&#8221; &#8220;2&#8221; 145</p>
+<p>==&gt; Babies_2010_v2.txt &lt;==</p>
+<p>2010 &#8220;Baldwin County, AL&#8221; &#8220;01003&#8221; &#8220;January&#8221; &#8220;1&#8221; 177</p>
+<p>2010 &#8220;Baldwin County, AL&#8221; &#8220;01003&#8221; &#8220;February&#8221; &#8220;2&#8221; 171</p>
+<p>==&gt; Babies_2011_v2.txt &lt;==</p>
+<p>2011 &#8220;Baldwin County, AL&#8221; &#8220;01003&#8221; &#8220;January&#8221; &#8220;1&#8221; 178</p>
+<p>2011 &#8220;Baldwin County, AL&#8221; &#8220;01003&#8221; &#8220;February&#8221; &#8220;2&#8221; 187</p>
+<p>==&gt; Babies_2012_v2.txt &lt;==</p>
+<p>2012 &#8220;Baldwin County, AL&#8221; &#8220;01003&#8221; &#8220;January&#8221; &#8220;1&#8221; 153</p>
+<p>2012 &#8220;Baldwin County, AL&#8221; &#8220;01003&#8221; &#8220;February&#8221; &#8220;2&#8221; 162</p>
+<p>==&gt; Babies_2013_v2.txt &lt;==</p>
+<p>2013 &#8220;Baldwin County, AL&#8221; &#8220;01003&#8221; &#8220;January&#8221; &#8220;1&#8221; 200</p>
+<p>2013 &#8220;Baldwin County, AL&#8221; &#8220;01003&#8221; &#8220;February&#8221; &#8220;2&#8221; 165</p>
+<p>==&gt; Babies_2014_v2.txt &lt;==</p>
+<p>2014 &#8220;Baldwin County, AL&#8221; &#8220;01003&#8221; &#8220;January&#8221; &#8220;1&#8221; 186</p>
+<p>2014 &#8220;Baldwin County, AL&#8221; &#8220;01003&#8221; &#8220;February&#8221; &#8220;2&#8221; 177</p>
+<p><em>APPENDING FILES in BASH</em></p>
+<p>The next step is to append the files from the individual years into a
+single file. The cat command can be used to accomplish this task. The
+full dataset is being placed into a file called Babies_AllYears.txt.</p>
+<p>$ cat Babies_2007_v2.txt Babies_2008_v2.txt Babies_2009_v2.txt</p>
+<p>Babies_2010_v2.txt Babies_2011_v2.txt Babies_2012_v2.txt</p>
+<p>Babies_2013_v2.txt Babies_2014_v2.txt &gt; Babies_AllYears.txt</p>
+<p>The use of wildcards makes this statement must easier.</p>
+<p>$ cat Babies_20*_v2.txt &gt; Babies_AllYears.txt</p>
+<p><a class="reference internal" href="_images/image308.png"><img alt="image29" src="_images/image308.png" style="width: 3.32870in; height: 2.35392in;" /></a></p>
+<p>The wc command with the –l option will quickly count the number of lines
+in the file.</p>
+<p>$ wc -l Babies_AllYears.txt</p>
+<p>55560 Babies_AllYears.txt</p>
+<p>This count matches the sum of the number of lines from each individual
+year. A check of this nature provides confidence that appending has
+worked as intended.</p>
+<p>$ wc -l Babies_20*_v2.txt</p>
+<p>6864 Babies_2007_v2.txt</p>
+<p>6864 Babies_2008_v2.txt</p>
+<p>6864 Babies_2009_v2.txt</p>
+<p>6864 Babies_2010_v2.txt</p>
+<p>6864 Babies_2011_v2.txt</p>
+<p>6864 Babies_2012_v2.txt</p>
+<p>6864 Babies_2013_v2.txt</p>
+<p>7512 Babies_2014_v2.txt</p>
+<p>55560 total</p>
+<ul class="simple">
+<li></li>
+<li></li>
+</ul>
+<p><em>ADDING a HEADER</em></p>
+<p>The following sed command (using the –i, i.e. in-place, option) can be
+used to insert column headers on the first line of this file. The column
+headers should be tab delimited like the rest of this file so that the
+headers match the columns of data.</p>
+<p>$ sed -i &#8216;1 i\Year \t County \t County Code \t Month \t Month Code
+\t Births&#8217; Babies_AllYears.txt</p>
+<p>The preparation of these files is complete. The Babies_AllYears.txt
+file can now be read into Excel for further analyses. A snip-it of the
+Excel file is shown here.</p>
+<p><a class="reference internal" href="_images/image3114.png"><img alt="image30" src="_images/image3114.png" style="width: 4.78125in; height: 2.04684in;" /></a></p>
+<p><em>ANALYSIS of DATA</em></p>
+<p>The analysis requires the identification of the Super Bowl winner for
+each year and the county in which the teams plays. The table below
+provides a single county for each team. A more thorough analysis could
+include additional counties for each team.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="54%" />
+<col width="46%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><p class="first">List of past Super Bowl Winners</p>
+<p><a class="reference internal" href="_images/image3211.png"><img alt="image31" src="_images/image3211.png" style="width: 2.66667in; height: 2.23150in;" /></a></p>
+<p class="last">Source: <a class="reference external" href="http://www.topendsports.com/events/super-bowl/winners-list.htm">http://www.topendsports.com/events/super-bowl/winners-list.htm</a></p>
+</td>
+<td><p class="first">Identifying the county for each team</p>
+<table border="1" class="last docutils">
+<colgroup>
+<col width="14%" />
+<col width="43%" />
+<col width="43%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Year</th>
+<th class="head">Super Bowl Winner</th>
+<th class="head">County</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>2007</td>
+<td>Indianapolis Colts</td>
+<td>Marion County, IN</td>
+</tr>
+<tr class="row-odd"><td>2008</td>
+<td>New York Giants</td>
+<td>Bergen County, NJ</td>
+</tr>
+<tr class="row-even"><td>2009</td>
+<td>Pittsburgh Steelers</td>
+<td>Allegheny County, PA</td>
+</tr>
+<tr class="row-odd"><td>2010</td>
+<td>New Orleans Saints</td>
+<td>Orleans Parish, LA</td>
+</tr>
+<tr class="row-even"><td>2011</td>
+<td>Green Bay Packers</td>
+<td>Brown County, WI</td>
+</tr>
+<tr class="row-odd"><td>2012</td>
+<td>New York Giants</td>
+<td>Bergen County, NJ</td>
+</tr>
+<tr class="row-even"><td>2013</td>
+<td>Baltimore Ravens</td>
+<td>Baltimore County, MD</td>
+</tr>
+<tr class="row-odd"><td>2014</td>
+<td>Seattle Seahawks</td>
+<td>King County, WA</td>
+</tr>
+<tr class="row-even"><td>2015</td>
+<td>New England Patriots</td>
+<td>Suffolk County, MA</td>
+</tr>
+<tr class="row-odd"><td>2016</td>
+<td>Denver Broncos</td>
+<td>Denver County, CO</td>
+</tr>
+<tr class="row-even"><td>2017</td>
+<td>New England Patriots</td>
+<td>Suffolk County, MA</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Using PivotTables in Excel is the most efficient in getting the
+necessary summaries. Setup a PivotTable as below. Notice that County is
+being used as a filter on these summaries. This will allow us to easily
+summarize the data for each winning Super Bowl team.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="40%" />
+<col width="60%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><p class="first">Setup of PivotTable</p>
+<p class="last"><a class="reference internal" href="_images/image336.png"><img alt="image32" src="_images/image336.png" style="width: 2.04775in; height: 3.76042in;" /></a></p>
+</td>
+<td><p class="first">Set Filter = Marion County, IN.</p>
+<p><a class="reference internal" href="_images/image345.png"><img alt="image33" src="_images/image345.png" style="width: 3.06250in; height: 1.51353in;" /></a></p>
+<p>Setting Year Filter = 2007.</p>
+<p class="last"><a class="reference internal" href="_images/image354.png"><img alt="image34" src="_images/image354.png" style="width: 3.81264in; height: 2.14583in;" /></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Removing the Year Filter = 2007 allows us to compare 2007 to the typical
+trends seen from year-to-year in this county.</p>
+<p><a class="reference internal" href="_images/image363.png"><img alt="image35" src="_images/image363.png" style="width: 4.68750in; height: 2.74489in;" /></a></p>
+<p>Consider the following graphs that include outcomes from 2014 (Seattle
+Seahawks) and 2008 / 2012 (New York Giants).</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="64%" />
+<col width="36%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><p class="first">2014</p>
+<p>Seattle Seahawks</p>
+<p class="last">[King County, WA]</p>
+</th>
+<th class="head"><a class="reference internal" href="_images/image373.png"><img alt="image36" src="_images/image373.png" style="width: 4.07227in; height: 2.40903in;" /></a></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><p class="first">2008 / 2012</p>
+<p>New York Giants</p>
+<p class="last">[Bergen County, NJ]</p>
+</td>
+<td><a class="reference internal" href="_images/image383.png"><img alt="image37" src="_images/image383.png" style="width: 4.28084in; height: 2.64583in;" /></a></td>
+</tr>
+</tbody>
+</table>
+<p><em>Questions</em></p>
+<ol class="arabic simple">
+<li>Does the claim of “Super Bowl Babies” appear to be real phenomena?
+Discuss.</li>
+<li>Consider our analysis for the Indianapolis Colts (2007). Identify
+additional counties that surround Marion County, IN. Recreate the
+graph provided above using these additional counties. Does the same
+trend appear? Discuss.</li>
+</ol>
+<ul class="simple">
+<li></li>
+<li></li>
+</ul>
+<p><em>TASK</em></p>
+<p>The CDC continually updates their datasets and hence our analyses can be
+updated using this new data.</p>
+<p>Data Sources:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://wonder.cdc.gov/controller/datarequest/D66">https://wonder.cdc.gov/controller/datarequest/D66</a></li>
+<li><a class="reference external" href="https://wonder.cdc.gov/natality-cur_vrent.html">https://wonder.cdc.gov/natality-cur_vrent.html</a></li>
+</ul>
+<p>Complete the following:</p>
+<ol class="arabic simple">
+<li>Download the Babies_2015.txt file from our course website.</li>
+<li>Edit this file so that the footer information is removed, the non
+^\t rows are removed, and add 2015 to the beginning of each line.</li>
+<li>Append the 2015 data to the bottom of Babies_AllYears.txt.</li>
+<li>Read the Babies_AllYears.txt file into Excel and update the 2007
+Indianapolis Colts graph provided above to include a line for 2015.</li>
+<li>Create a graph for the 2015 Super Bowl winner the New England
+Patriots.</li>
+</ol>
+</div>
+
+
+  
+      
+  <li id="relations-prev" class="navLink" title='Previous Section - 3. Processing Data with Bash' data-toggle="tooltip">
+    <a href="bash_toctree.html" >
+      <i class='prevNav glyphicon glyphicon-chevron-left'></i>
+    </a>
+  </li>
+  <a class="navLinkBg" id="navLinkBgLeft"  href="bash_toctree.html" ></a>
+  
+  <li id="relations-next" class="navLink" title='Next Section - 3.2. BASH SHELL - GREP' data-toggle="tooltip" >
+    <a href="h10.html" >
+      <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
+    </a>
+  </li>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="h10.html" >Next Section - 3.2. BASH SHELL - GREP</a>
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+  
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      
+      | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015 Todd Iverson.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.5.
+    </p>
+  </div>
+</footer>
+
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

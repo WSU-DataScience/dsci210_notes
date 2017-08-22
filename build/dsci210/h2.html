@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>1.8. Sorting and Filtering Data in Excel &mdash; Runestone Interactive Overview</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="_static/clickable.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="_static/dragndrop.css" type="text/css" />
+    <link rel="stylesheet" href="_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="_static/livecode.css" type="text/css" />
+    <link rel="stylesheet" href="_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootswatch/2.3.1/""/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/runestonebase.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="_static/codemirror.js"></script>
+    <script type="text/javascript" src="_static/xml.js"></script>
+    <script type="text/javascript" src="_static/css.js"></script>
+    <script type="text/javascript" src="_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="_static/python.js"></script>
+    <script type="text/javascript" src="_static/javascript.js"></script>
+    <script type="text/javascript" src="_static/activecode.js"></script>
+    <script type="text/javascript" src="_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="_static/clike.js"></script>
+    <script type="text/javascript" src="_static/timed_activecode.js"></script>
+    <script type="text/javascript" src="_static/animationbase.js"></script>
+    <script type="text/javascript" src="_static/mchoice.js"></script>
+    <script type="text/javascript" src="_static/timedmc.js"></script>
+    <script type="text/javascript" src="_static/timed.js"></script>
+    <script type="text/javascript" src="_static/clickable.js"></script>
+    <script type="text/javascript" src="_static/timedclickable.js"></script>
+    <script type="text/javascript" src="_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="_static/pytutor.js"></script>
+    <script type="text/javascript" src="_static/codelens.js"></script>
+    <script type="text/javascript" src="_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="_static/datafile.js"></script>
+    <script type="text/javascript" src="_static/dragndrop.js"></script>
+    <script type="text/javascript" src="_static/timeddnd.js"></script>
+    <script type="text/javascript" src="_static/fitb.js"></script>
+    <script type="text/javascript" src="_static/timedfitb.js"></script>
+    <script type="text/javascript" src="_static/livecode.js"></script>
+    <script type="text/javascript" src="_static/clike.js"></script>
+    <script type="text/javascript" src="_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="_static/lib/hammer.min.js"></script>
+    <script type="text/javascript" src="_static/parsons.js"></script>
+    <script type="text/javascript" src="_static/timedparsons.js"></script>
+    <script type="text/javascript" src="_static/poll.js"></script>
+    <script type="text/javascript" src="_static/reveal.js"></script>
+    <script type="text/javascript" src="_static/shortanswer.js"></script>
+    <script type="text/javascript" src="_static/timed_shortanswer.js"></script>
+    <script type="text/javascript" src="_static/tabbedstuff.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="_static/rangy-core.js"></script>
+    <script type="text/javascript" src="_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="_static/user-highlights.js"></script>
+    <script type="text/javascript" src="_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="Runestone Interactive Overview" href="index.html" />
+    <link rel="up" title="1. Processing Data with Excel" href="excel_toctree.html" />
+    <link rel="next" title="1.9. Excel: Basic String Functions" href="h3.html" />
+    <link rel="prev" title="1.7. Excel: Reading in Standard Data" href="h1.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="/runestone/static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'dsci210';
+  eBookConfig.logLevel = 0;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = false;
+  eBookConfig.python3 = true;
+  eBookConfig.basecourse = 'dsci210';
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="index.html">DSCI 210 Notes</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='index.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/dsci210/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:ACFactory.toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/dsci210/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='/runestone/default/reportabug?course=dsci210&page=h2'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        <!--
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">1.8. Sorting and Filtering Data in Excel</a><ul>
+<li><a class="reference internal" href="#sorting-data-in-excel">1.8.1. SORTING DATA IN EXCEL</a></li>
+<li><a class="reference internal" href="#custom-sorting">1.8.2. Custom Sorting</a></li>
+<li><a class="reference internal" href="#filtering-data-in-excel">1.8.3. FILTERING DATA IN EXCEL</a></li>
+<li><a class="reference internal" href="#filtering-numbers">1.8.4. Filtering Numbers</a></li>
+<li><a class="reference internal" href="#more-custom-filters">1.8.5. More Custom Filters</a></li>
+<li><a class="reference internal" href="#using-wildcards-when-filtering">1.8.6. Using Wildcards When Filtering</a></li>
+<li><a class="reference internal" href="#using-advanced-filters">1.8.7. Using Advanced Filters</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - 1.7. Excel: Reading in Standard Data" data-toggle="tooltip">
+    <a href="h1.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - 1.9. Excel: Basic String Functions' data-toggle="tooltip" >
+    <a href="h3.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content">
+  
+  <div class="section" id="sorting-and-filtering-data-in-excel">
+<h1>1.8. Sorting and Filtering Data in Excel<a class="headerlink" href="#sorting-and-filtering-data-in-excel" title="Permalink to this headline">¶</a></h1>
+<p>In this handout, we will consider the North Carolina Birth data. A
+portion of this data set is shown below.</p>
+<p><a class="reference internal" href="_images/image130.png"><img alt="image0" src="_images/image130.png" style="width: 6.50000in; height: 1.13681in;" /></a></p>
+<p>Before we discuss sorting and filtering, let’s identify some features of
+this spreadsheet that you should always keep in mind when creating a
+database in Excel.</p>
+<ul class="simple">
+<li>The column headings (known as field names) identify the variables in
+the data set, and each observation (or record) is placed in its own
+row.</li>
+<li>The column heading should reside in only one cell.</li>
+<li>Do not leave a blank row between the column headers and the first
+record, and be sure that there are no blank rows between records
+(when data points are missing, it is okay to have some blank cells).</li>
+</ul>
+<div class="section" id="sorting-data-in-excel">
+<h2>1.8.1. SORTING DATA IN EXCEL<a class="headerlink" href="#sorting-data-in-excel" title="Permalink to this headline">¶</a></h2>
+<p>Open the NC Birth dataset. Suppose that you want to sort the data by
+<em>Mother Age</em>. Sorting the data will change the order in which the
+records are displayed, but each row will be kept together so that the
+data is correctly maintained.</p>
+<p>To sort based on this column, select “Sort” from the Data ribbon.</p>
+<p><a class="reference internal" href="_images/image228.png"><img alt="image1" src="_images/image228.png" style="width: 4.87500in; height: 1.11294in;" /></a></p>
+<p>The following dialog box appears. Tell Excel to Sort by <em>Mother Age</em> by
+selecting this variable from the drop-down menu list, and also note that
+you are asked whether you wish to sort in an ascending or descending
+order. Here, we will sort from the youngest to the oldest mothers.</p>
+<p><a class="reference internal" href="_images/image320.png"><img alt="image2" src="_images/image320.png" style="width: 4.94792in; height: 2.23616in;" /></a></p>
+<p>Click OK, and Excel returns the data sorted by the age of the mother (a
+portion is shown below).</p>
+<p><a class="reference internal" href="_images/image417.png"><img alt="image3" src="_images/image417.png" style="width: 6.50000in; height: 2.27361in;" /></a></p>
+<p>Note that you can sort by more than one variable. For example, suppose
+that you wanted to also sort by <em>Father Age</em>. Once again, select
+“Sort” from the Data ribbon. In the upper-left-hand corner of the
+dialog box that appears, click “Add Level” and then choose the
+following:</p>
+<p><a class="reference internal" href="_images/image510.png"><img alt="image4" src="_images/image510.png" style="width: 6.18750in; height: 1.37500in;" /></a></p>
+<p>The data should now appear as follows:</p>
+<p><a class="reference internal" href="_images/image69.png"><img alt="image5" src="_images/image69.png" style="width: 5.83333in; height: 2.04541in;" /></a></p>
+</div>
+<div class="section" id="custom-sorting">
+<h2>1.8.2. Custom Sorting<a class="headerlink" href="#custom-sorting" title="Permalink to this headline">¶</a></h2>
+<p>When you sort data with Excel, it is done by default alphabetically,
+numerically, or by date. Sometimes, you may have items in your list that
+you would like sorted in a different way.</p>
+<p>For example, let’s start with the original NC Birth dataset (i.e.,
+before sorting by mother’s age or father’s age). Suppose you want to
+sort by the variable <em>Kotelchuk Index for Adequacy of Prenatal Care.</em>
+Furthermore, you want to sort the variables in this order: Inadequate,
+Intermediate, Adequate, AdequatePlus, and NotReported.</p>
+<p>From the Sort dialog box, select “Custom List.”</p>
+<p><a class="reference internal" href="_images/image79.png"><img alt="image6" src="_images/image79.png" style="width: 4.77083in; height: 0.88408in;" /></a></p>
+<p>Enter the following in the List Entries section of the Custom Lists box:</p>
+<p><a class="reference internal" href="_images/image89.png"><img alt="image7" src="_images/image89.png" style="width: 4.71875in; height: 1.67404in;" /></a></p>
+<p>Finally, click “Add” to add this to your custom lists, select it, and
+then the data should sort in the order you have requested.</p>
+</div>
+<div class="section" id="filtering-data-in-excel">
+<h2>1.8.3. FILTERING DATA IN EXCEL<a class="headerlink" href="#filtering-data-in-excel" title="Permalink to this headline">¶</a></h2>
+<p>A filter allows you to quickly and easily subset your data. In other
+words, you can easily view only those records that meet certain
+criteria. To invoke a filter in Excel, highlight all of the variables
+(columns) in your dataset and select “Filter” from the Data ribbon.</p>
+<p><a class="reference internal" href="_images/image98.png"><img alt="image8" src="_images/image98.png" style="width: 5.93750in; height: 2.03626in;" /></a></p>
+<p>Each variable in your dataset now has a drop-down arrow, indicating that
+the filter has been activated. This drop-down arrow can be used to apply
+a filter for that variable.</p>
+<p><a class="reference internal" href="_images/image109.png"><img alt="image9" src="_images/image109.png" style="width: 6.50000in; height: 1.11667in;" /></a></p>
+<p>For example, if you’d like to observe only those observations for which
+the father was Nonwhite, click on the <em>Father Minority</em> drop-down arrow
+and select only “Nonwhite.” This is shown here.</p>
+<p><a class="reference internal" href="_images/image1113.png"><img alt="image10" src="_images/image1113.png" style="width: 2.21832in; height: 2.37500in;" /></a></p>
+<p>Note that once a filter has been applied, the drop-down arrow changes to
+a “funnel.” Also, note that several rows are missing and the row labels
+have changed color.</p>
+<p><a class="reference internal" href="_images/image1210.png"><img alt="image11" src="_images/image1210.png" style="width: 6.02083in; height: 2.07191in;" /></a></p>
+<p>You can easily apply a filter on multiple variables. Each additional
+variable you add will narrow down your list, as records have to meet
+each set of criteria in order to be displayed. For example, consider the
+subset <em>Father Minority</em> = Nonwhite and <em>Mother Minority</em> = Nonwhite.</p>
+<p><a class="reference internal" href="_images/image138.png"><img alt="image12" src="_images/image138.png" style="width: 3.17708in; height: 2.06810in;" /></a></p>
+<p>Notice the funnel icon on both <em>Father Minority</em> and <em>Mother Minority</em>.</p>
+<p><a class="reference internal" href="_images/image148.png"><img alt="image13" src="_images/image148.png" style="width: 5.58333in; height: 1.35766in;" /></a></p>
+<p>To <strong>remove</strong> a filter, simply select “(Select All)” from the
+drop-down arrow for that variable. To deactivate the filters for all
+columns, click “Filter” once again from the Data ribbon. To deactivate a
+filter for just one column, click on the Filter button for that column
+and select “Clear Filter.”</p>
+</div>
+<div class="section" id="filtering-numbers">
+<h2>1.8.4. Filtering Numbers<a class="headerlink" href="#filtering-numbers" title="Permalink to this headline">¶</a></h2>
+<p>Unfortunately, Excel does not automatically differentiate between
+categorical data and numerical data. For example, suppose we want to see
+only the observations for which <em>Mother Age</em> &gt; 40. When the drop-down
+arrow for <em>Mother Age</em> is selected, you obtain a selection box for each
+observation.</p>
+<p><a class="reference internal" href="_images/image158.png"><img alt="image14" src="_images/image158.png" style="width: 1.78875in; height: 2.95833in;" /></a></p>
+<p>Excel does, however, provide a special menu for Number Filters. There
+are several options under the Number Filters submenu. If the intent is
+to subset based on Mother Age &gt; 40, select “Greater Than…” from this
+submenu.</p>
+<p><a class="reference internal" href="_images/image168.png"><img alt="image15" src="_images/image168.png" style="width: 3.41667in; height: 3.09014in;" /></a></p>
+<p>In the Custom AutoFilter window, specify that you want <em>Mother Age</em> &gt;
+40. This is shown below.</p>
+<p><a class="reference internal" href="_images/image177.png"><img alt="image16" src="_images/image177.png" style="width: 6.50000in; height: 2.05625in;" /></a></p>
+<p>A small portion of this filter’s result is given here.</p>
+<p><a class="reference internal" href="_images/image187.png"><img alt="image17" src="_images/image187.png" style="width: 6.50000in; height: 1.41042in;" /></a></p>
+</div>
+<div class="section" id="more-custom-filters">
+<h2>1.8.5. More Custom Filters<a class="headerlink" href="#more-custom-filters" title="Permalink to this headline">¶</a></h2>
+<p>There are several filters that can be applied to text variables, as
+well.</p>
+<p><a class="reference internal" href="_images/image197.png"><img alt="image18" src="_images/image197.png" style="width: 3.23958in; height: 3.04155in;" /></a></p>
+<p>For example, suppose we’d like to display all observations for which
+<em>Kotelchuck Index</em> = Inadequate, Intermediate, or Adequate. The easiest
+way to do this is to simply check the boxes for these three categories.</p>
+<p>Also note, however, that each of these variable <strong>ends with “e”</strong> and
+that this rule can be used to create a custom filter.</p>
+<p><a class="reference internal" href="_images/image206.png"><img alt="image19" src="_images/image206.png" style="width: 3.79167in; height: 2.36458in;" /></a></p>
+<p>After specifying this in the Custom AutoFilter box as shown above, you
+should obtain output similar to what is presented below.</p>
+<p><a class="reference internal" href="_images/image2111.png"><img alt="image20" src="_images/image2111.png" style="width: 2.97917in; height: 2.26215in;" /></a></p>
+</div>
+<div class="section" id="using-wildcards-when-filtering">
+<h2>1.8.6. Using Wildcards When Filtering<a class="headerlink" href="#using-wildcards-when-filtering" title="Permalink to this headline">¶</a></h2>
+<p>You can use a wildcard such as the asterisk (*) in a filter to
+represent any character. For example, suppose you want to subset those
+observations with a <em>Kotelchuck Index</em> of “Adequate” or “AdequatePlus.”
+Once again, this could be accomplished by checking the box next to both
+of these categories from the drop-down arrow. However, we can also do
+this with a Custom Filter using wildcards as follows:</p>
+<p><a class="reference internal" href="_images/image229.png"><img alt="image21" src="_images/image229.png" style="width: 6.30208in; height: 1.97344in;" /></a></p>
+<p>A portion of the records displayed by Excel is given below.</p>
+<p><a class="reference internal" href="_images/image236.png"><img alt="image22" src="_images/image236.png" style="width: 6.50000in; height: 0.88958in;" /></a></p>
+</div>
+<div class="section" id="using-advanced-filters">
+<h2>1.8.7. Using Advanced Filters<a class="headerlink" href="#using-advanced-filters" title="Permalink to this headline">¶</a></h2>
+<p>In some instances, the AutoFilter can’t be used to obtain the desired
+result. For example, suppose you wanted to view all records where either
+<em>Mother Age</em> &gt; 40 <strong>or</strong> <em>Father Age &gt; 40.</em></p>
+<p>In this case, you would have to use an Advanced Filter. In a blank
+part of the spreadsheet, type in the exact column headings that appear
+in the original dataset. Then, type in the desired criteria below
+these variable names. For this example, the following should be
+entered:</p>
+<p><a class="reference internal" href="_images/image245.png"><img alt="image23" src="_images/image245.png" style="width: 3.68750in; height: 0.94149in;" /></a></p>
+<p>Note that when the criteria are listed on separate lines such as they
+are above, this indicates that we desire one <strong>or</strong> the other
+criterion to be true.</p>
+<p>Next, click on the “Advanced” option in the Sort &amp; Filter menu.</p>
+<p><a class="reference internal" href="_images/image254.png"><img alt="image24" src="_images/image254.png" style="width: 6.13542in; height: 1.01436in;" /></a></p>
+<p>Enter the following in the Advanced Filter dialog box.</p>
+<p><a class="reference internal" href="_images/image264.png"><img alt="image25" src="_images/image264.png" style="width: 6.13542in; height: 2.65625in;" /></a></p>
+<p>A portion of the filtered data is shown below.</p>
+<p><a class="reference internal" href="_images/image274.png"><img alt="image26" src="_images/image274.png" style="width: 6.50000in; height: 1.74722in;" /></a></p>
+<p>Note that we when the criteria are listed on the same line, this
+indicates that we desire both criteria to be true. For example, suppose
+we had started with the following:</p>
+<p><a class="reference internal" href="_images/image284.png"><img alt="image27" src="_images/image284.png" style="width: 3.89583in; height: 0.96875in;" /></a></p>
+<p>This tells Excel to include records where <em>Mother Age</em> &gt; 40 <strong>and</strong>
+<em>Father Age</em> &gt; 40. Carry out this Advanced Filter in Excel and verify
+that this is the case.</p>
+</div>
+</div>
+
+
+  
+      
+  <li id="relations-prev" class="navLink" title='Previous Section - 1.7. Excel: Reading in Standard Data' data-toggle="tooltip">
+    <a href="h1.html" >
+      <i class='prevNav glyphicon glyphicon-chevron-left'></i>
+    </a>
+  </li>
+  <a class="navLinkBg" id="navLinkBgLeft"  href="h1.html" ></a>
+  
+  <li id="relations-next" class="navLink" title='Next Section - 1.9. Excel: Basic String Functions' data-toggle="tooltip" >
+    <a href="h3.html" >
+      <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
+    </a>
+  </li>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="h3.html" >Next Section - 1.9. Excel: Basic String Functions</a>
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+  
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      
+      | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015 Todd Iverson.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.5.
+    </p>
+  </div>
+</footer>
+
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

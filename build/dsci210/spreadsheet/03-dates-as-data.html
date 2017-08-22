@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>1.4. Dates as Data &mdash; Runestone Interactive Overview</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/livecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootswatch/2.3.1/""/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
+    <script type="text/javascript" src="../_static/timed_activecode.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/codelens.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/livecode.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/hammer.min.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/timedparsons.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
+    <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/timed_shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="Runestone Interactive Overview" href="../index.html" />
+    <link rel="up" title="1. Processing Data with Excel" href="../excel_toctree.html" />
+    <link rel="next" title="1.5. Quality Control" href="04-quality-control.html" />
+    <link rel="prev" title="1.3. Common Spreadsheet Errors" href="02-common-mistakes.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="/runestone/static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'dsci210';
+  eBookConfig.logLevel = 0;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = false;
+  eBookConfig.python3 = true;
+  eBookConfig.basecourse = 'dsci210';
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="../index.html">DSCI 210 Notes</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----MIIHNwYJKoZIhvcNAQcEoIIHKDCCByQCAQExggEwMIIBLAIBADCBlDCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20CAQAwDQYJKoZIhvcNAQEBBQAEgYAcrkqh1hn3lYqIpfXxNqe1T82EhXzCJGy1yMAmklpyZshyMkfDGe1Bhx+iwyGeoYRTTyphFmP+9M3NyO0+Q5XdHxgZPx/zYjjBxlZHgEV6jhE8bN2fHkkPf0VHfz0a0QQylQOPlKiOTZV7B37Jpk6yM47oVZ1tG/KNm0NkfmB76DELMAkGBSsOAwIaBQAwgbQGCSqGSIb3DQEHATAUBggqhkiG9w0DBwQIi0GmFfOlcjuAgZBbYOo9UO+CpMQa+PYqwsUmUnJvXIImeMeNI3KVTUx5Cfk9gNMo3WzPeiB5IqZo9nRAQ0mf1qL2ecLeB5tidM+lgBUhOxfj3/FecpnVFa0263gp4g+PLw8jzhvVRdUon1K3SeO1Rzh23fIRKwnrD6btt73uwtj0sl3tGd8qz+6GIcwPDdRk9VcUffiBJT/ZagKgggOHMIIDgzCCAuygAwIBAgIBADANBgkqhkiG9w0BAQUFADCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20wHhcNMDQwMjEzMTAxMzE1WhcNMzUwMjEzMTAxMzE1WjCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20wgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAMFHTt38RMxLXJyO2SmS+Ndl72T7oKJ4u4uw+6awntALWh03PewmIJuzbALScsTS4sZoS1fKciBGoh11gIfHzylvkdNe/hJl66/RGqrj5rFb08sAABNTzDTiqqNpJeBsYs/c2aiGozptX2RlnBktH+SUNpAajW724Nv2Wvhif6sFAgMBAAGjge4wgeswHQYDVR0OBBYEFJaffLvGbxe9WT9S1wob7BDWZJRrMIG7BgNVHSMEgbMwgbCAFJaffLvGbxe9WT9S1wob7BDWZJRroYGUpIGRMIGOMQswCQYDVQQGEwJVUzELMAkGA1UECBMCQ0ExFjAUBgNVBAcTDU1vdW50YWluIFZpZXcxFDASBgNVBAoTC1BheVBhbCBJbmMuMRMwEQYDVQQLFApsaXZlX2NlcnRzMREwDwYDVQQDFAhsaXZlX2FwaTEcMBoGCSqGSIb3DQEJARYNcmVAcGF5cGFsLmNvbYIBADAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBBQUAA4GBAIFfOlaagFrl71+jq6OKidbWFSE+Q4FqROvdgIONth+8kSK//Y/4ihuE4Ymvzn5ceE3S/iBSQQMjyvb+s2TWbQYDwcp129OPIbD9epdr4tJOUNiSojw7BHwYRiPh58S1xGlFgHFXwrEBb3dgNbMUa+u4qectsMAXpVHnD9wIyfmHMYIBmjCCAZYCAQEwgZQwgY4xCzAJBgNVBAYTAlVTMQswCQYDVQQIEwJDQTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEUMBIGA1UEChMLUGF5UGFsIEluYy4xEzARBgNVBAsUCmxpdmVfY2VydHMxETAPBgNVBAMUCGxpdmVfYXBpMRwwGgYJKoZIhvcNAQkBFg1yZUBwYXlwYWwuY29tAgEAMAkGBSsOAwIaBQCgXTAYBgkqhkiG9w0BCQMxCwYJKoZIhvcNAQcBMBwGCSqGSIb3DQEJBTEPFw0xMzExMDMxMzQxMzFaMCMGCSqGSIb3DQEJBDEWBBRDJF8w+zsMr7FSk+pwinB5f5D4rzANBgkqhkiG9w0BAQEFAASBgHw1LMHpkpaqHIvDGdFE0eG+2mZlmMnUeDCBhQlbc7QMzFQYKTV94NfaebBO4PmNdADe1rq4WidSRZZbE7CzkX9IGENYnBTWY0hb2l0lGdGrJdGeWyV3ekg9WVaFMMumrekds96h3Cx7dGz2kWDzIai2iEXE/qoE+xpkyXAYZNV3-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/dsci210/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:ACFactory.toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/dsci210/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='/runestone/default/reportabug?course=dsci210&page=03-dates-as-data'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        <!--
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">1.4. Dates as Data</a><ul>
+<li><a class="reference internal" href="#preferred-date-format">1.4.1. Preferred date format</a></li>
+<li><a class="reference internal" href="#data-formats-in-spreadsheets">1.4.2. Data formats in spreadsheets</a><ul>
+<li><a class="reference internal" href="#dates-stored-as-integers">1.4.2.1. Dates stored as integers</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#advantages-of-alternative-date-formatting">1.4.3. Advantages of Alternative Date Formatting</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - 1.3. Common Spreadsheet Errors" data-toggle="tooltip">
+    <a href="02-common-mistakes.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - 1.5. Quality Control' data-toggle="tooltip" >
+    <a href="04-quality-control.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content">
+  
+  <div class="section" id="dates-as-data">
+<h1>1.4. Dates as Data<a class="headerlink" href="#dates-as-data" title="Permalink to this headline">¶</a></h1>
+<p>Authors:<strong>Christie Bahlai</strong>, <strong>Aleksandra Pawlik</strong><a class="reference external" href="http://www.datacarpentry.org/spreadsheet-ecology-lesson/">Original Source</a></p>
+<p>Dates in spreadsheets are stored in a single column. While this seems
+the most natural way to record dates, it actually is not best practice.
+A spreadsheet application will display the dates in a seemingly correct
+way (to a human observer) but how it actually handles and stores the
+dates may be problematic.</p>
+<p>In particular, please remember that functions that are valid for a given
+spreadsheet program (be it LibreOffice, Microsoft Excel, OpenOffice,
+Gnumeric, etc.) are usually guaranteed to be compatible only within the
+same family of products. If you will later need to export the data and
+need to conserve the timestamps, you are better off handling them using
+one of the solutions discussed below.</p>
+<div class="admonition-exercise admonition">
+<p class="first admonition-title">Exercise</p>
+<p>Challenge: pulling month, day and year out of dates</p>
+<ul class="simple">
+<li>In the <code class="docutils literal"><span class="pre">dates</span></code> tab of your spreadsheet you have the data from
+2014 plot 3. There&#8217;s a <code class="docutils literal"><span class="pre">Date</span> <span class="pre">collected</span></code> column.</li>
+<li>Let’s extract month, day and year from the dates to new columns.
+For this we can use the built in Excel functions</li>
+</ul>
+<div class="line-block">
+<div class="line"><code class="docutils literal"><span class="pre">MONTH()</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">DAY()</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">YEAR()</span></code></div>
+</div>
+<p>(Make sure the new column is formatted as a number and not as a
+date.)</p>
+<p class="last">You can see that even though you wanted the year to be 2014, your
+spreadsheet program automatically interpreted it as 2015, the year
+you entered the data.</p>
+</div>
+<div class="section" id="preferred-date-format">
+<h2>1.4.1. Preferred date format<a class="headerlink" href="#preferred-date-format" title="Permalink to this headline">¶</a></h2>
+<p>It is much safer to store dates with <a class="reference external" href="#day">MONTH, DAY and YEAR</a> in
+separate columns or as <a class="reference external" href="#doy">YEAR and DAY-OF-YEAR</a> in separate
+columns.</p>
+<p><strong>Note</strong>: Excel is unable to parse dates from before 1899-12-31, and
+will thus leave these untouched. If you’re mixing historic data from
+before and after this date, Excel will translate only the post-1900
+dates into its internal format, thus resulting in mixed data. If you’re
+working with historic data, be extremely careful with your dates!</p>
+<p>Excel also entertains a second date system, the 1904 date system, as the
+default in Excel for Macintosh. This system will assign a different
+serial number than the <a class="reference external" href="https://support.microsoft.com/kb/180162">1900 date
+system</a>. Because of this,
+<a class="reference external" href="http://datapub.cdlib.org/2014/04/10/abandon-all-hope-ye-who-enter-dates-in-excel/">dates must be checked for accuracy when exporting data from
+Excel</a>
+(look for dates that are ~4 years off).</p>
+</div>
+<div class="section" id="data-formats-in-spreadsheets">
+<h2>1.4.2. Data formats in spreadsheets<a class="headerlink" href="#data-formats-in-spreadsheets" title="Permalink to this headline">¶</a></h2>
+<p>Spreadsheet programs have numerous “useful features” which allow them to
+handle dates in a variety of ways.</p>
+<div class="figure" id="id1">
+<img alt="Many formats, many ambiguities" src="../_images/5_excel_dates_1.jpg" />
+<p class="caption"><span class="caption-text">Many formats, many ambiguities</span></p>
+</div>
+<p>But these &#8220;features&#8221; often allow ambiguity to creep into your data.
+Ideally, data should be as unambiguous as possible.</p>
+<div class="section" id="dates-stored-as-integers">
+<h3>1.4.2.1. Dates stored as integers<a class="headerlink" href="#dates-stored-as-integers" title="Permalink to this headline">¶</a></h3>
+<p>The first thing you need to know is that Excel stores dates as numbers -
+see the last column in the above figure. Essentially, it counts the days
+from a default of December 31, 1899, and thus stores July 2, 2014 as the
+serial number 41822.</p>
+<p>(But wait. That’s the default on my version of Excel. We’ll get into how
+this can introduce problems down the line later in this lesson. )</p>
+<p>This serial number thing can actually be useful in some circumstances.
+By using the above functions we can easily add days, months or years to
+a given date. Say you had a sampling plan where you needed to sample
+every thirty seven days. In another cell, you could type:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">=</span><span class="n">B2</span><span class="o">+</span><span class="mi">37</span>
+</pre></div>
+</div>
+<p>And it would return</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="mi">8</span><span class="o">-</span><span class="n">Aug</span>
+</pre></div>
+</div>
+<p>because it understands the date as a number <code class="docutils literal"><span class="pre">41822</span></code>, and
+<code class="docutils literal"><span class="pre">41822</span> <span class="pre">+</span> <span class="pre">37</span> <span class="pre">=</span> <span class="pre">41859</span></code> which Excel interprets as August 8, 2014. It
+retains the format (for the most part) of the cell that is being
+operated upon, (unless you did some sort of formatting to the cell
+before, and then all bets are off). Month and year rollovers are
+internally tracked and applied.</p>
+<p><strong>Note</strong> Adding years and months and days is slightly trickier because
+we need to make sure that we are adding the amount to the correct
+entity.</p>
+<ul class="simple">
+<li>First we extract the single entities (day, month or year)</li>
+<li>We can then add values to to that</li>
+<li>Finally the complete date string is reconstructed using the
+<code class="docutils literal"><span class="pre">DATE()</span></code> function.</li>
+</ul>
+<p>As for dates, times are handled in a similar way; seconds can be
+directly added but to add hour and minutes we need to make sure that we
+are adding the quantities to the correct entities.</p>
+<p>Which brings us to the many different ways Excel provides in how it
+displays dates. If you refer to the figure above, you’ll see that there
+are many ways that ambiguity creeps into your data depending on the
+format you chose when you enter your data, and if you’re not fully aware
+of which format you’re using, you can end up actually entering your data
+in a way that Excel will badly misinterpret.</p>
+<div class="admonition-exercise admonition">
+<p class="first admonition-title">Exercise</p>
+<p class="last">What happens to the dates in the &#8220;dates&#8221; tab of our workbook if we
+save this sheet in Excel (in <code class="docutils literal"><span class="pre">csv</span></code> format) and then open the
+file in a plain text editor (like TextEdit or Notepad)? What
+happens to the dates if we then open the <code class="docutils literal"><span class="pre">csv</span></code> file in Excel? &gt;</p>
+</div>
+<div class="line-block">
+<div class="line"><strong>Note</strong></div>
+<div class="line">You will notice that when exporting into a text-based format (such as
+CSV), Excel will export its internal date integer instead of a useful
+value (that is, the dates will be represented as integer numbers).
+This can potentially lead to problems if you use other software to
+manipulate the file.</div>
+</div>
+</div>
+</div>
+<div class="section" id="advantages-of-alternative-date-formatting">
+<h2>1.4.3. Advantages of Alternative Date Formatting<a class="headerlink" href="#advantages-of-alternative-date-formatting" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>Storing dates as YEAR, MONTH, DAY</div></blockquote>
+<hr class="docutils" />
+<p>Storing dates in YEAR, MONTH, DAY format helps remove this ambiguity.
+Let&#8217;s look at this issue a bit closer.</p>
+<p>For instance this is a spreadsheet representing insect counts that were
+taken every few days over the summer, and things went something like
+this:</p>
+<div class="figure" id="id2">
+<img alt="So, so ambiguous, it's even confusing Excel" src="../_images/6_excel_dates_2.jpg" />
+<p class="caption"><span class="caption-text">So, so ambiguous, it&#8217;s even confusing Excel</span></p>
+</div>
+<p>If Excel was to be believed, this person had been collecting bugs <strong>in
+the future</strong>. Now, we have no doubt this person is highly capable, but I
+believe time travel was beyond even their grasp.</p>
+<p>Entering dates in one cell is helpful but due to the fact that the
+spreadsheet programs may interpret and save the data in different ways
+(doing that somewhat behind the scenes), there is a better practice.</p>
+<p>In dealing with dates in spreadsheets, separate date data into separate
+fields (day, month, year), which will eliminate any chance of ambiguity.</p>
+<blockquote>
+<div>Storing dates as YEAR, DAY-OF-YEAR</div></blockquote>
+<hr class="docutils" />
+<p>There is also another option. You can also store dates as year and day
+of year (DOY). Why? Because depending on your question, this might be
+what&#8217;s useful to you, and there is practically no possibility for
+ambiguity creeping in.</p>
+<p>Statistical models often incorporate year as a factor, or a categorical
+variable, rather than a numeric variable, to account for year-to-year
+variation, and DOY can be used to measure the passage of time within a
+year.</p>
+<p>So, can you convert all your dates into DOY format? Well, in Excel,
+here’s a useful guide:</p>
+<div class="figure">
+<img alt="spreadsheet/../fig/7_excel_dates_3.jpg:alt:Killthatambiguitybeforeitbitesyou!" src="spreadsheet/../fig/7_excel_dates_3.jpg:alt:Killthatambiguitybeforeitbitesyou!" />
+</div>
+<hr class="docutils" />
+<p>Another alternative could be to convert the date string into a single
+string using the <code class="docutils literal"><span class="pre">YYYYMMDDhhmmss</span></code> format. For example the date
+<code class="docutils literal"><span class="pre">March</span> <span class="pre">24,</span> <span class="pre">2015</span> <span class="pre">17:25:35</span></code> would become <code class="docutils literal"><span class="pre">20150324172535</span></code>, where:</p>
+<div class="line-block">
+<div class="line">YYYY: the full year, i.e. 2015</div>
+<div class="line">MM: the month, i.e. 03</div>
+<div class="line">DD: the day of month, i.e. 24</div>
+<div class="line">hh: hour of day, i.e. 17</div>
+<div class="line">mm: minutes, i.e. 25</div>
+<div class="line">ss: seconds, i.e. 35</div>
+</div>
+<p>Such strings will be correctly sorted in ascendng or descending order,
+and by knowing the format they can then be correctly processed by the
+receiving software.</p>
+</div>
+</div>
+
+
+  
+      
+  <li id="relations-prev" class="navLink" title='Previous Section - 1.3. Common Spreadsheet Errors' data-toggle="tooltip">
+    <a href="02-common-mistakes.html" >
+      <i class='prevNav glyphicon glyphicon-chevron-left'></i>
+    </a>
+  </li>
+  <a class="navLinkBg" id="navLinkBgLeft"  href="02-common-mistakes.html" ></a>
+  
+  <li id="relations-next" class="navLink" title='Next Section - 1.5. Quality Control' data-toggle="tooltip" >
+    <a href="04-quality-control.html" >
+      <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
+    </a>
+  </li>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="04-quality-control.html" >Next Section - 1.5. Quality Control</a>
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+  
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      
+      | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015 Todd Iverson.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.5.
+    </p>
+  </div>
+</footer>
+
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

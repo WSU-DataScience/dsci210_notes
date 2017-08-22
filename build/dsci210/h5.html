@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>1.11. Excel: Append, i.e. OFFSET() Function &mdash; Runestone Interactive Overview</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="_static/clickable.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="_static/dragndrop.css" type="text/css" />
+    <link rel="stylesheet" href="_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="_static/livecode.css" type="text/css" />
+    <link rel="stylesheet" href="_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootswatch/2.3.1/""/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/runestonebase.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="_static/codemirror.js"></script>
+    <script type="text/javascript" src="_static/xml.js"></script>
+    <script type="text/javascript" src="_static/css.js"></script>
+    <script type="text/javascript" src="_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="_static/python.js"></script>
+    <script type="text/javascript" src="_static/javascript.js"></script>
+    <script type="text/javascript" src="_static/activecode.js"></script>
+    <script type="text/javascript" src="_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="_static/clike.js"></script>
+    <script type="text/javascript" src="_static/timed_activecode.js"></script>
+    <script type="text/javascript" src="_static/animationbase.js"></script>
+    <script type="text/javascript" src="_static/mchoice.js"></script>
+    <script type="text/javascript" src="_static/timedmc.js"></script>
+    <script type="text/javascript" src="_static/timed.js"></script>
+    <script type="text/javascript" src="_static/clickable.js"></script>
+    <script type="text/javascript" src="_static/timedclickable.js"></script>
+    <script type="text/javascript" src="_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="_static/pytutor.js"></script>
+    <script type="text/javascript" src="_static/codelens.js"></script>
+    <script type="text/javascript" src="_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="_static/datafile.js"></script>
+    <script type="text/javascript" src="_static/dragndrop.js"></script>
+    <script type="text/javascript" src="_static/timeddnd.js"></script>
+    <script type="text/javascript" src="_static/fitb.js"></script>
+    <script type="text/javascript" src="_static/timedfitb.js"></script>
+    <script type="text/javascript" src="_static/livecode.js"></script>
+    <script type="text/javascript" src="_static/clike.js"></script>
+    <script type="text/javascript" src="_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="_static/lib/hammer.min.js"></script>
+    <script type="text/javascript" src="_static/parsons.js"></script>
+    <script type="text/javascript" src="_static/timedparsons.js"></script>
+    <script type="text/javascript" src="_static/poll.js"></script>
+    <script type="text/javascript" src="_static/reveal.js"></script>
+    <script type="text/javascript" src="_static/shortanswer.js"></script>
+    <script type="text/javascript" src="_static/timed_shortanswer.js"></script>
+    <script type="text/javascript" src="_static/tabbedstuff.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="_static/rangy-core.js"></script>
+    <script type="text/javascript" src="_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="_static/user-highlights.js"></script>
+    <script type="text/javascript" src="_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="Runestone Interactive Overview" href="index.html" />
+    <link rel="up" title="1. Processing Data with Excel" href="excel_toctree.html" />
+    <link rel="next" title="1.12. Excel: Merge Tables, i.e. MATCH() / INDEX() Functions" href="h6.html" />
+    <link rel="prev" title="1.10. Excel: Pivot Tables in Excel" href="h4.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="/runestone/static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'dsci210';
+  eBookConfig.logLevel = 0;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = false;
+  eBookConfig.python3 = true;
+  eBookConfig.basecourse = 'dsci210';
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="index.html">DSCI 210 Notes</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='index.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/dsci210/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:ACFactory.toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/dsci210/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='/runestone/default/reportabug?course=dsci210&page=h5'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        <!--
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">1.11. Excel: Append, i.e. OFFSET() Function</a><ul>
+<li><a class="reference internal" href="#replicating-row-content">1.11.1. Replicating Row Content</a></li>
+<li><a class="reference internal" href="#appending-columns">1.11.2. Appending Columns</a></li>
+<li><a class="reference internal" href="#working-with-complete-dataset">1.11.3. Working with Complete Dataset</a></li>
+<li><a class="reference internal" href="#getting-summaries-stacked-vs-unstacked">1.11.4. Getting Summaries Stacked vs. Unstacked</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - 1.10. Excel: Pivot Tables in Excel" data-toggle="tooltip">
+    <a href="h4.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - 1.12. Excel: Merge Tables, i.e. MATCH() / INDEX() Functions' data-toggle="tooltip" >
+    <a href="h6.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content">
+  
+  <div class="section" id="excel-append-i-e-offset-function">
+<h1>1.11. Excel: Append, i.e. OFFSET() Function<a class="headerlink" href="#excel-append-i-e-offset-function" title="Permalink to this headline">¶</a></h1>
+<p>Climate change affects the environment is many ways. This past winter
+produced little snow in California which is likely to compound their
+drought. The lack of snow also negatively impacts the $12 billion winter
+sports economy in the United States.</p>
+<p><a class="reference internal" href="_images/image150.png"><img alt="image0" src="_images/image150.png" style="width: 4.00in; height: 1.90in;" /></a></p>
+<p>The National Oceanic and Atmospheric Administration (NOAA) provides a
+lot of data that is freely available. Several regional weather offices
+also publish data. Data from the Western Regional Climate Center
+(Website: <a class="reference external" href="http://www.wrcc.dri.edu/">http://www.wrcc.dri.edu/</a>) is used in this handout.</p>
+<p>The following graphs of Colorado snowfall were computed from a dataset
+that required a substantial amount of data management before summaries
+could be constructed.</p>
+<p><a class="reference internal" href="_images/image239.png"><img alt="image1" src="_images/image239.png" style="width: 4.64in; height: 2.00in;" /></a></p>
+<p>The data from this handout is from the Western Regional Climate Center.
+This data was provided in two files. One file contained typical snowfall
+amounts for each month of the year. A second file contained relevant
+auxiliary information about the weather station for which snow
+measurements were obtained.</p>
+<p>Before working with these larger datasets, let’s begin by working with a
+very small subset of the original dataset. Enter the following data into
+Excel. This is a small subset of the snowfall dataset and will be used
+to understand how to append columns in Excel.</p>
+<p>Enter the following data into Excel</p>
+<p><a class="reference internal" href="_images/image612.png"><img alt="image5" src="_images/image612.png" style="width: 2.78358in; height: 1.04646in;" /></a></p>
+<p>The task here is to create a stacked version of the data by appending
+the Jan, Feb, and Mar columns</p>
+<p><a class="reference internal" href="_images/image712.png"><img alt="image6" src="_images/image712.png" style="width: 3.13445in; height: 2.73600in;" /></a></p>
+<div class="section" id="replicating-row-content">
+<h2>1.11.1. Replicating Row Content<a class="headerlink" href="#replicating-row-content" title="Permalink to this headline">¶</a></h2>
+<p>The first step to appending columns is to create replicates of the
+information not being stacked. For our example, station and elevation
+need to be replicated twice in our example.</p>
+<p># Replicates required = # Columns to be stacked – 1</p>
+<p><a class="reference internal" href="_images/image812.png"><img alt="image7" src="_images/image812.png" style="width: 2.85600in; height: 2.12674in;" /></a></p>
+<p>Insert a new column to the left of Station. Label this column RowID.
+Starting with 0, create a sequence from 0 to 14. This data has 5 rows
+and 3 columns are to be stacked. The number of rows needed for a stacked
+version of the dataset is 15.</p>
+<div class="math">
+\[(5\ rows*\ 3\ columns\ to\ stacked) = 15\]</div>
+<p>Modular arithmetic will be used and starting the sequence with 0 will
+prove to be easier than starting the sequence at 1.</p>
+<p>Next, insert a column between RowID and Station. Label this new column
+Row Reference. This column will identify which row of the original
+dataset is being referenced. Enter the following into cell B2 and copy
+down for all cells.</p>
+<p>Cell B2: <code class="docutils literal"><span class="pre">=MOD(A2,5)</span></code></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="42%" />
+<col width="58%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><p class="first">Enter <code class="docutils literal"><span class="pre">MOD</span></code> formula into cell B2 as shown here</p>
+<p class="last"><a class="reference internal" href="_images/image911.png"><img alt="image8" src="_images/image911.png" style="width: 2.33854in; height: 1.93284in;" /></a></p>
+</td>
+<td><p class="first">The Row Reference provides the needed reference for the replicates.</p>
+<p class="last"><a class="reference internal" href="_images/image1012.png"><img alt="image9" src="_images/image1012.png" style="width: 2.02985in; height: 1.72301in;" /></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal"><span class="pre">=OFFSET()</span></code> function in Excel will be used to replicate the necessary
+contents for each row. This function returns the contents of another
+cell. The contents being returned is determined by the number of cells
+down and to the right from a reference cell.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="69%" />
+<col width="31%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><p class="first">=OFFSET() requires the specification of a reference cell, i.e. cell C2 here. The row reference is specified by B7 and the column reference should be set to 0.</p>
+<p><a class="reference internal" href="_images/image1116.png"><img alt="image10" src="_images/image1116.png" style="width: 2.71642in; height: 1.27633in;" /></a></p>
+<p>Cell B7 contains 0, thus in this instance =OFFSET() will shift 0 rows down and 0 rows to the right to obtain the contents. Here =OFFSET() places BOULDER in cell C7 as desired.</p>
+<p class="last"><a class="reference internal" href="_images/image1213.png"><img alt="image11" src="_images/image1213.png" style="width: 2.77612in; height: 1.24297in;" /></a></p>
+</td>
+<td><p class="first">Cell C7: =OFFSET($C$2,B7,0)</p>
+<p>Copy this down for remaining cell. The Station names are replicated as needed.</p>
+<p class="last"><a class="reference internal" href="_images/image1312.png"><img alt="image12" src="_images/image1312.png" style="width: 3.11101in; height: 2.66438in;" /></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>A similar process can be used to replicate the Elevation values.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="60%" />
+<col width="40%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><p class="first">Put the following formula in cell D7 and copy down for the remaining cells.</p>
+<p>Cell D7: =OFFSET($C$2,B7,1)</p>
+<p class="last"><a class="reference internal" href="_images/image1411.png"><img alt="image13" src="_images/image1411.png" style="width: 2.68432in; height: 1.02985in;" /></a></p>
+</td>
+<td>Elevation should now be replicated as shown here
+<a class="reference internal" href="_images/image1511.png"><img alt="image14" src="_images/image1511.png" style="width: 2.72078in; height: 2.30597in;" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="appending-columns">
+<h2>1.11.2. Appending Columns<a class="headerlink" href="#appending-columns" title="Permalink to this headline">¶</a></h2>
+<p>The process needed for the columns to be appended is slightly different
+than above. The <code class="docutils literal"><span class="pre">=OFFSET()</span></code> function must automatically shift to the right
+for each replicate.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="74%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><p class="first">Cell F2 will be used as the reference cell</p>
+<p class="last"><a class="reference internal" href="_images/image1611.png"><img alt="image15" src="_images/image1611.png" style="width: 2.89568in; height: 1.76866in;" /></a></p>
+</td>
+<td><p class="first">For RowIDs 5 through 9, the column index should be set to 1; however, the column index should be 2 for RowIDs 10 through 14.</p>
+<p class="last"><a class="reference internal" href="_images/image179.png"><img alt="image16" src="_images/image179.png" style="width: 3.20149in; height: 1.93663in;" /></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Insert another column for the Column Reference. Enter the following
+formula into Cell C2.</p>
+<p>Cell C2: <code class="docutils literal"><span class="pre">=INT(A2</span> <span class="pre">/</span> <span class="pre">5)</span></code></p>
+<p><a class="reference internal" href="_images/image189.png"><img alt="image17" src="_images/image189.png" style="width: 5.03731in; height: 2.26195in;" /></a></p>
+<p>The <code class="docutils literal"><span class="pre">=INT()</span></code> function is equivalent to the floor function and simply
+returns the integer part of a number.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><div class="first last math">
+\[\left\lfloor \frac{1}{5} \right\rfloor = \left\lfloor 0.2 \right\rfloor = \ 0\]</div>
+</th>
+<th class="head"><div class="first last math">
+\[\left\lfloor \frac{6}{5} \right\rfloor = \left\lfloor 1.2 \right\rfloor = 1\]</div>
+</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><div class="first last math">
+\[\left\lfloor \frac{4}{5} \right\rfloor = \left\lfloor 0.8 \right\rfloor = 0\]</div>
+</td>
+<td><div class="first last math">
+\[\left\lfloor \frac{14}{5} \right\rfloor = \left\lfloor 2.8 \right\rfloor = 2\]</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p>After creating the Column Reference column, type the following into cell
+F7. $F$2 will be used as the reference cell. This function also makes
+use of the row and column references. Copy this formula down for all
+remaining cells.</p>
+<p>Cell F7: <code class="docutils literal"><span class="pre">=OFFSET($F$2,</span> <span class="pre">B7,</span> <span class="pre">C7)</span></code></p>
+<p><a class="reference internal" href="_images/image199.png"><img alt="image18" src="_images/image199.png" style="width: 4.66418in; height: 1.36437in;" /></a></p>
+<p>The snowfall amounts should now be stacked.</p>
+<p><a class="reference internal" href="_images/image207.png"><img alt="image19" src="_images/image207.png" style="width: 5.17910in; height: 2.59453in;" /></a></p>
+<p>The last step is to identify the month for each row. Click on column F,
+right click and select Insert. Name this new column Month. Enter the
+following into cell F2.</p>
+<p>Cell F2: <code class="docutils literal"><span class="pre">=OFFSET($G$1,</span> <span class="pre">0,</span> <span class="pre">C2)</span></code></p>
+<p><a class="reference internal" href="_images/image2112.png"><img alt="image20" src="_images/image2112.png" style="width: 6.50000in; height: 0.81806in;" /></a></p>
+<p>A final version of the stacked dataset is shown here. Unfortunately, the
+contents in many of these cells rely on the contents of other cells. You
+may find it beneficial to create a second version of the data that does
+not contain such dependencies. When making the second copy, select Paste
+Values to remove the dependencies.</p>
+<p><a class="reference internal" href="_images/image712.png"><img alt="image21" src="_images/image712.png" style="width: 2.91045in; height: 2.54048in;" /></a></p>
+</div>
+<div class="section" id="working-with-complete-dataset">
+<h2>1.11.3. Working with Complete Dataset<a class="headerlink" href="#working-with-complete-dataset" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="_images/image2211.png"><img alt="image22" src="_images/image2211.png" style="width: 4.72in; height: 1.44in;" /></a></p>
+<p><a class="reference external" href="http://www.wrcc.dri.edu/htmlfiles/co/co.sno.html">Link to data</a></p>
+<p><a class="reference external" href="http://www.wrcc.dri.edu/inventory/sodco.html">Link for station information:</a></p>
+<p>Often data downloaded from the internet must be cleaned before importing
+into Excel or other software packages. For example, the header content
+on this file should be removed before importing. The files provided on
+the workshop website have the unwanted header information removed.</p>
+<p><a class="reference internal" href="_images/image2310.png"><img alt="image23" src="_images/image2310.png" style="width: 6.50000in; height: 1.33125in;" /></a></p>
+<p>Import the monthly snowfall data into Excel. Select Data &gt; From Text,
+specify Fixed width in Step 1 of the import wizard. Continue through the
+remaining steps of the import wizard. You should delete Columns B, C, D,
+and Q as these columns will not be used here.</p>
+<p><a class="reference internal" href="_images/image247.png"><img alt="image24" src="_images/image247.png" style="width: 6.50000in; height: 1.05764in;" /></a></p>
+<p>The following snippet show the data that needs to be stacked.</p>
+<p><a class="reference internal" href="_images/image256.png"><img alt="image25" src="_images/image256.png" style="width: 6.50000in; height: 1.20486in;" /></a></p>
+<p>Similar to the example discussed above, the goal here is to stack the
+Month columns. There are a total of 326 rows in this dataset and 12
+columns are to be stacked.</p>
+<div class="math">
+\[(326\ rows*\ 12\ columns) = 3912\]</div>
+<p>Insert a RowID column. Again, starting with 0, create a sequence from 0
+to 3911 with increments of size 1.</p>
+<p><a class="reference internal" href="_images/image266.png"><img alt="image26" src="_images/image266.png" style="width: 4.54478in; height: 1.11973in;" /></a></p>
+<p>Next, insert two columns which will be used for the row and column
+reference. Type the following equations into cells B2 and C2. Copy these
+formulas down for all rows.</p>
+<p>Cell B2: <code class="docutils literal"><span class="pre">=MOD(A2,</span> <span class="pre">326)</span></code></p>
+<p>Cell C2: <code class="docutils literal"><span class="pre">=INT(A2</span> <span class="pre">/</span> <span class="pre">326)</span></code></p>
+<p>Before starting with the <code class="docutils literal"><span class="pre">=OFFSET()</span></code> function, verify these formulas have
+produced the desired outcomes.</p>
+<p><a class="reference internal" href="_images/image276.png"><img alt="image27" src="_images/image276.png" style="width: 3.26119in; height: 1.85218in;" /></a></p>
+<p>If the row and column references have been correctly specified, then we
+can proceed with the <code class="docutils literal"><span class="pre">=OFFSET()</span></code> function. Akin to the example above, the
+Station ID column must be replicated several times. A 0 is used for the
+column reference when stacking the Station IDs. However, a column
+reference is needed for the column to be stacked. This reference is
+contained in Column C.</p>
+<p>Cell D328:<code class="docutils literal"><span class="pre">=OFFSET(</span> <span class="pre">$D$2,B238</span> <span class="pre">,</span> <span class="pre">0</span> <span class="pre">)</span></code></p>
+<p>Cell E328: <code class="docutils literal"><span class="pre">=OFFSET(</span> <span class="pre">$E$2</span> <span class="pre">,</span> <span class="pre">B328</span> <span class="pre">,</span> <span class="pre">C328</span> <span class="pre">)</span></code></p>
+<p><a class="reference internal" href="_images/image286.png"><img alt="image28" src="_images/image286.png" style="width: 5.23134in; height: 1.50345in;" /></a></p>
+<div class="admonition-question admonition">
+<p class="first admonition-title">Question</p>
+<p class="last">How would the formula for the <code class="docutils literal"><span class="pre">=OFFSET()</span></code> function in column E be
+written if $D$2 is used as the reference cell?</p>
+</div>
+<p>Finally, insert a column to the left of Jan and name this column Month.
+Copy this formula down for all cell.</p>
+<p>Cell E2: <code class="docutils literal"><span class="pre">=OFFSET(</span> <span class="pre">$F$1</span> <span class="pre">,</span> <span class="pre">0</span> <span class="pre">,</span> <span class="pre">C2</span> <span class="pre">)</span></code></p>
+<p><a class="reference internal" href="_images/image295.png"><img alt="image29" src="_images/image295.png" style="width: 5.79105in; height: 0.70223in;" /></a></p>
+<p>Verify that all columns have been properly stacked and the content of
+all rows has been correctly specified. Obtain a copy of the this data
+using Paste Values to remove all cell dependencies. A snippet of the
+final dataset is provided here for reference.</p>
+<p><a class="reference internal" href="_images/image305.png"><img alt="image30" src="_images/image305.png" style="width: 2.34328in; height: 2.16841in;" /></a></p>
+</div>
+<div class="section" id="getting-summaries-stacked-vs-unstacked">
+<h2>1.11.4. Getting Summaries Stacked vs. Unstacked<a class="headerlink" href="#getting-summaries-stacked-vs-unstacked" title="Permalink to this headline">¶</a></h2>
+<p>The efficient use of PivotTables requires the data be in a stacked
+structure.</p>
+<p><strong>Stacked data: getting averages by Month</strong></p>
+<p><a class="reference internal" href="_images/image3112.png"><img alt="image31" src="_images/image3112.png" style="width: 4.17in; height: 1.97in;" /></a></p>
+<p><strong>Unstacked data: getting averages by Month</strong></p>
+<p><a class="reference internal" href="_images/image327.png"><img alt="image32" src="_images/image327.png" style="width: 4.18in; height: 2.95in;" /></a></p>
+<p>The PivotTable output and its associated visualization using the stacked
+version of the data.</p>
+<p><a class="reference internal" href="_images/image334.png"><img alt="image33" src="_images/image334.png" style="width: 4.14179in; height: 1.93018in;" /></a></p>
+<div class="admonition-questions admonition">
+<p class="first admonition-title">Questions</p>
+<ol class="last arabic simple">
+<li>Which month has the highest average snowfall?</li>
+<li>It is true that it has snowed in every month at some point in
+Colorado’s history. Explain how this data supports this statement.</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+  
+      
+  <li id="relations-prev" class="navLink" title='Previous Section - 1.10. Excel: Pivot Tables in Excel' data-toggle="tooltip">
+    <a href="h4.html" >
+      <i class='prevNav glyphicon glyphicon-chevron-left'></i>
+    </a>
+  </li>
+  <a class="navLinkBg" id="navLinkBgLeft"  href="h4.html" ></a>
+  
+  <li id="relations-next" class="navLink" title='Next Section - 1.12. Excel: Merge Tables, i.e. MATCH() / INDEX() Functions' data-toggle="tooltip" >
+    <a href="h6.html" >
+      <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
+    </a>
+  </li>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="h6.html" >Next Section - 1.12. Excel: Merge Tables, i.e. MATCH() / INDEX() Functions</a>
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+  
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      
+      | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015 Todd Iverson.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.5.
+    </p>
+  </div>
+</footer>
+
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>
