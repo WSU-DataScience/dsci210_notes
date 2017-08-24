@@ -2,6 +2,7 @@ Storing Data in Excel
 =====================
 
 Authors:\ **Christie Bahlai**, **Aleksandra Pawlik**\ 
+`Original Source <http://www.datacarpentry.org/spreadsheet-ecology-lesson/>`_
 
 Good data organization is the foundation of your research project. Most
 researchers have data or do data entry in spreadsheets. Spreadsheet

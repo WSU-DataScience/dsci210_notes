@@ -2,6 +2,7 @@ Exporting Data
 ==============
 
 Authors:\ **Christie Bahlai**, **Aleksandra Pawlik**\ 
+`Original Source <http://www.datacarpentry.org/spreadsheet-ecology-lesson/>`_
 
 Storing the data you're going to work with for your analyses in Excel
 default file format (``*.xls`` or ``*.xlsx`` - depending on the Excel
@@ -80,7 +81,7 @@ compatibility with Teletype-based systems.
 As such, when exporting to CSV using Excel, your data in text format
 will look like this:
 
-    data1,data2:raw-latex:`\r`:raw-latex:`\n`1,2:raw-latex:`\r`:raw-latex:`\n`4,5:raw-latex:`\r`:raw-latex:`\n`
+    ``data1,data2\r\n1,2\r\n4,5\r\n``
 
 When opening your CSV file in Excel again, it will parse it as follows:
 
@@ -89,7 +90,7 @@ parse the ":raw-latex:`\r`" it will interpret your CSV file differently:
 
 Your data in text format then look like this:
 
-    data1 data2:raw-latex:`\r<br>` 1 2:raw-latex:`\r<br>` …
+    ``data1,data2\n1,2\n4,5\n``
 
 This will then in turn parse as:
 
@@ -110,17 +111,17 @@ endings on your exported CSV files:
    (`see the detailed
    tutorial <http://nicercode.github.io/blog/2013-04-30-excel-and-line-endings>`__):
 
-   ::
+.. sourcecode:: 
 
-       [filter "cr"]
-           clean = LC_CTYPE=C awk '{printf(\"%s\\n\", $0)}' | LC_CTYPE=C tr '\\r' '\\n'
-           smudge = tr '\\n' '\\r'` 
+   [filter "cr"]
+       clean = LC_CTYPE=C awk '{printf(\"%s\\n\", $0)}' | LC_CTYPE=C tr '\\r' '\\n'
+       smudge = tr '\\n' '\\r'` 
 
-   and then create a file ``.gitattributes`` that contains the line:
+and then create a file ``.gitattributes`` that contains the line:
 
-   ::
+.. sourcecode::
 
-       *.csv filter=cr
+   *.csv filter=cr
 
 3. Use `dos2unix <http://dos2unix.sourceforge.net/>`__ (available on
    OSX, \*nix, and Cygwin) on local files to standardize line endings.
