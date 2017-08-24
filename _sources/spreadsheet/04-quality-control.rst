@@ -2,6 +2,7 @@ Quality Control
 ===============
 
 Authors:\ **Christie Bahlai**, **Aleksandra Pawlik**\ 
+`Original Source <http://www.datacarpentry.org/spreadsheet-ecology-lesson/>`_
 
 When you have a well-structured data table, you can use several simple
 techniques within your spreadsheet to ensure the data you enter is free

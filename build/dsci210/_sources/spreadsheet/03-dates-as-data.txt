@@ -2,6 +2,7 @@ Dates as Data
 =============
 
 Authors:\ **Christie Bahlai**, **Aleksandra Pawlik**\ 
+`Original Source <http://www.datacarpentry.org/spreadsheet-ecology-lesson/>`_
 
 Dates in spreadsheets are stored in a single column. While this seems
 the most natural way to record dates, it actually is not best practice.

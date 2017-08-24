@@ -317,7 +317,7 @@
   
   <div class="section" id="exporting-data">
 <h1>1.6. Exporting Data<a class="headerlink" href="#exporting-data" title="Permalink to this headline">¶</a></h1>
-<p>Authors:<strong>Christie Bahlai</strong>, <strong>Aleksandra Pawlik</strong></p>
+<p>Authors:<strong>Christie Bahlai</strong>, <strong>Aleksandra Pawlik</strong><a class="reference external" href="http://www.datacarpentry.org/spreadsheet-ecology-lesson/">Original Source</a></p>
 <p>Storing the data you&#8217;re going to work with for your analyses in Excel
 default file format (<code class="docutils literal"><span class="pre">*.xls</span></code> or <code class="docutils literal"><span class="pre">*.xlsx</span></code> - depending on the Excel
 version) isn&#8217;t a good idea. Why?</p>
@@ -372,7 +372,7 @@ and hit &#8216;Save&#8217;.</li>
 </ol>
 <p>An important note for backwards compatibility: you can open CSV files in
 Excel!</p>
-<div class="figure" id="id5">
+<div class="figure" id="id3">
 <img alt="Saving an Excel file to CSV" src="../_images/excel-to-csv.png" />
 <p class="caption"><span class="caption-text">Saving an Excel file to CSV</span></p>
 </div>
@@ -385,13 +385,13 @@ compatibility with Teletype-based systems.</p>
 <p>As such, when exporting to CSV using Excel, your data in text format
 will look like this:</p>
 <blockquote>
-<div>data1,data2:raw-latex:<cite>r</cite><a href="#id1"><span class="problematic" id="id2">:raw-latex:`\n`1,2:raw-latex:`</span></a>r`:raw-latex:<cite>n`4,5:raw-latex:</cite>r`:raw-latex:<cite>n</cite></div></blockquote>
+<div><code class="docutils literal"><span class="pre">data1,data2\r\n1,2\r\n4,5\r\n</span></code></div></blockquote>
 <p>When opening your CSV file in Excel again, it will parse it as follows:</p>
 <p>However, if you open your CSV file on a different system that does not
-parse the &#8220;<a href="#id3"><span class="problematic" id="id4">:raw-latex:`\r`</span></a>&#8221; it will interpret your CSV file differently:</p>
+parse the &#8220;<a href="#id1"><span class="problematic" id="id2">:raw-latex:`\r`</span></a>&#8221; it will interpret your CSV file differently:</p>
 <p>Your data in text format then look like this:</p>
 <blockquote>
-<div>data1 data2:raw-latex:<cite>r&lt;br&gt;</cite> 1 2:raw-latex:<cite>r&lt;br&gt;</cite> …</div></blockquote>
+<div><code class="docutils literal"><span class="pre">data1,data2\n1,2\n4,5\n</span></code></div></blockquote>
 <p>This will then in turn parse as:</p>
 <p>thus causing terrible things to happen to your data. For example,
 <code class="docutils literal"><span class="pre">2\r</span></code> is not a valid integer, and thus will throw an error (if you’re
@@ -400,28 +400,19 @@ happens on Excel for OSX as well as Windows, due to legacy Windows
 compatibility.</p>
 <p>There are a handful of solutions for enforcing uniform UNIX-style line
 endings on your exported CSV files:</p>
-<ol class="arabic">
-<li><p class="first">When exporting from Excel, save as a “Windows comma separated (.csv)”
-file</p>
-</li>
-<li><p class="first">If you store your data file under version control using Git, edit the
+<ol class="arabic simple">
+<li>When exporting from Excel, save as a “Windows comma separated (.csv)”
+file</li>
+<li>If you store your data file under version control using Git, edit the
 <code class="docutils literal"><span class="pre">.git/config</span></code> file in your repository to automatically translate
 <code class="docutils literal"><span class="pre">\r\n</span></code> line endings into <code class="docutils literal"><span class="pre">\n</span></code>. Add the following to the file
 (<a class="reference external" href="http://nicercode.github.io/blog/2013-04-30-excel-and-line-endings">see the detailed
-tutorial</a>):</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>[filter &quot;cr&quot;]
-    clean = LC_CTYPE=C awk &#39;{printf(\&quot;%s\\n\&quot;, $0)}&#39; | LC_CTYPE=C tr &#39;\\r&#39; &#39;\\n&#39;
-    smudge = tr &#39;\\n&#39; &#39;\\r&#39;`
-</pre></div>
-</div>
+tutorial</a>):</li>
+</ol>
 <p>and then create a file <code class="docutils literal"><span class="pre">.gitattributes</span></code> that contains the line:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">*.</span><span class="n">csv</span> <span class="nb">filter</span><span class="o">=</span><span class="n">cr</span>
-</pre></div>
-</div>
-</li>
-<li><p class="first">Use <a class="reference external" href="http://dos2unix.sourceforge.net/">dos2unix</a> (available on
-OSX, *nix, and Cygwin) on local files to standardize line endings.</p>
-</li>
+<ol class="arabic simple" start="3">
+<li>Use <a class="reference external" href="http://dos2unix.sourceforge.net/">dos2unix</a> (available on
+OSX, *nix, and Cygwin) on local files to standardize line endings.</li>
 </ol>
 <div class="section" id="a-note-on-r-and-xls">
 <h3>1.6.1.1. A note on R and <code class="docutils literal"><span class="pre">xls</span></code><a class="headerlink" href="#a-note-on-r-and-xls" title="Permalink to this headline">¶</a></h3>

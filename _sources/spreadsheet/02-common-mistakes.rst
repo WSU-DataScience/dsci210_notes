@@ -2,6 +2,7 @@ Common Spreadsheet Errors
 =========================
 
 Authors:\ **Christie Bahlai**, **Aleksandra Pawlik**\ 
+`Original Source <http://www.datacarpentry.org/spreadsheet-ecology-lesson/>`_
 
 
 This lesson is meant to be used as a reference for discussion as

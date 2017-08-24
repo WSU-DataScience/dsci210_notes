@@ -2,6 +2,7 @@ Formating Data
 ==============
 
 Authors: **Christie Bahlai**, **Aleksandra Pawlik**\ 
+`Original Source <http://www.datacarpentry.org/spreadsheet-ecology-lesson/>`_
 
 The most common mistake made is treating spreadsheet programs like lab
 notebooks, that is, relying on context, notes in the margin, spatial
