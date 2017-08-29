@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>7.8. Looking up data from a URL &mdash; Runestone Interactive Overview</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/livecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootswatch/2.3.1/""/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
+    <script type="text/javascript" src="../_static/timed_activecode.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/codelens.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/livecode.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/hammer.min.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/timedparsons.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
+    <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/timed_shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="Runestone Interactive Overview" href="../index.html" />
+    <link rel="up" title="7. Processing Data with Open Refine" href="../open_refine_toctree.html" />
+    <link rel="next" title="8. Processing Data with a Text Editor" href="../texteditor_toctree.html" />
+    <link rel="prev" title="7.7. Transforming data" href="07-using-transformations.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="/runestone/static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'dsci210';
+  eBookConfig.logLevel = 0;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = false;
+  eBookConfig.python3 = true;
+  eBookConfig.basecourse = 'dsci210';
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="../index.html">DSCI 210 Notes</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/dsci210/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:ACFactory.toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/dsci210/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='/runestone/default/reportabug?course=dsci210&page=08-looking-up-data'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        <!--
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">7.8. Looking up data from a URL</a><ul>
+<li><a class="reference internal" href="#reconciliation-services">7.8.1. Reconciliation services</a></li>
+<li><a class="reference internal" href="#extensions">7.8.2. Extensions</a></li>
+<li><a class="reference internal" href="#using-the-cross-function-to-lookup-data-in-other-openrefine-projects">7.8.3. Using the ‘cross’ function to lookup data in other OpenRefine projects</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - 7.7. Transforming data" data-toggle="tooltip">
+    <a href="07-using-transformations.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - 8. Processing Data with a Text Editor' data-toggle="tooltip" >
+    <a href="../texteditor_toctree.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content">
+  
+  <div class="section" id="looking-up-data-from-a-url">
+<h1>7.8. Looking up data from a URL<a class="headerlink" href="#looking-up-data-from-a-url" title="Permalink to this headline">¶</a></h1>
+<p>OpenRefine can retrieve data from URLs. This can be used in various
+ways, including looking up additional information from a remote service,
+based on information in your OpenRefine data.</p>
+<p>As an example, you can look up names against the Virtual International
+Authority File (VIAF), and retrieve additional information such as dates
+of birth/death and identifiers.</p>
+<p>Typically this is a two step process - firstly a step to retrieve data
+from a remote service, and secondly to extract the relevant information
+from the data you have retrieved.</p>
+<p>To retrieve data from an external source, from the drop down menu at a
+column heading use the option &#8216;Edit column-&gt;Add column by fetching
+URLs&#8217;.</p>
+<p>This will prompt you for a GREL expression to create a URL. Usually this
+would be a URL that uses existing values in your data to build a query.
+When the query runs OpenRefine will request each URL (for each line) and
+retrieve whatever data is returned (this may often be structured data,
+but could be simply HTML).</p>
+<p>The data retrieved will be stored in a cell in the new column that has
+been added to the project. You can then use OpenRefine transformations
+to extract relevant information from the data that has been retrieved.
+Two specific OpenRefine functions used for this are:</p>
+<ul class="simple">
+<li>parseHtml()</li>
+<li>parseJson()</li>
+</ul>
+<p>The &#8216;parseHtml()&#8217; function can also be used to extract data from XML.</p>
+<p>The next exercise demonstrates this two stage process in full.</p>
+<blockquote>
+<div><p class="rubric" id="retrieving-journal-details-from-crossref-via-issn">Retrieving journal details from CrossRef via ISSN</p>
+<p>Because retrieving data from external URLs takes time, this exercise
+targets a single line in the data. In reality you would want to run
+this over many rows (and probably go and do something else while it
+ran)</p>
+<ul class="simple">
+<li>Select a single row from the data set which contains an ISSN by:</li>
+<li>Clicking the star icon for the relevant row in the first column</li>
+<li>Facet by Star</li>
+<li>Choose the single row</li>
+<li>In the ISSN column use the dropdown menu to choose &#8216;Edit
+column-&gt;Add column by fetching URLs&#8217;</li>
+<li>Give the column a name e.g. &#8220;Journal details&#8221;</li>
+<li>In the expression box you need to write some GREL where the
+output of the expression is a URL which can be used to retrieve
+data (the format of the data could be HTML, XML, JSON, or some
+other text format)</li>
+</ul>
+<p>In this case we are going to use the CrossRef api (read more about
+the CrossRef service at <a class="reference external" href="http://www.crossref.org">http://www.crossref.org</a>, read more about the
+API we are going to use at
+<a class="reference external" href="https://github.com/CrossRef/rest-api-doc/blob/master/rest_api.md">https://github.com/CrossRef/rest-api-doc/blob/master/rest_api.md)</a>)</p>
+<p>The syntax for requesting journal information from CrossRef is
+<code class="docutils literal"><span class="pre">http://api.crossref.org/journals/{ISSN}</span></code> where {ISSN} is replaced
+with the ISSN of the journal</p>
+<ul class="simple">
+<li>In the expression box type the GREL
+<code class="docutils literal"><span class="pre">&quot;http://api.crossref.org/journals/&quot;+value</span></code></li>
+<li>Click &#8216;OK&#8217;</li>
+</ul>
+<p>You should see a message at the top on the OpenRefine screen
+indicating it is fetching some data, and how far it has got. Wait
+for this to complete. Fetching data for a single row should take
+only ten seconds or so, but fetching data for all rows will take
+longer. You can speed this up by modifying the &#8220;Throttle Delay&#8221;
+setting in the &#8216;Add column by fetching URLs&#8217; dialog which controls
+the delay between each URL request made by OpenRefine. This is
+defaulted to a rather large 5000 milliseconds (5 seconds).</p>
+<p>At this point you should have a new cell containing a long text
+string in a format called &#8216;JSON&#8217; (this stands for JavaScript Object
+Notation, although very rarely spelt out in full).</p>
+<p>OpenRefine has a function for extracting data from JSON (sometimes
+referred to as &#8216;parsing&#8217; the JSON). The &#8216;parseJson&#8217; function is
+explained in more detail at
+<a class="reference external" href="https://github.com/OpenRefine/OpenRefine/wiki/GREL-Other-Functions">https://github.com/OpenRefine/OpenRefine/wiki/GREL-Other-Functions</a>.</p>
+<ul class="simple">
+<li>In the new column you&#8217;ve just added use the dropdown menu to
+access &#8216;Edit column-&gt;Add column based on this column&#8217;</li>
+<li>Add a name for the new column e.g. &#8220;Journal Title&#8221;</li>
+<li>In the Expression box type the GREL
+<code class="docutils literal"><span class="pre">value.parseJson().message.title</span></code></li>
+<li>You should see in the Preview the Journal title displays</li>
+</ul>
+<p>The reason for using &#8216;Add column based on this column&#8217; is simply
+that this allows you to retain the full JSON and extract further
+data from it if you need to. If you only wanted the title and did
+not need any other information from the JSON you could use &#8216;Edit
+cells-&gt;Transform...&#8217; with the same GREL expression. {: .challenge}</p>
+</div></blockquote>
+<div class="section" id="reconciliation-services">
+<h2>7.8.1. Reconciliation services<a class="headerlink" href="#reconciliation-services" title="Permalink to this headline">¶</a></h2>
+<p>Reconciliation services allow you to lookup terms from your data in
+OpenRefine against external services, and use values from the external
+services in your data.</p>
+<p>Reconciliation services can be more sophisticated and often quicker than
+using the method described above to retrieve data from a URL. However,
+to use the ‘Reconciliation’ function in OpenRefine requires the external
+resource to support the necessary service for OpenRefine to work with,
+which means unless the service you wish to use supports such a service
+you cannot use the ‘Reconciliation’ approach.</p>
+<p>There are a few services where you can find an OpenRefine Reconciliation
+option available. For example WikiData has a (fledgling) reconciliation
+service at <a class="reference external" href="https://tools.wmflabs.org/wikidata-reconcile/">https://tools.wmflabs.org/wikidata-reconcile/</a>.</p>
+<p>In other cases people have built reconciliation applications for a
+specific service which you can download and run yourself. These vary in
+how they work, and what it takes to run them locally. For example there
+are multiple reconciliation applications for VIAF. Even for the same
+service (e.g. VIAF) different reconciliation applications (written by
+different people) can work in different ways and potentially give
+different results - so caveat emptor!</p>
+<p>One of the most common ways of using the reconciliation option in
+OpenRefine is with an extension (see below for more on extensions to
+OpenRefine) can use linked data sources for reconciliation. The
+extension is called &#8220;RDF Refine&#8221; and can be downloaded from
+<a class="reference external" href="http://refine.deri.ie">http://refine.deri.ie</a>.</p>
+<p>There also exist extensions to do reconciliation against local data such
+as csv files (see <a class="reference external" href="http://okfnlabs.org/reconcile-csv/">http://okfnlabs.org/reconcile-csv/</a>) and maintained
+lists of values (see
+<a class="reference external" href="http://okfnlabs.org/projects/nomenklatura/index.html">http://okfnlabs.org/projects/nomenklatura/index.html</a>).</p>
+<p>For more information on using Reconciliation services see
+<a class="reference external" href="https://github.com/OpenRefine/OpenRefine/wiki/Reconciliation-Service-API">https://github.com/OpenRefine/OpenRefine/wiki/Reconciliation-Service-API</a></p>
+<blockquote>
+<div><p class="rubric" id="reconcile-publisher-names-with-viaf-ids">Reconcile Publisher names with VIAF IDs</p>
+<p>In this exercise you are going to use the VIAF Reconciliation
+service written by <a class="reference external" href="https://twitter.com/absolutelyjeff">Jeff
+Chiu</a>. Jeff offers two ways
+of using the reconciliation service - either via a public service he
+runs at <a class="reference external" href="http://refine.codefork.com/">http://refine.codefork.com/</a>, or by installing and running
+the service locally using the instructions at
+<a class="reference external" href="https://github.com/codeforkjeff/refine_viaf">https://github.com/codeforkjeff/refine_viaf</a>.</p>
+<p>If you are going to do a lot of reconciliation, please install and
+run your own local reconciliation service - the instructions at
+<a class="reference external" href="https://github.com/codeforkjeff/refine_viaf">https://github.com/codeforkjeff/refine_viaf</a> make this reasonably
+straightforward.</p>
+<p>Once you have chosen which service you are going to use:</p>
+<ul class="simple">
+<li>In the Publisher column use the dropdown menu to choose
+&#8216;Reconcile-&gt;Start Reconciling&#8217;</li>
+<li>If this is the first time you&#8217;ve used this particular
+reconciliation service, you&#8217;ll need to add the details of the
+service now</li>
+<li>Click &#8216;Add Standard Service...&#8217; and in the dialogue that appears
+enter:<ul>
+<li>&#8220;<a class="reference external" href="http://refine.codefork.com/reconcile/viaf">http://refine.codefork.com/reconcile/viaf</a>&#8221; for Jeff&#8217;s public
+service</li>
+<li>&#8220;<a class="reference external" href="http://localhost:8080/reconcile/viaf">http://localhost:8080/reconcile/viaf</a>&#8221; if you are running the
+service locally</li>
+</ul>
+</li>
+<li>You should now see a heading in the list on the left hand side of
+the Reconciliation dialogue called &#8220;VIAF Reconciliation Service&#8221;</li>
+<li>Click on this to choose to use this reconciliation service</li>
+<li>In the middle box in the reconciliation dialogue you may get
+asked what type of &#8216;entity&#8217; you want to reconcile to - that is,
+what type of thing are you looking for. The list will vary
+depending on what reconciliation service you are using.</li>
+<li>In this case choose &#8220;Corporate Name&#8221; (it seems like the VIAF
+Reconciliation Service is slightly intelligent about this and
+will only offer options that are relevant)</li>
+<li>In the box on the righthand side of the reconciliation dialogue
+you can choose if other columns are used to help the
+reconciliation service make a match - however it is sometimes
+hard to tell what use (if any) the reconciliation service makes
+of these additional columns</li>
+<li>At the bottom of the reconciliation dialogue there is the option
+to &#8220;Auto-match candidates with high confidence&#8221;. This can be a
+time saver, but in this case you are going to uncheck it, so you
+can see the results before a match is made</li>
+<li>Now click &#8216;Start Reconciling&#8217;</li>
+</ul>
+<p>Reconciliation is an operation that can take a little time if you
+have many values to look up. However, in this case there are only 6
+publishers to check, so it should work quite quickly.</p>
+<p>Once the reconciliation has completed two Facets should be created
+automatically: * Publisher: Judgement * Publisher: best
+candidate&#8217;s score</p>
+<p>These are two of several specific reconciliation facets and actions
+that you can get from the &#8216;Reconcile&#8217; menu (from the column drop
+down menu).</p>
+<ul class="simple">
+<li>Close the &#8216;Publisher: best candidate&#8217;s score&#8217; facet, but leave
+the &#8216;Publisher: Judgement&#8217; facet open</li>
+</ul>
+<p>If you look at the Publisher column, you should see some cells have
+found one or more matches - the potential matches are show in a list
+in each cell. Next to each potential match there is a &#8216;tick&#8217; and a
+&#8216;double tick&#8217;. To accept a reconciliation match you can use the
+&#8216;tick&#8217; options in cells. The &#8216;tick&#8217; accepts the match for the single
+cell, the &#8216;double tick&#8217; accepts the match for all identical cells.</p>
+<ul class="simple">
+<li>Create a text facet on the Publisher column</li>
+<li>Choose &#8216;International Union of Crystallography&#8217;</li>
+</ul>
+<p>In the Publisher column you should be able to see the various
+potential matches. Clicking on a match will take you to the VIAF
+page for that entity.</p>
+<ul class="simple">
+<li>Click a &#8216;double tick&#8217; in one of the Publisher column cells for
+the option &#8220;International Union of Crystallography&#8221;</li>
+<li>This will accept this as a match for all cells - you should see
+the other options all disappear</li>
+<li>Check the &#8216;Publisher: Judgement&#8217; facet. This should now show that
+858 items are &#8216;matched&#8217; (if this does not update, try refreshing
+the facets)</li>
+</ul>
+<p>We could do these one by one, but if we are confident with matches,
+there is an option to accept all:</p>
+<ul class="simple">
+<li>Remove all filters/facets from the project so all rows display</li>
+<li>In the Publisher column use the dropdown menu to choose
+&#8216;Reconcile-&gt;Actions-&gt;Match each cell to its best candidate&#8217;</li>
+</ul>
+<p>There are two things that reconciliation can do for you. Firstly it
+gets a standard form of the name or label for the entity. Secondly
+it gets an ID for the entity - in this case a VIAF id. This is
+hidden in the default view, but can be extracted:</p>
+<ul class="simple">
+<li>In the Publisher column use the dropdown menu to choose &#8216;Edit
+column-&gt;Add column based on this column...&#8217;</li>
+<li>Give the column the name &#8216;VIAF ID&#8217;</li>
+<li>In the GREL expression box type <code class="docutils literal"><span class="pre">cell.recon.match.id</span></code></li>
+<li>This will create a new column that contains the VIAF ID for the
+matched entity {: .challenge}</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="extensions">
+<h2>7.8.2. Extensions<a class="headerlink" href="#extensions" title="Permalink to this headline">¶</a></h2>
+<p>The functionality in OpenRefine can be enhanced by ‘extensions’ which
+can be downloaded and installed to add functionality to your OpenRefine
+installation.</p>
+<p>A list of Extensions (not necessarily complete) is given on the
+OpenRefine downloads page at <a class="reference external" href="http://openrefine.org/download.html">http://openrefine.org/download.html</a></p>
+<p>One of these extensions tries to work around the limitation of
+Reconciliation services described above, by making it possible to use a
+reconciliation service against ‘linked data’ sources which have SPARQL
+endpoints. For more information on this see the ‘RDF Extension’ at
+<a class="reference external" href="http://refine.deri.ie">http://refine.deri.ie</a>. An example of how this works is given in more
+detail at <a class="reference external" href="http://refine.deri.ie/showcases">http://refine.deri.ie/showcases</a>.</p>
+</div>
+<div class="section" id="using-the-cross-function-to-lookup-data-in-other-openrefine-projects">
+<h2>7.8.3. Using the ‘cross’ function to lookup data in other OpenRefine projects<a class="headerlink" href="#using-the-cross-function-to-lookup-data-in-other-openrefine-projects" title="Permalink to this headline">¶</a></h2>
+<p>As well as looking up data in external systems using the methods
+described above, it is also possible to look up data in other OpenRefine
+projects on the same computer. This is done using the ‘cross’ function.</p>
+<p>The ‘cross’ function takes a value from the OpenRefine project you are
+working on, and looks for that value in a column in another OpenRefine
+project. If it finds one or more matching rows in the second OpenRefine
+project, it returns an array containing the rows that it has matched.</p>
+<p>As it returns the whole row for each match, you can use a transformation
+to extract the values from any of the columns in the second project.</p>
+<p>You can use this function to compare the contents of two OpenRefine
+projects, or to use data between the two projects.</p>
+<p>The <a class="reference external" href="https://www.bits.vib.be/index.php/software-overview/openrefine">VIB-Bits
+extension</a>
+adds a number of very useful functions to OpenRefine including a way of
+using the &#8216;cross&#8217; function with simply point-and-click functionality
+which makes looking up data from other projects significantly simpler.</p>
+</div>
+</div>
+
+
+  
+      
+  <li id="relations-prev" class="navLink" title='Previous Section - 7.7. Transforming data' data-toggle="tooltip">
+    <a href="07-using-transformations.html" >
+      <i class='prevNav glyphicon glyphicon-chevron-left'></i>
+    </a>
+  </li>
+  <a class="navLinkBg" id="navLinkBgLeft"  href="07-using-transformations.html" ></a>
+  
+  <li id="relations-next" class="navLink" title='Next Section - 8. Processing Data with a Text Editor' data-toggle="tooltip" >
+    <a href="../texteditor_toctree.html" >
+      <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
+    </a>
+  </li>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="../texteditor_toctree.html" >Next Section - 8. Processing Data with a Text Editor</a>
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+  
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      
+      | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015 Todd Iverson.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.5.
+    </p>
+  </div>
+</footer>
+
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

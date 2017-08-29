@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>7.7. Transforming data &mdash; Runestone Interactive Overview</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/livecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootswatch/2.3.1/""/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
+    <script type="text/javascript" src="../_static/timed_activecode.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/codelens.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/livecode.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/hammer.min.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/timedparsons.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
+    <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/timed_shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="Runestone Interactive Overview" href="../index.html" />
+    <link rel="up" title="7. Processing Data with Open Refine" href="../open_refine_toctree.html" />
+    <link rel="next" title="7.8. Looking up data from a URL" href="08-looking-up-data.html" />
+    <link rel="prev" title="7.6. Working with Columns" href="06-working-with-columns.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="/runestone/static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'dsci210';
+  eBookConfig.logLevel = 0;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = false;
+  eBookConfig.python3 = true;
+  eBookConfig.basecourse = 'dsci210';
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="../index.html">DSCI 210 Notes</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----MIIHNwYJKoZIhvcNAQcEoIIHKDCCByQCAQExggEwMIIBLAIBADCBlDCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20CAQAwDQYJKoZIhvcNAQEBBQAEgYAcrkqh1hn3lYqIpfXxNqe1T82EhXzCJGy1yMAmklpyZshyMkfDGe1Bhx+iwyGeoYRTTyphFmP+9M3NyO0+Q5XdHxgZPx/zYjjBxlZHgEV6jhE8bN2fHkkPf0VHfz0a0QQylQOPlKiOTZV7B37Jpk6yM47oVZ1tG/KNm0NkfmB76DELMAkGBSsOAwIaBQAwgbQGCSqGSIb3DQEHATAUBggqhkiG9w0DBwQIi0GmFfOlcjuAgZBbYOo9UO+CpMQa+PYqwsUmUnJvXIImeMeNI3KVTUx5Cfk9gNMo3WzPeiB5IqZo9nRAQ0mf1qL2ecLeB5tidM+lgBUhOxfj3/FecpnVFa0263gp4g+PLw8jzhvVRdUon1K3SeO1Rzh23fIRKwnrD6btt73uwtj0sl3tGd8qz+6GIcwPDdRk9VcUffiBJT/ZagKgggOHMIIDgzCCAuygAwIBAgIBADANBgkqhkiG9w0BAQUFADCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20wHhcNMDQwMjEzMTAxMzE1WhcNMzUwMjEzMTAxMzE1WjCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20wgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAMFHTt38RMxLXJyO2SmS+Ndl72T7oKJ4u4uw+6awntALWh03PewmIJuzbALScsTS4sZoS1fKciBGoh11gIfHzylvkdNe/hJl66/RGqrj5rFb08sAABNTzDTiqqNpJeBsYs/c2aiGozptX2RlnBktH+SUNpAajW724Nv2Wvhif6sFAgMBAAGjge4wgeswHQYDVR0OBBYEFJaffLvGbxe9WT9S1wob7BDWZJRrMIG7BgNVHSMEgbMwgbCAFJaffLvGbxe9WT9S1wob7BDWZJRroYGUpIGRMIGOMQswCQYDVQQGEwJVUzELMAkGA1UECBMCQ0ExFjAUBgNVBAcTDU1vdW50YWluIFZpZXcxFDASBgNVBAoTC1BheVBhbCBJbmMuMRMwEQYDVQQLFApsaXZlX2NlcnRzMREwDwYDVQQDFAhsaXZlX2FwaTEcMBoGCSqGSIb3DQEJARYNcmVAcGF5cGFsLmNvbYIBADAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBBQUAA4GBAIFfOlaagFrl71+jq6OKidbWFSE+Q4FqROvdgIONth+8kSK//Y/4ihuE4Ymvzn5ceE3S/iBSQQMjyvb+s2TWbQYDwcp129OPIbD9epdr4tJOUNiSojw7BHwYRiPh58S1xGlFgHFXwrEBb3dgNbMUa+u4qectsMAXpVHnD9wIyfmHMYIBmjCCAZYCAQEwgZQwgY4xCzAJBgNVBAYTAlVTMQswCQYDVQQIEwJDQTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEUMBIGA1UEChMLUGF5UGFsIEluYy4xEzARBgNVBAsUCmxpdmVfY2VydHMxETAPBgNVBAMUCGxpdmVfYXBpMRwwGgYJKoZIhvcNAQkBFg1yZUBwYXlwYWwuY29tAgEAMAkGBSsOAwIaBQCgXTAYBgkqhkiG9w0BCQMxCwYJKoZIhvcNAQcBMBwGCSqGSIb3DQEJBTEPFw0xMzExMDMxMzQxMzFaMCMGCSqGSIb3DQEJBDEWBBRDJF8w+zsMr7FSk+pwinB5f5D4rzANBgkqhkiG9w0BAQEFAASBgHw1LMHpkpaqHIvDGdFE0eG+2mZlmMnUeDCBhQlbc7QMzFQYKTV94NfaebBO4PmNdADe1rq4WidSRZZbE7CzkX9IGENYnBTWY0hb2l0lGdGrJdGeWyV3ekg9WVaFMMumrekds96h3Cx7dGz2kWDzIai2iEXE/qoE+xpkyXAYZNV3-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/dsci210/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:ACFactory.toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/dsci210/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='/runestone/default/reportabug?course=dsci210&page=07-using-transformations'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        <!--
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">7.7. Transforming data</a><ul>
+<li><a class="reference internal" href="#introducing-transformations">7.7.1. Introducing Transformations</a></li>
+<li><a class="reference internal" href="#common-transformations">7.7.2. Common transformations</a></li>
+<li><a class="reference internal" href="#writing-transformations">7.7.3. Writing transformations</a><ul>
+<li><a class="reference internal" href="#undo-and-redo">7.7.3.1. Undo and Redo</a></li>
+<li><a class="reference internal" href="#exporting-data">7.7.3.2. Exporting data</a></li>
+<li><a class="reference internal" href="#data-types">7.7.3.3. Data types</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#data-types-in-openrefine">7.7.4. Data types in OpenRefine</a></li>
+<li><a class="reference internal" href="#dates-and-numbers">7.7.5. Dates and Numbers</a></li>
+<li><a class="reference internal" href="#booleans-and-arrays">7.7.6. Booleans and Arrays</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - 7.6. Working with Columns" data-toggle="tooltip">
+    <a href="06-working-with-columns.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - 7.8. Looking up data from a URL' data-toggle="tooltip" >
+    <a href="08-looking-up-data.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content">
+  
+  <div class="section" id="transforming-data">
+<h1>7.7. Transforming data<a class="headerlink" href="#transforming-data" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introducing-transformations">
+<h2>7.7.1. Introducing Transformations<a class="headerlink" href="#introducing-transformations" title="Permalink to this headline">¶</a></h2>
+<p>Through facets, filters and clusters OpenRefine offers relatively
+straightforward ways of getting an overview of your data, and making
+changes where you want to standardise terms used to a common set of
+values.</p>
+<p>However, sometimes there will be changes you want to make to the data
+that cannot be achieved in this way. Such types of changes include:</p>
+<ul class="simple">
+<li>Splitting data that is in a single column into multiple columns (e.g.
+splitting an address into multiple parts)</li>
+<li>Standardising the format of data in a column without changing the
+values (e.g. removing punctuation or standardising a date format)</li>
+<li>Extracting a particular type of data from a longer text string (e.g.
+finding ISBNs in a bibliographic citation)</li>
+</ul>
+<p>To support this type of activity OpenRefine supports &#8216;Transformations&#8217;
+which are ways of manipulating data in columns. Transformations are
+normally written in a special language called &#8216;GREL&#8217; (General Refine
+Expression Language). To some extent GREL expressions are similar to
+Excel Formula, although they tend to focus on text manipulations rather
+than numeric functions.</p>
+<p>Full documentation for the GREL is available at
+<a class="reference external" href="https://github.com/OpenRefine/OpenRefine/wiki/General-Refine-Expression-Language">https://github.com/OpenRefine/OpenRefine/wiki/General-Refine-Expression-Language</a>.
+This tutorial covers only a small subset of the commands available.</p>
+</div>
+<div class="section" id="common-transformations">
+<h2>7.7.2. Common transformations<a class="headerlink" href="#common-transformations" title="Permalink to this headline">¶</a></h2>
+<p>Some transformations are used regularly and are accessible directly
+through menu options, without having to type them directly.</p>
+<p>Examples of some of these common transformations are given in the table
+below, with their &#8216;GREL&#8217; equivalents. We&#8217;ll see how to use the GREL
+version later in this lesson.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="42%" />
+<col width="29%" />
+<col width="29%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Common Transformation</th>
+<th class="head">Action</th>
+<th class="head">GREL
+expression</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>To Uppercase</td>
+<td>Converts the
+current value
+to uppercase</td>
+<td><code class="docutils literal"><span class="pre">value.toUppe</span>
+<span class="pre">rcase()</span></code></td>
+</tr>
+<tr class="row-odd"><td>To Lowercase</td>
+<td>Converts the
+current value
+to lowercase</td>
+<td><code class="docutils literal"><span class="pre">value.toLowe</span>
+<span class="pre">rcase()</span></code></td>
+</tr>
+<tr class="row-even"><td>To Titlecase</td>
+<td>Converts the
+current value
+to titlecase
+(i.e. each
+word starts
+with an
+uppercase
+character and
+all other
+characters are
+converted to
+lowercase)</td>
+<td><code class="docutils literal"><span class="pre">value.toTitl</span>
+<span class="pre">ecase()</span></code></td>
+</tr>
+<tr class="row-odd"><td>Trim leading and
+trailing whitespace</td>
+<td>Removes any
+&#8216;whitespace&#8217;
+characters
+(e.g. spaces,
+tabs) from the
+start or end
+of the current
+value</td>
+<td><a href="#id1"><span class="problematic" id="id2">``</span></a>value.trim()
+``</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<div><p class="rubric" id="correct-publisher-data">Correct Publisher data</p>
+<ul class="simple">
+<li>Create a text facet on the Publisher column</li>
+<li>Note that in the values there are two that look identical - why
+does this value appear twice?</li>
+<li>On the publisher column use the dropdown menu to select &#8216;Edit
+cells-&gt;Common transforms-&gt;Trim leading and trailing whitespace&#8217;</li>
+<li>Look at the publisher facet now - has it changed? (if it hasn&#8217;t
+changed try clicking the Refresh option to make sure it updates)
+{: .challenge}</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="writing-transformations">
+<h2>7.7.3. Writing transformations<a class="headerlink" href="#writing-transformations" title="Permalink to this headline">¶</a></h2>
+<p>To start writing transformations, select the column on which you wish to
+perform a transformation and choose &#8216;Edit cells-&gt;Transform…&#8217;. In the
+screen that displays you have a place to write a transformation (the
+&#8216;Expression&#8217; box) and then the ability to Preview the effect the
+transformation would have on 10 rows of your data.</p>
+<p>The transformation you type into the &#8216;Expression&#8217; box has to be a valid
+GREL expression. The simplest expression is simply the word &#8216;value&#8217; by
+itself - which simply means the value that is currently in the column -
+that is: make no change.</p>
+<p>GREL functions are written by giving a value of some kind (a text
+string, a date, a number etc.) to a GREL function. Some GREL functions
+take additional parameters or options which control how the function
+works. GREL supports two types of syntax:</p>
+<ul class="simple">
+<li>value.function(options)</li>
+<li>function(value, options)</li>
+</ul>
+<p>Either is valid, and which is used is completely down to personal
+preference. In these notes the first syntax is used.</p>
+<p>Next to the &#8216;Preview&#8217; option are options to view:</p>
+<ul>
+<li><p class="first">History - a list of transformations you&#8217;ve previously used with the
+option to reuse them immediately or to &#8216;star&#8217; them for easy access</p>
+</li>
+<li><p class="first">Starred - a list of transformations you&#8217;ve &#8216;starred&#8217; via the
+&#8216;History&#8217; view</p>
+</li>
+<li><p class="first">Help - a list of all the GREL functions and brief information on how
+to use them</p>
+<blockquote>
+<div><p class="rubric" id="put-titles-into-title-case">Put titles into Title Case</p>
+<ul class="simple">
+<li>Facet by publisher</li>
+<li>Select &#8220;Akshantala Enterprises&#8221; and &#8220;Society of Pharmaceutical
+Technocrats&#8221;</li>
+<li>To select multiple values in the facet use the &#8216;Include&#8217; link
+that appears to the right of the facet</li>
+<li>See that the Titles for these are all in uppercase</li>
+<li>Click the dropdown menu on the Title column</li>
+<li>Choose &#8216;Edit cells-&gt;Transform...&#8217;</li>
+<li>In the Expression box type <code class="docutils literal"><span class="pre">value.toTitlecase()</span></code></li>
+<li>In the Preview note that you can see what the affect of running
+this will be</li>
+<li>Click &#8216;OK&#8217; {: .challenge}</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<div class="section" id="undo-and-redo">
+<h3>7.7.3.1. Undo and Redo<a class="headerlink" href="#undo-and-redo" title="Permalink to this headline">¶</a></h3>
+<p>OpenRefine lets you undo, and redo, any number of steps you have taken
+in cleaning the data. This means you can always try out transformations
+and &#8216;undo&#8217; if you need to. The way OpenRefine records the steps you have
+taken even allows you to take the steps you&#8217;ve carried out on one data
+set, and apply it to another data set by a simple copy and paste
+operation.</p>
+<p>The &#8216;Undo&#8217; and &#8216;Redo&#8217; options are accessed via the lefthand panel.</p>
+<p>The Undo/Redo panel lists all the steps you&#8217;ve taken so far. To undo
+steps, simply click on the last step you want to preserve in the list
+and this will automatically undo all the changes made since that step.</p>
+<p>The remaining steps will continue to show in the list but greyed out,
+and you can reapply them by simply clicking on the last step you want to
+apply.</p>
+<p>However, if you &#8216;undo&#8217; a set of steps and then start doing new
+transformations, the greyed out steps will disappear and you will no
+longer have the option to &#8216;redo&#8217; these steps.</p>
+<p>If you wish to save a set of steps to be re-applied later, or to a
+different project, you can click the &#8216;Extract&#8217; button. This gives you
+the option to select the steps you want to save, and to copy the
+transformations included in the selected steps in a format called &#8216;JSON&#8217;</p>
+<p>To apply a set of steps you have copied or saved in this &#8216;JSON&#8217; format
+use the &#8216;Apply&#8217; button and paste in the JSON. In this way you can share
+transformations between projects and each other.</p>
+<p>Undo/Redo data is stored with the Project and is saved automatically as
+you work, so next time you open the project, you can access your full
+history of steps you have carried out and undo/redo in exactly the same
+way.</p>
+</div>
+<div class="section" id="exporting-data">
+<h3>7.7.3.2. Exporting data<a class="headerlink" href="#exporting-data" title="Permalink to this headline">¶</a></h3>
+<p>Once you have finished working with a data set in OpenRefine you may
+wish to export it. The export options are accessed through the &#8216;Export&#8217;
+button at the top right of the OpenRefine interface Export formats
+support include HTML, Excel and comma- and tab-separated value (csv and
+tsv). You can also write a custom export, selecting to export specific
+fields, adding a header or footer and specifying the exact format.</p>
+</div>
+<div class="section" id="data-types">
+<h3>7.7.3.3. Data types<a class="headerlink" href="#data-types" title="Permalink to this headline">¶</a></h3>
+<p>Understanding data types and regular expressions will help you write
+more complex transformations using GREL.</p>
+</div>
+</div>
+<div class="section" id="data-types-in-openrefine">
+<h2>7.7.4. Data types in OpenRefine<a class="headerlink" href="#data-types-in-openrefine" title="Permalink to this headline">¶</a></h2>
+<p>Every piece of data in OpenRefine has a &#8216;type&#8217;. The most common &#8216;type&#8217;
+is a &#8216;string&#8217; - that is a piece of text. However there are other data
+types available and transformations let you convert data from one type
+to another where appropriate. The data types supported are:</p>
+<ul class="simple">
+<li>String</li>
+<li>Number</li>
+<li>Date</li>
+<li>Boolean</li>
+<li>Array</li>
+</ul>
+</div>
+<div class="section" id="dates-and-numbers">
+<h2>7.7.5. Dates and Numbers<a class="headerlink" href="#dates-and-numbers" title="Permalink to this headline">¶</a></h2>
+<p>So far we&#8217;ve been looking only at &#8216;String&#8217; type data. Much of the time
+it is possible to treat numbers and dates as strings. For example in the
+Date column we have the date of publication represented as a String.
+However, some operations and transformations only work on &#8216;number&#8217; or
+&#8216;date&#8217; type operations. The simplest example is sorting values in
+numeric or date order. To carry out these functions we need to convert
+the values to a date or number first.</p>
+<blockquote>
+<div><p class="rubric" id="reformat-the-date">Reformat the Date</p>
+<ul class="simple">
+<li>Make sure you remove all Facets and Filters</li>
+<li>On the Date column use the dropdown menu to select &#8216;Edit
+cells-&gt;Common transforms-&gt;To date&#8217;</li>
+<li>Note how the values are now displayed in green and follow a
+standard convention for their display format (ISO8601) - this
+indicates they are now stored as date data types in OpenRefine.
+We can now carry out functions that are specific to Dates</li>
+<li>On the Date column dropdown select &#8216;Edit column-&gt;Add column based
+on this column&#8217;. Using this function you can create a new column,
+while preserving the old column</li>
+<li>In the &#8216;New column name&#8217; type &#8220;Formatted Date&#8221;</li>
+<li>In the &#8216;Expression&#8217; box type the GREL expression
+<code class="docutils literal"><span class="pre">value.toString(&quot;dd</span> <span class="pre">MMMM</span> <span class="pre">yyyy&quot;)</span></code> {: .challenge}</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="booleans-and-arrays">
+<h2>7.7.6. Booleans and Arrays<a class="headerlink" href="#booleans-and-arrays" title="Permalink to this headline">¶</a></h2>
+<p>Booleans and Arrays are data types that are more often used while
+manipulating data in a GREL expression than for actually storing in a
+cell (in fact, Arrays cannot be stored in a cell in OpenRefine).</p>
+<p>A &#8216;Boolean&#8217; is a binary value that can either be &#8216;true&#8217; or &#8216;false&#8217;.
+Boolean values can be used directly in OpenRefine cell, but is more
+often used in transformations as part of a GREL expression. For example
+the GREL expression</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">value</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;test&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>generates a boolean value of either &#8216;true&#8217; or &#8216;false&#8217; depending on
+whether the current value in the cell contains the text &#8216;test&#8217; anywhere.</p>
+<p>Such tests can be combined with other GREL expressions to create more
+complex transformations. For example, to carry out a further
+transformation only if a test is successful. The GREL transformation
+<code class="docutils literal"><span class="pre">if(value.contains(&quot;test&quot;),&quot;Test</span> <span class="pre">data&quot;,value)</span></code> replaces a cell value
+with the words &#8220;Test data&#8221; only <em>if</em> the value in the cell contains the
+string &#8220;test&#8221; anywhere.</p>
+<p>An &#8216;Array&#8217; is a list of values, represented in Refine by the use of
+square brackets containing a list of values surrounded by inverted
+commas and separated by commas. For example an array listing the days of
+the week would look like:</p>
+<p>[&#8220;Monday&#8221;,&#8221;Tuesday&#8221;,&#8221;Wednesday&#8221;,&#8221;Thursday&#8221;,&#8221;Friday&#8221;,&#8221;Saturday&#8221;,&#8221;Sunday&#8221;]</p>
+<p>Arrays can be sorted, de-duplicated, and manipulated in other ways in
+GREL expressions, but cannot appear directly in an OpenRefine cell.
+Arrays in OpenRefine are usually the result of a transformation. For
+example the &#8216;split&#8217; function takes a string, and changes it into an
+array based on a &#8216;separator&#8217;. For example if a cell has the value:</p>
+<p>&#8220;Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday&#8221;</p>
+<p>This can be transformed into an array using the &#8216;split&#8217; function</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">value</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This would create the array containing the days of the week:</p>
+<p>[&#8220;Monday&#8221;,&#8221;Tuesday&#8221;,&#8221;Wednesday&#8221;,&#8221;Thursday&#8221;,&#8221;Friday&#8221;,&#8221;Saturday&#8221;,&#8221;Sunday&#8221;]</p>
+<p>This can be combined with array operations like &#8216;sort&#8217;. For example,
+assuming the cell contains the same value as above, then the function</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">value</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>would result in an array containing the days of the week sorted in
+alphabetical order:</p>
+<p>[&#8220;Friday&#8221;,&#8221;Monday&#8221;,&#8221;Saturday&#8221;,&#8221;Sunday&#8221;,&#8221;Thursday&#8221;,&#8221;Tuesday&#8221;,&#8221;Wednesday&#8221;]</p>
+<p>To output a value from an array you can either select a specific value
+depending on its position in the list (with the first position treated
+as &#8216;zero&#8217;). For example</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">value</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>would extract the first value from the array created by the &#8216;split&#8217;
+function. In the above example this would be &#8220;Monday&#8221;</p>
+<p>You can also join arrays together to make a &#8216;String&#8217;. The GREL
+expression would look like</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">value</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>. Taking the above example again, this would result in a string with the
+days of the week in alphabetical order, listed with commas between each
+day.</p>
+<blockquote>
+<div><p class="rubric" id="reverse-author-names">Reverse author names</p>
+<p>In this exercise we are going to use both the Boolean and Array data
+types. If you look at the Authors column, you can see that most of
+the author names are written in the natural order. However, a few
+have been &gt;reversed to put the family name first.</p>
+<p>We can do a crude test for reversed author names by looking for
+those that contain a comma:</p>
+<ul class="simple">
+<li>Make sure you have already split the author names into individual
+cells using &#8216;Edit cells-&gt;Split multi-valued cells&#8217; (you should
+have done this in exercise 5)</li>
+<li>On the Authors column, use the dropdown menu and select
+&#8216;Facet-&gt;Custom text facet...&#8217;</li>
+<li>The Custom text facet function allows you to write GREL functions
+to create a facet</li>
+<li>In the Expression box type <code class="docutils literal"><span class="pre">value.contains(&quot;,&quot;)</span></code></li>
+<li>Click &#8216;OK&#8217;</li>
+<li>Since the &#8216;contains&#8217; function outputs a Boolean value, you should
+see a facet that contains &#8216;false&#8217; and &#8216;true&#8217;. These represent the
+outcome of the expression, i.e. true = values containing a comma;
+false = values not containing a comma</li>
+<li>In this facet select &#8216;true&#8217; to narrow down to the author names
+that contain a comma</li>
+</ul>
+<p>Now we have narrowed down to the lines with a comma in a name, we
+can use the &#8216;match&#8217; function. The match function allows you to use
+&gt;regular expressions, and output the capture groups as an array,
+which you can then manipulate.</p>
+<ul class="simple">
+<li>On the Authors column use the dropdown menu and select &#8216;Edit
+cells-&gt;Transform&#8217;</li>
+<li>In the Expression box type <code class="docutils literal"><span class="pre">value.match(/(.*),(.*)/)</span></code> The &#8220;/&#8221;,
+means you are using a regular expression inside a GREL
+expression. The parentheses indicate you are going to match a
+group of characters. The &#8221;.*&#8221; expression will match any
+character from 0, 1 or more times. So here we are matching any
+number of characters, a comma, and another set of any number of
+characters.</li>
+<li>See how this creates an array with two members in each row in the
+Preview column</li>
+</ul>
+<p>To get the author name in the natural order you can reverse the
+array and join it back together with a space to create the string
+you need:</p>
+<ul class="simple">
+<li>In the Expression box, add to the existing expression until it
+reads <code class="docutils literal"><span class="pre">value.match(/(.*),(.*)/).reverse().join(&quot;</span> <span class="pre">&quot;)</span></code></li>
+<li>In the Preview view you should be able see this has reversed the
+array, and joined it back into a string</li>
+<li>Click &#8216;OK&#8217; {: .challenge}</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+  
+      
+  <li id="relations-prev" class="navLink" title='Previous Section - 7.6. Working with Columns' data-toggle="tooltip">
+    <a href="06-working-with-columns.html" >
+      <i class='prevNav glyphicon glyphicon-chevron-left'></i>
+    </a>
+  </li>
+  <a class="navLinkBg" id="navLinkBgLeft"  href="06-working-with-columns.html" ></a>
+  
+  <li id="relations-next" class="navLink" title='Next Section - 7.8. Looking up data from a URL' data-toggle="tooltip" >
+    <a href="08-looking-up-data.html" >
+      <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
+    </a>
+  </li>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="08-looking-up-data.html" >Next Section - 7.8. Looking up data from a URL</a>
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+  
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      
+      | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015 Todd Iverson.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.5.
+    </p>
+  </div>
+</footer>
+
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

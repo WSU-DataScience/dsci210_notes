@@ -232,6 +232,32 @@ This tells Excel to include records where *Mother Age* > 40 **and**
 *Father Age* > 40. Carry out this Advanced Filter in Excel and verify
 that this is the case.
 
+
+
+.. admonition:: Exercises
+
+    Use filters to complete each of the following tasks.
+
+    1. Use filters to remove the numbers and underscores from the values in the Kotelchuck Index column.  For example, ``3_Adequate`` should become ``Adequate``.
+    2. Use a filter to count the number of rows that fit each of the following specifications.
+
+       1. The father's age is blank
+       2. The father's minority status is blank
+       3. Both the father's age and minority status are blank
+       4. The father's age is blank, but not the minority status
+
+    3. Use filters to replace blanks with ``NA`` for each of the following
+
+       1. The father's age
+       2. The father's minority status
+    4. Use a filter to explore the ``Low Birth`` column and determine the rule used
+       to define low birth weight
+    5. Use filters to create the following new variables (in new columns)
+
+       1. Premature (Yes or No).  You will need to investigate and document a definition for premature based on Gestational Age
+       2. Premature AND low birth (Yes or No)
+       3. Premature OR low birth
+
 .. |image0| image:: img/h2/media/image1.png
    :width: 6.50000in
    :height: 1.13681in
