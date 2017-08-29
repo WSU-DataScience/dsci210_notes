@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>4.4. Basic Graphics in R &mdash; Runestone Interactive Overview</title>
+    <title>10.4. Basic Graphics in R &mdash; Runestone Interactive Overview</title>
     
     <link rel="stylesheet" href="_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -101,9 +101,9 @@
     <script type="text/javascript" src="_static/jquery.hotkey.js"></script>
     <script type="text/javascript" src="_static/jquery-migrate-1.2.1.min.js"></script>
     <link rel="top" title="Runestone Interactive Overview" href="index.html" />
-    <link rel="up" title="4. Processing Data with R" href="R_toctree.html" />
-    <link rel="next" title="4.6. Data Management in R" href="h16.html" />
-    <link rel="prev" title="4.3. Summaries in R" href="h14.html" />
+    <link rel="up" title="10. Processing Data with R" href="R_toctree.html" />
+    <link rel="next" title="10.6. Data Management in R" href="h16.html" />
+    <link rel="prev" title="10.3. Summaries in R" href="h14.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -263,22 +263,22 @@
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">4.4. Basic Graphics in R</a><ul>
-<li><a class="reference internal" href="#id5">4.4.1. ***</a></li>
-<li><a class="reference internal" href="#id10">4.4.2. ***</a></li>
-<li><a class="reference internal" href="#id15">4.4.3. ***</a></li>
-<li><a class="reference internal" href="#id20">4.4.4. ***</a></li>
+<li><a class="reference internal" href="#">10.4. Basic Graphics in R</a><ul>
+<li><a class="reference internal" href="#id5">10.4.1. ***</a></li>
+<li><a class="reference internal" href="#id10">10.4.2. ***</a></li>
+<li><a class="reference internal" href="#id15">10.4.3. ***</a></li>
+<li><a class="reference internal" href="#id20">10.4.4. ***</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#the-loess-function-in-r-can-be-used-to-obtain-a-loess-smoother-in-r">4.5. The loess() function in R can be used to obtain a loess smoother in R.</a><ul>
-<li><a class="reference internal" href="#id25">4.5.1. ***</a></li>
-<li><a class="reference internal" href="#id30">4.5.2. ***</a></li>
-<li><a class="reference internal" href="#id35">4.5.3. ***</a></li>
-<li><a class="reference internal" href="#id40">4.5.4. ***</a></li>
-<li><a class="reference internal" href="#id45">4.5.5. ***</a></li>
-<li><a class="reference internal" href="#id50">4.5.6. ***</a></li>
-<li><a class="reference internal" href="#id55">4.5.7. ***</a></li>
-<li><a class="reference internal" href="#id60">4.5.8. ***</a></li>
+<li><a class="reference internal" href="#the-loess-function-in-r-can-be-used-to-obtain-a-loess-smoother-in-r">10.5. The loess() function in R can be used to obtain a loess smoother in R.</a><ul>
+<li><a class="reference internal" href="#id25">10.5.1. ***</a></li>
+<li><a class="reference internal" href="#id30">10.5.2. ***</a></li>
+<li><a class="reference internal" href="#id35">10.5.3. ***</a></li>
+<li><a class="reference internal" href="#id40">10.5.4. ***</a></li>
+<li><a class="reference internal" href="#id45">10.5.5. ***</a></li>
+<li><a class="reference internal" href="#id50">10.5.6. ***</a></li>
+<li><a class="reference internal" href="#id55">10.5.7. ***</a></li>
+<li><a class="reference internal" href="#id60">10.5.8. ***</a></li>
 </ul>
 </li>
 </ul>
@@ -288,13 +288,13 @@
         
         
           
-  <li id="relations-prev" title="Previous Chapter - 4.3. Summaries in R" data-toggle="tooltip">
+  <li id="relations-prev" title="Previous Chapter - 10.3. Summaries in R" data-toggle="tooltip">
     <a href="h14.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - 4.6. Data Management in R' data-toggle="tooltip" >
+  <li id="relations-next" title='Next Chapter - 10.6. Data Management in R' data-toggle="tooltip" >
     <a href="h16.html" >
       <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
     </a>
@@ -326,7 +326,7 @@
 <div class="container" id="main-content">
   
   <div class="section" id="basic-graphics-in-r">
-<h1>4.4. Basic Graphics in R<a class="headerlink" href="#basic-graphics-in-r" title="Permalink to this headline">¶</a></h1>
+<h1>10.4. Basic Graphics in R<a class="headerlink" href="#basic-graphics-in-r" title="Permalink to this headline">¶</a></h1>
 <p>This handout will provide an introduction to creating graphics in R.
 Here, we will cover only the more basic, traditional graphics. You
 should be aware, however, that more advanced users can create more
@@ -348,7 +348,7 @@ as follows.</p>
 <p>&gt; hist(NutritionData$SatFat)</p>
 <p><a class="reference internal" href="_images/image215.png"><img alt="image1" src="_images/image215.png" style="width: 2.99130in; height: 1.94331in;" /></a></p>
 <div class="section" id="id5">
-<h2>4.4.1. <a href="#id1"><span class="problematic" id="id2">**</span></a><a href="#id3"><span class="problematic" id="id4">*</span></a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<h2>10.4.1. <a href="#id1"><span class="problematic" id="id2">**</span></a><a href="#id3"><span class="problematic" id="id4">*</span></a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <p>As shown in the following documentation, several optional arguments
 exist that can be used to modify the resulting plot.</p>
 <p><a class="reference internal" href="_images/image314.png"><img alt="image2" src="_images/image314.png" style="width: 5.90688in; height: 3.59130in;" /></a></p>
@@ -393,7 +393,7 @@ main=&#8221;Histogram of Saturated Fat&#8221;, col=&#8217;gray&#8217;)</p>
 </ol>
 </div>
 <div class="section" id="id10">
-<h2>4.4.2. <a href="#id6"><span class="problematic" id="id7">**</span></a><a href="#id8"><span class="problematic" id="id9">*</span></a><a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<h2>10.4.2. <a href="#id6"><span class="problematic" id="id7">**</span></a><a href="#id8"><span class="problematic" id="id9">*</span></a><a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
 <p><strong>*Boxplots in R*</strong></p>
 <p>The most basic form of the boxplot() function is employed below.</p>
 <p>&gt; boxplot(NutritionData$SatFat)</p>
@@ -447,7 +447,7 @@ legend=TRUE)</p>
 <p><a class="reference internal" href="_images/image203.png"><img alt="image19" src="_images/image203.png" style="width: 4.98261in; height: 2.90018in;" /></a></p>
 </div>
 <div class="section" id="id15">
-<h2>4.4.3. <a href="#id11"><span class="problematic" id="id12">**</span></a><a href="#id13"><span class="problematic" id="id14">*</span></a><a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
+<h2>10.4.3. <a href="#id11"><span class="problematic" id="id12">**</span></a><a href="#id13"><span class="problematic" id="id14">*</span></a><a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
 <p><strong>*Scatterplots and Smoothers*</strong></p>
 <p>Scatterplots are simple to create in R using the plot() function. For
 example, we could examine the relationship between <em>Saturated Fat</em> and
@@ -460,7 +460,7 @@ use the abline() and lm() function.</p>
 <p><a class="reference internal" href="_images/image224.png"><img alt="image21" src="_images/image224.png" style="width: 4.05217in; height: 3.03163in;" /></a></p>
 </div>
 <div class="section" id="id20">
-<h2>4.4.4. <a href="#id16"><span class="problematic" id="id17">**</span></a><a href="#id18"><span class="problematic" id="id19">*</span></a><a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h2>
+<h2>10.4.4. <a href="#id16"><span class="problematic" id="id17">**</span></a><a href="#id18"><span class="problematic" id="id19">*</span></a><a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h2>
 <p>Loess smoothers are a common alternative to regression models in data
 science. Loess models are more flexible than regression-type smoothers.
 There are advantages and disadvantages to all models.</p>
@@ -470,7 +470,7 @@ There are advantages and disadvantages to all models.</p>
 </div>
 </div>
 <div class="section" id="the-loess-function-in-r-can-be-used-to-obtain-a-loess-smoother-in-r">
-<h1>4.5. The loess() function in R can be used to obtain a loess smoother in R.<a class="headerlink" href="#the-loess-function-in-r-can-be-used-to-obtain-a-loess-smoother-in-r" title="Permalink to this headline">¶</a></h1>
+<h1>10.5. The loess() function in R can be used to obtain a loess smoother in R.<a class="headerlink" href="#the-loess-function-in-r-can-be-used-to-obtain-a-loess-smoother-in-r" title="Permalink to this headline">¶</a></h1>
 <p>&gt; #Creating the intial plot</p>
 <p>&gt; plot(TotalFat~SatFat,data=NutritionData)</p>
 <p>&gt;</p>
@@ -489,7 +489,7 @@ smoothing being done. The lower the span value, the less smoothing that
 is done.</p>
 <p>&gt; fit&lt;-loess(TotalFat~SatFat,data=NutritionData, span=.4)</p>
 <div class="section" id="id25">
-<h2>4.5.1. <a href="#id21"><span class="problematic" id="id22">**</span></a><a href="#id23"><span class="problematic" id="id24">*</span></a><a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h2>
+<h2>10.5.1. <a href="#id21"><span class="problematic" id="id22">**</span></a><a href="#id23"><span class="problematic" id="id24">*</span></a><a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
 <colgroup>
 <col width="70%" />
@@ -527,13 +527,13 @@ ylab=&#8221;Total Fat&#8221;, col=&#8221;blue&#8221;,pch=2)</p>
 <p><a class="reference internal" href="_images/image292.png"><img alt="image28" src="_images/image292.png" style="width: 4.36522in; height: 3.34364in;" /></a></p>
 </div>
 <div class="section" id="id30">
-<h2>4.5.2. <a href="#id26"><span class="problematic" id="id27">**</span></a><a href="#id28"><span class="problematic" id="id29">*</span></a><a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h2>
+<h2>10.5.2. <a href="#id26"><span class="problematic" id="id27">**</span></a><a href="#id28"><span class="problematic" id="id29">*</span></a><a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h2>
 <p>For the next set of plots, we will create a subset of the NutritionData</p>
 <p>&gt; BeefChickenData &lt;- NutritionData[NutritionData$Type %in%
 c(&#8220;Beef&#8221;,&#8221;Chicken&#8221;), ]</p>
 </div>
 <div class="section" id="id35">
-<h2>4.5.3. <a href="#id31"><span class="problematic" id="id32">**</span></a><a href="#id33"><span class="problematic" id="id34">*</span></a><a class="headerlink" href="#id35" title="Permalink to this headline">¶</a></h2>
+<h2>10.5.3. <a href="#id31"><span class="problematic" id="id32">**</span></a><a href="#id33"><span class="problematic" id="id34">*</span></a><a class="headerlink" href="#id35" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
 <colgroup>
 <col width="8%" />
@@ -588,7 +588,7 @@ ylab=&#8221;Total Fat&#8221;,</p>
 </ul>
 </div>
 <div class="section" id="id40">
-<h2>4.5.4. <a href="#id36"><span class="problematic" id="id37">**</span></a><a href="#id38"><span class="problematic" id="id39">*</span></a><a class="headerlink" href="#id40" title="Permalink to this headline">¶</a></h2>
+<h2>10.5.4. <a href="#id36"><span class="problematic" id="id37">**</span></a><a href="#id38"><span class="problematic" id="id39">*</span></a><a class="headerlink" href="#id40" title="Permalink to this headline">¶</a></h2>
 <p><strong>*Advanced Plotting*</strong></p>
 <p>The lattice package is a powerful graphical package available in R. The
 most cutting-edge package for plotting is ggplot2. The ggplot2 package
@@ -603,7 +603,7 @@ automatically runs the following command.</p>
 <p>&gt; library(lattice)</p>
 </div>
 <div class="section" id="id45">
-<h2>4.5.5. <a href="#id41"><span class="problematic" id="id42">**</span></a><a href="#id43"><span class="problematic" id="id44">*</span></a><a class="headerlink" href="#id45" title="Permalink to this headline">¶</a></h2>
+<h2>10.5.5. <a href="#id41"><span class="problematic" id="id42">**</span></a><a href="#id43"><span class="problematic" id="id44">*</span></a><a class="headerlink" href="#id45" title="Permalink to this headline">¶</a></h2>
 <p><strong>*Obtaining a Histogram Using the Lattice Package*</strong></p>
 <p>You can use the histogram() function once the lattice package has been
 installed:</p>
@@ -615,7 +615,7 @@ Fat across Location. This is easily implemented with lattice graphics.</p>
 <p><a class="reference internal" href="_images/image361.png"><img alt="image35" src="_images/image361.png" style="width: 5.04348in; height: 3.49366in;" /></a></p>
 </div>
 <div class="section" id="id50">
-<h2>4.5.6. <a href="#id46"><span class="problematic" id="id47">**</span></a><a href="#id48"><span class="problematic" id="id49">*</span></a><a class="headerlink" href="#id50" title="Permalink to this headline">¶</a></h2>
+<h2>10.5.6. <a href="#id46"><span class="problematic" id="id47">**</span></a><a href="#id48"><span class="problematic" id="id49">*</span></a><a class="headerlink" href="#id50" title="Permalink to this headline">¶</a></h2>
 <p><strong>*Obtaining a Density Plot Using the Lattice Package*</strong></p>
 <p>&gt; densityplot(~SatFat|Location,data=NutritionData, col=&#8221;black&#8221;,
 plot.points=FALSE)</p>
@@ -682,7 +682,7 @@ plot.points=FALSE, auto.key=TRUE)</p>
 </table>
 </div>
 <div class="section" id="id55">
-<h2>4.5.7. <a href="#id51"><span class="problematic" id="id52">**</span></a><a href="#id53"><span class="problematic" id="id54">*</span></a><a class="headerlink" href="#id55" title="Permalink to this headline">¶</a></h2>
+<h2>10.5.7. <a href="#id51"><span class="problematic" id="id52">**</span></a><a href="#id53"><span class="problematic" id="id54">*</span></a><a class="headerlink" href="#id55" title="Permalink to this headline">¶</a></h2>
 <p><strong>*Obtaining a Scatterplot Using Lattice*</strong></p>
 <p>&gt; xyplot(TotalFat~SatFat, data=NutritionData)</p>
 <p><a class="reference internal" href="_images/image461.png"><img alt="image45" src="_images/image461.png" style="width: 3.01887in; height: 2.52166in;" /></a></p>
@@ -713,7 +713,7 @@ panel.smoother)</p>
 <p><a class="reference internal" href="_images/image50.png"><img alt="image49" src="_images/image50.png" style="width: 5.07547in; height: 4.39757in;" /></a></p>
 </div>
 <div class="section" id="id60">
-<h2>4.5.8. <a href="#id56"><span class="problematic" id="id57">**</span></a><a href="#id58"><span class="problematic" id="id59">*</span></a><a class="headerlink" href="#id60" title="Permalink to this headline">¶</a></h2>
+<h2>10.5.8. <a href="#id56"><span class="problematic" id="id57">**</span></a><a href="#id58"><span class="problematic" id="id59">*</span></a><a class="headerlink" href="#id60" title="Permalink to this headline">¶</a></h2>
 <p><strong>*Obtaining Scatterplot Matrices without Lattice Package*</strong></p>
 <p>&gt; pairs(NutritionData[,5:10], panel=panel.smooth)</p>
 <p><a class="reference internal" href="_images/image511.png"><img alt="image50" src="_images/image511.png" style="width: 6.00000in; height: 4.51458in;" /></a></p>
@@ -786,19 +786,19 @@ your new variables.</li>
 
   
       
-  <li id="relations-prev" class="navLink" title='Previous Section - 4.3. Summaries in R' data-toggle="tooltip">
+  <li id="relations-prev" class="navLink" title='Previous Section - 10.3. Summaries in R' data-toggle="tooltip">
     <a href="h14.html" >
       <i class='prevNav glyphicon glyphicon-chevron-left'></i>
     </a>
   </li>
   <a class="navLinkBg" id="navLinkBgLeft"  href="h14.html" ></a>
   
-  <li id="relations-next" class="navLink" title='Next Section - 4.6. Data Management in R' data-toggle="tooltip" >
+  <li id="relations-next" class="navLink" title='Next Section - 10.6. Data Management in R' data-toggle="tooltip" >
     <a href="h16.html" >
       <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
     </a>
   </li>
-  <a class="navLinkBg navLink" id="navLinkBgRight" href="h16.html" >Next Section - 4.6. Data Management in R</a>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="h16.html" >Next Section - 10.6. Data Management in R</a>
 
 <script type="text/javascript">
 

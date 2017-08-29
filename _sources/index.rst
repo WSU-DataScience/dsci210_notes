@@ -18,6 +18,8 @@ web by `Todd Iverson <https://github.com/yardsale8>`_.
 
 
   ./excel_toctree.rst
+  ./intro_to_open_refine.rst
+  ./open_refine_toctree.rst
   ./texteditor_toctree.rst
   ./bash_toctree.rst
   ./R_toctree.rst
