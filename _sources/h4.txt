@@ -6,6 +6,10 @@ Pivot Tables
 Getting Started…
 ----------------
 
+.. note:: 
+
+    In this exercise, we will be working with the data found in **CarAccidents.xlsx**.
+
 To invoke the PivotTable wizard in Excel, first highlight the data that
 you want to summarize. Select Insert > PivotTable or PivotChart. The
 PivotChart will produce a table as well as a chart; whereas the
@@ -48,6 +52,11 @@ missing values, thus, we can deselect this from the drop-down menu in
 the Row Labels box.
 
 |image7|
+
+.. admonition:: Exercise 1
+
+    1. Compute the totals for each level of the Cell Phone Involved variable.
+    2. Compute the totals for each level of the Cell Phone Usage variable.
 
 Computing percentages is not necessarily straight forward…
 ----------------------------------------------------------
@@ -135,6 +144,12 @@ The following table contains the desired outcomes.
 | **Total**    | **388**     | **100.00%**      |
 +--------------+-------------+------------------+
 
+
+.. admonition:: Exercise 2 
+
+    1. Compute the percentages for each level of the Cell Phone Involved variable.
+    2. Compute the percentages for each level of the Cell Phone Usage variable.
+
 Working with Two or More Variables…
 -----------------------------------
 
@@ -171,6 +186,14 @@ you can easily become overwhelmed with too much information.
 
 |image21|
 
+
+.. admonition:: Exercise 3
+
+    1. Create a table and graph that shows the percentages for all combinations of Age
+       Group and Gender.
+    2. Create a table that computes the percentages for all combinations of Age
+       Group, Seat Belt, and Cell Phone Usage.
+
 Pivot Tables with Numerical Data
 --------------------------------
 
@@ -193,6 +216,13 @@ The results are shown below.
 
 |image24|
 
+.. admonition:: Exercise 4
+
+    1. Create a table that computes the average birth weight for each of the levels
+       of the Kotelchuck index.
+    2. Create a table that computes the average gestational age for babies that were
+       and were not low birth weight.
+
 Filtering with Pivot Tables
 ---------------------------
 
@@ -214,7 +244,7 @@ order to filter the results based on this variable.
 **For only the Unmarried women:**
 |image28|
 
-.. admonition:: Tasks:
+.. admonition:: Exercise 5
 
     1. Create the following PivotTable in Excel.
 
