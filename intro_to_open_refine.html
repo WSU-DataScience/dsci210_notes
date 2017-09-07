@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>2. 1. Getting Started &mdash; Runestone Interactive Overview</title>
+    <title>2. Introduction to OpenRefine &mdash; Runestone Interactive Overview</title>
     
     <link rel="stylesheet" href="_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -101,7 +101,7 @@
     <script type="text/javascript" src="_static/jquery.hotkey.js"></script>
     <script type="text/javascript" src="_static/jquery-migrate-1.2.1.min.js"></script>
     <link rel="top" title="Runestone Interactive Overview" href="index.html" />
-    <link rel="next" title="7. Processing Data with Open Refine" href="open_refine_toctree.html" />
+    <link rel="next" title="3. Processing Data with Open Refine" href="open_refine_toctree.html" />
     <link rel="prev" title="1.13. Application: Association Rules, i.e. Market Basket Analysis" href="h7.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -262,55 +262,50 @@
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">2. 1. Getting Started</a><ul>
-<li><a class="reference internal" href="#what-is-openrefine">2.1. What is OpenRefine?</a></li>
-<li><a class="reference internal" href="#downloading-openrefine">2.2. Downloading OpenRefine</a></li>
-<li><a class="reference internal" href="#installing-and-running-openrefine">2.3. Installing and Running OpenRefine</a></li>
-<li><a class="reference internal" href="#getting-help">2.4. Getting Help</a></li>
-<li><a class="reference internal" href="#exercise-1-create-your-first-open-refine-project-using-provided-data">2.5. Exercise 1: Create your first Open Refine project (using provided data)</a></li>
+<li><a class="reference internal" href="#">2. Introduction to OpenRefine</a><ul>
+<li><a class="reference internal" href="#getting-started">2.1. Getting Started</a><ul>
+<li><a class="reference internal" href="#what-is-openrefine">2.1.1. What is OpenRefine?</a></li>
+<li><a class="reference internal" href="#downloading-openrefine">2.1.2. Downloading OpenRefine</a></li>
+<li><a class="reference internal" href="#installing-and-running-openrefine">2.1.3. Installing and Running OpenRefine</a></li>
+<li><a class="reference internal" href="#getting-help">2.1.4. Getting Help</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#basic-openrefine-functions">3. Basic OpenRefine Functions</a><ul>
-<li><a class="reference internal" href="#the-layout-of-openrefine">3.1. The layout of OpenRefine</a></li>
-<li><a class="reference internal" href="#reordering-and-renaming-columns">3.2. Reordering and renaming columns</a></li>
-<li><a class="reference internal" href="#sorting-data">3.3. Sorting data</a></li>
-<li><a class="reference internal" href="#exercise-2-re-order-columns-and-sort-data">3.4. Exercise 2: Re-order columns and sort data</a></li>
-<li><a class="reference internal" href="#facets">3.5. Facets</a></li>
-<li><a class="reference internal" href="#filters">3.6. Filters</a></li>
+<li><a class="reference internal" href="#basic-openrefine-functions">2.2. Basic OpenRefine Functions</a><ul>
+<li><a class="reference internal" href="#the-layout-of-openrefine">2.2.1. The layout of OpenRefine</a></li>
+<li><a class="reference internal" href="#reordering-and-renaming-columns">2.2.2. Reordering and renaming columns</a></li>
+<li><a class="reference internal" href="#sorting-data">2.2.3. Sorting data</a></li>
+<li><a class="reference internal" href="#facets">2.2.4. Facets</a></li>
+<li><a class="reference internal" href="#filters">2.2.5. Filters</a></li>
+<li><a class="reference internal" href="#working-with-filtered-data">2.2.6. Working with filtered data</a></li>
+<li><a class="reference internal" href="#more-on-facets">2.2.7. More on Facets</a></li>
+<li><a class="reference internal" href="#amending-data-through-facets">2.2.8. Amending data through facets</a></li>
+<li><a class="reference internal" href="#using-clustering-to-find-similar-values">2.2.9. Using Clustering to find similar values</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#working-with-filtered-data">4. Working with filtered data</a><ul>
-<li><a class="reference internal" href="#exercise-3-remove-all-continuing-publications-from-this-data-set">4.1. Exercise 3: Remove all ‘continuing’ publications from this data set</a></li>
-<li><a class="reference internal" href="#more-on-facets">4.2. More on Facets</a></li>
-<li><a class="reference internal" href="#exercise-4-find-all-publications-without-a-date-of-publication">4.3. Exercise 4: Find all publications without a date of publication</a></li>
-<li><a class="reference internal" href="#amending-data-through-facets">4.4. Amending data through facets</a></li>
-<li><a class="reference internal" href="#exercise-5-edit-edition-statements-via-a-text-facet">4.5. Exercise 5: Edit edition statements via a text facet</a></li>
-<li><a class="reference internal" href="#using-clustering-to-find-similar-values">4.6. Using Clustering to find similar values</a></li>
-<li><a class="reference internal" href="#exercise-6-use-clustering-to-clean-up-publisher-data">4.7. Exercise 6: Use Clustering to clean up publisher data</a></li>
-<li><a class="reference internal" href="#introducing-transformations">4.8. Introducing Transformations</a></li>
-<li><a class="reference internal" href="#some-simple-transformations">4.9. Some simple transformations</a></li>
-<li><a class="reference internal" href="#undo-and-redo">4.10. Undo and Redo</a></li>
-<li><a class="reference internal" href="#exporting-data">4.11. Exporting data</a></li>
+<li><a class="reference internal" href="#introducing-transformations">2.3. Introducing Transformations</a><ul>
+<li><a class="reference internal" href="#some-simple-transformations">2.3.1. Some simple transformations</a></li>
+<li><a class="reference internal" href="#undo-and-redo">2.3.2. Undo and Redo</a></li>
+<li><a class="reference internal" href="#exporting-data">2.3.3. Exporting data</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#data-types-and-regular-expressions">5. Data types and Regular Expressions</a><ul>
-<li><a class="reference internal" href="#data-types-in-openrefine">5.1. Data types in OpenRefine</a></li>
-<li><a class="reference internal" href="#regular-expressions">5.2. Regular Expressions</a></li>
-<li><a class="reference internal" href="#using-the-match-transformation-with-regular-expressions">5.3. Using the ‘match’ transformation with Regular Expressions</a><ul>
-<li><a class="reference internal" href="#value-match-pp-d">5.3.1. value.match(/pp. (\d*).*/)</a></li>
-<li><a class="reference internal" href="#value-match-pp-d-s">5.3.2. value.match(/pp. (\d*)\. (.*):\s*(.*)/)</a></li>
+<li><a class="reference internal" href="#data-types-and-regular-expressions">2.4. Data types and Regular Expressions</a><ul>
+<li><a class="reference internal" href="#data-types-in-openrefine">2.4.1. Data types in OpenRefine</a></li>
+<li><a class="reference internal" href="#regular-expressions">2.4.2. Regular Expressions</a></li>
+<li><a class="reference internal" href="#using-the-match-transformation-with-regular-expressions">2.4.3. Using the <em>match</em> transformation with Regular Expressions</a></li>
+<li><a class="reference internal" href="#value-match-pp-d">2.4.4. value.match(/pp. (\d*).*/)</a></li>
+<li><a class="reference internal" href="#value-match-pp-d-s">2.4.5. value.match(/pp. (\d*)\. (.*):\s*(.*)/)</a></li>
+<li><a class="reference internal" href="#exercise-8-extracting-dates-of-publication-from-the-place-of-publication-column">2.4.6. Exercise 8: Extracting dates of publication from the <em>Place of Publication</em> column</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#exercise-8-extracting-dates-of-publication-from-the-place-of-publication-column">5.4. Exercise 8: Extracting dates of publication from the ‘Place of Publication’ column</a></li>
+<li><a class="reference internal" href="#advanced-refine">2.5. Advanced Refine</a><ul>
+<li><a class="reference internal" href="#looking-up-data-from-a-url">2.5.1. Looking up data from a URL</a></li>
+<li><a class="reference internal" href="#exercise-9-retrieving-viaf-ids-for-authors">2.5.2. Exercise 9: Retrieving VIAF IDs for Authors</a></li>
+<li><a class="reference internal" href="#reconciliation-services">2.5.3. Reconciliation services</a></li>
+<li><a class="reference internal" href="#extensions">2.5.4. Extensions</a></li>
+<li><a class="reference internal" href="#records-and-rows">2.5.5. Records and Rows</a></li>
+<li><a class="reference internal" href="#using-the-cross-function-to-lookup-data-in-other-openrefine-projects">2.5.6. Using the <em>cross</em> function to lookup data in other OpenRefine projects</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#advanced-refine">6. Advanced Refine</a><ul>
-<li><a class="reference internal" href="#looking-up-data-from-a-url">6.1. Looking up data from a URL</a></li>
-<li><a class="reference internal" href="#exercise-9-retrieving-viaf-ids-for-authors">6.2. Exercise 9: Retrieving VIAF IDs for Authors</a></li>
-<li><a class="reference internal" href="#reconciliation-services">6.3. Reconciliation services</a></li>
-<li><a class="reference internal" href="#extensions">6.4. Extensions</a></li>
-<li><a class="reference internal" href="#records-and-rows">6.5. Records and Rows</a></li>
-<li><a class="reference internal" href="#using-the-cross-function-to-lookup-data-in-other-openrefine-projects">6.6. Using the ‘cross’ function to lookup data in other OpenRefine projects</a></li>
 </ul>
 </li>
 </ul>
@@ -326,7 +321,7 @@
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - 7. Processing Data with Open Refine' data-toggle="tooltip" >
+  <li id="relations-next" title='Next Chapter - 3. Processing Data with Open Refine' data-toggle="tooltip" >
     <a href="open_refine_toctree.html" >
       <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
     </a>
@@ -357,38 +352,35 @@
 
 <div class="container" id="main-content">
   
-  <blockquote>
-<div><p><strong>Introduction to OpenRefine</strong></p>
+  <div class="section" id="introduction-to-openrefine">
+<h1>2. Introduction to OpenRefine<a class="headerlink" href="#introduction-to-openrefine" title="Permalink to this headline">¶</a></h1>
 <p>This Introduction to OpenRefine was developed by Owen Stephens
 (<em>owen&#64;ostephens.com</em>) on behalf of the British Library in July
 2014.</p>
 <p>This work is licensed under a Creative Commons Attribution 4.0
 International License
-<a class="reference external" href="http://creativecommons.org/licenses/by/4.0/">*http://creativecommons.org/licenses/by/4.0/*.</a></p>
+<a class="reference external" href="http://creativecommons.org/licenses/by/4.0/">http://creativecommons.org/licenses/by/4.0/.</a></p>
 <p>It is suggested when crediting this work, you include the phrase
-“Developed by Owen Stephens on behalf of the British Library”</p>
-</div></blockquote>
+<strong>Developed by Owen Stephens on behalf of the British Library</strong></p>
 <div class="section" id="getting-started">
-<h1>2. 1. Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<h2>2.1. Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="what-is-openrefine">
-<h2>2.1. What is OpenRefine?<a class="headerlink" href="#what-is-openrefine" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p>OpenRefine is described as a tool for working with ‘messy’ data -
+<h3>2.1.1. What is OpenRefine?<a class="headerlink" href="#what-is-openrefine" title="Permalink to this headline">¶</a></h3>
+<p>OpenRefine is described as a tool for working with <em>messy</em> data -
 but what does this mean? It is probably easiest to describe the
 kinds of data OpenRefine is good at working with and the sorts of
 problems it can help you solve.</p>
 <p>OpenRefine is most useful where you have data in a simple tabular
 format but with internal inconsistencies either in data formats, or
 where data appears, or in terminology used. It can help you:</p>
-</div></blockquote>
 <ul class="simple">
 <li>Get an overview of a data set</li>
 <li>Resolve inconsistencies in a data set</li>
 <li>Help you split data up into more granular parts</li>
 <li>Match local data up to other data sets</li>
-<li>Enhance a data set with data from other sources Some common scenarios
-might be:</li>
+<li>Enhance a data set with data from other sources</li>
 </ul>
+<p>Some common scenarios might be:</p>
 <ol class="arabic simple">
 <li>Where you want to know how many times a particular value appears in a
 column in your data</li>
@@ -398,1013 +390,556 @@ data set</li>
 and want to change all the dates in the list to a single common date
 format:</li>
 </ol>
-<ol class="arabic simple">
+<p><a class="reference internal" href="_images/table1.png"><img alt="image19" src="_images/table1.png" style="width: 3.57in; height: 2.14in;" /></a></p>
+<ol class="arabic simple" start="4">
 <li>Where you have a list of names or terms that differ from each other
 but refer to the same people, places or concepts:</li>
 </ol>
-<ol class="arabic simple">
+<p><a class="reference internal" href="_images/table2.png"><img alt="image20" src="_images/table2.png" style="width: 3.53in; height: 2.06in;" /></a></p>
+<ol class="arabic simple" start="5">
 <li>Where you have several bits of data combined together in a single
 column, and you want to separate them out into individual bits of
 data with one column for each bit of the data:</li>
 </ol>
-<table border="1" class="docutils">
-<colgroup>
-<col width="13%" />
-<col width="12%" />
-<col width="12%" />
-<col width="11%" />
-<col width="11%" />
-<col width="11%" />
-<col width="9%" />
-<col width="10%" />
-<col width="10%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head"><strong>Data you have</strong></th>
-<th class="head"><strong>Desired data</strong></th>
-<th class="head">&nbsp;</th>
-<th class="head">&nbsp;</th>
-<th class="head">&nbsp;</th>
-<th class="head">&nbsp;</th>
-<th class="head">&nbsp;</th>
-<th class="head">&nbsp;</th>
-<th class="head">&nbsp;</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>&nbsp;</td>
-<td><strong>Institution</strong></td>
-<td><strong>Library name</strong></td>
-<td><strong>Address 1</strong></td>
-<td><strong>Address 2</strong></td>
-<td><strong>Town/City</strong></td>
-<td><strong>Region</strong></td>
-<td><strong>Country</strong></td>
-<td><strong>Postcode</strong></td>
-</tr>
-<tr class="row-odd"><td>University of</td>
-<td>University of</td>
-<td>Llyfrgell</td>
-<td>Llanbadarn</td>
-<td>&nbsp;</td>
-<td>Aberystwyth</td>
-<td>Ceredigion</td>
-<td>United</td>
-<td>SY23 3AS</td>
-</tr>
-<tr class="row-even"><td>Wales, Llyfrgell</td>
-<td>Wales</td>
-<td>Thomas</td>
-<td>Fawr</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>Kingdom</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>Thomas Parry</td>
-<td>&nbsp;</td>
-<td>Parry Library</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>Library,</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>Llanbadarn Fawr,</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>ABERYSTWYTH,</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>Ceredigion, SY23</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>3AS, United</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>Kingdom</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>University of</td>
-<td>University of</td>
-<td>Queen</td>
-<td>Meston Walk</td>
-<td>&nbsp;</td>
-<td>Aberdeen</td>
-<td>&nbsp;</td>
-<td>United</td>
-<td>AB24 3UE</td>
-</tr>
-<tr class="row-odd"><td>Aberdeen, Queen</td>
-<td>Abderdeen</td>
-<td>Mother</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>Kingdom</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>Mother Library,</td>
-<td>&nbsp;</td>
-<td>Library</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>Meston Walk,</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>ABERDEEN,</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>AB24 3UE,</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>United Kingdom</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>University of</td>
-<td>University of</td>
-<td>Barnes</td>
-<td>Medical</td>
-<td>Edgbaston</td>
-<td>Birmingham</td>
-<td>West</td>
-<td>United</td>
-<td>B15 2TT</td>
-</tr>
-<tr class="row-even"><td>Birmingham,</td>
-<td>Birmingham</td>
-<td>Library</td>
-<td>School</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>Midlands</td>
-<td>Kingdom</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>Barnes Library,</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>Medical School,</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>Edgbaston,</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>BIRMINGHAM,</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>West Midlands,</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>B15 2TT, United</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>Kingdom</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>University of</td>
-<td>University of</td>
-<td>Library</td>
-<td>Gibbett Hill</td>
-<td>&nbsp;</td>
-<td>Coventry</td>
-<td>&nbsp;</td>
-<td>United</td>
-<td>CV4 7AL</td>
-</tr>
-<tr class="row-odd"><td>Warwick, Library,</td>
-<td>Warwick</td>
-<td>&nbsp;</td>
-<td>Road</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>Kingdom</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>Gibbett Hill Road,</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>COVENTRY, CV4</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>7AL, United</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>Kingdom</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-</tbody>
-</table>
-<ol class="arabic simple">
+<p><a class="reference internal" href="_images/table3.png"><img alt="image21" src="_images/table3.png" style="width: 8.44in; height: 5.90in;" /></a></p>
+<ol class="arabic simple" start="6">
 <li>Where you want to add to your data from an external data source:</li>
 </ol>
+<p><a class="reference internal" href="_images/table4.png"><img alt="image22" src="_images/table4.png" style="width: 8.52in; height: 1.83in;" /></a></p>
 </div>
 <div class="section" id="downloading-openrefine">
-<h2>2.2. Downloading OpenRefine<a class="headerlink" href="#downloading-openrefine" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p>You can download OpenRefine from
-<a class="reference external" href="http://openrefine.org/download.html">*http://openrefine.org/download.html*</a></p>
-<p>While the current (as of 10th July 2014) official ‘stable’ version
-is called ‘Google Refine 2.5’, generally the “OpenRefine 2.6 -
-Development version” is recommended over this and although labelled
-‘beta’ has been stable for some time.</p>
+<h3>2.1.2. Downloading OpenRefine<a class="headerlink" href="#downloading-openrefine" title="Permalink to this headline">¶</a></h3>
+<p>You can download OpenRefine from <a class="reference external" href="http://openrefine.org/download.html">http://openrefine.org/download.html</a></p>
+<p>While the current (as of 10th July 2014) official <em>stable</em> version
+is called <em>Google Refine 2.5</em>, generally the <strong>OpenRefine 2.6 -
+Development version</strong> is recommended over this and although labelled
+<em>beta</em> has been stable for some time.</p>
 <p>There are versions for Windows, Mac OS X and Linux.</p>
-</div></blockquote>
 </div>
 <div class="section" id="installing-and-running-openrefine">
-<h2>2.3. Installing and Running OpenRefine<a class="headerlink" href="#installing-and-running-openrefine" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p>When you download OpenRefine for Windows or Linux from the address
+<h3>2.1.3. Installing and Running OpenRefine<a class="headerlink" href="#installing-and-running-openrefine" title="Permalink to this headline">¶</a></h3>
+<p>When you download OpenRefine for Windows or Linux from the address
 above, you are downloading a zip file. To install OpenRefine you
 simply unzip the downloaded file wherever you want to install the
 program. This can be to a personal directory or to an applications
 or software directory - OpenRefine should run wherever you put the
 unzipped folder.</p>
 <p>If you are downloading OpenRefine for Mac, you a re downloading a
-‘dmg’ (disk image) file which you can open, and then drag the
+<em>dmg</em> (disk image) file which you can open, and then drag the
 OpenRefine application to an appropriate folder on you computer.</p>
-<p>OpenRefine is a java application, and you need to have a ‘java
-runtime environment’ (JRE) installed on your computer to run
-OpenRefine. If you don’t already have one installed then you can
-download and install from <a class="reference external" href="http://java.com/">*http://java.com*</a>
-by going to the site and clicking ‘Free Java Download’.</p>
+<p>OpenRefine is a java application, and you need to have a <em>java
+runtime environment</em> (JRE) installed on your computer to run
+OpenRefine. If you don*t already have one installed then you can
+download and install from <a class="reference external" href="http://java.com/">http://java.com</a>
+by going to the site and clicking <em>Free Java Download</em>.</p>
 <p>To run Refine:</p>
-</div></blockquote>
-<ul>
-<li><p class="first"><strong>On Windows:</strong> Navigate to the folder where you’ve installed
-OpenRefine and either double-click ‘google-refine.exe’ (for Google
-Refine 2.5), ’openrefine.exe’ (for OpenRefine 2.6) or</p>
-<blockquote>
-<div><p>‘refine.bat’ (for either)</p>
-</div></blockquote>
-</li>
-<li><p class="first"><strong>On Linux:</strong> Navigate to the folder where you’ve installed
-OpenRefine in a terminal window and type ‘./refine’</p>
-</li>
-<li><p class="first"><strong>On Mac:</strong> Navigate to where you installed OpenRefine and click the
-OpenRefine icon</p>
-<blockquote>
-<div><p>The interface to OpenRefine is accessed via a web browser. When you
+<ul class="simple">
+<li><strong>On Windows:</strong> Navigate to the folder where you*ve installed OpenRefine and either double-click <strong>google-refine.exe</strong> (for Google Refine 2.5), <strong>openrefine.exe</strong> (for OpenRefine 2.6) or <strong>refine.bat</strong> (for either)</li>
+<li><strong>On Linux:</strong> Navigate to the folder where you*ve installed
+OpenRefine in a terminal window and type <code class="docutils literal"><span class="pre">./refine</span></code></li>
+<li><strong>On Mac:</strong> Navigate to where you installed OpenRefine and click the
+OpenRefine icon</li>
+</ul>
+<p>The interface to OpenRefine is accessed via a web browser. When you
 run Refine normally this should open a window in your default web
 browser pointing at the address <em>http://127.0.0.1:3333</em>. If this
-doesn’t happen automatically you can open a web browser and type in
+doesn*t happen automatically you can open a web browser and type in
 this address.</p>
-</div></blockquote>
-</li>
-</ul>
 <p><a class="reference internal" href="_images/image11.jpeg"><img alt="image0" src="_images/image11.jpeg" style="width: 6.75271in; height: 3.47260in;" /></a></p>
 </div>
 <div class="section" id="getting-help">
-<h2>2.4. Getting Help<a class="headerlink" href="#getting-help" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div>You can find support, documentation and tutorials on using
-OpenRefine in various places online including:</div></blockquote>
+<h3>2.1.4. Getting Help<a class="headerlink" href="#getting-help" title="Permalink to this headline">¶</a></h3>
+<p>You can find support, documentation and tutorials on using
+OpenRefine in various places online including:</p>
 <ul class="simple">
-<li>The OpenRefine Wiki <em>https://github.com/OpenRefine/OpenRefine/wiki</em></li>
-<li>The ‘Free your metadata’ site
-<a class="reference external" href="http://freeyourmetadata.org/">*http://freeyourmetadata.org/*</a></li>
-<li>The OpenRefine mailing list and forum
-<a class="reference external" href="http://groups.google.com/d/forum/openrefine">*http://groups.google.com/d/forum/openrefine*</a></li>
+<li>The <a class="reference external" href="https://github.com/OpenRefine/OpenRefine/wiki">OpenRefine Wiki</a></li>
+<li>The <a class="reference external" href="http://freeyourmetadata.org/">Free your metadata</a> site</li>
+<li>The OpenRefine <a class="reference external" href="http://groups.google.com/d/forum/openrefine">mailing list and forum</a></li>
 </ul>
-</div>
-<div class="section" id="exercise-1-create-your-first-open-refine-project-using-provided-data">
-<h2>2.5. Exercise 1: Create your first Open Refine project (using provided data)<a class="headerlink" href="#exercise-1-create-your-first-open-refine-project-using-provided-data" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p>There are several options for getting your data set into OpenRefine.
-You can upload or import files</p>
-<p>in a variety of formats including:</p>
-</div></blockquote>
-<ul>
-<li><p class="first">TSV (tab-separated values)</p>
-</li>
-<li><p class="first">CSV (comma-separated values)</p>
-</li>
-<li><p class="first">Excel</p>
-</li>
-<li><p class="first">JSON (javascript object notation)</p>
-</li>
-<li><p class="first">XML</p>
-</li>
-<li><p class="first">Google Spreadsheet</p>
-<blockquote>
-<div><p>To import the data for the exercises below, run OpenRefine and:</p>
-</div></blockquote>
-</li>
-<li><p class="first">Click ‘Create Project’</p>
-</li>
-<li><p class="first">Choose ‘Get Data from this Computer’</p>
-</li>
-<li><p class="first">Click ‘Choose Files’</p>
-</li>
-<li><p class="first">Locate the file called ‘BL-Flickr-Images-Book-subset.csv’ (this can
+<div class="admonition-exercise-1-create-your-first-open-refine-project-using-provided-data admonition">
+<p class="first admonition-title">Exercise 1: Create your first Open Refine project (using provided data)</p>
+<p>There are several options for getting your data set into OpenRefine.
+You can upload or import files in a variety of formats including:</p>
+<ul class="simple">
+<li>TSV (tab-separated values)</li>
+<li>CSV (comma-separated values)</li>
+<li>Excel</li>
+<li>JSON (javascript object notation)</li>
+<li>XML</li>
+<li>Google Spreadsheet</li>
+</ul>
+<p>To import the data for the exercises below, run OpenRefine and:</p>
+<ul class="simple">
+<li>Click <em>Create Project</em></li>
+<li>Choose <em>Get Data from this Computer</em></li>
+<li>Click <em>Choose Files</em></li>
+<li>Locate the file called <em>BL-Flickr-Images-Book-subset.csv</em> (this can
 be downloaded from <a class="reference external" href="http://">http://</a>
 <a class="reference external" href="http://www.meanboyfriend.com/overdue_ideas/wp-content/uploads/2015/02/BL-Flickr-Images-Book-">www.meanboyfriend.com/overdue_ideas/wp-content/uploads/2015/02/BL-Flickr-Images-Book-</a>
-subset.csv)</p>
-</li>
-<li><p class="first">Click ‘Next’</p>
-<blockquote>
-<div><p>You should see a screen as follows:</p>
-</div></blockquote>
-</li>
+subset.csv)</li>
+<li>Click <em>Next</em></li>
 </ul>
+<p>You should see a screen as follows:</p>
 <p><a class="reference internal" href="_images/image2.jpeg"><img alt="image1" src="_images/image2.jpeg" style="width: 6.77625in; height: 3.82417in;" /></a></p>
-<blockquote>
-<div><p>This screen gives you some options to ensure that the data gets
+<p>This screen gives you some options to ensure that the data gets
 imported into OpenRefine correctly. The options vary depending on
 the type of data you are importing.</p>
 <p>In this case you need to:</p>
-</div></blockquote>
-<ul>
-<li><p class="first">Set the ‘Character encoding’ to ‘UTF-8’</p>
-</li>
-<li><p class="first">Ensure the first row is used to create the column headings</p>
-</li>
-<li><p class="first">Make sure OpenRefine doesn’t try to automatically detect numbers and
-dates Once you are happy click ‘Create Project &gt;&gt;’</p>
-<blockquote>
-<div><p>This will create the project and open it for you. Projects are saved
+<ul class="simple">
+<li>Set the <em>Character encoding</em> to <em>UTF-8</em></li>
+<li>Ensure the first row is used to create the column headings</li>
+<li>Make sure OpenRefine doesn*t try to automatically detect numbers and
+dates Once you are happy click <em>Create Project &gt;&gt;</em></li>
+</ul>
+<p class="last">This will create the project and open it for you. Projects are saved
 as you work on them, there is no need to save copies as you go
 along.</p>
-<p>To open an existing project in OpenRefine you can click ‘Open
-Project’ from the main OpenRefine screen (in the lefthand menu).
+</div>
+<p>To open an existing project in OpenRefine you can click <em>Open
+Project</em> from the main OpenRefine screen (in the lefthand menu).
 When you click this, you will see a list of the existing projects
-and can click on a project’s name to open it.</p>
-</div></blockquote>
-</li>
-</ul>
+and can click on a project*s name to open it.</p>
 </div>
 </div>
 <div class="section" id="basic-openrefine-functions">
-<h1>3. Basic OpenRefine Functions<a class="headerlink" href="#basic-openrefine-functions" title="Permalink to this headline">¶</a></h1>
+<h2>2.2. Basic OpenRefine Functions<a class="headerlink" href="#basic-openrefine-functions" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="the-layout-of-openrefine">
-<h2>3.1. The layout of OpenRefine<a class="headerlink" href="#the-layout-of-openrefine" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p><a class="reference internal" href="_images/image31.jpeg"><img alt="image2" src="_images/image31.jpeg" style="width: 6.80062in; height: 3.62917in;" /></a>OpenRefine displays data in a tabular format. Each row
-will usually represent a ‘record’ in the data, while each column
+<h3>2.2.1. The layout of OpenRefine<a class="headerlink" href="#the-layout-of-openrefine" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference internal" href="_images/image31.jpeg"><img alt="image2" src="_images/image31.jpeg" style="width: 6.80062in; height: 3.62917in;" /></a></p>
+<p>OpenRefine displays data in a tabular format. Each row
+will usually represent a <em>record</em> in the data, while each column
 represents a type of information. This is very similar to how you
-might view data</p>
-<p>in a spreadsheet or database.</p>
-</div></blockquote>
+might view data in a spreadsheet or database.</p>
 </div>
 <div class="section" id="reordering-and-renaming-columns">
-<h2>3.2. Reordering and renaming columns<a class="headerlink" href="#reordering-and-renaming-columns" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div>Many operations in OpenRefine are accessed from the drop down menus
+<h3>2.2.2. Reordering and renaming columns<a class="headerlink" href="#reordering-and-renaming-columns" title="Permalink to this headline">¶</a></h3>
+<p>Many operations in OpenRefine are accessed from the drop down menus
 at the top of each column. You can re-order the columns by clicking
-the drop down menu at the top of the first column (labelled ‘All’),
-and choosing ‘Edit columns’ -&gt; ‘Re-order / remove columns …’</div></blockquote>
+the drop down menu at the top of the first column (labelled <em>All</em>),
+and choosing <strong>Edit columns &gt; Re-order / remove columns …</strong></p>
 <p><img alt="image3" src="_images/image4.jpeg" /></p>
-<blockquote>
-<div>You can then drag and drop column names to re-order the columns, or
-remove columns completely if they are not required:</div></blockquote>
+<p>You can then drag and drop column names to re-order the columns, or
+remove columns completely if they are not required:</p>
 <p><a class="reference internal" href="_images/image518.png"><img alt="image4" src="_images/image518.png" style="width: 3.23297in; height: 2.91687in;" /></a></p>
 </div>
 <div class="section" id="sorting-data">
-<h2>3.3. Sorting data<a class="headerlink" href="#sorting-data" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div>You can sort data in OpenRefine by clicking on the drop down menu
-for the column you want to sort on, and choosing ‘Sort’</div></blockquote>
+<h3>2.2.3. Sorting data<a class="headerlink" href="#sorting-data" title="Permalink to this headline">¶</a></h3>
+<p>You can sort data in OpenRefine by clicking on the drop down menu
+for the column you want to sort on, and choosing <em>Sort</em></p>
 <p><a class="reference internal" href="_images/image617.png"><img alt="image5" src="_images/image617.png" style="width: 1.25355in; height: 2.23031in;" /></a></p>
-<blockquote>
-<div>Once you have sorted the data a new ‘Sort’ drop down menu will be
-displayed:</div></blockquote>
+<p>Once you have sorted the data a new <em>Sort</em> drop down menu will be
+displayed:</p>
 <p><a class="reference internal" href="_images/image7.jpeg"><img alt="image6" src="_images/image7.jpeg" style="width: 5.54842in; height: 2.44062in;" /></a></p>
-<blockquote>
-<div><p>Unlike Excel ‘Sorts’ in OpenRefine are temporary - that is, if you
-remove the ‘Sort’, the data will go back to it’s original
-‘unordered’ state. The ‘Sort’ drop down menu lets you amend the
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Unlike Excel <em>Sorts</em> in OpenRefine are temporary - that is, if you
+remove the <em>Sort</em>, the data will go back to it*s original
+<em>unordered</em> state. The <em>Sort</em> drop down menu lets you amend the
 existing sort (e.g. reverse the sort order), remove existing sorts,
 and make sorts permanent.</p>
-<p>You can sort on multiple columns at the same time.</p>
-</div></blockquote>
 </div>
-<div class="section" id="exercise-2-re-order-columns-and-sort-data">
-<h2>3.4. Exercise 2: Re-order columns and sort data<a class="headerlink" href="#exercise-2-re-order-columns-and-sort-data" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li>Find the ‘Date of Publication” column and sort the information by
+<p>You can sort on multiple columns at the same time.</p>
+<div class="admonition-exercise-2-re-order-columns-and-sort-data admonition">
+<p class="first admonition-title">Exercise 2: Re-order columns and sort data</p>
+<ul class="last simple">
+<li>Find the <em>Date of Publication</em> column and sort the information by
 date of publication</li>
 <li>Move the title column to be the second column in the project (after
-the “Identifier” column)</li>
+the <strong>Identifier</strong> column)</li>
 </ul>
 </div>
+</div>
 <div class="section" id="facets">
-<h2>3.5. Facets<a class="headerlink" href="#facets" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p>“Facets” are one of the most useful features of OpenRefine and can
+<h3>2.2.4. Facets<a class="headerlink" href="#facets" title="Permalink to this headline">¶</a></h3>
+<p><strong>Facets</strong> are one of the most useful features of OpenRefine and can
 help both get an overview of the data in a project as well as
 helping you bring more consistency to the data.</p>
-<p>A ‘Facet’ groups all the values that appear in a column, and then
+<p>A <em>Facet</em> groups all the values that appear in a column, and then
 allow you to filter the data by these values and edit values across
 many records at the same time.</p>
-<p>The simplest type of Facet is called a ‘Text facet’. This simply
+<p>The simplest type of Facet is called a <em>Text facet</em>. This simply
 groups all the text values in a column and lists each value with the
 number of records it appears in. The facet information always
 appears in the left hand panel in the OpenRefine interface.</p>
-</div></blockquote>
 <p><a class="reference internal" href="_images/image8.jpeg"><img alt="image7" src="_images/image8.jpeg" style="width: 6.76661in; height: 4.74229in;" /></a></p>
-<blockquote>
-<div><p>To create a Text Facet for a column, click on the drop down menu at
+<p>To create a Text Facet for a column, click on the drop down menu at
 the top of the column and choose Facet -&gt; Text Facet. The facet will
 then appear in the left hand panel.</p>
-<p><a class="reference internal" href="_images/image91.jpeg"><img alt="image8" src="_images/image91.jpeg" style="width: 6.78260in; height: 4.05333in;" /></a>The screenshot below shows a Text Facet on the ‘Issuance
-Type’ column. You can see this contains two values ‘continuing’ and
-‘monographic’. You can filter the data displayed by clicking on one
-of these headings.</p>
+<p><a class="reference internal" href="_images/image91.jpeg"><img alt="image8" src="_images/image91.jpeg" style="width: 6.78260in; height: 4.05333in;" /></a></p>
+<p>The screenshot below shows a Text Facet on the <em>Issuance Type</em> column. You can
+see this contains two values <em>continuing</em> and <em>monographic</em>. You can filter the
+data displayed by clicking on one of these headings.</p>
 <p>You can include multiple values from the facet in a filter at one
-time by using the ‘Include’ option which appears when you put your
+time by using the <em>Include</em> option which appears when you put your
 mouse over a value in the Facet.</p>
-<p>You can also ‘invert’ the filter to show all records which do not
+<p>You can also <em>invert</em> the filter to show all records which do not
 match your selected values. This option appears at the top of the
 Facet panel when you select a value from the facet to apply as a
 filter.</p>
-</div></blockquote>
 </div>
 <div class="section" id="filters">
-<h2>3.6. Filters<a class="headerlink" href="#filters" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p>As well as using Facets to filter the data displayed in OpenRefine
-you can also apply ‘Text Filters’ which looks for a particular piece
+<h3>2.2.5. Filters<a class="headerlink" href="#filters" title="Permalink to this headline">¶</a></h3>
+<p>As well as using Facets to filter the data displayed in OpenRefine
+you can also apply <em>Text Filters</em> which looks for a particular piece
 of text appearing in a column. Text filters are applied by clicking
 the drop down menu at the top of the column you want to apply the
-filter to and choosing ‘Text filter’.</p>
+filter to and choosing <em>Text filter</em>.</p>
 <p>As with Facets, the Filter options appear in the left hand panel in
 OpenRefine. Simply type in the text you want to use in the Filter to
 display only rows which contain that text in the relevant column.</p>
-</div></blockquote>
 <p><a class="reference internal" href="_images/image10.jpeg"><img alt="image9" src="_images/image10.jpeg" style="width: 6.75936in; height: 4.27510in;" /></a></p>
 </div>
-</div>
 <div class="section" id="working-with-filtered-data">
-<h1>4. Working with filtered data<a class="headerlink" href="#working-with-filtered-data" title="Permalink to this headline">¶</a></h1>
-<blockquote>
-<div><p>It is very important to note that when you have filtered the data
+<h3>2.2.6. Working with filtered data<a class="headerlink" href="#working-with-filtered-data" title="Permalink to this headline">¶</a></h3>
+<p>It is very important to note that when you have filtered the data
 displayed in OpenRefine, any operations you carry out will apply
 only to the rows that match the filter - that is the data currently
 being displayed.</p>
 <p>In particular if you wish to remove rows that match a filter, you
 can do this as follows:</p>
-</div></blockquote>
-<ul>
-<li><p class="first">Filter the data using Facets or Filters</p>
-</li>
-<li><p class="first">Clicking on the drop down menu under the ‘All’ column heading (this
-is always the first column in an OpenRefine project)</p>
-</li>
-<li><p class="first">Choose ‘Edit rows’ -&gt; ‘Remove all matching rows’</p>
-<blockquote>
-<div><p>This will remove all rows that were displayed by the filter:</p>
-</div></blockquote>
-</li>
-</ul>
-<p><a class="reference internal" href="_images/image111.jpeg"><img alt="image10" src="_images/image111.jpeg" style="width: 6.73077in; height: 4.37937in;" /></a></p>
-<div class="section" id="exercise-3-remove-all-continuing-publications-from-this-data-set">
-<h2>4.1. Exercise 3: Remove all ‘continuing’ publications from this data set<a class="headerlink" href="#exercise-3-remove-all-continuing-publications-from-this-data-set" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Create a facet for the ‘Issuance Type’ column</li>
-<li>Filter the data to only show those rows which represent ‘continuing’
+<li>Filter the data using Facets or Filters</li>
+<li>Clicking on the drop down menu under the <em>All</em> column heading (this
+is always the first column in an OpenRefine project)</li>
+<li>Choose <strong>Edit rows &gt; Remove all matching rows</strong></li>
+</ul>
+<p>This will remove all rows that were displayed by the filter:</p>
+<p><a class="reference internal" href="_images/image111.jpeg"><img alt="image10" src="_images/image111.jpeg" style="width: 6.73077in; height: 4.37937in;" /></a></p>
+<div class="admonition-exercise-3-remove-all-continuing-publications-from-this-data-set admonition">
+<p class="first admonition-title">Exercise 3: Remove all <em>continuing</em> publications from this data set</p>
+<ul class="last simple">
+<li>Create a facet for the <em>Issuance Type</em> column</li>
+<li>Filter the data to only show those rows which represent <em>continuing</em>
 publications</li>
 <li>Remove these rows from the data set</li>
 </ul>
 </div>
+</div>
 <div class="section" id="more-on-facets">
-<h2>4.2. More on Facets<a class="headerlink" href="#more-on-facets" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div>As well as ‘Text facets’ Refine also supports a range of other types
-of facet. These include:</div></blockquote>
-<ul>
-<li><p class="first">Numeric facets</p>
-</li>
-<li><p class="first">Timeline facets (for dates)</p>
-</li>
-<li><p class="first">Custom facets</p>
-</li>
-<li><p class="first">Scatterplot facets</p>
-<blockquote>
-<div><p><strong>Numeric and Timeline facets</strong> display graphs instead of lists of
-values. The graph includes ‘drag and drop’ controls you can use to
-set a start and end range to filter the data displayed.</p>
-</div></blockquote>
-</li>
+<h3>2.2.7. More on Facets<a class="headerlink" href="#more-on-facets" title="Permalink to this headline">¶</a></h3>
+<p>As well as <em>Text facets</em> Refine also supports a range of other types
+of facet. These include:</p>
+<ul class="simple">
+<li>Numeric facets</li>
+<li>Timeline facets (for dates)</li>
+<li>Custom facets</li>
+<li>Scatterplot facets</li>
 </ul>
+<p><strong>Numeric and Timeline facets</strong> display graphs instead of lists of
+values. The graph includes <em>drag and drop</em> controls you can use to
+set a start and end range to filter the data displayed.</p>
 <p><a class="reference internal" href="_images/image12.jpeg"><img alt="image11" src="_images/image12.jpeg" style="width: 6.67500in; height: 4.69500in;" /></a></p>
-<blockquote>
-<div><p><strong>Scatterplot facets</strong> are less commonly used - for further
-information on these see the tutorial at
-<a class="reference external" href="http://enipedia.tudelft.nl/wiki/OpenRefine_Tutorial#Exploring_the_data_with_scatter_plots">*http://enipedia.tudelft.nl/wiki/OpenRefine_Tutorial#Exploring_the_data_with_scatter_plots*</a></p>
+<p><strong>Scatterplot facets</strong> are commonly used in statistics.  One example can be
+found in the following <a class="reference external" href="http://enipedia.tudelft.nl/wiki/OpenRefine_Tutorial#Exploring_the_data_with_scatter_plots">OpenRefine Tutorial</a></p>
 <p>Custom facets are a range of different types of facets, and also
 allow you write your own custom facets. Some of the default custom
 facets are:</p>
-</div></blockquote>
-<ul>
-<li><p class="first">Word facet - this breaks down text into words and counts the number
-of records each word appears in</p>
-</li>
-<li><p class="first">Duplicates facet - this results in a binary facet of ‘true’ or
-‘false’. Rows appear in the ‘true’ facet if the value in the selected
+<ul class="simple">
+<li>Word facet - this breaks down text into words and counts the number
+of records each word appears in</li>
+<li>Duplicates facet - this results in a binary facet of <em>true</em> or
+<em>false</em>. Rows appear in the <em>true</em> facet if the value in the selected
 column is an exact match for a value in the same column in another
-row</p>
-</li>
-<li><p class="first">Text length facet - creates a numeric facet based on the length
+row</li>
+<li>Text length facet - creates a numeric facet based on the length
 (number of characters) of the text in each row for the selected
 column. This can be useful for spotting incorrect or unusual data in
 a field where specific lengths are expected (e.g. if the values are
 expected to be years, any row with a text length more than 4 for that
-column is likely to be incorrect)</p>
-</li>
-<li><p class="first">Facet by blank - a binary facet of ‘true’ or ‘false’. Rows appear in
-the ‘true’ facet if they have no data present in that column. This is
-useful when looking for rows missing key data.</p>
-<blockquote>
-<div><p>Facets are intended to group together common values and OpenRefine
+column is likely to be incorrect)</li>
+<li>Facet by blank - a binary facet of <em>true</em> or <em>false</em>. Rows appear in
+the <em>true</em> facet if they have no data present in that column. This is
+useful when looking for rows missing key data.</li>
+</ul>
+<p>Facets are intended to group together common values and OpenRefine
 limits the number of values allowed in a single facet to ensure the
 software does not perform slowly or run out of memory. If you create
 a facet where there are many unique values (for example, a facet on
-a ‘book title’ column in a data set that has one row per book) the
+a <em>book title</em> column in a data set that has one row per book) the
 facet created will be very large and may either slow down the
 application, or OpenRefine will not create the facet.</p>
-</div></blockquote>
-</li>
-</ul>
-</div>
-<div class="section" id="exercise-4-find-all-publications-without-a-date-of-publication">
-<h2>4.3. Exercise 4: Find all publications without a date of publication<a class="headerlink" href="#exercise-4-find-all-publications-without-a-date-of-publication" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li>Use the ‘Facet by blank’ function to find all publications in this
+<div class="admonition-exercise-4-find-all-publications-without-a-date-of-publication admonition">
+<p class="first admonition-title">Exercise 4: Find all publications without a date of publication</p>
+<ul class="last simple">
+<li>Use the <em>Facet by blank</em> function to find all publications in this
 data set without a date of publication</li>
 <li>Filter the data to only those without a date of publication - do you
-notice anything about these records? [Hint: look at the “Place of
-Publication” column]</li>
+notice anything about these records? [Hint: look at the <strong>Place of
+Publication</strong> column]</li>
 </ul>
 </div>
+</div>
 <div class="section" id="amending-data-through-facets">
-<h2>4.4. Amending data through facets<a class="headerlink" href="#amending-data-through-facets" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div>If you create a text facet you can edit the values in the facet to
+<h3>2.2.8. Amending data through facets<a class="headerlink" href="#amending-data-through-facets" title="Permalink to this headline">¶</a></h3>
+<p>If you create a text facet you can edit the values in the facet to
 change the value for several records at the same time. To do this,
-simply mouse-over the value you want to edit and click the ‘edit’
-option that appears:</div></blockquote>
+simply mouse-over the value you want to edit and click the <em>edit</em>
+option that appears:</p>
 <p><a class="reference internal" href="_images/image1317.png"><img alt="image12" src="_images/image1317.png" style="width: 2.10837in; height: 2.79083in;" /></a></p>
-<blockquote>
-<div><p>This approach is useful in relatively small facets where you might
+<p>This approach is useful in relatively small facets where you might
 have small variations through punctuation or typing errors etc. For
 example, a column that should contain only terms from a small
 restricted list such as days of the week or months of the year.</p>
 <p>The list of values in the facet will update as you make edits.</p>
-</div></blockquote>
-</div>
-<div class="section" id="exercise-5-edit-edition-statements-via-a-text-facet">
-<h2>4.5. Exercise 5: Edit edition statements via a text facet<a class="headerlink" href="#exercise-5-edit-edition-statements-via-a-text-facet" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
+<div class="admonition-exercise-5-edit-edition-statements-via-a-text-facet admonition">
+<p class="first admonition-title">Exercise 5: Edit edition statements via a text facet</p>
+<ul class="last simple">
 <li>Create a text facet for the Edition column</li>
-<li>Sort the facet by ‘count’ to see the most common values</li>
-<li>Pick the facets that refer to a ‘second edition’ and edit them using
+<li>Sort the facet by <em>count</em> to see the most common values</li>
+<li>Pick the facets that refer to a <em>second edition</em> and edit them using
 a consistent wording</li>
 </ul>
 </div>
+</div>
 <div class="section" id="using-clustering-to-find-similar-values">
-<h2>4.6. Using Clustering to find similar values<a class="headerlink" href="#using-clustering-to-find-similar-values" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p>Another function that is provided with facets is the ‘Cluster’
+<h3>2.2.9. Using Clustering to find similar values<a class="headerlink" href="#using-clustering-to-find-similar-values" title="Permalink to this headline">¶</a></h3>
+<p>Another function that is provided with facets is the <em>Cluster</em>
 function. The Cluster function looks for similar values across the
 facet and enables you to merge together several facets to a single
 value.</p>
 <p>This is very effective where you have data where there can be minor
 variations in data values that are likely such as names of people,
 organisations and places.</p>
-<p>To use the the ‘Cluster’ function, create a Facet on the relevant
-column and click the ‘Cluster’ button. This will bring up a new
-window where you can see the ‘Clusters’ that have been detected and
+<p>To use the the <em>Cluster</em> function, create a Facet on the relevant
+column and click the <em>Cluster</em> button. This will bring up a new
+window where you can see the <em>Clusters</em> that have been detected and
 work with them:</p>
-</div></blockquote>
 <p><a class="reference internal" href="_images/image14.jpeg"><img alt="image13" src="_images/image14.jpeg" style="width: 6.62027in; height: 4.30000in;" /></a></p>
-<blockquote>
-<div><p>The ‘Clusters’ are created automatically according to an algorithm.
+<p>The <em>Clusters</em> are created automatically according to an algorithm.
 There are a number of different algorithms supported by OpenRefine -
 some experimentation maybe required to see which clustering
 algorithm works best with any particular set of data, and you may
 find that using different algorithms highlights different clusters.</p>
-<p>For more information on the methods used to create Clusters see
-<a class="reference external" href="https://github.com/OpenRefine/">https://github.com/OpenRefine/</a> OpenRefine/wiki/Clustering-In-Depth</p>
-<p>For each cluster you have the option of ‘merging’ the values
+<p>For more information on the methods used to create Clusters see the
+<a class="reference external" href="https://github.com/OpenRefine/OpenRefine/wiki/Clustering-In-Depth">OpenRefine wiki</a></p>
+<p>For each cluster you have the option of <em>merging</em> the values
 together - that is replace with a single consistent value. By
 default OpenRefine uses the most common value in the cluster as the
 new value, but you can select one of the other values by clicking
 the value itself, or you can simply type the desired value into the
-‘New Cell Value’ box.</p>
+<em>New Cell Value</em> box.</p>
 <p>The Clustering function can also be accessed via the drop down menu
-at the top of a column by selecting “Edit cells” -&gt; “Cluster and
-edit …”</p>
-</div></blockquote>
-</div>
-<div class="section" id="exercise-6-use-clustering-to-clean-up-publisher-data">
-<h2>4.7. Exercise 6: Use Clustering to clean up publisher data<a class="headerlink" href="#exercise-6-use-clustering-to-clean-up-publisher-data" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li>Create a Text Facet for the “Publisher” column</li>
-<li>Click ‘Cluster’</li>
-<li>Using the ‘key collision’ method with the ‘fingerprint’ Keying
+at the top of a column by selecting <strong>Edit cells &gt; Cluster and edit …</strong></p>
+<div class="admonition-exercise-6-use-clustering-to-clean-up-publisher-data admonition">
+<p class="first admonition-title">Exercise 6: Use Clustering to clean up publisher data</p>
+<ul class="last simple">
+<li>Create a Text Facet for the <strong>Publisher</strong> column</li>
+<li>Click <em>Cluster</em></li>
+<li>Using the <em>key collision</em> method with the <em>fingerprint</em> Keying
 Function work through the clusters of values, merging them to a
 single value where appropriate</li>
 </ul>
 </div>
+</div>
+</div>
 <div class="section" id="introducing-transformations">
-<h2>4.8. Introducing Transformations<a class="headerlink" href="#introducing-transformations" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p>Through facets, filters and clusters OpenRefine offers relatively
+<h2>2.3. Introducing Transformations<a class="headerlink" href="#introducing-transformations" title="Permalink to this headline">¶</a></h2>
+<p>Through facets, filters and clusters OpenRefine offers relatively
 straightforward ways of getting an overview of your data, and making
 changes where you want to standardise terms used to a common set of
 values.</p>
 <p>However, sometimes there will be changes you want to make to the
 data that cannot be achieved in this way. Such types of changes
 include:</p>
-</div></blockquote>
-<ul>
-<li><p class="first">Splitting data that is in a single column into multiple columns (e.g.
-splitting an address into multiple parts)</p>
-</li>
-<li><p class="first">Standardising the format of data in a column without changing the
-values (e.g. removing punctuation or standardising a date format)</p>
-</li>
-<li><p class="first">Extracting a particular type of data from a longer text string (e.g.
-finding ISBNs in a bibliographic citation)</p>
-<blockquote>
-<div><p>To support this type of activity OpenRefine supports
-‘Transformations’ which are ways of manipulating data in columns.
+<ul class="simple">
+<li>Splitting data that is in a single column into multiple columns (e.g.
+splitting an address into multiple parts)</li>
+<li>Standardising the format of data in a column without changing the
+values (e.g. removing punctuation or standardising a date format)</li>
+<li>Extracting a particular type of data from a longer text string (e.g.
+finding ISBNs in a bibliographic citation)</li>
+</ul>
+<p>To support this type of activity OpenRefine supports
+<em>Transformations</em> which are ways of manipulating data in columns.
 Transformations are normally written in a special language called
-‘GREL’ (Google Refine Expression Language). To some extent GREL
+<em>GREL</em> (Google Refine Expression Language). To some extent GREL
 expressions are similar to Excel Forumla, although they tend to
 focus on text manipulations rather than numeric functions.</p>
 <p>Full documentation for the GREL is available at
-<em>https://github.com/OpenRefine/OpenRefine/wiki/</em>
-<em>Google-refine-expression-language</em>. This tutorial covers only a
-small subset of the commands available.</p>
+<a class="reference external" href="https://github.com/OpenRefine/OpenRefine/wiki/">Google-refine-expression-language</a>.
+This tutorial covers only a small subset of the commands available.</p>
 <p>To start writing transformations, select the column on which you
-wish to perform a transformation and choose “Edit cells” -&gt;
-“Transform…” to see the following screen:</p>
-</div></blockquote>
-</li>
-</ul>
+wish to perform a transformation and choose <strong>Edit cells &gt; Transform…</strong>
+to see the following screen:</p>
 <p><a class="reference internal" href="_images/image1516.png"><img alt="image14" src="_images/image1516.png" style="width: 4.20350in; height: 3.22250in;" /></a></p>
-<blockquote>
-<div><p>In this screen you have a place to write a transformation (the
-‘Expression’ box) and then the ability to Preview the effect the
+<p>In this screen you have a place to write a transformation (the
+<em>Expression</em> box) and then the ability to Preview the effect the
 transformation would have on the first 10 rows of your data.</p>
-<p>The transformation you type into the ‘Expression’ box has to be a
+<p>The transformation you type into the <em>Expression</em> box has to be a
 valid GREL expression. The simplest expression is simply the word
-‘value’ by itself - which simply means ‘the value that is currently
-in the column’ - that is, “make no change”.</p>
+<em>value</em> by itself - which simply means <em>the value that is currently
+in the column</em> - that is, <strong>make no change</strong>.</p>
 <p>GREL functions are written by giving a value of some kind (a text
 string, a date, a number etc.) to a GREL function. Some GREL
 functions take additional parameters or options which control how
 the function works. GREL supports two syntaxes:</p>
-<p>value.function(options) function(value, options)</p>
+<p><code class="docutils literal"><span class="pre">value.function(options)</span> <span class="pre">function(value,</span> <span class="pre">options)</span></code></p>
 <p>Either is valid, and which is used is completely down to personal
-preference. Next to the ‘Preview’ option are options to view:</p>
-</div></blockquote>
+preference. Next to the <em>Preview</em> option are options to view:</p>
 <ul class="simple">
-<li>History - a list of transformations you’ve previously used with the
-option to reuse them immediately or to ‘star’ them for easy access</li>
-<li>Starred - a list of transformations you’ve ‘starred’ via the
-‘History’ view</li>
+<li>History - a list of transformations you*ve previously used with the
+option to reuse them immediately or to <em>star</em> them for easy access</li>
+<li>Starred - a list of transformations you*ve <em>starred</em> via the
+<em>History</em> view</li>
 <li>Help - a list of all the GREL functions and brief information on how
 to use them</li>
 </ul>
-</div>
 <div class="section" id="some-simple-transformations">
-<h2>4.9. Some simple transformations<a class="headerlink" href="#some-simple-transformations" title="Permalink to this headline">¶</a></h2>
+<h3>2.3.1. Some simple transformations<a class="headerlink" href="#some-simple-transformations" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><strong>Exercise 7: Cleaning up Date of Publication using simple
 transformations</strong></div></blockquote>
 <ul class="simple">
 <li>Create a facet based on the Date of Publication column</li>
-<li>Sort the facet by ‘name’</li>
+<li>Sort the facet by <em>name</em></li>
 <li>What are common issues with the values in this list?</li>
-<li>Use the ‘replace’ GREL expression to remove the characters [, ] and ?
+<li>Use the <em>replace</em> GREL expression to remove the characters [, ] and ?
 from the Date of Publication column</li>
 </ul>
 </div>
 <div class="section" id="undo-and-redo">
-<h2>4.10. Undo and Redo<a class="headerlink" href="#undo-and-redo" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p>OpenRefine lets you undo, and redo, any number of steps you have
+<h3>2.3.2. Undo and Redo<a class="headerlink" href="#undo-and-redo" title="Permalink to this headline">¶</a></h3>
+<p>OpenRefine lets you undo, and redo, any number of steps you have
 taken in cleaning the data. This means you can always try out
-transformations and ‘undo’ if you need to. The way OpenRefine
+transformations and <em>undo</em> if you need to. The way OpenRefine
 records the steps you have taken even allows you to take the steps
-you’ve carried out on one data set, and apply it to another data set
+you*ve carried out on one data set, and apply it to another data set
 by a simple copy and paste operation.</p>
-<p>The ‘Undo’ and ‘Redo’ options are accessed via the lefthand panel.</p>
-</div></blockquote>
+<p>The <em>Undo</em> and <em>Redo</em> options are accessed via the lefthand panel.</p>
 <p><a class="reference internal" href="_images/image16.jpeg"><img alt="image15" src="_images/image16.jpeg" style="width: 6.75474in; height: 5.17229in;" /></a></p>
-<blockquote>
-<div><p>The Undo/Redo panel lists all the steps you’ve taken so far. To undo
+<p>The Undo/Redo panel lists all the steps you*ve taken so far. To undo
 steps, simply click on the last step you want to preserve in the
 list and this will automatically undo all the changes made since
 that step.</p>
 <p>The remaining steps will continue to show in the list but greyed
 out, and you can reapply them by simply clicking on the last step
 you want to apply.</p>
-<p>However, if you ‘undo’ a set of steps and then start doing new
+<p>However, if you <em>undo</em> a set of steps and then start doing new
 transformations, the greyed out steps will disappear and you will no
-longer have the option to ‘redo’ these steps.</p>
+longer have the option to <em>redo</em> these steps.</p>
 <p>If you wish to save a set of steps to be re-applied later, or to a
-different project, you can click the ‘Extract’ button. This gives
+different project, you can click the <em>Extract</em> button. This gives
 you the option to select the steps you want to save, and to copy the
 transformations included in the selected steps in a format called
-‘JSON’</p>
-<p>To apply a set of steps you have copied or saved in this ‘JSON’
-format use the ‘Apply’ button and paste in the JSON. In this way you
+<em>JSON</em></p>
+<p>To apply a set of steps you have copied or saved in this <em>JSON</em>
+format use the <em>Apply</em> button and paste in the JSON. In this way you
 can share transformations between projects and each other.</p>
 <p>Undo/Redo data is stored with the Project and is saved automatically
 as you work, so next time you open the project, you can access your
 full history of steps you have carried out and undo/redo in exactly
 the same way.</p>
-</div></blockquote>
 </div>
 <div class="section" id="exporting-data">
-<h2>4.11. Exporting data<a class="headerlink" href="#exporting-data" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div>Once you have finished working with a data set in OpenRefine you may
+<h3>2.3.3. Exporting data<a class="headerlink" href="#exporting-data" title="Permalink to this headline">¶</a></h3>
+<p>Once you have finished working with a data set in OpenRefine you may
 wish to export it. The export options are accessed through the
-‘Export’ button at the top right of the OpenRefine interface</div></blockquote>
+<em>Export</em> button at the top right of the OpenRefine interface</p>
 <p><a class="reference internal" href="_images/image17.jpeg"><img alt="image16" src="_images/image17.jpeg" style="width: 6.57462in; height: 2.79687in;" /></a></p>
-<blockquote>
-<div>Export formats support include HTML, Excel and comma- and
+<p>Export formats support include HTML, Excel and comma- and
 tab-separated value (csv and tsv). You can also write a custom
 export, selecting to export specific fields, adding a header or
-footer and specifying the exact format.</div></blockquote>
+footer and specifying the exact format.</p>
 </div>
 </div>
 <div class="section" id="data-types-and-regular-expressions">
-<h1>5. Data types and Regular Expressions<a class="headerlink" href="#data-types-and-regular-expressions" title="Permalink to this headline">¶</a></h1>
-<blockquote>
-<div>Understanding data types and regular expressions will help you write
-more complex transformations using GREL.</div></blockquote>
+<h2>2.4. Data types and Regular Expressions<a class="headerlink" href="#data-types-and-regular-expressions" title="Permalink to this headline">¶</a></h2>
+<p>Understanding data types and regular expressions will help you write
+more complex transformations using GREL.</p>
 <div class="section" id="data-types-in-openrefine">
-<h2>5.1. Data types in OpenRefine<a class="headerlink" href="#data-types-in-openrefine" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div>Every piece of data in OpenRefine is has a ‘type’. The most common
-‘type’ is a ‘string’ - that is a piece of text. However there are
+<h3>2.4.1. Data types in OpenRefine<a class="headerlink" href="#data-types-in-openrefine" title="Permalink to this headline">¶</a></h3>
+<p>Every piece of data in OpenRefine is has a <em>type</em>. The most common
+<em>type</em> is a <em>string</em> - that is a piece of text. However there are
 other data types available and transformations let you convert data
 from one type to another where appropriate. The data types supported
-are:</div></blockquote>
-<ul>
-<li><p class="first">String</p>
-</li>
-<li><p class="first">Number</p>
-</li>
-<li><p class="first">Date</p>
-</li>
-<li><p class="first">Boolean</p>
-</li>
-<li><p class="first">Array</p>
-<blockquote>
-<div><p>The first three are hopefully self-explanatory, but the latter two
+are:</p>
+<ul class="simple">
+<li>String</li>
+<li>Number</li>
+<li>Date</li>
+<li>Boolean</li>
+<li>Array</li>
+</ul>
+<p>The first three are hopefully self-explanatory, but the latter two
 may require slightly more explanation.</p>
-<p>A <strong>‘Boolean’</strong> is a binary value that can either be ‘true’ or
-‘false’. Boolean values can be used directly in OpenRefine cell, but
+<p>A <strong>*Boolean*</strong> is a binary value that can either be <em>true</em> or
+<em>false</em>. Boolean values can be used directly in OpenRefine cell, but
 is more often used in transformations as part of a GREL expression.
 For example:</p>
-<p>value.contains(“test&#8221;)</p>
-<p>Generates a boolean value of either ‘true’ or ‘false’ depending on
-whether the current value in the cell contains the text ‘test’
+<p>value.contains(<a href="#id2"><span class="problematic" id="id3">**</span></a>test&#8221;)</p>
+<p>Generates a boolean value of either <em>true</em> or <em>false</em> depending on
+whether the current value in the cell contains the text <em>test</em>
 anywhere. Such tests can be combined with other GREL expressions to
 create more complex transformations.</p>
-<p>An <strong>‘Array’</strong> is a list of values, represented in Refine by the use
+<p>An <strong>*Array*</strong> is a list of values, represented in Refine by the use
 of square brackets containing a list of values surrounded by
 inverted commas and separated by commas. For example an array
 listing the days of the week would look like:
-[“Monday”,”Tuesday”,”Wednesday”,”Thursday”,”Friday”,”Saturday”,”Sunday”]</p>
+[<strong>Monday</strong>,**Tuesday**,**Wednesday**,**Thursday**,**Friday**,**Saturday**,**Sunday**]</p>
 <p>Arrays can be sorted, de-duplicated, and manipulated in other ways
 in GREL expressions, but cannot appear directly in an OpenRefine
 cell. Arrays in OpenRefine are usually the result of a
-transformation. For example the ‘split’ function takes a string, and
-changes it into an array based on a ‘separator’. For example if a
+transformation. For example the <em>split</em> function takes a string, and
+changes it into an array based on a <em>separator</em>. For example if a
 cell has the value:</p>
-<p>“Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday” This can
-be transformed into an array using the ‘split’ function:
-value.split(“,”)</p>
+<p><strong>Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday</strong> This can
+be transformed into an array using the <em>split</em> function:
+value.split(<strong>,</strong>)</p>
 <p>This would create the array containing the days of the week:
-[“Monday”,”Tuesday”,”Wednesday”,”Thursday”,”Friday”,”Saturday”,”Sunday”]</p>
-<p>This can be combined with array operations like ‘sort’. For example,
+[<strong>Monday</strong>,**Tuesday**,**Wednesday**,**Thursday**,**Friday**,**Saturday**,**Sunday**]</p>
+<p>This can be combined with array operations like <em>sort</em>. For example,
 assuming the cell contains the same value as above, then the
 function:</p>
-<p>value.split(“,”).sort()</p>
+<p>value.split(<strong>,</strong>).sort()</p>
 <p>Would result in an array containing the days of the week sorted in
 alphabetical order:
-[“Friday”,“Monday”,”Saturday”,”Sunday”,”Thursday”,”Tuesday”,”Wednesday”]</p>
+[<strong>Friday</strong>,**Monday**,**Saturday**,**Sunday**,**Thursday**,**Tuesday**,**Wednesday**]</p>
 <p>To output a value from an array you can either select a specific
 value depending on its position in the list (with the first position
-treated as ‘zero’). For example:</p>
-<p>value.split(“,”)[0]</p>
-<p>Would extract the first value from the array created by the ‘split’
-function. In the above example this would be “Monday”</p>
-<p>You can also join arrays together to make a ‘String’. The GREL
-expression would look like: value.split(“,”).sort().join(“,”)</p>
+treated as <em>zero</em>). For example:</p>
+<p>value.split(<strong>,</strong>)[0]</p>
+<p>Would extract the first value from the array created by the <em>split</em>
+function. In the above example this would be <strong>Monday</strong></p>
+<p>You can also join arrays together to make a <em>String</em>. The GREL
+expression would look like: value.split(<strong>,</strong>).sort().join(<strong>,</strong>)</p>
 <p>Taking the above example again, this would result in a string with
 the days of the week in alphabetical order, listed with commas
 between each day.</p>
-</div></blockquote>
-</li>
-</ul>
 </div>
 <div class="section" id="regular-expressions">
-<h2>5.2. Regular Expressions<a class="headerlink" href="#regular-expressions" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p>A ‘regular expression’ (sometimes called a ‘regex’) is a way of
+<h3>2.4.2. Regular Expressions<a class="headerlink" href="#regular-expressions" title="Permalink to this headline">¶</a></h3>
+<p>A <em>regular expression</em> (sometimes called a <em>regex</em>) is a way of
 representing patterns in text strings. These can be used to search
 for text that matches the pattern represented by the regular
-expression. Regular expressions typically surrounded by ‘/‘
+expression. Regular expressions typically surrounded by <em>/</em>
 characters.</p>
 <p>To write a regular expression you need to know the special syntax
 used to represent different types of characters that can occur in a
 text string. The table below introduces some of these:</p>
-</div></blockquote>
-<blockquote>
-<div><p>These special characters can be combined with any normal characters
-to form a regular expression. So to find both the ’s’ and ‘z’
-spellings of ‘organize/organise’) could be:</p>
+<p>These special characters can be combined with any normal characters
+to form a regular expression. So to find both the <em>s</em> and <em>z</em>
+spellings of <em>organize/organise</em>) could be:</p>
 <p>/organi.e/</p>
-<p>Here the ‘.’ character can represent any character and so this would
-match both ‘organise’ and ‘organize’. Because ‘.’ can represent any
+<p>Here the <em>.</em> character can represent any character and so this would
+match both <em>organise</em> and <em>organize</em>. Because <em>.</em> can represent any
 character this could also catch other patterns that might occur. To
 be more specific you could use:</p>
 <p>/organi[sz]e/</p>
 <p>These (and other) character matches can be combined with
-‘repetition’ operators, which allow you to say how many times a
+<em>repetition</em> operators, which allow you to say how many times a
 character or pattern is repeated. Repetition operators apply to the
 character or expression immediately preceding the operator. The
 repetition operations are:</p>
-</div></blockquote>
-<blockquote>
-<div><p>In addition you can specify exact numbers of repetitions, or a
+<p>In addition you can specify exact numbers of repetitions, or a
 maximum/minimum number of repetitions using curly brackets
 containing one or two numbers:</p>
 <p>/a{2}/</p>
-<p>Matches the letter ‘a’ appearing twice (i.e. matches ‘aa’)</p>
+<p>Matches the letter <em>a</em> appearing twice (i.e. matches <em>aa</em>)</p>
 <p>/a{2,4}/</p>
-<p>Matches the letter ‘a’ appearing a minimum of two times or a maximum
-of four times (i.e. matches any of ‘aa’, ‘aaa’, ‘aaaa’)</p>
+<p>Matches the letter <em>a</em> appearing a minimum of two times or a maximum
+of four times (i.e. matches any of <em>aa</em>, <em>aaa</em>, <em>aaaa</em>)</p>
 <p>There are many online resources which provide tutorials on using
 Regular Expressions, including:</p>
-</div></blockquote>
 <ul class="simple">
 <li><a class="reference external" href="http://www.regular-expressions.info/">*http://www.regular-expressions.info*</a></li>
 <li><a class="reference external" href="http://software-carpentry.org/v4/regexp/index.html">*http://software-carpentry.org/v4/regexp/index.html*</a></li>
@@ -1413,68 +948,60 @@ Regular Expressions, including:</p>
 </ul>
 </div>
 <div class="section" id="using-the-match-transformation-with-regular-expressions">
-<h2>5.3. Using the ‘match’ transformation with Regular Expressions<a class="headerlink" href="#using-the-match-transformation-with-regular-expressions" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p>Another feature of Regular Expressions is that you can ‘capture’
+<h3>2.4.3. Using the <em>match</em> transformation with Regular Expressions<a class="headerlink" href="#using-the-match-transformation-with-regular-expressions" title="Permalink to this headline">¶</a></h3>
+<p>Another feature of Regular Expressions is that you can <em>capture</em>
 parts of the matched string to do some further work with. In
-OpenRefine, this is particularly used with the ‘match’ function. The
-‘match’ function allows you to extract particular parts of a string
+OpenRefine, this is particularly used with the <em>match</em> function. The
+<em>match</em> function allows you to extract particular parts of a string
 by using a regular expression which captures parts of the matching
-string. To tell the ‘match’ function which bits of the matched
+string. To tell the <em>match</em> function which bits of the matched
 string you want to capture, you simply surround those parts of the
 regular expression with brackets ().</p>
 <p>For example, if you have strings like: pp. 40. G. Bryan &amp; Co: Oxford</p>
 <p>pp. 64. W. Cann: Plymouth</p>
 <p>pp. 92. Heath Cranton: London</p>
 <p>(representing number of pages, publisher and place of publication).
-You could use the ‘match’ function as follows</p>
-</div></blockquote>
+You could use the <em>match</em> function as follows</p>
+</div>
 <div class="section" id="value-match-pp-d">
-<h3>5.3.1. value.match(/pp. (\d*).*/)<a class="headerlink" href="#value-match-pp-d" title="Permalink to this headline">¶</a></h3>
-<blockquote>
-<div><p>This would find the number following ‘pp’ in each row and put it
+<h3>2.4.4. value.match(/pp. (\d*).*/)<a class="headerlink" href="#value-match-pp-d" title="Permalink to this headline">¶</a></h3>
+<p>This would find the number following <em>pp</em> in each row and put it
 into an OpenRefine Array - so for the rows above you would get:</p>
-<p>[“40”]</p>
-<p>[“64”]</p>
-<p>[“92”]</p>
-<p>In the ‘match’ function the regular expression used has to match the
+<p>[<strong>40</strong>]</p>
+<p>[<strong>64</strong>]</p>
+<p>[<strong>92</strong>]</p>
+<p>In the <em>match</em> function the regular expression used has to match the
 full string, but only the parts of the regular expression in
 brackets are put into the array. A more complex example with the
 same example strings might be:</p>
-</div></blockquote>
 </div>
 <div class="section" id="value-match-pp-d-s">
-<h3>5.3.2. value.match(/pp. (\d*)\. (.*):\s*(.*)/)<a class="headerlink" href="#value-match-pp-d-s" title="Permalink to this headline">¶</a></h3>
-<blockquote>
-<div><p>This has three capture groups - the page number, the publisher and
-the place of publication - getting the output:</p>
-<p>[&#8220;40&#8221;, &#8220;G. Bryan &amp; Co&#8221;, “Oxford”]</p>
-<p>[ &#8220;64&#8221;, &#8220;W. Cann&#8221;, “Plymouth”]</p>
-<p>[ &#8220;95&#8221;, &#8220;Erskine Macdonald&#8221;, “London”]</p>
-</div></blockquote>
-</div>
+<h3>2.4.5. value.match(/pp. (\d*)\. (.*):\s*(.*)/)<a class="headerlink" href="#value-match-pp-d-s" title="Permalink to this headline">¶</a></h3>
+<p>This has three capture groups - the page number, the publisher and
+the place of publication - getting the output:
+[&#8220;40&#8221;, &#8220;G. Bryan &amp; Co&#8221;, <strong>Oxford</strong>]</p>
+<p>[ &#8220;64&#8221;, &#8220;W. Cann&#8221;, <strong>Plymouth</strong>]</p>
+<p>[ &#8220;95&#8221;, &#8220;Erskine Macdonald&#8221;, <strong>London</strong>]</p>
 </div>
 <div class="section" id="exercise-8-extracting-dates-of-publication-from-the-place-of-publication-column">
-<h2>5.4. Exercise 8: Extracting dates of publication from the ‘Place of Publication’ column<a class="headerlink" href="#exercise-8-extracting-dates-of-publication-from-the-place-of-publication-column" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p>In Exercise 4 above you may have noted that in many cases where the
-‘date of publication’ value</p>
-<p>was blank, there was a date in the ‘place of publication’ column.
+<h3>2.4.6. Exercise 8: Extracting dates of publication from the <em>Place of Publication</em> column<a class="headerlink" href="#exercise-8-extracting-dates-of-publication-from-the-place-of-publication-column" title="Permalink to this headline">¶</a></h3>
+<p>In Exercise 4 above you may have noted that in many cases where the
+<em>date of publication</em> value</p>
+<p>was blank, there was a date in the <em>place of publication</em> column.
 This exercise is to use what you have learnt about facets,
 transformations, data types and regular expressions to extract these
-dates and put them in the ‘Date of Publication’ column.</p>
-</div></blockquote>
+dates and put them in the <em>Date of Publication</em> column.</p>
 <ul class="simple">
 <li>Make sure you are only working with records where the Date of
 Publication is blank [Hint: See Exercise 4]</li>
-<li>Working with the Place of Publication column, use the ‘Add column
-based on this column’ function [Hint: Look in the drop down menu for
+<li>Working with the Place of Publication column, use the <em>Add column
+based on this column</em> function [Hint: Look in the drop down menu for
 this column]</li>
-<li>Use the ‘match’ function with a regular expression to find where the
+<li>Use the <em>match</em> function with a regular expression to find where the
 Place of Publication column ends with a four digit number<ul>
-<li>When using the ‘match’ function, you have to use ‘capture groups’
-in your regular expression (see above under ‘Regular Expressions’)</li>
-<li>The output of the ‘match’ function is an Array - you’ll need to
+<li>When using the <em>match</em> function, you have to use <em>capture groups</em>
+in your regular expression (see above under <em>Regular Expressions</em>)</li>
+<li>The output of the <em>match</em> function is an Array - you*ll need to
 get a string value from this</li>
 </ul>
 </li>
@@ -1482,11 +1009,10 @@ get a string value from this</li>
 </div>
 </div>
 <div class="section" id="advanced-refine">
-<h1>6. Advanced Refine<a class="headerlink" href="#advanced-refine" title="Permalink to this headline">¶</a></h1>
+<h2>2.5. Advanced Refine<a class="headerlink" href="#advanced-refine" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="looking-up-data-from-a-url">
-<h2>6.1. Looking up data from a URL<a class="headerlink" href="#looking-up-data-from-a-url" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p>OpenRefine can retrieve data from URLs. This can be used in various
+<h3>2.5.1. Looking up data from a URL<a class="headerlink" href="#looking-up-data-from-a-url" title="Permalink to this headline">¶</a></h3>
+<p>OpenRefine can retrieve data from URLs. This can be used in various
 ways, including looking up additional information from a remote
 service, based on information in your OpenRefine data.</p>
 <p>As an example, you can look up names against the Virtual
@@ -1496,138 +1022,115 @@ information such as dates of birth/death and identifiers.</p>
 data from a remote service, and secondly to extract the relevant
 information from the data you have retrieved.</p>
 <p>To retrieve data from an external source, from the drop down menu at
-a column heading use the option ‘Edit column’ -&gt; ‘Add column by
-fetching URLs’.</p>
+a column heading use the option <em>Edit column</em> -&gt; <em>Add column by
+fetching URLs</em>.</p>
 <p>This will prompt you for a GREL expression to create a URL. Often
 this would be a URL that uses existing values in your data to build
 a query.</p>
-</div></blockquote>
 <p><a class="reference internal" href="_images/image1814.png"><img alt="image17" src="_images/image1814.png" style="width: 4.07128in; height: 3.17167in;" /></a></p>
-<blockquote>
-<div><p>For example if you have a list of Author names, and wish to retrieve
+<p>For example if you have a list of Author names, and wish to retrieve
 information from VIAF you can build a URL by appending the name to
 the end of a general VIAF URL as follows:</p>
 <p><a class="reference external" href="http://viaf.org/viaf/AutoSuggest?query">&#8220;h</a>t<a class="reference external" href="http://viaf.org/viaf/AutoSuggest?query">tp://viaf.org/viaf/AutoSuggest?query=&#8221;+</a>
 escape(value, &#8216;url&#8217;)</p>
 <p>(assuming that the column you are working from contains names the
-‘value’ variable will contain the value from the current cell)</p>
+<em>value</em> variable will contain the value from the current cell)</p>
 <p>This VIAF service returns a list of possible matches in a format
-called ‘JSON’. There is GREL function to extract data from JSON
-formatted data called ‘parseJSON’. This can be used to extract
+called <em>JSON</em>. There is GREL function to extract data from JSON
+formatted data called <em>parseJSON</em>. This can be used to extract
 values from the JSON retrieved from VIAF. For example the following
 expression will extract the first name with a VIAF ID.</p>
 <p>forEach(value.parseJson().result, v, v.term + &#8216; | &#8216; + v.viafid)[0]</p>
 <p>The process of retrieving data from external services in this way
 can be very slow, and is best used on small data sets</p>
-</div></blockquote>
 </div>
 <div class="section" id="exercise-9-retrieving-viaf-ids-for-authors">
-<h2>6.2. Exercise 9: Retrieving VIAF IDs for Authors<a class="headerlink" href="#exercise-9-retrieving-viaf-ids-for-authors" title="Permalink to this headline">¶</a></h2>
-<ul>
-<li><p class="first">Use the drop down menu at the top of the Date of Publication column
-and select ‘Text Filter’</p>
-</li>
-<li><p class="first">Type ‘1800’ into the Date of Publication text filter - this should
-reduce the number of records you are working with to about 26</p>
-</li>
-<li><p class="first">Use the drop down menu at the top of the Author column and select
-‘Edit column’ -&gt; ‘Add column by fetching URLs’</p>
-</li>
-<li><p class="first">In the ‘New column name’ box type “VIAF JSON”</p>
-</li>
-<li><p class="first">In the ‘Expression’ box, type the expression:</p>
+<h3>2.5.2. Exercise 9: Retrieving VIAF IDs for Authors<a class="headerlink" href="#exercise-9-retrieving-viaf-ids-for-authors" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
+<li>Use the drop down menu at the top of the Date of Publication column
+and select <em>Text Filter</em></li>
+<li>Type <em>1800</em> into the Date of Publication text filter - this should
+reduce the number of records you are working with to about 26</li>
+<li>Use the drop down menu at the top of the Author column and select
+<em>Edit column</em> -&gt; <em>Add column by fetching URLs</em></li>
+<li>In the <em>New column name</em> box type <strong>VIAF JSON</strong></li>
+<li>In the <em>Expression</em> box, type the expression:<ul>
 <li><a class="reference external" href="http://viaf.org/viaf/AutoSuggest?query">&#8220;h</a>t<a class="reference external" href="http://viaf.org/viaf/AutoSuggest?query">tp://viaf.org/viaf/AutoSuggest?query=&#8221;+</a>
 escape(value, &#8216;url&#8217;)</li>
 </ul>
 </li>
-<li><p class="first">Click ‘OK’</p>
-</li>
-<li><p class="first">Wait for OpenRefine to retrieve the data from VIAF - this may take a
-few minutes</p>
-</li>
-<li><p class="first">Use the drop down menu at the top of the new “VIAF JSON” column and
-select ‘’</p>
-</li>
-<li><p class="first">In the ‘Expression’ box, type the expression:</p>
-<ul class="simple">
+<li>Click <em>OK</em></li>
+<li>Wait for OpenRefine to retrieve the data from VIAF - this may take a
+few minutes</li>
+<li>Use the drop down menu at the top of the new <strong>VIAF JSON</strong> column and
+select **</li>
+<li>In the <em>Expression</em> box, type the expression:<ul>
 <li>forEach(value.parseJson().result, v, v.term + &#8216; | &#8216; +
 v.viafid)[0]</li>
 </ul>
-<blockquote>
-<div><p>This should leave some of the boxes in the column populated with
-author names and IDs from VIAF.</p>
-</div></blockquote>
 </li>
 </ul>
+<p>This should leave some of the boxes in the column populated with
+author names and IDs from VIAF.</p>
 </div>
 <div class="section" id="reconciliation-services">
-<h2>6.3. Reconciliation services<a class="headerlink" href="#reconciliation-services" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p>Reconciliation services allow you to lookup terms from your data in
+<h3>2.5.3. Reconciliation services<a class="headerlink" href="#reconciliation-services" title="Permalink to this headline">¶</a></h3>
+<p>Reconciliation services allow you to lookup terms from your data in
 OpenRefine against external services, and use values from the
 external services in your data.</p>
 <p>Reconciliation services can be more sophisticated and quicker than
 using the method described above to retrieve data from a URL.
-However, to use the ‘Reconciliation’ function in OpenRefine requires
+However, to use the <em>Reconciliation</em> function in OpenRefine requires
 the external resource to support the necessary service for
 OpenRefine to work with, which means unless the service you wish to
-use supports such a service you cannot use the ‘Reconciliation’
+use supports such a service you cannot use the <em>Reconciliation</em>
 approach.</p>
-</div></blockquote>
 </div>
 <div class="section" id="extensions">
-<h2>6.4. Extensions<a class="headerlink" href="#extensions" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p>The functionality in OpenRefine can be enhanced by ‘extensions’
+<h3>2.5.4. Extensions<a class="headerlink" href="#extensions" title="Permalink to this headline">¶</a></h3>
+<p>The functionality in OpenRefine can be enhanced by <em>extensions</em>
 which can be downloaded and installed to add functionality to your
 OpenRefine installation.</p>
 <p>A list of Extensions is given at
 <em>https://github.com/OpenRefine/OpenRefine/wiki/Extensions</em></p>
 <p>One of these extensions tries to work around the limitation of
 Reconciliation services described above, by making it possible to
-use a reconciliation service against ‘linked data’1 sources which
-have SPARQL endpoints2. For more information on this see the ‘RDF
-Extension’ at <em>http://</em> <em>refine.deri.ie</em>. An example of how this
+use a reconciliation service against <em>linked data*1 sources which
+have SPARQL endpoints2. For more information on this see the *RDF
+Extension</em> at <em>http://</em> <em>refine.deri.ie</em>. An example of how this
 works is given in more detail at <a class="reference external" href="http://refine.deri.ie/">http://refine.deri.ie/</a> showcases.</p>
-</div></blockquote>
 </div>
 <div class="section" id="records-and-rows">
-<h2>6.5. Records and Rows<a class="headerlink" href="#records-and-rows" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p>All the examples above use OpenRefine in ‘Row’ mode, where it is
-assumed that each row in the table represents a ‘record’.</p>
+<h3>2.5.5. Records and Rows<a class="headerlink" href="#records-and-rows" title="Permalink to this headline">¶</a></h3>
+<p>All the examples above use OpenRefine in <em>Row</em> mode, where it is
+assumed that each row in the table represents a <em>record</em>.</p>
 <p>1 Linked Data is a specific data format that is seeing increased
-usage in the library and cultural heritage sector</p>
-<p>2 SPARQL is a language used to query ‘Linked Data’ and a “SPARQL
-Endpoint” is the URL to which such queries can be sent</p>
-<p>However, OpenRefine supports a more complex model of ‘Records’ which
+usage in the library and cultural heritage sector
+Introduction to OpenRefine</p>
+<p>2 SPARQL is a language used to query <em>Linked Data</em> and a <strong>SPARQL
+Endpoint</strong> is the URL to which such queries can be sent</p>
+<p>However, OpenRefine supports a more complex model of <em>Records</em> which
 allows you to have multiple values for a single column in a single
 record. For example, it is not unusual for a book to have multiple
-people (or ‘contributors’) involved in the creation of the book.</p>
-<p>In the screenshot below you can see the options to select a to ‘Show
-as’ rows or records, and also see how row 11 has tow contributors
+people (or <em>contributors</em>) involved in the creation of the book.</p>
+<p>In the screenshot below you can see the options to select a to <em>Show
+as</em> rows or records, and also see how row 11 has tow contributors
 listed.</p>
-</div></blockquote>
 <p><a class="reference internal" href="_images/image19.jpeg"><img alt="image18" src="_images/image19.jpeg" style="width: 6.70159in; height: 4.26937in;" /></a></p>
-<blockquote>
-<div><p>The “records’ approach is occasionally useful and can be used when
+<p>The <strong>records</strong> approach is occasionally useful and can be used when
 you have two rows in the original data set that represent the same
-‘thing’ (book/person/place/etc.) and wish to merge the two rows into
+<em>thing</em> (book/person/place/etc.) and wish to merge the two rows into
 a single row, preserving information from both original rows.</p>
 <p>For more information on how you can create Records in OpenRefine see
-<em>http://</em>
-<em>googlerefine.blogspot.co.uk/2012/06/create-records-in-google-refine.html</em></p>
-</div></blockquote>
+<em>http://googlerefine.blogspot.co.uk/2012/06/create-records-in-google-refine.html</em></p>
 </div>
 <div class="section" id="using-the-cross-function-to-lookup-data-in-other-openrefine-projects">
-<h2>6.6. Using the ‘cross’ function to lookup data in other OpenRefine projects<a class="headerlink" href="#using-the-cross-function-to-lookup-data-in-other-openrefine-projects" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p>As well as looking up data in external systems using the methods
+<h3>2.5.6. Using the <em>cross</em> function to lookup data in other OpenRefine projects<a class="headerlink" href="#using-the-cross-function-to-lookup-data-in-other-openrefine-projects" title="Permalink to this headline">¶</a></h3>
+<p>As well as looking up data in external systems using the methods
 described above, it is also</p>
 <p>possible to look up data in other OpenRefine projects on the same
-computer. This is done using the ‘cross’ function.</p>
-<p>The ‘cross’ function takes a value from the OpenRefine project you
+computer. This is done using the <em>cross</em> function.</p>
+<p>The <em>cross</em> function takes a value from the OpenRefine project you
 are working on, and looks for that value in a column in another
 OpenRefine project. If it finds one or more matching rows in the
 second OpenRefine project, it returns an array containing the rows
@@ -1636,7 +1139,7 @@ that it has matched.</p>
 transformation to extract the values from any of the columns in the</p>
 <p>You can use to compare the contents of two OpenRefine projects, or
 to use data between the two projects.</p>
-</div></blockquote>
+</div>
 </div>
 </div>
 
@@ -1650,12 +1153,12 @@ to use data between the two projects.</p>
   </li>
   <a class="navLinkBg" id="navLinkBgLeft"  href="h7.html" ></a>
   
-  <li id="relations-next" class="navLink" title='Next Section - 7. Processing Data with Open Refine' data-toggle="tooltip" >
+  <li id="relations-next" class="navLink" title='Next Section - 3. Processing Data with Open Refine' data-toggle="tooltip" >
     <a href="open_refine_toctree.html" >
       <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
     </a>
   </li>
-  <a class="navLinkBg navLink" id="navLinkBgRight" href="open_refine_toctree.html" >Next Section - 7. Processing Data with Open Refine</a>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="open_refine_toctree.html" >Next Section - 3. Processing Data with Open Refine</a>
 
 <script type="text/javascript">
 
