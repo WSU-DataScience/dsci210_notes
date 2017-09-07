@@ -155,9 +155,8 @@ OpenRefine in various places online including:
     -  Click *Choose Files*
 
     -  Locate the file called *BL-Flickr-Images-Book-subset.csv* (this can
-       be downloaded from http://
-       `www.meanboyfriend.com/overdue\_ideas/wp-content/uploads/2015/02/BL-Flickr-Images-Book- <http://www.meanboyfriend.com/overdue_ideas/wp-content/uploads/2015/02/BL-Flickr-Images-Book->`__
-       subset.csv)
+       be downloaded from 
+       `this link <http://www.google.com/url?q=http%3A%2F%2Fwww.meanboyfriend.com%2Foverdue_ideas%2Fwp-content%2Fuploads%2F2015%2F02%2FBL-Flickr-Images-Book-subset.csv&sa=D&sntz=1&usg=AFQjCNGfYuz-USkcuALufjWZ1rGSKEz4vQ>`_
 
     -  Click *Next*
 
