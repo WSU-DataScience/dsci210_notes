@@ -290,20 +290,22 @@
 </li>
 <li><a class="reference internal" href="#data-types-and-regular-expressions">2.4. Data types and Regular Expressions</a><ul>
 <li><a class="reference internal" href="#data-types-in-openrefine">2.4.1. Data types in OpenRefine</a></li>
-<li><a class="reference internal" href="#regular-expressions">2.4.2. Regular Expressions</a></li>
-<li><a class="reference internal" href="#using-the-match-transformation-with-regular-expressions">2.4.3. Using the <em>match</em> transformation with Regular Expressions</a></li>
-<li><a class="reference internal" href="#value-match-pp-d">2.4.4. value.match(/pp. (\d*).*/)</a></li>
-<li><a class="reference internal" href="#value-match-pp-d-s">2.4.5. value.match(/pp. (\d*)\. (.*):\s*(.*)/)</a></li>
-<li><a class="reference internal" href="#exercise-8-extracting-dates-of-publication-from-the-place-of-publication-column">2.4.6. Exercise 8: Extracting dates of publication from the <em>Place of Publication</em> column</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#advanced-refine">2.5. Advanced Refine</a><ul>
-<li><a class="reference internal" href="#looking-up-data-from-a-url">2.5.1. Looking up data from a URL</a></li>
-<li><a class="reference internal" href="#exercise-9-retrieving-viaf-ids-for-authors">2.5.2. Exercise 9: Retrieving VIAF IDs for Authors</a></li>
-<li><a class="reference internal" href="#reconciliation-services">2.5.3. Reconciliation services</a></li>
-<li><a class="reference internal" href="#extensions">2.5.4. Extensions</a></li>
-<li><a class="reference internal" href="#records-and-rows">2.5.5. Records and Rows</a></li>
-<li><a class="reference internal" href="#using-the-cross-function-to-lookup-data-in-other-openrefine-projects">2.5.6. Using the <em>cross</em> function to lookup data in other OpenRefine projects</a></li>
+<li><a class="reference internal" href="#regular-expressions">2.5. Regular Expressions</a><ul>
+<li><a class="reference internal" href="#using-the-match-transformation-with-regular-expressions">2.5.1. Using the <em>match</em> transformation with Regular Expressions</a></li>
+<li><a class="reference internal" href="#value-match-pp-d">2.5.2. value.match(/pp. (\d*).*/)</a></li>
+<li><a class="reference internal" href="#value-match-pp-d-s">2.5.3. value.match(/pp. (\d*)\. (.*):\s*(.*)/)</a></li>
+<li><a class="reference internal" href="#exercise-8-extracting-dates-of-publication-from-the-place-of-publication-column">2.5.4. Exercise 8: Extracting dates of publication from the <em>Place of Publication</em> column</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#advanced-refine">2.6. Advanced Refine</a><ul>
+<li><a class="reference internal" href="#looking-up-data-from-a-url">2.6.1. Looking up data from a URL</a></li>
+<li><a class="reference internal" href="#exercise-9-retrieving-viaf-ids-for-authors">2.6.2. Exercise 9: Retrieving VIAF IDs for Authors</a></li>
+<li><a class="reference internal" href="#reconciliation-services">2.6.3. Reconciliation services</a></li>
+<li><a class="reference internal" href="#extensions">2.6.4. Extensions</a></li>
+<li><a class="reference internal" href="#records-and-rows">2.6.5. Records and Rows</a></li>
+<li><a class="reference internal" href="#using-the-cross-function-to-lookup-data-in-other-openrefine-projects">2.6.6. Using the <em>cross</em> function to lookup data in other OpenRefine projects</a></li>
 </ul>
 </li>
 </ul>
@@ -771,8 +773,8 @@ in the column</em> - that is, <strong>make no change</strong>.</p>
 <p>GREL functions are written by giving a value of some kind (a text
 string, a date, a number etc.) to a GREL function. Some GREL
 functions take additional parameters or options which control how
-the function works. GREL supports two syntaxes:</p>
-<p><code class="docutils literal"><span class="pre">value.function(options)</span> <span class="pre">function(value,</span> <span class="pre">options)</span></code></p>
+the function works. GREL supports two syntaxes:
+<code class="docutils literal"><span class="pre">value.function(options)</span></code> or <code class="docutils literal"><span class="pre">function(value,</span> <span class="pre">options)</span></code></p>
 <p>Either is valid, and which is used is completely down to personal
 preference. Next to the <em>Preview</em> option are options to view:</p>
 <ul class="simple">
@@ -785,16 +787,21 @@ to use them</li>
 </ul>
 <div class="section" id="some-simple-transformations">
 <h3>2.3.1. Some simple transformations<a class="headerlink" href="#some-simple-transformations" title="Permalink to this headline">¶</a></h3>
-<blockquote>
-<div><strong>Exercise 7: Cleaning up Date of Publication using simple
-transformations</strong></div></blockquote>
-<ul class="simple">
+<p><a class="reference internal" href="_images/simple_transforms.png"><img alt="image23" src="_images/simple_transforms.png" style="width: 7.68in; height: 5.29in;" /></a></p>
+<div class="admonition-exercise-7-cleaning-up-date-of-publication-using-simple-transformations admonition">
+<p class="first admonition-title">Exercise 7: Cleaning up Date of Publication using simple transformations</p>
+<ul class="last simple">
 <li>Create a facet based on the Date of Publication column</li>
 <li>Sort the facet by <em>name</em></li>
 <li>What are common issues with the values in this list?</li>
 <li>Use the <em>replace</em> GREL expression to remove the characters [, ] and ?
 from the Date of Publication column</li>
+<li>What other issues can you see with the data of publication column?</li>
+<li>What approaches might you use to overcome these issues?</li>
+<li>Do you think it is possible to achieve a single coumn with a four digit
+data in it to represent data of publication?</li>
 </ul>
+</div>
 </div>
 <div class="section" id="undo-and-redo">
 <h3>2.3.2. Undo and Redo<a class="headerlink" href="#undo-and-redo" title="Permalink to this headline">¶</a></h3>
@@ -861,52 +868,60 @@ are:</p>
 </ul>
 <p>The first three are hopefully self-explanatory, but the latter two
 may require slightly more explanation.</p>
-<p>A <strong>*Boolean*</strong> is a binary value that can either be <em>true</em> or
+<p>A <strong>Boolean</strong> is a binary value that can either be <em>true</em> or
 <em>false</em>. Boolean values can be used directly in OpenRefine cell, but
 is more often used in transformations as part of a GREL expression.
-For example:</p>
-<p>value.contains(<a href="#id2"><span class="problematic" id="id3">**</span></a>test&#8221;)</p>
+For example: <code class="docutils literal"><span class="pre">value.contains(&quot;test&quot;)</span></code></p>
 <p>Generates a boolean value of either <em>true</em> or <em>false</em> depending on
 whether the current value in the cell contains the text <em>test</em>
 anywhere. Such tests can be combined with other GREL expressions to
 create more complex transformations.</p>
-<p>An <strong>*Array*</strong> is a list of values, represented in Refine by the use
+<p>An <strong>Array</strong> is a list of values, represented in Refine by the use
 of square brackets containing a list of values surrounded by
 inverted commas and separated by commas. For example an array
 listing the days of the week would look like:
-[<strong>Monday</strong>,**Tuesday**,**Wednesday**,**Thursday**,**Friday**,**Saturday**,**Sunday**]</p>
+<code class="docutils literal"><span class="pre">[&quot;Monday&quot;,&quot;Tuesday&quot;,&quot;Wednesday&quot;,&quot;Thursday&quot;,&quot;Friday&quot;,&quot;Saturday&quot;,&quot;Sunday&quot;]</span></code></p>
 <p>Arrays can be sorted, de-duplicated, and manipulated in other ways
 in GREL expressions, but cannot appear directly in an OpenRefine
 cell. Arrays in OpenRefine are usually the result of a
 transformation. For example the <em>split</em> function takes a string, and
 changes it into an array based on a <em>separator</em>. For example if a
 cell has the value:</p>
-<p><strong>Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday</strong> This can
-be transformed into an array using the <em>split</em> function:
-value.split(<strong>,</strong>)</p>
+<p><code class="docutils literal"><span class="pre">&quot;Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday&quot;</span></code></p>
+<p>This can be transformed into an array using the <em>split</em> function:
+<code class="docutils literal"><span class="pre">value.split(&quot;,&quot;)</span></code></p>
 <p>This would create the array containing the days of the week:
-[<strong>Monday</strong>,**Tuesday**,**Wednesday**,**Thursday**,**Friday**,**Saturday**,**Sunday**]</p>
+<code class="docutils literal"><span class="pre">[&quot;Monday&quot;,&quot;Tuesday&quot;,&quot;Wednesday&quot;,&quot;Thursday&quot;,&quot;Friday&quot;,&quot;Saturday&quot;,&quot;Sunday&quot;]</span></code></p>
 <p>This can be combined with array operations like <em>sort</em>. For example,
 assuming the cell contains the same value as above, then the
 function:</p>
-<p>value.split(<strong>,</strong>).sort()</p>
+<p><code class="docutils literal"><span class="pre">value.split(,).sort()</span></code></p>
 <p>Would result in an array containing the days of the week sorted in
 alphabetical order:
-[<strong>Friday</strong>,**Monday**,**Saturday**,**Sunday**,**Thursday**,**Tuesday**,**Wednesday**]</p>
+<code class="docutils literal"><span class="pre">[&quot;Friday&quot;,&quot;Monday&quot;,&quot;Saturday&quot;,&quot;Sunday&quot;,&quot;Thursday&quot;,&quot;Tuesday&quot;,&quot;Wednesday&quot;]</span></code></p>
 <p>To output a value from an array you can either select a specific
 value depending on its position in the list (with the first position
 treated as <em>zero</em>). For example:</p>
-<p>value.split(<strong>,</strong>)[0]</p>
+<p><code class="docutils literal"><span class="pre">value.split(&quot;,&quot;)[0]</span></code></p>
 <p>Would extract the first value from the array created by the <em>split</em>
-function. In the above example this would be <strong>Monday</strong></p>
+function. In the above example this would be <code class="docutils literal"><span class="pre">&quot;Monday&quot;</span></code></p>
 <p>You can also join arrays together to make a <em>String</em>. The GREL
-expression would look like: value.split(<strong>,</strong>).sort().join(<strong>,</strong>)</p>
+expression would look like:</p>
+<p><code class="docutils literal"><span class="pre">value.split(&quot;,&quot;).sort().join(&quot;,&quot;)</span></code></p>
 <p>Taking the above example again, this would result in a string with
 the days of the week in alphabetical order, listed with commas
 between each day.</p>
+<div class="admonition-exercise-8-splitting-up-the-shelfmarks-data admonition">
+<p class="first admonition-title">Exercise 8: Splitting up the shelfmarks data</p>
+<ul class="last simple">
+<li>Note that the shelfmark data is of the form <code class="docutils literal"><span class="pre">library</span> <span class="pre">code</span> <span class="pre">location</span></code>
+(e.g. <code class="docutils literal"><span class="pre">British</span> <span class="pre">Library</span> <span class="pre">HMNTS</span> <span class="pre">12641.b.30.</span></code>).  Make three new columns that contains each piece of information.  Be sure to join the libary information back together.</li>
+</ul>
+</div>
+</div>
 </div>
 <div class="section" id="regular-expressions">
-<h3>2.4.2. Regular Expressions<a class="headerlink" href="#regular-expressions" title="Permalink to this headline">¶</a></h3>
+<h2>2.5. Regular Expressions<a class="headerlink" href="#regular-expressions" title="Permalink to this headline">¶</a></h2>
 <p>A <em>regular expression</em> (sometimes called a <em>regex</em>) is a way of
 representing patterns in text strings. These can be used to search
 for text that matches the pattern represented by the regular
@@ -945,9 +960,8 @@ Regular Expressions, including:</p>
 <li><a class="reference external" href="http://www.codeproject.com/Articles/939/An-Introduction-to-Regular-Expressions">*http://www.codeproject.com/Articles/939/An-Introduction-to-Regular-Expressions*</a></li>
 <li><a class="reference external" href="http://regex.bastardsbook.com/">*http://regex.bastardsbook.com*</a></li>
 </ul>
-</div>
 <div class="section" id="using-the-match-transformation-with-regular-expressions">
-<h3>2.4.3. Using the <em>match</em> transformation with Regular Expressions<a class="headerlink" href="#using-the-match-transformation-with-regular-expressions" title="Permalink to this headline">¶</a></h3>
+<h3>2.5.1. Using the <em>match</em> transformation with Regular Expressions<a class="headerlink" href="#using-the-match-transformation-with-regular-expressions" title="Permalink to this headline">¶</a></h3>
 <p>Another feature of Regular Expressions is that you can <em>capture</em>
 parts of the matched string to do some further work with. In
 OpenRefine, this is particularly used with the <em>match</em> function. The
@@ -963,7 +977,7 @@ regular expression with brackets ().</p>
 You could use the <em>match</em> function as follows</p>
 </div>
 <div class="section" id="value-match-pp-d">
-<h3>2.4.4. value.match(/pp. (\d*).*/)<a class="headerlink" href="#value-match-pp-d" title="Permalink to this headline">¶</a></h3>
+<h3>2.5.2. value.match(/pp. (\d*).*/)<a class="headerlink" href="#value-match-pp-d" title="Permalink to this headline">¶</a></h3>
 <p>This would find the number following <em>pp</em> in each row and put it
 into an OpenRefine Array - so for the rows above you would get:</p>
 <p>[<strong>40</strong>]</p>
@@ -975,7 +989,7 @@ brackets are put into the array. A more complex example with the
 same example strings might be:</p>
 </div>
 <div class="section" id="value-match-pp-d-s">
-<h3>2.4.5. value.match(/pp. (\d*)\. (.*):\s*(.*)/)<a class="headerlink" href="#value-match-pp-d-s" title="Permalink to this headline">¶</a></h3>
+<h3>2.5.3. value.match(/pp. (\d*)\. (.*):\s*(.*)/)<a class="headerlink" href="#value-match-pp-d-s" title="Permalink to this headline">¶</a></h3>
 <p>This has three capture groups - the page number, the publisher and
 the place of publication - getting the output:
 [&#8220;40&#8221;, &#8220;G. Bryan &amp; Co&#8221;, <strong>Oxford</strong>]</p>
@@ -983,7 +997,7 @@ the place of publication - getting the output:
 <p>[ &#8220;95&#8221;, &#8220;Erskine Macdonald&#8221;, <strong>London</strong>]</p>
 </div>
 <div class="section" id="exercise-8-extracting-dates-of-publication-from-the-place-of-publication-column">
-<h3>2.4.6. Exercise 8: Extracting dates of publication from the <em>Place of Publication</em> column<a class="headerlink" href="#exercise-8-extracting-dates-of-publication-from-the-place-of-publication-column" title="Permalink to this headline">¶</a></h3>
+<h3>2.5.4. Exercise 8: Extracting dates of publication from the <em>Place of Publication</em> column<a class="headerlink" href="#exercise-8-extracting-dates-of-publication-from-the-place-of-publication-column" title="Permalink to this headline">¶</a></h3>
 <p>In Exercise 4 above you may have noted that in many cases where the
 <em>date of publication</em> value</p>
 <p>was blank, there was a date in the <em>place of publication</em> column.
@@ -1008,9 +1022,9 @@ get a string value from this</li>
 </div>
 </div>
 <div class="section" id="advanced-refine">
-<h2>2.5. Advanced Refine<a class="headerlink" href="#advanced-refine" title="Permalink to this headline">¶</a></h2>
+<h2>2.6. Advanced Refine<a class="headerlink" href="#advanced-refine" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="looking-up-data-from-a-url">
-<h3>2.5.1. Looking up data from a URL<a class="headerlink" href="#looking-up-data-from-a-url" title="Permalink to this headline">¶</a></h3>
+<h3>2.6.1. Looking up data from a URL<a class="headerlink" href="#looking-up-data-from-a-url" title="Permalink to this headline">¶</a></h3>
 <p>OpenRefine can retrieve data from URLs. This can be used in various
 ways, including looking up additional information from a remote
 service, based on information in your OpenRefine data.</p>
@@ -1044,7 +1058,7 @@ expression will extract the first name with a VIAF ID.</p>
 can be very slow, and is best used on small data sets</p>
 </div>
 <div class="section" id="exercise-9-retrieving-viaf-ids-for-authors">
-<h3>2.5.2. Exercise 9: Retrieving VIAF IDs for Authors<a class="headerlink" href="#exercise-9-retrieving-viaf-ids-for-authors" title="Permalink to this headline">¶</a></h3>
+<h3>2.6.2. Exercise 9: Retrieving VIAF IDs for Authors<a class="headerlink" href="#exercise-9-retrieving-viaf-ids-for-authors" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Use the drop down menu at the top of the Date of Publication column
 and select <em>Text Filter</em></li>
@@ -1073,7 +1087,7 @@ v.viafid)[0]</li>
 author names and IDs from VIAF.</p>
 </div>
 <div class="section" id="reconciliation-services">
-<h3>2.5.3. Reconciliation services<a class="headerlink" href="#reconciliation-services" title="Permalink to this headline">¶</a></h3>
+<h3>2.6.3. Reconciliation services<a class="headerlink" href="#reconciliation-services" title="Permalink to this headline">¶</a></h3>
 <p>Reconciliation services allow you to lookup terms from your data in
 OpenRefine against external services, and use values from the
 external services in your data.</p>
@@ -1086,7 +1100,7 @@ use supports such a service you cannot use the <em>Reconciliation</em>
 approach.</p>
 </div>
 <div class="section" id="extensions">
-<h3>2.5.4. Extensions<a class="headerlink" href="#extensions" title="Permalink to this headline">¶</a></h3>
+<h3>2.6.4. Extensions<a class="headerlink" href="#extensions" title="Permalink to this headline">¶</a></h3>
 <p>The functionality in OpenRefine can be enhanced by <em>extensions</em>
 which can be downloaded and installed to add functionality to your
 OpenRefine installation.</p>
@@ -1100,7 +1114,7 @@ Extension</em> at <em>http://</em> <em>refine.deri.ie</em>. An example of how th
 works is given in more detail at <a class="reference external" href="http://refine.deri.ie/">http://refine.deri.ie/</a> showcases.</p>
 </div>
 <div class="section" id="records-and-rows">
-<h3>2.5.5. Records and Rows<a class="headerlink" href="#records-and-rows" title="Permalink to this headline">¶</a></h3>
+<h3>2.6.5. Records and Rows<a class="headerlink" href="#records-and-rows" title="Permalink to this headline">¶</a></h3>
 <p>All the examples above use OpenRefine in <em>Row</em> mode, where it is
 assumed that each row in the table represents a <em>record</em>.</p>
 <p>1 Linked Data is a specific data format that is seeing increased
@@ -1124,7 +1138,7 @@ a single row, preserving information from both original rows.</p>
 <em>http://googlerefine.blogspot.co.uk/2012/06/create-records-in-google-refine.html</em></p>
 </div>
 <div class="section" id="using-the-cross-function-to-lookup-data-in-other-openrefine-projects">
-<h3>2.5.6. Using the <em>cross</em> function to lookup data in other OpenRefine projects<a class="headerlink" href="#using-the-cross-function-to-lookup-data-in-other-openrefine-projects" title="Permalink to this headline">¶</a></h3>
+<h3>2.6.6. Using the <em>cross</em> function to lookup data in other OpenRefine projects<a class="headerlink" href="#using-the-cross-function-to-lookup-data-in-other-openrefine-projects" title="Permalink to this headline">¶</a></h3>
 <p>As well as looking up data in external systems using the methods
 described above, it is also</p>
 <p>possible to look up data in other OpenRefine projects on the same
