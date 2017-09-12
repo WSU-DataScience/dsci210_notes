@@ -515,9 +515,8 @@ in the column* - that is, **make no change**.
 GREL functions are written by giving a value of some kind (a text
 string, a date, a number etc.) to a GREL function. Some GREL
 functions take additional parameters or options which control how
-the function works. GREL supports two syntaxes:
-
-``value.function(options) function(value, options)``
+the function works. GREL supports two syntaxes: 
+``value.function(options)`` or ``function(value, options)`` 
 
 Either is valid, and which is used is completely down to personal
 preference. Next to the *Preview* option are options to view:
@@ -534,37 +533,25 @@ preference. Next to the *Preview* option are options to view:
 Some simple transformations
 ---------------------------
 
-+---------------------------------------------------------------+---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-|     **GREL expression Examples Action carried out**           |
-+===============================================================+===================================================+=======================================================================================================================================================+
-|     **toUppercase(string)**                                   |     toUppercase(value) value.toUppercase()        |     Converts the current value to uppercase                                                                                                           |
-+---------------------------------------------------------------+---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-|     **toLowercase(string)**                                   |     toLowercase(value) value.toLowercase()        |     Converts the current value to lowercase                                                                                                           |
-+---------------------------------------------------------------+---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-|     **toTitlecase(string)**                                   |     toTitlecase(value) value.toTitlecase()        |     Converts the current value to titlecase (i.e. each word starts with an uppercase character and all other characters are converted to lowercase)   |
-+---------------------------------------------------------------+---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-|     **trim(string)**                                          |     trim(value) value.trim()                      |     Removes any *whitespace* characters (e.g. spaces, tabs) from the start or end of the current value                                                |
-+---------------------------------------------------------------+---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-|     **substring(string, number from, optional number to)**    |     substring(value, 0, 4) value.substring(0,4)   |     Finds the first four characters of the current value                                                                                              |
-+---------------------------------------------------------------+---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-|     **replace(string, string to find, replacement string)**   |     replace(value,**a**, **b**)                       |     Find the letter *a* in the current value and replace it with the letter *b*                                                                       |
-|                                                               |                                                   |                                                                                                                                                       |
-|                                                               |     value.substring(**a**, **b**)                     |                                                                                                                                                       |
-+---------------------------------------------------------------+---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-|     **+**                                                     |     **Prefix: ** + value                            |     Adds (concatenates) the word **Prefix** to the front of the current value                                                                           |
-+---------------------------------------------------------------+---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+|image23|
 
-    **Exercise 7: Cleaning up Date of Publication using simple
-    transformations**
+.. admonition:: Exercise 7: Cleaning up Date of Publication using simple transformations
 
--  Create a facet based on the Date of Publication column
+    -  Create a facet based on the Date of Publication column
 
--  Sort the facet by *name*
+    -  Sort the facet by *name*
 
--  What are common issues with the values in this list?
+    -  What are common issues with the values in this list?
 
--  Use the *replace* GREL expression to remove the characters [, ] and ?
-   from the Date of Publication column
+    -  Use the *replace* GREL expression to remove the characters [, ] and ?
+       from the Date of Publication column
+
+    - What other issues can you see with the data of publication column?
+
+    - What approaches might you use to overcome these issues?
+
+    - Do you think it is possible to achieve a single coumn with a four digit
+      data in it to represent data of publication?
 
 Undo and Redo
 -------------
@@ -650,23 +637,21 @@ are:
 The first three are hopefully self-explanatory, but the latter two
 may require slightly more explanation.
 
-A ***Boolean*** is a binary value that can either be *true* or
+A **Boolean** is a binary value that can either be *true* or
 *false*. Boolean values can be used directly in OpenRefine cell, but
 is more often used in transformations as part of a GREL expression.
-For example:
-
-value.contains(**test")
+For example: ``value.contains("test")``
 
 Generates a boolean value of either *true* or *false* depending on
 whether the current value in the cell contains the text *test*
 anywhere. Such tests can be combined with other GREL expressions to
 create more complex transformations.
 
-An ***Array*** is a list of values, represented in Refine by the use
+An **Array** is a list of values, represented in Refine by the use
 of square brackets containing a list of values surrounded by
 inverted commas and separated by commas. For example an array
 listing the days of the week would look like:
-[**Monday**,**Tuesday**,**Wednesday**,**Thursday**,**Friday**,**Saturday**,**Sunday**]
+``["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]``
 
 Arrays can be sorted, de-duplicated, and manipulated in other ways
 in GREL expressions, but cannot appear directly in an OpenRefine
@@ -675,41 +660,51 @@ transformation. For example the *split* function takes a string, and
 changes it into an array based on a *separator*. For example if a
 cell has the value:
 
-**Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday** This can
-be transformed into an array using the *split* function:
-value.split(**,**)
+``"Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday"``
+
+
+This can be transformed into an array using the *split* function:
+``value.split(",")``
 
 This would create the array containing the days of the week:
-[**Monday**,**Tuesday**,**Wednesday**,**Thursday**,**Friday**,**Saturday**,**Sunday**]
+``["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]``
 
 This can be combined with array operations like *sort*. For example,
 assuming the cell contains the same value as above, then the
 function:
 
-value.split(**,**).sort()
+``value.split(,).sort()``
 
 Would result in an array containing the days of the week sorted in
 alphabetical order:
-[**Friday**,**Monday**,**Saturday**,**Sunday**,**Thursday**,**Tuesday**,**Wednesday**]
+``["Friday","Monday","Saturday","Sunday","Thursday","Tuesday","Wednesday"]``
 
 To output a value from an array you can either select a specific
 value depending on its position in the list (with the first position
 treated as *zero*). For example:
 
-value.split(**,**)[0]
+``value.split(",")[0]``
 
 Would extract the first value from the array created by the *split*
-function. In the above example this would be **Monday**
+function. In the above example this would be ``"Monday"``
 
 You can also join arrays together to make a *String*. The GREL
-expression would look like: value.split(**,**).sort().join(**,**)
+expression would look like: 
+
+``value.split(",").sort().join(",")``
 
 Taking the above example again, this would result in a string with
 the days of the week in alphabetical order, listed with commas
 between each day.
 
+.. admonition:: Exercise 8: Splitting up the shelfmarks data
+
+
+    - Note that the shelfmark data is of the form ``library code location`` 
+      (e.g. ``British Library HMNTS 12641.b.30.``).  Make three new columns that contains each piece of information.  Be sure to join the libary information back together.
+
 Regular Expressions
--------------------
+===================
 
 A *regular expression* (sometimes called a *regex*) is a way of
 representing patterns in text strings. These can be used to search
@@ -1126,3 +1121,6 @@ to use data between the two projects.
 .. |image22| image:: img/open_refine/media/table4.png
    :width: 8.52in
    :height: 1.83in
+.. |image23| image:: img/open_refine/media/simple_transforms.png
+   :width: 7.68in
+   :height: 5.29in
