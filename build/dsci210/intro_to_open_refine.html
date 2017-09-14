@@ -286,26 +286,21 @@
 <li><a class="reference internal" href="#some-simple-transformations">2.3.1. Some simple transformations</a></li>
 <li><a class="reference internal" href="#undo-and-redo">2.3.2. Undo and Redo</a></li>
 <li><a class="reference internal" href="#exporting-data">2.3.3. Exporting data</a></li>
+<li><a class="reference internal" href="#data-types-and-regular-expressions">2.3.4. Data types and Regular Expressions</a></li>
+<li><a class="reference internal" href="#data-types-in-openrefine">2.3.5. Data types in OpenRefine</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#data-types-and-regular-expressions">2.4. Data types and Regular Expressions</a><ul>
-<li><a class="reference internal" href="#data-types-in-openrefine">2.4.1. Data types in OpenRefine</a></li>
+<li><a class="reference internal" href="#regular-expressions">2.4. Regular Expressions</a><ul>
+<li><a class="reference internal" href="#using-the-match-transformation-with-regular-expressions">2.4.1. Using the <code class="docutils literal"><span class="pre">match</span></code> transformation with Regular Expressions</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#regular-expressions">2.5. Regular Expressions</a><ul>
-<li><a class="reference internal" href="#using-the-match-transformation-with-regular-expressions">2.5.1. Using the <em>match</em> transformation with Regular Expressions</a></li>
-<li><a class="reference internal" href="#value-match-pp-d">2.5.2. value.match(/pp. (\d*).*/)</a></li>
-<li><a class="reference internal" href="#value-match-pp-d-s">2.5.3. value.match(/pp. (\d*)\. (.*):\s*(.*)/)</a></li>
-<li><a class="reference internal" href="#exercise-8-extracting-dates-of-publication-from-the-place-of-publication-column">2.5.4. Exercise 8: Extracting dates of publication from the <em>Place of Publication</em> column</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#advanced-refine">2.6. Advanced Refine</a><ul>
-<li><a class="reference internal" href="#looking-up-data-from-a-url">2.6.1. Looking up data from a URL</a></li>
-<li><a class="reference internal" href="#exercise-9-retrieving-viaf-ids-for-authors">2.6.2. Exercise 9: Retrieving VIAF IDs for Authors</a></li>
-<li><a class="reference internal" href="#reconciliation-services">2.6.3. Reconciliation services</a></li>
-<li><a class="reference internal" href="#extensions">2.6.4. Extensions</a></li>
-<li><a class="reference internal" href="#records-and-rows">2.6.5. Records and Rows</a></li>
-<li><a class="reference internal" href="#using-the-cross-function-to-lookup-data-in-other-openrefine-projects">2.6.6. Using the <em>cross</em> function to lookup data in other OpenRefine projects</a></li>
+<li><a class="reference internal" href="#advanced-refine">2.5. Advanced Refine</a><ul>
+<li><a class="reference internal" href="#looking-up-data-from-a-url">2.5.1. Looking up data from a URL</a></li>
+<li><a class="reference internal" href="#exercise-9-retrieving-viaf-ids-for-authors">2.5.2. Exercise 9: Retrieving VIAF IDs for Authors</a></li>
+<li><a class="reference internal" href="#reconciliation-services">2.5.3. Reconciliation services</a></li>
+<li><a class="reference internal" href="#extensions">2.5.4. Extensions</a></li>
+<li><a class="reference internal" href="#records-and-rows">2.5.5. Records and Rows</a></li>
+<li><a class="reference internal" href="#using-the-cross-function-to-lookup-data-in-other-openrefine-projects">2.5.6. Using the <em>cross</em> function to lookup data in other OpenRefine projects</a></li>
 </ul>
 </li>
 </ul>
@@ -847,13 +842,13 @@ tab-separated value (csv and tsv). You can also write a custom
 export, selecting to export specific fields, adding a header or
 footer and specifying the exact format.</p>
 </div>
-</div>
 <div class="section" id="data-types-and-regular-expressions">
-<h2>2.4. Data types and Regular Expressions<a class="headerlink" href="#data-types-and-regular-expressions" title="Permalink to this headline">¶</a></h2>
+<h3>2.3.4. Data types and Regular Expressions<a class="headerlink" href="#data-types-and-regular-expressions" title="Permalink to this headline">¶</a></h3>
 <p>Understanding data types and regular expressions will help you write
 more complex transformations using GREL.</p>
+</div>
 <div class="section" id="data-types-in-openrefine">
-<h3>2.4.1. Data types in OpenRefine<a class="headerlink" href="#data-types-in-openrefine" title="Permalink to this headline">¶</a></h3>
+<h3>2.3.5. Data types in OpenRefine<a class="headerlink" href="#data-types-in-openrefine" title="Permalink to this headline">¶</a></h3>
 <p>Every piece of data in OpenRefine is has a <em>type</em>. The most common
 <em>type</em> is a <em>string</em> - that is a piece of text. However there are
 other data types available and transformations let you convert data
@@ -916,52 +911,57 @@ between each day.</p>
 <ul class="last simple">
 <li>Note that the shelfmark data is of the form <code class="docutils literal"><span class="pre">library</span> <span class="pre">code</span> <span class="pre">location</span></code>
 (e.g. <code class="docutils literal"><span class="pre">British</span> <span class="pre">Library</span> <span class="pre">HMNTS</span> <span class="pre">12641.b.30.</span></code>).  Make three new columns that contains each piece of information.  Be sure to join the libary information back together.</li>
+<li>Did anything go wrong?  How did you check?  If there were problems, how
+might you fix them?</li>
 </ul>
 </div>
 </div>
 </div>
 <div class="section" id="regular-expressions">
-<h2>2.5. Regular Expressions<a class="headerlink" href="#regular-expressions" title="Permalink to this headline">¶</a></h2>
+<h2>2.4. Regular Expressions<a class="headerlink" href="#regular-expressions" title="Permalink to this headline">¶</a></h2>
 <p>A <em>regular expression</em> (sometimes called a <em>regex</em>) is a way of
 representing patterns in text strings. These can be used to search
 for text that matches the pattern represented by the regular
-expression. Regular expressions typically surrounded by <em>/</em>
+expression. Regular expressions typically surrounded by <code class="docutils literal"><span class="pre">/</span></code>
 characters.</p>
 <p>To write a regular expression you need to know the special syntax
 used to represent different types of characters that can occur in a
 text string. The table below introduces some of these:</p>
+<p><a class="reference internal" href="_images/reg_exp.png"><img alt="image24" src="_images/reg_exp.png" style="width: 7.61in; height: 7.12in;" /></a></p>
 <p>These special characters can be combined with any normal characters
-to form a regular expression. So to find both the <em>s</em> and <em>z</em>
+to form a regular expression. So to find both the <code class="docutils literal"><span class="pre">s</span></code> and <code class="docutils literal"><span class="pre">z</span></code>
 spellings of <em>organize/organise</em>) could be:</p>
-<p>/organi.e/</p>
-<p>Here the <em>.</em> character can represent any character and so this would
-match both <em>organise</em> and <em>organize</em>. Because <em>.</em> can represent any
+<p><code class="docutils literal"><span class="pre">/organi.e/</span></code></p>
+<p>Here the <code class="docutils literal"><span class="pre">.</span></code> character can represent any character and so this would
+match both <em>organise</em> and <em>organize</em>. Because <code class="docutils literal"><span class="pre">.</span></code> can represent any
 character this could also catch other patterns that might occur. To
 be more specific you could use:</p>
-<p>/organi[sz]e/</p>
+<p><code class="docutils literal"><span class="pre">/organi[sz]e/</span></code></p>
 <p>These (and other) character matches can be combined with
 <em>repetition</em> operators, which allow you to say how many times a
 character or pattern is repeated. Repetition operators apply to the
 character or expression immediately preceding the operator. The
 repetition operations are:</p>
+<p><a class="reference internal" href="_images/reg_exp_repeat.png"><img alt="image25" src="_images/reg_exp_repeat.png" style="width: 7.44in; height: 4.49in;" /></a></p>
 <p>In addition you can specify exact numbers of repetitions, or a
 maximum/minimum number of repetitions using curly brackets
 containing one or two numbers:</p>
-<p>/a{2}/</p>
-<p>Matches the letter <em>a</em> appearing twice (i.e. matches <em>aa</em>)</p>
-<p>/a{2,4}/</p>
+<p><code class="docutils literal"><span class="pre">/a{2}/</span></code></p>
+<p>Matches the letter <code class="docutils literal"><span class="pre">a</span></code> appearing twice (i.e. matches <code class="docutils literal"><span class="pre">aa</span></code>)</p>
+<p><code class="docutils literal"><span class="pre">/a{2,4}/</span></code></p>
 <p>Matches the letter <em>a</em> appearing a minimum of two times or a maximum
-of four times (i.e. matches any of <em>aa</em>, <em>aaa</em>, <em>aaaa</em>)</p>
+of four times (i.e. matches any of <code class="docutils literal"><span class="pre">aa</span></code>, <code class="docutils literal"><span class="pre">aaa</span></code>, <code class="docutils literal"><span class="pre">aaaa</span></code>)</p>
 <p>There are many online resources which provide tutorials on using
 Regular Expressions, including:</p>
 <ul class="simple">
-<li><a class="reference external" href="http://www.regular-expressions.info/">*http://www.regular-expressions.info*</a></li>
-<li><a class="reference external" href="http://software-carpentry.org/v4/regexp/index.html">*http://software-carpentry.org/v4/regexp/index.html*</a></li>
-<li><a class="reference external" href="http://www.codeproject.com/Articles/939/An-Introduction-to-Regular-Expressions">*http://www.codeproject.com/Articles/939/An-Introduction-to-Regular-Expressions*</a></li>
-<li><a class="reference external" href="http://regex.bastardsbook.com/">*http://regex.bastardsbook.com*</a></li>
+<li><a class="reference external" href="http://arcadiafalcone.net/GoogleRefineCheatSheets.pdf">Cheat Cheet</a></li>
+<li><a class="reference external" href="http://www.regular-expressions.info/">http://www.regular-expressions.info</a></li>
+<li><a class="reference external" href="http://software-carpentry.org/v4/regexp/index.html">http://software-carpentry.org/v4/regexp/index.html</a></li>
+<li><a class="reference external" href="http://www.codeproject.com/Articles/939/An-Introduction-to-Regular-Expressions">http://www.codeproject.com/Articles/939/An-Introduction-to-Regular-Expressions</a></li>
+<li><a class="reference external" href="http://regex.bastardsbook.com/">http://regex.bastardsbook.com</a></li>
 </ul>
 <div class="section" id="using-the-match-transformation-with-regular-expressions">
-<h3>2.5.1. Using the <em>match</em> transformation with Regular Expressions<a class="headerlink" href="#using-the-match-transformation-with-regular-expressions" title="Permalink to this headline">¶</a></h3>
+<h3>2.4.1. Using the <code class="docutils literal"><span class="pre">match</span></code> transformation with Regular Expressions<a class="headerlink" href="#using-the-match-transformation-with-regular-expressions" title="Permalink to this headline">¶</a></h3>
 <p>Another feature of Regular Expressions is that you can <em>capture</em>
 parts of the matched string to do some further work with. In
 OpenRefine, this is particularly used with the <em>match</em> function. The
@@ -969,62 +969,69 @@ OpenRefine, this is particularly used with the <em>match</em> function. The
 by using a regular expression which captures parts of the matching
 string. To tell the <em>match</em> function which bits of the matched
 string you want to capture, you simply surround those parts of the
-regular expression with brackets ().</p>
-<p>For example, if you have strings like: pp. 40. G. Bryan &amp; Co: Oxford</p>
-<p>pp. 64. W. Cann: Plymouth</p>
-<p>pp. 92. Heath Cranton: London</p>
-<p>(representing number of pages, publisher and place of publication).
-You could use the <em>match</em> function as follows</p>
+regular expression with brackets <code class="docutils literal"><span class="pre">()</span></code>.</p>
+<p>For example, if you have strings like:</p>
+<p><code class="docutils literal"><span class="pre">pp.</span> <span class="pre">40.</span> <span class="pre">G.</span> <span class="pre">Bryan</span> <span class="pre">&amp;</span> <span class="pre">Co:</span> <span class="pre">Oxford</span></code></p>
+<p><code class="docutils literal"><span class="pre">pp.</span> <span class="pre">64.</span> <span class="pre">W.</span> <span class="pre">Cann:</span> <span class="pre">Plymouth</span></code></p>
+<p><code class="docutils literal"><span class="pre">pp.</span> <span class="pre">92.</span> <span class="pre">Heath</span> <span class="pre">Cranton:</span> <span class="pre">London</span></code></p>
+<p>(representing number of pages, publisher and place of publication).</p>
+<div class="admonition-question admonition">
+<p class="first admonition-title">Question</p>
+<p class="last">Suppose that we want to match &#8220;pp. &#8221; including the space (and nothing
+else).  What is wrong with using the regular expression <code class="docutils literal"><span class="pre">/pp.</span> <span class="pre">/</span></code>?</p>
 </div>
-<div class="section" id="value-match-pp-d">
-<h3>2.5.2. value.match(/pp. (\d*).*/)<a class="headerlink" href="#value-match-pp-d" title="Permalink to this headline">¶</a></h3>
-<p>This would find the number following <em>pp</em> in each row and put it
+<p>The problem is matching the period!  The regular expression <code class="docutils literal"><span class="pre">/pp.</span> <span class="pre">/</span></code> would not
+only match <code class="docutils literal"><span class="pre">&quot;pp.</span> <span class="pre">&quot;</span></code>, but also strings like <code class="docutils literal"><span class="pre">&quot;ppa</span> <span class="pre">&quot;</span></code> and <code class="docutils literal"><span class="pre">&quot;ppz</span> <span class="pre">&quot;</span></code>.  Since
+<code class="docutils literal"><span class="pre">.</span></code> has a special meaning in a regular expression (an character), we need to
+<em>escape</em> this character to just match a period.  That is, you use <code class="docutils literal"><span class="pre">\.</span></code> to
+match a period, where putting the forward slash in front of the period is
+referred to as escaping the character.</p>
+<p>You could use the <code class="docutils literal"><span class="pre">match</span></code> function as follows</p>
+<p><code class="docutils literal"><span class="pre">value.match(/pp\.</span> <span class="pre">(d*)\.*/)</span></code></p>
+<p>This would find the number following <code class="docutils literal"><span class="pre">pp</span></code> in each row and put it
 into an OpenRefine Array - so for the rows above you would get:</p>
-<p>[<strong>40</strong>]</p>
-<p>[<strong>64</strong>]</p>
-<p>[<strong>92</strong>]</p>
-<p>In the <em>match</em> function the regular expression used has to match the
-full string, but only the parts of the regular expression in
-brackets are put into the array. A more complex example with the
-same example strings might be:</p>
-</div>
-<div class="section" id="value-match-pp-d-s">
-<h3>2.5.3. value.match(/pp. (\d*)\. (.*):\s*(.*)/)<a class="headerlink" href="#value-match-pp-d-s" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal"><span class="pre">[40]</span></code></p>
+<p><code class="docutils literal"><span class="pre">[64]</span></code></p>
+<p><code class="docutils literal"><span class="pre">[92]</span></code></p>
+<p>In the <code class="docutils literal"><span class="pre">match</span></code> function the regular expression used has to match the full
+string, but only the parts of the regular expression in brackets are put into
+the array. A more complex example with the same example strings might be:</p>
+<p><code class="docutils literal"><span class="pre">value.match(/pp\.</span> <span class="pre">(\d*)\.</span> <span class="pre">(.*):\s*(.*)/)</span></code></p>
 <p>This has three capture groups - the page number, the publisher and
-the place of publication - getting the output:
-[&#8220;40&#8221;, &#8220;G. Bryan &amp; Co&#8221;, <strong>Oxford</strong>]</p>
-<p>[ &#8220;64&#8221;, &#8220;W. Cann&#8221;, <strong>Plymouth</strong>]</p>
-<p>[ &#8220;95&#8221;, &#8220;Erskine Macdonald&#8221;, <strong>London</strong>]</p>
-</div>
-<div class="section" id="exercise-8-extracting-dates-of-publication-from-the-place-of-publication-column">
-<h3>2.5.4. Exercise 8: Extracting dates of publication from the <em>Place of Publication</em> column<a class="headerlink" href="#exercise-8-extracting-dates-of-publication-from-the-place-of-publication-column" title="Permalink to this headline">¶</a></h3>
+the place of publication - getting the output:</p>
+<p><code class="docutils literal"><span class="pre">[&quot;40&quot;,</span> <span class="pre">&quot;G.</span> <span class="pre">Bryan</span> <span class="pre">&amp;</span> <span class="pre">Co&quot;,</span> <span class="pre">&quot;Oxford&quot;]</span></code></p>
+<p><code class="docutils literal"><span class="pre">[</span> <span class="pre">&quot;64&quot;,</span> <span class="pre">&quot;W.</span> <span class="pre">Cann&quot;,</span> <span class="pre">&quot;Plymouth&quot;]</span></code></p>
+<p><code class="docutils literal"><span class="pre">[</span> <span class="pre">&quot;95&quot;,</span> <span class="pre">&quot;Erskine</span> <span class="pre">Macdonald&quot;,</span> <span class="pre">&quot;London&quot;]</span></code></p>
+<div class="admonition-exercise-8-extracting-dates-of-publication-from-the-place-of-publication-column admonition">
+<p class="first admonition-title">Exercise 8: Extracting dates of publication from the <em>Place of Publication</em> column</p>
 <p>In Exercise 4 above you may have noted that in many cases where the
 <em>date of publication</em> value</p>
 <p>was blank, there was a date in the <em>place of publication</em> column.
 This exercise is to use what you have learnt about facets,
 transformations, data types and regular expressions to extract these
 dates and put them in the <em>Date of Publication</em> column.</p>
-<ul class="simple">
+<ul class="last simple">
 <li>Make sure you are only working with records where the Date of
 Publication is blank [Hint: See Exercise 4]</li>
 <li>Working with the Place of Publication column, use the <em>Add column
 based on this column</em> function [Hint: Look in the drop down menu for
 this column]</li>
-<li>Use the <em>match</em> function with a regular expression to find where the
+<li>Use the <code class="docutils literal"><span class="pre">match</span></code> function with a regular expression to find where the
 Place of Publication column ends with a four digit number<ul>
-<li>When using the <em>match</em> function, you have to use <em>capture groups</em>
+<li>When using the <code class="docutils literal"><span class="pre">match</span></code> function, you have to use <em>capture groups</em>
 in your regular expression (see above under <em>Regular Expressions</em>)</li>
-<li>The output of the <em>match</em> function is an Array - you*ll need to
+<li>The output of the <code class="docutils literal"><span class="pre">match</span></code> function is an Array - you``ll need to
 get a string value from this</li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
+</div>
 <div class="section" id="advanced-refine">
-<h2>2.6. Advanced Refine<a class="headerlink" href="#advanced-refine" title="Permalink to this headline">¶</a></h2>
+<h2>2.5. Advanced Refine<a class="headerlink" href="#advanced-refine" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="looking-up-data-from-a-url">
-<h3>2.6.1. Looking up data from a URL<a class="headerlink" href="#looking-up-data-from-a-url" title="Permalink to this headline">¶</a></h3>
+<h3>2.5.1. Looking up data from a URL<a class="headerlink" href="#looking-up-data-from-a-url" title="Permalink to this headline">¶</a></h3>
 <p>OpenRefine can retrieve data from URLs. This can be used in various
 ways, including looking up additional information from a remote
 service, based on information in your OpenRefine data.</p>
@@ -1058,7 +1065,7 @@ expression will extract the first name with a VIAF ID.</p>
 can be very slow, and is best used on small data sets</p>
 </div>
 <div class="section" id="exercise-9-retrieving-viaf-ids-for-authors">
-<h3>2.6.2. Exercise 9: Retrieving VIAF IDs for Authors<a class="headerlink" href="#exercise-9-retrieving-viaf-ids-for-authors" title="Permalink to this headline">¶</a></h3>
+<h3>2.5.2. Exercise 9: Retrieving VIAF IDs for Authors<a class="headerlink" href="#exercise-9-retrieving-viaf-ids-for-authors" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Use the drop down menu at the top of the Date of Publication column
 and select <em>Text Filter</em></li>
@@ -1087,7 +1094,7 @@ v.viafid)[0]</li>
 author names and IDs from VIAF.</p>
 </div>
 <div class="section" id="reconciliation-services">
-<h3>2.6.3. Reconciliation services<a class="headerlink" href="#reconciliation-services" title="Permalink to this headline">¶</a></h3>
+<h3>2.5.3. Reconciliation services<a class="headerlink" href="#reconciliation-services" title="Permalink to this headline">¶</a></h3>
 <p>Reconciliation services allow you to lookup terms from your data in
 OpenRefine against external services, and use values from the
 external services in your data.</p>
@@ -1100,7 +1107,7 @@ use supports such a service you cannot use the <em>Reconciliation</em>
 approach.</p>
 </div>
 <div class="section" id="extensions">
-<h3>2.6.4. Extensions<a class="headerlink" href="#extensions" title="Permalink to this headline">¶</a></h3>
+<h3>2.5.4. Extensions<a class="headerlink" href="#extensions" title="Permalink to this headline">¶</a></h3>
 <p>The functionality in OpenRefine can be enhanced by <em>extensions</em>
 which can be downloaded and installed to add functionality to your
 OpenRefine installation.</p>
@@ -1114,7 +1121,7 @@ Extension</em> at <em>http://</em> <em>refine.deri.ie</em>. An example of how th
 works is given in more detail at <a class="reference external" href="http://refine.deri.ie/">http://refine.deri.ie/</a> showcases.</p>
 </div>
 <div class="section" id="records-and-rows">
-<h3>2.6.5. Records and Rows<a class="headerlink" href="#records-and-rows" title="Permalink to this headline">¶</a></h3>
+<h3>2.5.5. Records and Rows<a class="headerlink" href="#records-and-rows" title="Permalink to this headline">¶</a></h3>
 <p>All the examples above use OpenRefine in <em>Row</em> mode, where it is
 assumed that each row in the table represents a <em>record</em>.</p>
 <p>1 Linked Data is a specific data format that is seeing increased
@@ -1138,7 +1145,7 @@ a single row, preserving information from both original rows.</p>
 <em>http://googlerefine.blogspot.co.uk/2012/06/create-records-in-google-refine.html</em></p>
 </div>
 <div class="section" id="using-the-cross-function-to-lookup-data-in-other-openrefine-projects">
-<h3>2.6.6. Using the <em>cross</em> function to lookup data in other OpenRefine projects<a class="headerlink" href="#using-the-cross-function-to-lookup-data-in-other-openrefine-projects" title="Permalink to this headline">¶</a></h3>
+<h3>2.5.6. Using the <em>cross</em> function to lookup data in other OpenRefine projects<a class="headerlink" href="#using-the-cross-function-to-lookup-data-in-other-openrefine-projects" title="Permalink to this headline">¶</a></h3>
 <p>As well as looking up data in external systems using the methods
 described above, it is also</p>
 <p>possible to look up data in other OpenRefine projects on the same
