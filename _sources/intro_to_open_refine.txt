@@ -610,7 +610,7 @@ export, selecting to export specific fields, adding a header or
 footer and specifying the exact format.
 
 Data types and Regular Expressions
-==================================
+----------------------------------
 
 Understanding data types and regular expressions will help you write
 more complex transformations using GREL.
@@ -702,6 +702,8 @@ between each day.
 
     - Note that the shelfmark data is of the form ``library code location`` 
       (e.g. ``British Library HMNTS 12641.b.30.``).  Make three new columns that contains each piece of information.  Be sure to join the libary information back together.
+    - Did anything go wrong?  How did you check?  If there were problems, how
+      might you fix them?
 
 Regular Expressions
 ===================
@@ -709,53 +711,27 @@ Regular Expressions
 A *regular expression* (sometimes called a *regex*) is a way of
 representing patterns in text strings. These can be used to search
 for text that matches the pattern represented by the regular
-expression. Regular expressions typically surrounded by */*
+expression. Regular expressions typically surrounded by ``/``
 characters.
 
 To write a regular expression you need to know the special syntax
 used to represent different types of characters that can occur in a
 text string. The table below introduces some of these:
 
-+-------------------------------------------------------------------+------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|     **Type of character Regular expression syntax Explanation**   |
-+===================================================================+====================================+==============================================================================================================================================================================================================+
-|     **Any character**                                             |     .                              |     A *period* can represent any character at all - essentially a *wildcard*                                                                                                                                 |
-+-------------------------------------------------------------------+------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|     **A list or range of characters**                             |     [<list/range to be matched>]   |     You can put a list of characters or a range of characters inside square brackets to match any of the characters in the list. e.g.                                                                        |
-|                                                                   |                                    |                                                                                                                                                                                                              |
-|                                                                   |                                    |     [ABC]                                                                                                                                                                                                    |
-|                                                                   |                                    |                                                                                                                                                                                                              |
-|                                                                   |                                    |     matches A or B or C (note this is case sensitive). [A-Z]                                                                                                                                                 |
-|                                                                   |                                    |                                                                                                                                                                                                              |
-|                                                                   |                                    |     matches any uppercase letter [A-Za-z0-9]                                                                                                                                                                 |
-|                                                                   |                                    |                                                                                                                                                                                                              |
-|                                                                   |                                    |     matches any upper or lower case letter or any digit                                                                                                                                                      |
-+-------------------------------------------------------------------+------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|     **Any digit**                                                 |     \\d                            |     The syntax *\\d* will match any single digit character (equivalent to [0-9])                                                                                                                             |
-+-------------------------------------------------------------------+------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|     **Any *word* characters**                                     |     \\w                            |     The syntax *\\w* will match any character that can be part of a *word*. In practice this means any letter (upper or lower case), any digit or the underscore character. (equivalent to [A-Za-z0-9\_] )   |
-+-------------------------------------------------------------------+------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|     **Any *whitespace* characters**                               |     \\s                            |     The syntax *\\s* will match any *space* type character                                                                                                                                                   |
-|                                                                   |                                    |                                                                                                                                                                                                              |
-|                                                                   |                                    |     - such as a space, a tab, or a newline.                                                                                                                                                                  |
-+-------------------------------------------------------------------+------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|     **The start of a string**                                     |     ^                              |     The syntax *^* will match the start of the string - useful if you want to find strings that start with a specific pattern                                                                                |
-+-------------------------------------------------------------------+------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|     **The end of a string**                                       |     $                              |     The syntax *$* will match the start of the string - useful if you want to find strings that end with a specific pattern                                                                                  |
-+-------------------------------------------------------------------+------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|image24|
 
 These special characters can be combined with any normal characters
-to form a regular expression. So to find both the *s* and *z*
+to form a regular expression. So to find both the ``s`` and ``z``
 spellings of *organize/organise*) could be:
 
-/organi.e/
+``/organi.e/``
 
-Here the *.* character can represent any character and so this would
-match both *organise* and *organize*. Because *.* can represent any
+Here the ``.`` character can represent any character and so this would
+match both *organise* and *organize*. Because ``.`` can represent any
 character this could also catch other patterns that might occur. To
 be more specific you could use:
 
-/organi[sz]e/
+``/organi[sz]e/``
 
 These (and other) character matches can be combined with
 *repetition* operators, which allow you to say how many times a
@@ -763,54 +739,35 @@ character or pattern is repeated. Repetition operators apply to the
 character or expression immediately preceding the operator. The
 repetition operations are:
 
-+------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-|     **Repetition Meaning Explanation/Example character**   |
-+============================================================+================================================================================================+=================================================================================================+
-|     **\***                                                 |     The preceding character/ expression can be repeated any number of times (including zero)   |     The regular expression                                                                      |
-|                                                            |                                                                                                |                                                                                                 |
-|                                                            |                                                                                                |     **/.\*/**                                                                                   |
-|                                                            |                                                                                                |                                                                                                 |
-|                                                            |                                                                                                |     represents any text string at all (any character repeated any number of times)              |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-|     **+**                                                  |     The preceding character/ expression can be repeated one or more times                      |     Unlike the *\** using a *+* means the character must appear at least once. The expression   |
-|                                                            |                                                                                                |                                                                                                 |
-|                                                            |                                                                                                |     **/head\\s+/rest/**                                                                         |
-|                                                            |                                                                                                |                                                                                                 |
-|                                                            |                                                                                                |     would match *head rest* (one space), *head rest* (two spaces) but not *headrest*.           |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-|     **?**                                                  |     The preceding character/ expression can be repeated 1 or zero times                        |     Essentially makes a character optional in a regular expression. The regular expression      |
-|                                                            |                                                                                                |                                                                                                 |
-|                                                            |                                                                                                |     **/colou?r/**                                                                               |
-|                                                            |                                                                                                |                                                                                                 |
-|                                                            |                                                                                                |     would match both *colour* and *color*                                                       |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+|image25|
 
 In addition you can specify exact numbers of repetitions, or a
 maximum/minimum number of repetitions using curly brackets
 containing one or two numbers:
 
-/a{2}/
+``/a{2}/``
 
-Matches the letter *a* appearing twice (i.e. matches *aa*)
+Matches the letter ``a`` appearing twice (i.e. matches ``aa``)
 
-/a{2,4}/
+``/a{2,4}/``
 
 Matches the letter *a* appearing a minimum of two times or a maximum
-of four times (i.e. matches any of *aa*, *aaa*, *aaaa*)
+of four times (i.e. matches any of ``aa``, ``aaa``, ``aaaa``)
 
 There are many online resources which provide tutorials on using
 Regular Expressions, including:
 
--  `*http://www.regular-expressions.info* <http://www.regular-expressions.info/>`__
+-  `Cheat Cheet <http://arcadiafalcone.net/GoogleRefineCheatSheets.pdf>`_
+-  `http://www.regular-expressions.info <http://www.regular-expressions.info/>`__
 
--  `*http://software-carpentry.org/v4/regexp/index.html* <http://software-carpentry.org/v4/regexp/index.html>`__
+-  `http://software-carpentry.org/v4/regexp/index.html <http://software-carpentry.org/v4/regexp/index.html>`__
 
--  `*http://www.codeproject.com/Articles/939/An-Introduction-to-Regular-Expressions* <http://www.codeproject.com/Articles/939/An-Introduction-to-Regular-Expressions>`__
+-  `http://www.codeproject.com/Articles/939/An-Introduction-to-Regular-Expressions <http://www.codeproject.com/Articles/939/An-Introduction-to-Regular-Expressions>`__
 
--  `*http://regex.bastardsbook.com* <http://regex.bastardsbook.com/>`__
+-  `http://regex.bastardsbook.com <http://regex.bastardsbook.com/>`__
 
-Using the *match* transformation with Regular Expressions
----------------------------------------------------------
+Using the ``match`` transformation with Regular Expressions
+-----------------------------------------------------------
 
 Another feature of Regular Expressions is that you can *capture*
 parts of the matched string to do some further work with. In
@@ -819,71 +776,84 @@ OpenRefine, this is particularly used with the *match* function. The
 by using a regular expression which captures parts of the matching
 string. To tell the *match* function which bits of the matched
 string you want to capture, you simply surround those parts of the
-regular expression with brackets ().
+regular expression with brackets ``()``.
 
-For example, if you have strings like: pp. 40. G. Bryan & Co: Oxford
+For example, if you have strings like: 
 
-pp. 64. W. Cann: Plymouth
+``pp. 40. G. Bryan & Co: Oxford`` 
 
-pp. 92. Heath Cranton: London
+``pp. 64. W. Cann: Plymouth`` 
+
+``pp. 92. Heath Cranton: London`` 
 
 (representing number of pages, publisher and place of publication).
-You could use the *match* function as follows
 
-value.match(/pp. (\\d\*).\*/)
------------------------------
+.. admonition:: Question
 
-This would find the number following *pp* in each row and put it
+    Suppose that we want to match "pp. " including the space (and nothing
+    else).  What is wrong with using the regular expression ``/pp. /``?
+
+The problem is matching the period!  The regular expression ``/pp. /`` would not
+only match ``"pp. "``, but also strings like ``"ppa "`` and ``"ppz "``.  Since
+``.`` has a special meaning in a regular expression (an character), we need to
+*escape* this character to just match a period.  That is, you use ``\.`` to
+match a period, where putting the forward slash in front of the period is
+referred to as escaping the character.  
+
+You could use the ``match`` function as follows
+
+``value.match(/pp\. (d*)\.*/)``
+
+This would find the number following ``pp`` in each row and put it
 into an OpenRefine Array - so for the rows above you would get:
 
-[**40**]
+``[40]``
 
-[**64**]
+``[64]``
 
-[**92**]
+``[92]``
 
-In the *match* function the regular expression used has to match the
-full string, but only the parts of the regular expression in
-brackets are put into the array. A more complex example with the
-same example strings might be:
+In the ``match`` function the regular expression used has to match the full
+string, but only the parts of the regular expression in brackets are put into
+the array. A more complex example with the same example strings might be:
 
-value.match(/pp. (\\d\*)\\. (.\*):\\s\*(.\*)/)
-----------------------------------------------
+``value.match(/pp\. (\d*)\. (.*):\s*(.*)/)``
+
 
 This has three capture groups - the page number, the publisher and
 the place of publication - getting the output:
-["40", "G. Bryan & Co", **Oxford**]
 
-[ "64", "W. Cann", **Plymouth**]
+``["40", "G. Bryan & Co", "Oxford"]``
 
-[ "95", "Erskine Macdonald", **London**]
+``[ "64", "W. Cann", "Plymouth"]``
 
-Exercise 8: Extracting dates of publication from the *Place of Publication* column
-----------------------------------------------------------------------------------
+``[ "95", "Erskine Macdonald", "London"]``
 
-In Exercise 4 above you may have noted that in many cases where the
-*date of publication* value
+.. admonition:: Exercise 8: Extracting dates of publication from the *Place of Publication* column
 
-was blank, there was a date in the *place of publication* column.
-This exercise is to use what you have learnt about facets,
-transformations, data types and regular expressions to extract these
-dates and put them in the *Date of Publication* column.
+    In Exercise 4 above you may have noted that in many cases where the
+    *date of publication* value
 
--  Make sure you are only working with records where the Date of
-   Publication is blank [Hint: See Exercise 4]
+    was blank, there was a date in the *place of publication* column.
+    This exercise is to use what you have learnt about facets,
+    transformations, data types and regular expressions to extract these
+    dates and put them in the *Date of Publication* column.
 
--  Working with the Place of Publication column, use the *Add column
-   based on this column* function [Hint: Look in the drop down menu for
-   this column]
+    -  Make sure you are only working with records where the Date of
+       Publication is blank [Hint: See Exercise 4]
 
--  Use the *match* function with a regular expression to find where the
-   Place of Publication column ends with a four digit number
+    -  Working with the Place of Publication column, use the *Add column
+       based on this column* function [Hint: Look in the drop down menu for
+       this column]
 
-   -  When using the *match* function, you have to use *capture groups*
-      in your regular expression (see above under *Regular Expressions*)
+    -  Use the ``match`` function with a regular expression to find where the
+       Place of Publication column ends with a four digit number
 
-   -  The output of the *match* function is an Array - you*ll need to
-      get a string value from this
+       -  When using the ``match`` function, you have to use *capture groups*
+          in your regular expression (see above under *Regular Expressions*)
+
+       -  The output of the ``match`` function is an Array - you``ll need to
+          get a string value from this
 
 Advanced Refine
 ===============
@@ -1124,3 +1094,9 @@ to use data between the two projects.
 .. |image23| image:: img/open_refine/media/simple_transforms.png
    :width: 7.68in
    :height: 5.29in
+.. |image24| image:: img/open_refine/media/reg_exp.png
+   :width: 7.61in
+   :height: 7.12in
+.. |image25| image:: img/open_refine/media/reg_exp_repeat.png
+   :width: 7.44in
+   :height: 4.49in
