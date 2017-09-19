@@ -292,6 +292,7 @@
 </li>
 <li><a class="reference internal" href="#regular-expressions">2.4. Regular Expressions</a><ul>
 <li><a class="reference internal" href="#using-the-match-transformation-with-regular-expressions">2.4.1. Using the <code class="docutils literal"><span class="pre">match</span></code> transformation with Regular Expressions</a></li>
+<li><a class="reference internal" href="#column-references">2.4.2. Column References</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#advanced-refine">2.5. Advanced Refine</a><ul>
@@ -954,7 +955,7 @@ of four times (i.e. matches any of <code class="docutils literal"><span class="p
 <p>There are many online resources which provide tutorials on using
 Regular Expressions, including:</p>
 <ul class="simple">
-<li><a class="reference external" href="http://arcadiafalcone.net/GoogleRefineCheatSheets.pdf">Cheat Cheet</a></li>
+<li><a class="reference external" href="http://arcadiafalcone.net/GoogleRefineCheatSheets.pdf">Cheat Sheet</a></li>
 <li><a class="reference external" href="http://www.regular-expressions.info/">http://www.regular-expressions.info</a></li>
 <li><a class="reference external" href="http://software-carpentry.org/v4/regexp/index.html">http://software-carpentry.org/v4/regexp/index.html</a></li>
 <li><a class="reference external" href="http://www.codeproject.com/Articles/939/An-Introduction-to-Regular-Expressions">http://www.codeproject.com/Articles/939/An-Introduction-to-Regular-Expressions</a></li>
@@ -987,7 +988,7 @@ only match <code class="docutils literal"><span class="pre">&quot;pp.</span> <sp
 match a period, where putting the forward slash in front of the period is
 referred to as escaping the character.</p>
 <p>You could use the <code class="docutils literal"><span class="pre">match</span></code> function as follows</p>
-<p><code class="docutils literal"><span class="pre">value.match(/pp\.</span> <span class="pre">(d*)\.*/)</span></code></p>
+<p><code class="docutils literal"><span class="pre">value.match(/pp\.</span> <span class="pre">(d*)\..*/)</span></code></p>
 <p>This would find the number following <code class="docutils literal"><span class="pre">pp</span></code> in each row and put it
 into an OpenRefine Array - so for the rows above you would get:</p>
 <p><code class="docutils literal"><span class="pre">[40]</span></code></p>
@@ -1002,28 +1003,98 @@ the place of publication - getting the output:</p>
 <p><code class="docutils literal"><span class="pre">[&quot;40&quot;,</span> <span class="pre">&quot;G.</span> <span class="pre">Bryan</span> <span class="pre">&amp;</span> <span class="pre">Co&quot;,</span> <span class="pre">&quot;Oxford&quot;]</span></code></p>
 <p><code class="docutils literal"><span class="pre">[</span> <span class="pre">&quot;64&quot;,</span> <span class="pre">&quot;W.</span> <span class="pre">Cann&quot;,</span> <span class="pre">&quot;Plymouth&quot;]</span></code></p>
 <p><code class="docutils literal"><span class="pre">[</span> <span class="pre">&quot;95&quot;,</span> <span class="pre">&quot;Erskine</span> <span class="pre">Macdonald&quot;,</span> <span class="pre">&quot;London&quot;]</span></code></p>
-<div class="admonition-exercise-8-extracting-dates-of-publication-from-the-place-of-publication-column admonition">
-<p class="first admonition-title">Exercise 8: Extracting dates of publication from the <em>Place of Publication</em> column</p>
-<p>In Exercise 4 above you may have noted that in many cases where the
-<em>date of publication</em> value</p>
-<p>was blank, there was a date in the <em>place of publication</em> column.
-This exercise is to use what you have learnt about facets,
-transformations, data types and regular expressions to extract these
-dates and put them in the <em>Date of Publication</em> column.</p>
+<div class="admonition-task-find-the-offending-rows admonition">
+<p class="first admonition-title">Task - Find the offending rows</p>
+<p>There are a number of rows that have information like that found in the above
+examples, all stored in the <em>Place of Publication</em> column.</p>
 <ul class="last simple">
-<li>Make sure you are only working with records where the Date of
-Publication is blank [Hint: See Exercise 4]</li>
-<li>Working with the Place of Publication column, use the <em>Add column
-based on this column</em> function [Hint: Look in the drop down menu for
-this column]</li>
-<li>Use the <code class="docutils literal"><span class="pre">match</span></code> function with a regular expression to find where the
-Place of Publication column ends with a four digit number<ul>
-<li>When using the <code class="docutils literal"><span class="pre">match</span></code> function, you have to use <em>capture groups</em>
-in your regular expression (see above under <em>Regular Expressions</em>)</li>
-<li>The output of the <code class="docutils literal"><span class="pre">match</span></code> function is an Array - you``ll need to
-get a string value from this</li>
+<li>Place a text filter on the <em>Place of Publication</em> column and search for
+<code class="docutils literal"><span class="pre">pp.</span></code>.</li>
+<li>What information is stored in this field (in addition to the place of
+publication).  Notice that this information is missing from the respective
+columns.</li>
 </ul>
-</li>
+</div>
+<p>The last exercise illustrates a common problem when working with data that has
+been merged from many sources: at least one of the sources has multiple
+variables stored in one column.  This is a clear violation of our golden rule of
+storing data (one column per variable).  Let&#8217;s clean this up.</p>
+<div class="admonition-task-make-a-regular-expression-to-capture-the-information admonition">
+<p class="first admonition-title">Task - Make a regular expression to capture the information</p>
+<p>Make a regular expression that captures all of the following pieces of
+information.</p>
+<ul class="last simple">
+<li>The number that follows the <code class="docutils literal"><span class="pre">pp.</span></code></li>
+<li>The publisher</li>
+<li>The place of publication</li>
+<li>The date  of publication</li>
+</ul>
+</div>
+</div>
+<div class="section" id="column-references">
+<h3>2.4.2. Column References<a class="headerlink" href="#column-references" title="Permalink to this headline">¶</a></h3>
+<p>To make use of this information, we will need to reference the <em>Place of
+Publication</em> column in expression for other cells (like <em>Publisher</em>).
+This will require us to use a <strong>column reference</strong>.  So far, all of our
+transformations have started with <code class="docutils literal"><span class="pre">value</span></code>, which is reference to the current
+value of each respective cell.</p>
+<p>GREL also allows us to reference a cell using <code class="docutils literal"><span class="pre">cell[col_name].value</span></code>, where
+<code class="docutils literal"><span class="pre">col_name</span></code> is the name of a column in quotes.  For example,
+<code class="docutils literal"><span class="pre">cells[&quot;Publisher&quot;].value</span></code> refers to the value stored in the <em>Publisher</em>
+column of each respective cell.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">More information about how to reference various values in GREL expression can be
+found in the
+<a class="reference external" href="https://github.com/OpenRefine/OpenRefine/wiki/Variables">Variable documentation</a>.</p>
+</div>
+<p>We can use these references to pull data from one column into another column,
+which we illustrate in the following task.</p>
+<div class="admonition-task-pull-the-publisher-information-from-the-place-of-publication-column admonition">
+<p class="first admonition-title">Task - Pull the publisher information from the Place of Publication column.</p>
+<p>Let&#8217;s add the missing publisher information that we identified in the following
+task.  To do this, perform that following steps.</p>
+<ul class="last simple">
+<li>Make sure that you still have the <code class="docutils literal"><span class="pre">pp.</span></code> text filter in place</li>
+<li>Add a cell transformation to the <em>Publisher</em> column.</li>
+<li>Use <code class="docutils literal"><span class="pre">cells[&quot;Place</span> <span class="pre">of</span> <span class="pre">Publication].value</span></code> to reference the <em>Place of Publication</em>
+column.</li>
+<li>Use <code class="docutils literal"><span class="pre">match</span></code>, the earlier regular expression (e.g. <code class="docutils literal"><span class="pre">/pp.</span> <span class="pre">([xv]i*\.</span> <span class="pre">)?(\d*)\.</span>
+<span class="pre">(.*):</span> <span class="pre">(.*),</span> <span class="pre">\[?(\d*)\??\.?]?/</span></code>), and indexing to pull out the publisher.</li>
+</ul>
+</div>
+<p>Now you should complete what we have started by following the steps in the next
+exercise.</p>
+<div class="admonition-exercise-8-pull-out-the-other-publication-information-from-the-above-example admonition">
+<p class="first admonition-title">Exercise 8: Pull out the other publication information from the above example.</p>
+<ul class="last simple">
+<li>Use a similar transformation to fill in the date of publication.</li>
+<li>Finally, transform the <em>Place of Publication</em> to exclude the earlier
+information.</li>
+<li>When you apply the last transformation, all the rows disappear.  Why?</li>
+<li>One of the offending rows was the 8th row.  Verify that all of the
+transformations worked.</li>
+<li>Note that the order of our transformations was essential.  Why?</li>
+</ul>
+</div>
+<p>Next, use regular expressions to extract the shelfmark code from the <em>Shelfmark</em>
+columns.</p>
+<div class="admonition-exercise-9-extract-the-shelfmark admonition">
+<p class="first admonition-title">Exercise 9: Extract the shelfmark</p>
+<p>Notice that the first few columns of the <em>Shelfmark</em> column have the form
+<code class="docutils literal"><span class="pre">British</span> <span class="pre">Library</span> <span class="pre">HMNTS</span> <span class="pre">12641.b.30.</span></code>
+- Verify that all lines start with <code class="docutils literal"><span class="pre">British</span> <span class="pre">Library</span> <span class="pre">HMNTS</span></code> using a text filter</p>
+<blockquote>
+<div>with a regular expression.</div></blockquote>
+<ul class="last simple">
+<li>Use <code class="docutils literal"><span class="pre">match</span></code> to create a new column called <em>Shelfmark Code</em> that contains the
+code (e.g. <code class="docutils literal"><span class="pre">12641.b.30</span></code>)</li>
+<li>Use <code class="docutils literal"><span class="pre">match</span></code> to create a new column called <em>Shelfmark Code 1</em> that contains the first part of
+code (e.g. <code class="docutils literal"><span class="pre">12641</span></code>)</li>
+<li>Use <code class="docutils literal"><span class="pre">match</span></code> to create a new column called <em>Shelfmark Code 1</em> that contains the second part of
+code (e.g. <code class="docutils literal"><span class="pre">b</span></code>)</li>
+<li>Use <code class="docutils literal"><span class="pre">match</span></code> to create a new column called <em>Shelfmark Code 1</em> that contains the last part of
+code (e.g. <code class="docutils literal"><span class="pre">30</span></code>)</li>
 </ul>
 </div>
 </div>
