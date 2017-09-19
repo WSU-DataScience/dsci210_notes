@@ -757,7 +757,7 @@ of four times (i.e. matches any of ``aa``, ``aaa``, ``aaaa``)
 There are many online resources which provide tutorials on using
 Regular Expressions, including:
 
--  `Cheat Cheet <http://arcadiafalcone.net/GoogleRefineCheatSheets.pdf>`_
+-  `Cheat Sheet <http://arcadiafalcone.net/GoogleRefineCheatSheets.pdf>`_
 -  `http://www.regular-expressions.info <http://www.regular-expressions.info/>`__
 
 -  `http://software-carpentry.org/v4/regexp/index.html <http://software-carpentry.org/v4/regexp/index.html>`__
@@ -802,7 +802,7 @@ referred to as escaping the character.
 
 You could use the ``match`` function as follows
 
-``value.match(/pp\. (d*)\.*/)``
+``value.match(/pp\. (d*)\..*/)``
 
 This would find the number following ``pp`` in each row and put it
 into an OpenRefine Array - so for the rows above you would get:
@@ -829,31 +829,100 @@ the place of publication - getting the output:
 
 ``[ "95", "Erskine Macdonald", "London"]``
 
-.. admonition:: Exercise 8: Extracting dates of publication from the *Place of Publication* column
 
-    In Exercise 4 above you may have noted that in many cases where the
-    *date of publication* value
+.. admonition:: Task - Find the offending rows
 
-    was blank, there was a date in the *place of publication* column.
-    This exercise is to use what you have learnt about facets,
-    transformations, data types and regular expressions to extract these
-    dates and put them in the *Date of Publication* column.
+    There are a number of rows that have information like that found in the above
+    examples, all stored in the *Place of Publication* column. 
 
-    -  Make sure you are only working with records where the Date of
-       Publication is blank [Hint: See Exercise 4]
+    - Place a text filter on the *Place of Publication* column and search for
+      ``pp.``.
+    - What information is stored in this field (in addition to the place of
+      publication).  Notice that this information is missing from the respective
+      columns.
 
-    -  Working with the Place of Publication column, use the *Add column
-       based on this column* function [Hint: Look in the drop down menu for
-       this column]
+The last exercise illustrates a common problem when working with data that has
+been merged from many sources: at least one of the sources has multiple
+variables stored in one column.  This is a clear violation of our golden rule of
+storing data (one column per variable).  Let's clean this up.
 
-    -  Use the ``match`` function with a regular expression to find where the
-       Place of Publication column ends with a four digit number
+.. admonition:: Task - Make a regular expression to capture the information
 
-       -  When using the ``match`` function, you have to use *capture groups*
-          in your regular expression (see above under *Regular Expressions*)
+    Make a regular expression that captures all of the following pieces of
+    information.
 
-       -  The output of the ``match`` function is an Array - you``ll need to
-          get a string value from this
+    - The number that follows the ``pp.``
+    - The publisher
+    - The place of publication
+    - The date  of publication
+
+Column References
+-----------------
+
+To make use of this information, we will need to reference the *Place of
+Publication* column in expression for other cells (like *Publisher*).
+This will require us to use a **column reference**.  So far, all of our
+transformations have started with ``value``, which is reference to the current
+value of each respective cell.  
+
+
+GREL also allows us to reference a cell using ``cell[col_name].value``, where
+``col_name`` is the name of a column in quotes.  For example,
+``cells["Publisher"].value`` refers to the value stored in the *Publisher*
+column of each respective cell.  
+
+.. note::
+
+    More information about how to reference various values in GREL expression can be
+    found in the
+    `Variable documentation <https://github.com/OpenRefine/OpenRefine/wiki/Variables>`_.
+
+We can use these references to pull data from one column into another column,
+which we illustrate in the following task.
+
+.. admonition:: Task - Pull the publisher information from the Place of Publication column.
+
+    Let's add the missing publisher information that we identified in the following
+    task.  To do this, perform that following steps.
+
+    - Make sure that you still have the ``pp.`` text filter in place
+    - Add a cell transformation to the *Publisher* column.
+    - Use ``cells["Place of Publication].value`` to reference the *Place of Publication*
+      column.
+    - Use ``match``, the earlier regular expression (e.g. ``/pp. ([xv]i*\. )?(\d*)\.
+      (.*): (.*), \[?(\d*)\??\.?]?/``), and indexing to pull out the publisher.
+
+Now you should complete what we have started by following the steps in the next
+exercise.
+
+.. admonition:: Exercise 8: Pull out the other publication information from the above example.
+
+    - Use a similar transformation to fill in the date of publication.
+    - Finally, transform the *Place of Publication* to exclude the earlier
+      information.
+    - When you apply the last transformation, all the rows disappear.  Why?
+    - One of the offending rows was the 8th row.  Verify that all of the
+      transformations worked.
+    - Note that the order of our transformations was essential.  Why?
+
+Next, use regular expressions to extract the shelfmark code from the *Shelfmark*
+columns.
+
+.. admonition:: Exercise 9: Extract the shelfmark
+
+    Notice that the first few columns of the *Shelfmark* column have the form
+    ``British Library HMNTS 12641.b.30.``
+    - Verify that all lines start with ``British Library HMNTS`` using a text filter
+      with a regular expression.
+    - Use ``match`` to create a new column called *Shelfmark Code* that contains the
+      code (e.g. ``12641.b.30``)
+    - Use ``match`` to create a new column called *Shelfmark Code 1* that contains the first part of 
+      code (e.g. ``12641``)
+    - Use ``match`` to create a new column called *Shelfmark Code 1* that contains the second part of 
+      code (e.g. ``b``)
+    - Use ``match`` to create a new column called *Shelfmark Code 1* that contains the last part of 
+      code (e.g. ``30``)
+
 
 Advanced Refine
 ===============
